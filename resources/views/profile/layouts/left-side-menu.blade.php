@@ -4,8 +4,8 @@
 <div class="col-md-4 background-dark-purple full-height" id="left-side-block">
     <div class="userData">
         <h2 class="text-white">{{Auth::user()->last_name}} {{Auth::user()->first_name}}</h2>
-        <h3 class="heading">Скидка</h3>
-        <p class="discount">5%</p>
+        {{--<h3 class="heading">Скидка</h3>--}}
+        {{--<p class="discount">5%</p>--}}
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <ul class="menu_list">
@@ -19,7 +19,7 @@
                            href="{{route('profile-orders')}}">Мои заказы</a></li>
                 </ul>
                 <ul class="additional">
-                    <li><a href="">Спецпредложения</a></li>
+                    {{--<li><a href="">Спецпредложения</a></li>--}}s
                     <li><a class="{{(\Request::route()->getName() == 'profile') ? 'active' : ''}}"
                            href="{{route('profile')}}">Персональные данные</a></li>
                 </ul>
