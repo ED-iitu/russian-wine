@@ -1,4 +1,12 @@
 @extends('layouts.app')
+<style>
+    @media only screen and (max-width: 600px) {
+        .profile-form {
+            display: flex;
+            margin-left: -40px !important;
+        }
+    }
+</style>
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile-personal-info-form.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
@@ -11,7 +19,7 @@
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8 bg_white">
                     <div class="bg-gray profile-info">
-                        <h1>Персональные данные</h1>
+                        <h1 style="color: black; font-size: 20px">Персональные данные</h1>
                         <div class="row profile-form">
                             <form role="form" method="POST" id="profile_form" action="{{route('profile-update')}}">
                                 <div class="col-md-5">
