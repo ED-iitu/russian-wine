@@ -2504,7 +2504,7 @@ span.currency {
     }
 
     .winemaker-details #in_par p a {
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
     .winemaker-details #in_par p {
@@ -2538,6 +2538,17 @@ span.currency {
         max-height: 120vw;
         min-height: unset;
     }
+    #winetours .btn-danger {
+        font: 3.1rem ProximaNova-Reg;
+        margin-top: 4rem;
+    }
+    #winetours .white-box-red-dash .text {
+        padding: 1rem 1rem;
+    }
+    #winetours #tour-carousel {
+        margin:0;
+    }
+
     .button_cont button#button-carts {
         padding: 0.417vw 1.563vw 0.417vw 3.125vw;
         font: 3.8vw 'ProximaNova-Bold';

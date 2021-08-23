@@ -37,7 +37,9 @@
                             <div class="">
                                 <input name="phone" required class="form-control" type="text" placeholder="Телефон">
                             </div>
-                            <button type="submit" class="btn-danger">Отправиться в тур</button>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn-danger">Отправиться в тур</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -182,7 +184,7 @@
                                                placeholder="Телефон">
                                     </div>
                                     <div class="form-group text-center">
-                                        <button type="submit" class="text-center  btn-danger">
+                                        <button type="submit" class="text-center btn-danger m-t-10">
                                             Оставить заявку
                                         </button>
                                     </div>
