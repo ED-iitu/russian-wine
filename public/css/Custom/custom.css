@@ -74,7 +74,7 @@ html {
 
 .shopContent .featured_cont .swiper-slide {
     padding-bottom: 2rem !important;
-    margin-bottom: 1.9rem;
+    margin-bottom: 2.9rem;
     transition: all .3s ease;
 }
 
@@ -2161,9 +2161,11 @@ span.currency {
     .shopContent .featured_cont .swiper-slide:hover {
         box-shadow: none !important;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
-
+    .pagination > li > a, .pagination > li > span {
+        margin-left: -4px;
+    }
     .shopContent .col-md-4:nth-child(3n) > .swiper-slide:hover {
         box-shadow: none !important;
         margin-top: 0;
