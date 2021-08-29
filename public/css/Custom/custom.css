@@ -2161,7 +2161,7 @@ span.currency {
     .shopContent .featured_cont .swiper-slide:hover {
         box-shadow: none !important;
         margin-top: 0;
-        margin-bottom: 2rem;
+        /*margin-bottom: 2rem;*/
     }
     .pagination > li > a, .pagination > li > span {
         margin-left: -4px;
