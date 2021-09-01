@@ -22,7 +22,7 @@
                         </div>
                         <div class="mobileToShop">
                             <a href="{{route('wine_shop')}}" class="pageControl">
-                                <img alt="close_icon" src="http://dev.wine/image/closeicon.png">
+                                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
                             </a>
                         </div>
                         <div class="showcase">

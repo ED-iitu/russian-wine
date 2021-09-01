@@ -1690,10 +1690,10 @@ span.currency {
         width: 70px;
         background: transparent;
         background-size: auto;
-        background-size: auto;
         border: none;
         text-align: center;
         font-size: 40px;
+        font-family: 'ProximaNova-Reg', sans-serif;
     }
 
     #product-product #button-carts {
