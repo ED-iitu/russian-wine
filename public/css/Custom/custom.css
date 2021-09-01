@@ -1682,7 +1682,7 @@ span.currency {
         font-size: 15px;
         width: 100%;
         line-height: 250%;
-        font-family: "ProximaNova", sans-serif;
+        /*font-family: "ProximaNova", sans-serif;*/
         font-weight: 600;
     }
 
@@ -2537,7 +2537,7 @@ span.currency {
     #product-product.product-temp1 .image img {
         width: auto;
         margin-top: 0;
-        max-height: 120vw;
+        max-height: 130vw;
         min-height: unset;
     }
     #winetours .btn-danger {
