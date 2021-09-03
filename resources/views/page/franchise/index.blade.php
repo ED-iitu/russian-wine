@@ -197,15 +197,15 @@
                                     @csrf
                                     <div class="p-t-0">
                                         <input name="name" class="form-control" type="text"
-                                               placeholder="Имя">
+                                               placeholder="Имя" required>
                                     </div>
                                     <div class="p-t-0">
                                         <input name="phone" class="form-control" type="text"
-                                               placeholder="Телефон">
+                                               placeholder="Телефон" required>
                                     </div>
                                     <div class="text-left p-t-0">
                                         <input type="submit" class="btn-danger"
-                                               value="Оставить заявку">
+                                               value="Оставить заявку" style="font-size: 2.4rem">
                                     </div>
                                 </form>
                             </div>

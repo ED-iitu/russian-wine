@@ -16811,11 +16811,11 @@ header ul li.active span:after {
 
         #product-preview .icon-icon_x,
         .winery-close {
-            width: 5.556vw;
-            height: 5.556vw;
-            top: 5.556vw;
-            right: 5.556vw;
-            z-index: 120;
+            width: 5vw;
+            height: 5vw;
+            top: 5vw;
+            right: 5vw;
+            z-index: 10000;
             background: url(/image/closeicon.png);
             background-size: cover;
         }
