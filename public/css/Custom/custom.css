@@ -2502,9 +2502,8 @@ span.currency {
 
     #winemakers .close-icon {
         left: 1rem;
-        font-size: 2rem;
-        bottom: 8.5rem;
-
+        font-size: 4rem;
+        bottom: 17.5rem;
     }
 
     .winemaker-details #in_par p a {
