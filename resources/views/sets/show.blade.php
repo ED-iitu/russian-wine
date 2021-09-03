@@ -158,7 +158,10 @@
               @endif
           </div>
         	</span>
-            <button id="podpisatsa" onclick="cart_add('{{$set->id}}', 1, 'set');">Купить</button>
+            <button id="podpisatsa" onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине');$(this).css({'backgroundColor' : '#261F30'})">
+                в
+                корзину
+            </button>
         </div>
     </div>
     <div id="bottle-container">
