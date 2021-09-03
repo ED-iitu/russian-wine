@@ -310,7 +310,7 @@
     @foreach($wineries as $winery)
         <div id="information-winerywc" class="information-winerywc winery-modal-{{$winery->id}}">
             <p class="close_click hidden" onclick="close_winery_modal()">
-                <img alt="close_icon" src="{{asset('image/closeicon.png')}}" style="width: 2.5rem; top: 4rem;">
+                <img alt="close_icon" src="{{asset('image/closeicon.png')}}" style="width: 4.5rem; top: 4rem;">
             </p>
             <div class="col-ss-6">
             <h1 class="forwc">{{$winery->title}}</h1>
