@@ -1604,7 +1604,7 @@ span.currency {
         font-weight: 900;
         display: inline-block;
         line-height: 1.5em;
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
 
     #product-product.product-temp1 .amount {
@@ -1628,7 +1628,7 @@ span.currency {
         font-weight: 900;
         display: inline-block;
         line-height: 2em;
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: 12px !important;
     }
 
@@ -2647,7 +2647,7 @@ span.currency {
 
     #product-product.product-temp1 .species .iblock span {
         font-weight: 900;
-        text-transform: uppercase;
+        text-transform: capitalize;
         padding-top: 3vw;
     }
 
