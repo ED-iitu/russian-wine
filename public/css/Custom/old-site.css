@@ -15378,9 +15378,9 @@ header ul li.active span:after {
     }
 
     .image-set a {
-        height: 50rem;
+        height: 102vw;
         /*margin-right: 1rem;*/
-        width: 20rem;
+        width: 6vw;
         background: #fff;
         padding: 2rem 0;
     }
@@ -15393,7 +15393,7 @@ header ul li.active span:after {
         width: max-content;
         min-height: unset!important;
         padding: 0;
-        background: transparent;
+        /*background: transparent;*/
     }
 
     .image-set .swiper-wrapper {
