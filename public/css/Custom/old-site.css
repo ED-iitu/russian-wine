@@ -2959,13 +2959,13 @@ header #form-language .language-select {
         font-weight: 900;
         display: inline-block;
         line-height: 1.2;
-        text-transform: uppercase;
+        text-transform: capitalize;
     }
 
     #product-product.product-temp1 .amount .iblock span {
         font-size: 1.8vw;
         font-weight: 900;
-        text-transform: uppercase;
+        text-transform: capitalize;
         line-height: 1.2;
     }
 
