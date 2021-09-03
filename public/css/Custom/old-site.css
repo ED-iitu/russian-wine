@@ -15383,6 +15383,7 @@ header ul li.active span:after {
         width: 20rem;
         background: #fff;
         padding: 2rem 0;
+        margin: 15px;
     }
 
     .image-set {
