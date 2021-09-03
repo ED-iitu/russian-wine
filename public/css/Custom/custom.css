@@ -1573,7 +1573,7 @@ span.currency {
         padding-left: 0;
         border-bottom: 1px solid #E1E1E1;
         font-weight: 900;
-        text-transform: uppercase;
+        /*text-transform: uppercase;*/
         float: left;
     }
 
