@@ -117,7 +117,7 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="col-md-6 col_1 col-xs-12" style="position:relative;">
+                <div class="col-md-6 col-xs-12" style="position:relative;">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 5 and $block->type_id == 3)
                             <img src="{{Voyager::image($block->image)}}" alt="image" class="abs_img page_image">

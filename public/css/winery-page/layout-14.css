@@ -90,7 +90,7 @@
     }
 
     .layout-14  .teruar_bg .col-md-6 .text_s_s {
-        padding: 15% 16% 15% 15%
+        padding: 22% 16% 15% 15%
     }
 
     .layout-14  .teruar_bg .col-md-12.text_mxl {
@@ -326,7 +326,11 @@
     }
 
     .layout-14  .text_s_s, .layout-14  .text_mxl, .layout-14  .text_ml {
-        padding: 8.333vw 40px
+        padding: 15rem 40px;
+    }
+
+    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple p {
+        color: white;
     }
 
     .layout-14  .about_person {
@@ -381,14 +385,16 @@
     }
 
     .layout-14  .flex_elem_row img {
-        width: auto !important;
+        width: 100%;
         height: 56vw !important
     }
 
     .layout-14  .flex_elem_row .col-md-6 {
-        width: auto !important
+        width: 100%;
     }
-
+    h4 {
+        font-size: 4rem;
+    }
     .layout-14  #space_area, .layout-14  #proizvoditelnost {
         width: 100vw;
         color: #fff;
