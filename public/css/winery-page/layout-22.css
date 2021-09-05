@@ -287,7 +287,7 @@
     }
 
     .layout-22 .about_person_below .flex_elem .col-md-4 {
-        padding-bottom: 0
+        padding-bottom: 7rem
     }
 
     .layout-22 .about_person_below .flex_elem .col-md-12 {
@@ -433,8 +433,11 @@
     .layout-22 .about_person_below .flex_elem .col-md-12 {
         order: 3
     }
-
-    .layout-22 img {
-        width: 100vw !important
+    #information-winery h1 {
+        font-size: 53px;
     }
+
+        /*.layout-22 img {*/
+    /*    width: 100vw !important*/
+    /*}*/
 }

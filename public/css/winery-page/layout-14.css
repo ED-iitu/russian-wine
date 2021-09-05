@@ -332,6 +332,9 @@
     .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple p {
         color: white;
     }
+    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple .text_s_s p {
+        color: black;
+    }
 
     .layout-14  .about_person {
         margin-bottom: 0
@@ -451,7 +454,8 @@
     }
 
     .layout-14  .vinogradniki {
-        margin-bottom: 16vw
+        margin-bottom: 16vw;
+        margin-top: 10rem;
     }
 
     .layout-14  .name_vinodelnia {
@@ -468,5 +472,14 @@
 
     .layout-14  .vinodelnia .background_purple .col_1 {
         padding-bottom: 0
+    }
+    #information-winery h1 {
+        font-size: 55px;
+    }
+    h2 {
+        font-size: 15rem;
+    }
+    .teruar_bg {
+        padding: 0 80px;
     }
 }
