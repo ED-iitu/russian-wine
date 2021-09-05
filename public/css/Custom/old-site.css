@@ -11090,7 +11090,8 @@ section#specials #specials-cont div.col-md-4 {
     #simplecheckout_cart tr td.image {
         padding: 0 25rem 0 10rem;
         float: left;
-        display: block
+        display: block;
+        width: 28rem;
     }
 
     #simplecheckout_cart tr td.image img {
