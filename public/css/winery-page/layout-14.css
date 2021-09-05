@@ -332,7 +332,7 @@
     .layout-14 .teruar_bg p, .layout-14 .vinodelnia .text_s_s p {
         color: black;
     }
-    .layout-14 .vinodelnia .background_purple p {
+    .layout-14 .background_purple{
         color: white !important;
     }
     /*.layout-14 .teruar_bg p, .layout-14 .vinodelnia .text-white p {*/
