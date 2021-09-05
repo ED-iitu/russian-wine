@@ -292,7 +292,7 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="col-md-5 col_2 col-xs-12 text_s_s">
+                <div class="col-md-5 col_2 col-xs-12 text_s_s text-white">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 4 and $block->type_id == 2)
                             {!!$block->description!!}
