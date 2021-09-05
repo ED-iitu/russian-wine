@@ -335,6 +335,9 @@
     .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple .text_s_s p {
         color: black;
     }
+    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple .text-white p {
+        color: white !important;
+    }
 
     .layout-14  .about_person {
         margin-bottom: 0
