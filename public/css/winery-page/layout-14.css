@@ -329,15 +329,15 @@
         padding: 15rem 40px;
     }
 
-    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple p {
-        color: white;
-    }
-    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple .text_s_s p {
+    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .text_s_s p {
         color: black;
     }
-    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple .text-white p {
+    .layout-14 .teruar_bg p, .layout-14 .vinodelnia .background_purple p {
         color: white !important;
     }
+    /*.layout-14 .teruar_bg p, .layout-14 .vinodelnia .text-white p {*/
+    /*    color: white !important;*/
+    /*}*/
 
     .layout-14  .about_person {
         margin-bottom: 0
@@ -483,6 +483,6 @@
         font-size: 15rem;
     }
     .teruar_bg {
-        padding: 0 80px;
+        padding: 0;
     }
 }
