@@ -347,3 +347,18 @@
         width: 100vw
     }
 }
+@media (max-width: 767px) {
+    .person_img {
+        margin-top: 0
+    }
+    .teruar_bg {
+        padding: 0 0 80px;
+    }
+    .teruar {
+        font-size: 10rem;
+    }
+    .layout-21 .vinodelnia .half_plus .abs_img {
+        margin-left: 0;
+    }
+
+}

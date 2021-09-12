@@ -100,7 +100,7 @@
                         @if ($block->numbering == 2 and $block->type_id == 1)
                             <img alt="block_image" src="{{Voyager::image($block->image)}}"
                                  class="fluid_image page_image"
-                                 style="width: calc(100% + 70px); margin-left: -70px">
+                                 style="width: calc(100% + 70px);">
                         @endif
                     @endforeach
                 </div>

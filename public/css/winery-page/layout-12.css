@@ -644,3 +644,8 @@
         height: 800px
     }
 }
+@media (max-width: 767px) {
+    .layout-12 .vinodelnia .abs_img {
+        position: unset;
+    }
+}

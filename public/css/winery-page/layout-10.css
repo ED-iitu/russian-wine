@@ -715,3 +715,17 @@
         font-size: 40px;
     }
 }
+@media (max-width: 767px) {
+    .layout-10 img.col_3, .layout-10 img.col_1 {
+        margin-left: 0;
+    }
+    .layout-10 .text_on_right {
+        padding: 25rem 15px 0;
+    }
+    .layout-10 .last_block_vinogradniki ul {
+        padding: 0 0 8.333vw 15px;
+    }
+    .layout-10 .vinodelnia .second_block img {
+        margin-left: 0;
+    }
+}

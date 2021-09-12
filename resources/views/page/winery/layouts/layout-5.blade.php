@@ -73,7 +73,7 @@
     <div class="container">
         <div class="terruar_below_one">
             <div class="row">
-                <div class="col-md-12 col-xs-12 terruar_text_2">
+                <div class="col-md-12 col-xs-12 terruar_text_2 background_purple">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 2  and $block->type_id == 3)
                             {!!$block->description!!}
@@ -210,7 +210,7 @@
     <div class="container">
         <h2>Винодельня</h2>
         <div class="row">
-            <div class="col-md-12 col-xs-12 first-block">
+            <div class="col-md-12 col-xs-12 first-block background_purple">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 1  and $block->type_id == 2)
                         <img alt="image" src="{{Voyager::image($block->image)}}" class="page_image">

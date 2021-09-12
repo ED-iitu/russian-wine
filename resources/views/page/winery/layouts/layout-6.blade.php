@@ -78,7 +78,7 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="text_map col-md-4 col-xs-12">
+                <div class="text_map col-md-4 col-xs-12 background_purple">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 1 and $block->type_id == 3)
                             {!!$block->addition!!}
@@ -200,14 +200,14 @@
                 </div>
 
             </div>
-            <div class="spec_col_2 col-md-7 text_with_padding">
+            <div class="spec_col_2 col-md-7 text_with_padding background_purple">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 1 and $block->type_id == 2)
                         {!!$block->addition!!}
                     @endif
                 @endforeach
             </div>
-            <div class="text_down_vinodelnia">
+            <div class="text_down_vinodelnia background_purple">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 2 and $block->type_id == 2)
                         {!!$block->description!!}

@@ -52,7 +52,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-xs-12">
+            <div class="col-md-8 col-xs-12 background_purple">
                 <div class="text_s_s">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 2 and $block->type_id == 3)
@@ -94,7 +94,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-9 col-xs-12 text_s_s">
+            <div class="col-md-offset-3 col-md-9 col-xs-12 text_s_s background_purple">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 4 and $block->type_id == 3)
                         {!!  $block->description !!}

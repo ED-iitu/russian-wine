@@ -86,3 +86,17 @@
     }
 
 }
+.fluid_image {
+    margin-left: -70px;
+}
+@media (max-width: 767px) {
+    .vinogradniki td {
+        color: white;
+    }
+    #wine_species {
+        width: 100%;
+    }
+    .fluid_image {
+        margin-left: 0px;
+    }
+}

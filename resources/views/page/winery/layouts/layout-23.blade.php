@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-9 col-xs-12 half_minus text_mxl background_purple">
                 <div class="row flex_elem">
-                    <div class="col-md-5 col_2 col-xs-12 half_minus">
+                    <div class="col-md-5 col_2 col-xs-12 half_minus background_purple">
                         @foreach($winery->images as $block)
                             @if ($block->numbering == 1 and $block->type_id == 3)
                                 {!!$block->description!!}

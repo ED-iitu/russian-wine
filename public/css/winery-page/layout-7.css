@@ -586,3 +586,8 @@
         margin-top: -1px
     }
 }
+@media (max-width: 767px) {
+    .layout-7 .name_vinodelnia {
+        font-size: 10rem !important;
+    }
+}

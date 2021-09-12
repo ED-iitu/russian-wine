@@ -275,3 +275,9 @@
         margin-top: 16vw
     }
 }
+@media (max-width: 767px) {
+    .layout-18 .vinogradniki .col_1 img, .layout-18 .vinodelnia
+    .margin_plus img, .layout-18 .person_img, .layout-18 .mob-elem {
+        margin-left: 0;
+    }
+}

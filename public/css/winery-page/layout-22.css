@@ -441,3 +441,8 @@
     /*    width: 100vw !important*/
     /*}*/
 }
+@media (max-width: 767px) {
+    h4 {
+        font-size: 5rem;
+    }
+}

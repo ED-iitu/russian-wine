@@ -420,3 +420,26 @@
         margin-bottom: 16vw
     }
 }
+@media (max-width: 767px) {
+    .person_img {
+        margin-top: 0;
+    }
+    .teruar_bg {
+        padding: 0 0 80px;
+    }
+    .teruar {
+        font-size: 10rem;
+    }
+    .background_purple p {
+        color: white !important;
+    }
+    .layout-19 .teruar_bg .col-md-5.half_plus img {
+        margin-left: 0;
+    }
+    .layout-19 .vinogradniki_title {
+        font-size: 10rem !important;
+    }
+    .layout-19 .vinogradniki .background_grey .col-md-8 img {
+        margin-left: 0;
+    }
+}

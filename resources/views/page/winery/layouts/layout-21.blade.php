@@ -44,14 +44,14 @@
                     @endif
                 @endforeach
             </div>
-            <div class="col-md-6 col-xs-12 half_plus text_s_s">
+            <div class="col-md-6 col-xs-12 half_plus text_s_s background_purple ">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 1 and $block->type_id == 3)
                         {!!$block->description!!}
                     @endif
                 @endforeach
             </div>
-            <div class="col-md-offset-1 col-md-4 col-xs-12 half_minus">
+            <div class="col-md-offset-1 col-md-4 col-xs-12  half_minus">
                 <div id="map">
                 </div>
             </div>

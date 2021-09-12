@@ -3455,3 +3455,29 @@ span.currency {
         width: 1500px;
     }
 }
+@media (max-width: 767px) {
+    .person_img {
+        margin-top: 0 !important;
+    }
+    .teruar_bg {
+        padding: 0 0 80px !important;
+    }
+    .teruar {
+        font-size: 10rem !important;
+    }
+    .vinodelnia .flex_elem .col-md-8 img, .teruar_bg .col-md-4 img,  .vinodelnia_page_3 img, .last_line img {
+        margin-left: 0 !important;
+    }
+    .vinogradniki h2 {
+        margin-bottom: 0 !important;
+        font-size: 10rem;
+        padding-left: 0 !important
+    }
+    .background_purple p {
+        color: white !important;
+    }
+    .name_vinodelnia {
+        font-size: 10rem !important;
+    }
+
+}
