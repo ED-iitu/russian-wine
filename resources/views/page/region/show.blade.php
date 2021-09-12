@@ -7,7 +7,7 @@
     <div id="information-region" class="information-wine-region">
         <div id="content" class="">
             <div>
-                <img alt="{{ $region->title  }}" class="img-responsive" src="{{Voyager::image($region->banner_image)}}">          
+                <img alt="{{ $region->title  }}" class="img-responsive" src="{{Voyager::image($region->banner_image)}}">
                 <!-- style="height: 20vw; object-fit: cover;"  -->
             </div>
             <div class="background-white">
@@ -237,19 +237,19 @@
                         el: '.swiper-pagination',
                         clickable: true,
                     },
-                    // breakpoints: {
-                    //     1024: {
-                    //         slidesPerView: 4,
-                    //         spaceBetween: 40,
-                    //         slidesPerGroup: 4,
-                    //     },
-                    //     768: {
-                    //         slidesPerView: 'auto',
-                    //         spaceBetween: 30,
-                    //         freeMode: true,
-                    //         slidesPerGroup: 1,
-                    //     }
-                    // }
+                    breakpoints: {
+                        // 1024: {
+                        //     slidesPerView: 2,
+                        //     spaceBetween: 40,
+                        //     slidesPerGroup: 4,
+                        // },
+                        425: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                            freeMode: true,
+                            slidesPerGroup: 1,
+                        }
+                    }
                 });
                 </script>
                 <script>
