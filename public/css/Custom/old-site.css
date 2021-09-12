@@ -542,7 +542,7 @@ header #form-language .language-select {
     }
 
     #information-winery .description-fourth-title h2 {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .module-russkie-vinodelni .html-content img,
@@ -1637,7 +1637,7 @@ header #form-language .language-select {
 
 #information-winery .wines-slider .item-inner,
 #information-winery .swiper-slide .item-inner {
-    /*background: #F3F3F3;*/
+    background: #F3F3F3;
     margin-bottom: 80px
 }
 
