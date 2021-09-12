@@ -1462,6 +1462,10 @@ span.currency {
     .information-wine-regions .region-info .wine-species-text{
         font-size: 17px;
     }
+    .information-wine-regions .region-info .wine-species-text {
+        padding: 0 0 40px 0;
+    }
+
 
     .information-wine-regions .nav-pills > li.active > a {
         background: none;
