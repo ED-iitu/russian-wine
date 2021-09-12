@@ -239,7 +239,7 @@
                     },
                     breakpoints: {
                         320: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 20
                         },
                         // when window width is >= 480px
@@ -264,6 +264,11 @@
                 </script>
             @endpush
             <style>
+                @media (max-width: 767px) {
+                    #region-carousel img {
+                        height: 50rem;
+                    }
+                }
                 .swiper-button-next, .swiper-button-prev {
                     top:50% !important;
                     height: 44px !important;
