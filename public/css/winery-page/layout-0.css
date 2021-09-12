@@ -4,10 +4,17 @@
     }
 
 
+
 }
 @media (max-width: 767px) {
     #information-winery .description-fifth-image-2 {
         margin-top: 0 !important;
         width: 100% !important;
+    }
+    #information-winery .description-third-title h2 {
+        margin-bottom: 0;
+    }
+    #information-winery .description-second-title h2 {
+        margin-bottom: 0;
     }
 }

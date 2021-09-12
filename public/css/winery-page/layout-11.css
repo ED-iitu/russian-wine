@@ -531,7 +531,7 @@
 
     .layout-11 .vinodelnia .name_vinodelnia {
         position: absolute;
-        font-size: 17.4vw !important;
+        font-size: 15.4vw !important;
         top: -10.9vw !important;
         width: 100vw;
         text-align: center;
@@ -591,3 +591,16 @@
         padding: 8.333vw 30px
     }
 }
+
+@media (max-width: 767px) {
+    .teruar_bg {
+        padding: 0 0 80px;
+    }
+    .teruar {
+        font-size: 10rem;
+    }
+    .layout-11 .teruar_bg p {
+        color: white;
+    }
+}
+

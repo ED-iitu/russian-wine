@@ -1,7 +1,14 @@
 .layout-9 #map {
     height: 270px
 }
-
+@media (max-width: 767px) {
+    .teruar {
+        font-size: 75px;
+    }
+    .name_vinodelnia {
+        font-size: 12rem;
+    }
+}
 @media (min-width: 992px) {
     .layout-9 .logo {
         width: 22%;
@@ -45,9 +52,7 @@
     .layout-9 .teruar_bg .container {
         position: relative
     }
-    .teruar {
-        font-size: 75px;
-    }
+
     .layout-9 .teruar_bg .teruar {
         position: absolute;
         top: 73px;
@@ -409,7 +414,7 @@
 
     .layout-9 .vinogradnik_title {
         padding: 0;
-        /*margin-bottom: -6vw;*/
+        margin-bottom: 0;
         z-index: 2
     }
 

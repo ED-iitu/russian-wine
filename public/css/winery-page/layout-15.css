@@ -413,3 +413,43 @@
         line-height: 1.8
     }
 }
+@media (max-width: 767px) {
+    .layout-15 .background_purple p {
+        color: white;
+    }
+    .layout-15 .about_last_block img {
+        margin-left: 0;
+    }
+    .person_img {
+        margin-top: 0;
+    }
+    .teruar_bg {
+        padding: 0 0 80px;
+    }
+    .teruar {
+        font-size: 10rem;
+    }
+    .layout-15 .teruar_bg .col-md-8 img {
+        margin-left: 0;
+    }
+    .layout-15 .text_mxl p, .layout-15 .text_ml p {
+        font: unset;
+        line-height: 25px;
+        font-size: 4.1vw;
+    }
+    h4 {
+        font-size: 10rem;
+    }
+    .layout-15 .vinogradniki .col-md-8 .abs_img {
+        margin-left: 0;
+    }
+    .layout-15 .vinodelnia img {
+        margin-left: 0;
+    }
+    .layout-15 #space_area {
+        margin-left: 0;
+    }
+    .layout-15 .vinodelnia .text_space_old p {
+        font: unset;
+    }
+}

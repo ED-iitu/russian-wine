@@ -75,7 +75,7 @@
                 @endif
             @endforeach
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-xs-12 map-block-style">
             <div id="map" style="position: relative; overflow: hidden;">
             </div>
         </div>

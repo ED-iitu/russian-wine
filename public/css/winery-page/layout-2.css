@@ -101,10 +101,12 @@
     .layout-2 .posadki_vinogradnikov_below {
         background-color: rgba(241, 241, 241, 1);
     }
+
     .layout-2 .posadki_vinogradnikov_below h4 {
         font-size: 30px;
         margin-bottom: 60px;
     }
+
     .layout-2 .posadki_vinogradnikov_below .first_text {
         background: #fff;
         margin-top: -50px;
@@ -115,6 +117,7 @@
         background-repeat: no-repeat;
         background-position: 124% 35%;
     }
+
     .layout-2 .second_text {
         padding: 5% 11% 5% 8%;
         font-size: 18px;
@@ -126,6 +129,7 @@
         z-index: 2;
         text-align: center;
     }
+
     .layout-2 .proizvoditelnost {
         position: relative;
         display: block;
@@ -135,30 +139,78 @@
         font-size: 15px;
 
     }
+
     .layout-2 .proizvoditelnost p {
         font-family: 'ProximaNova-Bold';
     }
+
     .layout-2 .proizvoditelnost h2, #legrand .proizvoditelnost h3 {
         margin: 0;
     }
-    .layout-2 .proizvoditelnost h3   {
+
+    .layout-2 .proizvoditelnost h3 {
         font-size: 21px !important;
         color: white !important;
     }
-    .layout-2 .proizvoditelnost h2   {
+
+    .layout-2 .proizvoditelnost h2 {
         font-size: 35px;
         margin-top: 20px;
         margin-bottom: -10px;
         color: white !important;
     }
-    .layout-2  .vinodelnia .text_below_second {
+
+    .layout-2 .vinodelnia .text_below_second {
         font-size: 22px;
         color: #000;
         font-family: Lato-Light;
         padding-top: 45px;
     }
+
     .layout-2 .vinodelnia {
-        background: rgba(241,241,241,1);
+        background: rgba(241, 241, 241, 1);
         padding-bottom: 100px;
     }
+}
+
+@media (max-width: 767px) {
+    .teruar_bg {
+        padding: 0 0 80px;
+    }
+
+    .teruar {
+        font-size: 17rem;
+    }
+
+    .fluid_img {
+        margin: 0;
+    }
+
+    .vinogradniki h2 {
+        margin-bottom: 0;
+        font-size: 43px;
+        padding-left: 0;
+    }
+
+    .plod {
+        width: unset;
+    }
+
+    .vine_info p {
+        color: white;
+    }
+
+    h6 {
+        font-size: 7rem;
+    }
+
+    .posadki_vinogradnikov .col-md-3 {
+        width: 50%;
+        float: left;
+    }
+
+    .vinogradnik_title {
+        font-size: 12rem;
+    }
+
 }

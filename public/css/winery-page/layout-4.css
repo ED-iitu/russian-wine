@@ -385,8 +385,59 @@
         font-size: 18px;
         padding: 15px 30px;
     }
-}
 
+}
+@media (max-width: 767px) {
+    .fluid_img {
+        margin: 0;
+    }
+    .teruar_bg {
+        padding: 0;
+    }
+    .teruar {
+        font-size: 80px;
+    }
+    .title_box {
+        background-image: unset !important;
+    }
+    .title_box h5 {
+        font-size: 10rem;
+    }
+    .cvet_sorta h6 {
+        text-align: center;
+        font-size: 5rem;
+    }
+    .cvet_sorta .white {
+        color: #cdc266;
+    }
+    .cvet_sorta .red {
+        color: #da224d;
+    }
+    .cvet_sorta p {
+        line-height: 1;
+    }
+    .map-block-style {
+        margin-top: 28rem;
+        margin-bottom: 18rem;
+    }
+    .vinogradniki_bg {
+        background: unset !important;
+    }
+    .vinogradniki h2 {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    .vinogradnik_title {
+        font-size: 55px;
+    }
+    .fluid_image {
+        margin-top: 0;
+    }
+    .name_vinodelnia {
+        font-size: 8rem;
+    }
+
+}
 .layout-4 #map {
     height: 350px;
     margin-top: -170px;

@@ -320,7 +320,7 @@
 
     .layout-14  .text_mxl p, .layout-14  .text_ml p {
         margin: 0 !important;
-        font: 5vw Lato-Light;
+        /*font: 5vw Lato-Light;*/
         line-height: 1.8;
         text-align: center
     }
@@ -370,7 +370,7 @@
     }
 
     .layout-14  .teruar_bg {
-        padding-bottom: 22vw
+        padding-bottom: 5vw
     }
 
     .layout-14  .vinogradniki_title {
@@ -381,7 +381,7 @@
         left: 0;
         z-index: 1;
         width: 100vw;
-        text-align: center
+        text-align: center;
     }
 
     .layout-14  .vinogradniki .flex_elem_row {
@@ -399,7 +399,7 @@
         width: 100%;
     }
     h4 {
-        font-size: 4rem;
+        font-size: 9rem;
     }
     .layout-14  #space_area, .layout-14  #proizvoditelnost {
         width: 100vw;
