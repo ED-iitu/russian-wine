@@ -541,6 +541,10 @@ header #form-language .language-select {
         max-height: 280px !important;
     }
 
+    #information-winery .description-fourth-title h2 {
+        margin-bottom: 0;
+    }
+
     .module-russkie-vinodelni .html-content img,
     .module-russkie-vinodely .html-content img,
     .module-russkie-vina .html-content img {
@@ -11006,9 +11010,6 @@ section#specials #specials-cont div.col-md-4 {
         display: none !important;
     }
 
-    #information-winery .description-fourth-title h2 {
-        margin-bottom: 0;
-    }
 
     #simplecheckout_cart .quantity .fa {
         width: 1.042vw;
