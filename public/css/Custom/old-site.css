@@ -11006,6 +11006,10 @@ section#specials #specials-cont div.col-md-4 {
         display: none !important;
     }
 
+    #information-winery .description-fourth-title h2 {
+        margin-bottom: 0;
+    }
+
     #simplecheckout_cart .quantity .fa {
         width: 1.042vw;
         height: 1.042vw;

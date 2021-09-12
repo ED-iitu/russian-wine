@@ -2,4 +2,9 @@
     .layout-0 .teruar_bg .col-md-10 .abs_img.page_image {
         margin-top: -305px;
     }
+    #information-winery .description-fifth-image-2 {
+        margin-top: 0;
+        width: 100%;
+    }
+
 }
