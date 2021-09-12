@@ -28,7 +28,7 @@
             <div class="col-md-3"></div>
         </div>
         <div class="row flex_elem">
-            <div class="col-md-7 col-xs-12">
+            <div class="col-md-7 col-xs-12 text-white">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 1 and $block->type_id == 3)
                         {!!$block->description!!}
@@ -75,7 +75,7 @@
     </div>
     <div class="teruar_text_prelast">
         <div class="container">
-            <div class="col-md-12 col-xs-12 ">
+            <div class="col-md-12 col-xs-12 text-white ">
                 @foreach($winery->images as $block)
                     @if ($block->numbering == 3 and $block->type_id == 3)
                         {!!$block->description!!}
@@ -87,7 +87,7 @@
     <div class="teruar_last">
         <div class="container-fluid">
             <div class="row flex_elem">
-                <div class="col-md-offset-2 col_2 col-md-4">
+                <div class="col-md-offset-2 col_2 text-white col-md-4">
                     @foreach($winery->images as $block)
                         @if ($block->numbering == 4 and $block->type_id == 3)
                             {!!$block->description!!}

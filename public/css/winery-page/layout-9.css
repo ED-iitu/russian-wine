@@ -45,7 +45,9 @@
     .layout-9 .teruar_bg .container {
         position: relative
     }
-
+    .teruar {
+        font-size: 75px;
+    }
     .layout-9 .teruar_bg .teruar {
         position: absolute;
         top: 73px;
@@ -282,7 +284,7 @@
 @media (max-width: 991px) {
     .layout-9 .main_bg {
         height: 152vw;
-        background-image: url(/image/catalog/lefcadia/lefcadia_bg.jpg) !important;
+        /*background-image: url(/image/catalog/lefcadia/lefcadia_bg.jpg) !important;*/
         background-position: center center;
         position: Relative
     }
@@ -321,9 +323,12 @@
 
     .layout-9 .about_person .flex_elem .col-md-6 img {
         width: 100vw;
-        margin-left: -30px
+        /* margin-left: -30px; */
+        margin-top: 0.5rem;
     }
-
+    .teruar_bg {
+        padding: 0;
+    }
     .layout-9 .about_person .flex_elem .col-md-6.person_text, .layout-9 .teruar_bg .flex_elem .col-md-5 {
         order: 1
     }
@@ -334,7 +339,7 @@
 
     .layout-9 .teruar_bg .col-md-9 img {
         width: 100vw;
-        margin-left: -30px
+        /*margin-left: -30px*/
     }
 
     .layout-9 .teruar_bg .flex_elem .col-md-5 {
@@ -354,6 +359,10 @@
         line-height: 1.8
     }
 
+    .layout-9 .teruar_bg .flex_elem .text-white p {
+        color: white !important;
+    }
+
     .layout-9 .teruar_bg .flex_elem .col-md-7 {
         padding: 8.3333vw 10px
     }
@@ -367,6 +376,10 @@
         color: #23252b;
         margin: 0
     }
+    .layout-9 .teruar_text_prelast .text-white p {
+        color: white !important;
+    }
+
 
     .layout-9 .teruar_text_prelast {
         padding: 8.333vw 10px
@@ -374,7 +387,10 @@
 
     .layout-9 .teruar_bg .col_1 img {
         width: 100vw;
-        margin-left: -30px
+        /*margin-left: -30px*/
+    }
+    .vinogradnik_title {
+        font-size: 60px;
     }
 
     .layout-9 .teruar_bg .col_2 {
@@ -387,9 +403,13 @@
         line-height: 1.8
     }
 
+    .layout-9 .teruar_bg .text-white p {
+        color: white !important;
+    }
+
     .layout-9 .vinogradnik_title {
         padding: 0;
-        margin-bottom: -6vw;
+        /*margin-bottom: -6vw;*/
         z-index: 2
     }
 
@@ -452,13 +472,13 @@
 
     .layout-9 .vinogradniki .col-md-6 img {
         width: 100vw;
-        margin-left: -15px
+        /*margin-left: -15px*/
     }
 
     .layout-9 .vinodelnia .flex_elem .col_1 {
         width: 100vw;
         margin-left: -15px;
-        height: 100vw;
+        /*height: 100vw;*/
         overflow: hidden
     }
 
@@ -486,6 +506,9 @@
         margin: 0 -15px;
         background-color: #2d2032
     }
+    .layout-9 .vinodelnia_t_1 p {
+        color: white !important;
+    }
 
     .layout-9 .vinodelnia .col-md-10 {
         padding: 8.333vw 40px;
@@ -501,8 +524,8 @@
     .layout-9 .img_vin_below_1 img {
         width: 90vw;
         margin-right: 10vw;
-        margin-left: -30px;
-        margin-bottom: -10vw
+        /*margin-left: -30px;*/
+        /*margin-bottom: -10vw*/
     }
 
     .layout-9 .img_vin_below_2 img.mob-elem {
@@ -515,9 +538,8 @@
     .layout-9 .img_vin_below_2 img {
         width: 90vw;
         margin-left: auto;
-        margin-right: -15px;
+        margin-top: 15px;
         margin-bottom: 8.333vw;
-        margin-right: -30px;
         float: right
     }
 
