@@ -290,13 +290,13 @@
                                                            form="searching-form-mobile"
                                                            type="checkbox"
                                                            value="{{$winery->id}}"
-                                                           id="shop-winery-mob{{$winery->id}}"
+                                                           id="shop-winery-full-mob{{$winery->id}}"
                                                            name="winery[]"
                                                            @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                                            checked
                                                         @endif>
                                                     <label class="form-check-label"
-                                                           for="shop-winery-mob{{$winery->id}}">
+                                                           for="shop-winery-full-mob{{$winery->id}}">
                                                         {{$winery->title}}
                                                     </label>
                                                 </div>
@@ -378,12 +378,12 @@
                                                                form="searching-form-mobile"
                                                                type="checkbox"
                                                                name="sort[]" value="{{$sort->id}}"
-                                                               id="shop-sort-mob{{$sort->id}}"
+                                                               id="shop-sort-full-mob{{$sort->id}}"
                                                                @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
                                                                checked
                                                             @endif>
                                                         <label class="form-check-label"
-                                                               for="shop-sort-letter{{$sort->id}}">
+                                                               for="shop-sort-full-mob{{$sort->id}}">
                                                             {{$sort->title}}
                                                         </label>
                                                     </div>

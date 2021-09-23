@@ -2068,11 +2068,15 @@ span.currency {
         font-size: 4vw;
         line-height: 1.6em;
         letter-spacing: -0.01em;
-        color: #171717 !important;
+        color: #ffffff !important;
         font-family: ProximaNova-Reg, sans-serif !important;
         float: left;
-        margin: 2vw -6vw 2vw 5.3vw;
+        margin: 1rem 3rem;
         font-weight: bold;
+        border: 1px solid red;
+        padding: 1rem 3rem;
+        border-radius: 25px;
+        background: #da224d;
     }
     .letter-title {
         padding-left: 4rem;
@@ -2195,14 +2199,18 @@ span.currency {
         line-height: 4rem;
     }
     .button_cont button#button-carts {
-        top: -3vw!important;
+        top: -6vw!important;
 
     }
     .wine #button-carts.active {
         font-size: 2.6vw!important;
-        padding-right: 8vw!important;
-    }
+        width: 50%;
 
+        /*padding-right: 8vw!important;*/
+    }
+    .featured_cont .price-vinoteka {
+        margin-top: 3.521vw;
+    }
     .featured_cont .swiper-slide .meta .price-vinoteka span {
         font: 3.8rem 'RUBSN' !important;
         font-style: normal;
