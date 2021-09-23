@@ -5771,6 +5771,8 @@ h2.price {
         color: #6f6772;
         padding: 8px 15px;
         text-align: left;
+        font-size: 15px !important;
+        line-height: 25px !important;
     }
 }
 
