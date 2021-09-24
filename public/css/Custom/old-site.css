@@ -9084,7 +9084,6 @@ h2.price {
 
     .wine:hover #button-carts.active {
         background-color: #4fb32b;
-        background-image: unset;
     }
 
     .wine:hover {
