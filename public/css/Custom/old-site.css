@@ -11068,6 +11068,17 @@ section#specials #specials-cont div.col-md-4 {
     content: ""
 }
 
+.fa-plus-footer:before {
+    content: "\f067";
+}
+
+.collapsed:before {
+    content: "\f068";
+}
+button {
+    letter-spacing: 0.1em;
+}
+
 @media (max-width: 991px) {
     #bannerdate span {
         font: 9.722vw ProximaNova-Bold;

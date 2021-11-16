@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="185.219.43.215" id="f889086e-d7a1-4088-a928-15f99bb26f71" port="22" customName="russianwine" nameFormat="CUSTOM">
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="185.219.43.215" id="f889086e-d7a1-4088-a928-15f99bb26f71" port="22" customName="russianwine" nameFormat="CUSTOM">
         <option name="customName" value="russianwine" />
       </sshConfig>
     </configs>

@@ -2,8 +2,10 @@
     <div class="container container-lg">
         <div class="row ">
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
-                <h5 onclick="$('#footer1').toggleClass('footerUl');">Клиентам <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled" id="footer1">
+                <h5 class="footer-menu-title" >
+                    Клиентам <i class="fa fa-plus-footer"></i>
+                </h5>
+                <ul class="list-unstyled">
                     <li><a href="{{route('wine_shop')}}">{{trans('header.wine')}}</a></li>
                     <li><a href="{{route('sets')}}">{{trans('footer.sets')}}</a></li>
                     <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
@@ -12,8 +14,8 @@
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
-                <h5 onclick="$('#footer2').toggleClass('footerUl');">Информация <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled" id="footer2">
+                <h5 class="footer-menu-title" >Информация <i class="fa fa-plus-footer"></i></h5>
+                <ul class="list-unstyled">
                     <li><a href="/winemaking-regions">Регионы виноделия</a></li>
                     <li><a href="/wineries">Винодельни</a></li>
                     <li><a href="/winemakers">Виноделы</a></li>
@@ -22,8 +24,8 @@
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-3 col-lg-2 col-lg-push-3">
-                <h5 onclick="$('#footer3').toggleClass('footerUl');">Партнерам <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled" id="footer3">
+                <h5 class="footer-menu-title">Партнерам <i class="fa fa-plus-footer"></i></h5>
+                <ul class="list-unstyled">
                     {{--<li><a href="{{route('simple_page','distributors')}}">{{trans('footer.distributors')}}</a></li>--}}
                     <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                     <li><a href="{{route('wine-tour')}}">{{trans('footer.tour')}}</a></li>
@@ -58,3 +60,20 @@
         </div>
     </div>
 </footer>
+@push('scripts')
+    <script>
+        $('.ftr__list .footer-menu-title').on('click', function(e) {
+            e.preventDefault();
+            var $content = $(this).next();
+            $content.toggleClass('footerUl');
+            $('.accordion-item .heading').not(this).find('.plus-minus-toggle').addClass('collapsed')
+            if ($(this).find('.collapsed').length) {
+                $(this).find('.fa-plus-footer').removeClass('collapsed')
+            } else {
+                $(this).find('.fa-plus-footer').addClass('collapsed')
+            }
+
+        });
+    </script>
+@endpush
+{{--onclick="$('#footer1').toggleClass('footerUl'); $('#test').addClass('active')"--}}

@@ -1693,7 +1693,7 @@ span.currency {
     }
 
     #product-product .button_cont .prod_quantity input {
-        margin-top: -4px;
+        margin-top: 0;
         width: 70px;
         background: transparent;
         background-size: auto;
