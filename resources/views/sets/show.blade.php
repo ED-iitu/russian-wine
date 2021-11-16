@@ -7,13 +7,13 @@
     <div id="desktop-product">
         <div class="other-page" id="other-page">
             <div class="product-page">
-                <div id="spec-cont" class="col-sp-15">
-                    <div class="inner-image">
-                        <div class="image-set">
+                <div  class="col-sp-15 ">
+                    <div class="inner-image swiper-container" id="spec-cont">
+                        <div class="image-set swiper-wrapper">
                             @switch($wine_count)
                                 @case(1)
                                 @for ($i = 0; $i < 6; $i++)
-                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
                                              src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
@@ -21,11 +21,11 @@
                                 @break
                                 @case(2)
                                 @for ($i = 0; $i < 3; $i++)
-                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
                                              src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
-                                    <a data-bottle="{{$set->wines[1]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[1]->id}}">
                                         <img alt="{{$set->wines[1]->title}}"
                                              src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
@@ -33,15 +33,15 @@
                                 @break
                                 @case(3)
                                 @for ($i = 0; $i < 2; $i++)
-                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
                                              src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
-                                    <a data-bottle="{{$set->wines[1]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[1]->id}}">
                                         <img alt="{{$set->wines[1]->title}}"
                                              src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
-                                    <a data-bottle="{{$set->wines[2]->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$set->wines[2]->id}}">
                                         <img alt="{{$set->wines[2]->title}}"
                                              src="{{Voyager::image($set->wines[2]->image)}}">
                                     </a>
@@ -49,7 +49,7 @@
                                 @break
                                 @default
                                 @foreach($set->wines as $wine)
-                                    <a data-bottle="{{$wine->id}}">
+                                    <a class="swiper-slide" data-bottle="{{$wine->id}}">
                                         <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">
                                     </a>
                                 @endforeach

@@ -36,6 +36,16 @@ new Swiper('#winemakers_slider.swiper-container', {
 
 
 if ($(window).width() < 991) {
+    var swiper = new Swiper('#spec-cont', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+            el: '.home-pagination',
+            clickable: true,
+        },
+    });
+
     var swiper = new Swiper('#home_slider', {
         slidesPerView: 'auto',
         spaceBetween: 0,
