@@ -10,7 +10,7 @@
 
 #franchise .title-shop {
     font-size: 15rem;
-    letter-spacing: 0.462em;
+    /*letter-spacing: 0.462em;*/
     color: rgba(255,255,255,0.05);
     white-space: nowrap;
     text-align: center;
@@ -75,7 +75,7 @@
     text-transform: uppercase;
     padding-bottom: 0;
     line-height: 5.5rem;
-    letter-spacing: 0.2em;
+    /*letter-spacing: 0.2em;*/
     font-family: 'ProximaNova-Xbold';
 }
 
@@ -213,7 +213,7 @@
     margin: 0;
     padding: 22rem 0 0;
     line-height: 8rem;
-    letter-spacing: -.01em;
+    /*letter-spacing: -.01em;*/
 }
 
 #franchise .heading-wrap p {
@@ -222,7 +222,7 @@
     padding-top: 2rem;
     line-height: 3rem;
     font-family: 'Lato', Open Sans;
-    letter-spacing: .01em;
+    /*letter-spacing: .01em;*/
     position: absolute;
     top: 70%;
     padding-right: 8rem;
@@ -253,7 +253,7 @@
 
 #franchise .new-russian-wine-title {
     font-size: 10.416vw;
-    letter-spacing: 1.875vw;
+    /*letter-spacing: 1.875vw;*/
     color: #E5E5E5;
     white-space: nowrap;
     text-align: center;
@@ -404,7 +404,7 @@
     line-height: 5rem;
     margin-top: 4rem;
     margin-right: 1.5rem;
-    letter-spacing: -.01em;
+    /*letter-spacing: -.01em;*/
 }
 
 #franchise .contact {
@@ -426,11 +426,11 @@
         margin: 0;
         padding: 11.465vw;
         line-height: 4.2vw;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
     }
     #franchise .title-shop {
         font-size: 7.817vw;
-        letter-spacing: 0.462em;
+        /*letter-spacing: 0.462em;*/
         color: rgba(255,255,255,0.05);
         white-space: nowrap;
         text-align: center;
@@ -455,7 +455,7 @@
         padding-top: 2.085vw;
         line-height: 1.564vw;
         font-family: 'Lato', Open Sans;
-        letter-spacing: .01em;
+        /*letter-spacing: .01em;*/
         position: absolute;
         top: 70%;
         padding-right: 4.169vw;
@@ -469,14 +469,14 @@
         line-height: 2.606vw;
         margin-top: 2.085vw;
         margin-right: 0.782vw;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
     }
     #franchise .searching-result p {
         font-size: 1.043vw;
         text-transform: uppercase;
         padding-bottom: 0;
         line-height: 2.8665vw;
-        letter-spacing: 0.2em;
+        /*letter-spacing: 0.2em;*/
         font-family: 'ProximaNova-Xbold';
     }
     #franchise .searching-result h4 {
@@ -581,7 +581,7 @@
         padding-top: 0px;
         line-height: 3rem;
         font-family: 'Lato', Open Sans;
-        letter-spacing: .01em;
+        /*letter-spacing: .01em;*/
         position: absolute;
         top: 70%;
         padding-right: 10vw;
@@ -592,14 +592,14 @@
         line-height: 3rem;
         margin-top: 0;
         margin-right: 0;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
     }
     #franchise .searching-result p {
         font-size: 14px;
         text-transform: uppercase;
         padding-bottom: 0;
         line-height: 3rem;
-        letter-spacing: 0.2em;
+        /*letter-spacing: 0.2em;*/
         font-family: 'ProximaNova-Xbold';
         text-align: center;
     }

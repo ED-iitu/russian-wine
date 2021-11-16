@@ -3,7 +3,7 @@
     margin: 0;
 }
 #product-category.container{
-  padding: 0!important;
+    padding: 0!important;
 }
 #product-category .breadcrumb {
     display: none;
@@ -21,7 +21,7 @@
         position: relative;
         line-height: 3.5rem;
         color: #ffffff !important;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         text-align: left;
         margin-top: 2rem;
     }
@@ -34,10 +34,10 @@
         background: #da224d;
         font: 1.6rem ProximaNova-Bold;
         text-align: center;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         border-radius: 50px;
         border: none;
-        padding: 1.8rem 3rem;
+        padding: 3.8rem 5rem;
         text-transform: uppercase;
         transition: .2s all linear;
         height: auto;
@@ -175,14 +175,14 @@
         background: white;
     }
     #secondblock .subscription-title {
-        font-size: 8rem;
+        font-size: 7.5rem;
         margin: 2rem;
     }
     #secondblock .col-sp-8 {
         margin: 2rem;
     }
     .desc-mask .description {
-        margin-top: 13rem;
+        margin-top: 5rem;
         position: absolute;
         width: 73rem;
     }
@@ -208,7 +208,7 @@
         position: relative;
         line-height: 6.5rem;
         color: #ffffff !important;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         text-align: left;
         margin-top: 2rem;
     }
@@ -216,7 +216,7 @@
         background: #da224d;
         font: 22px ProximaNova-Bold;
         /* text-align: center; */
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         border-radius: 50px;
         border: none;
         /* padding: 1.8rem 5rem; */
@@ -227,7 +227,7 @@
         display: inline-block;
         /* float: none; */
         position: relative;
-        left: 15%;
+        left: 10%;
         color: white !important;
     }
     #top_podpiska .inner {

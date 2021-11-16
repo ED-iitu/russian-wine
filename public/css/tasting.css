@@ -62,7 +62,7 @@
     text-align: center;
     padding: 0.688vw 2.502vw;
     white-space: nowrap;
-    letter-spacing: 3px;
+    /*letter-spacing: 3px;*/
 }
 
 #tasting-page #button_link {
@@ -99,7 +99,7 @@
     color: #23252b;
     text-align: center;
     font: 2.6vw 'ProximaNova-Bold';
-    letter-spacing: .5rem;
+    /*letter-spacing: .5rem;*/
     margin-bottom: 1rem;
 }
 
@@ -188,7 +188,7 @@
 
 #tasting-page #lozung h5 {
     font: 3.125vw 'ProximaNova-Reg';
-    letter-spacing: 1.4vw;
+    /*letter-spacing: 1.4vw;*/
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 7rem;
@@ -473,7 +473,7 @@
 #tasting-page #second_block .title_prox_bold {
     padding-right: 12vw;
     text-transform: uppercase;
-    letter-spacing: 0.4vw;
+    /*letter-spacing: 0.4vw;*/
     padding-bottom: 3.125vw;
 }
 
@@ -618,7 +618,7 @@
 
 #tasting-page #second_block .swiper-viewport .title_prox_bold {
     text-align: center;
-    letter-spacing: 0.5vw;
+    /*letter-spacing: 0.5vw;*/
     text-transform: uppercase;
     margin-bottom: 2.6vw;
     padding-right: 0px;
@@ -694,7 +694,7 @@
 
 #tasting-page #footer_title h6 {
     font: 1.5625vw 'ProximaNova-Bold';
-    letter-spacing: 5px;
+    /*letter-spacing: 5px;*/
     text-transform: uppercase;
 }
 
@@ -724,7 +724,7 @@
     color: #fff;
     margin-top: 0px;
     margin-bottom: 3px;
-    letter-spacing: 3px;
+    /*letter-spacing: 3px;*/
 }
 
 #tasting-page #contact_list li,
@@ -1359,7 +1359,7 @@
         margin-right: auto !important;
         display: block;
         line-height: 3.5;
-        letter-spacing: 2px;
+        /*letter-spacing: 2px;*/
         background: #da224d !important;
     }
 
@@ -2011,7 +2011,7 @@
     line-height: 3;
     border-radius: 2vw;
     width: 16.875vw;
-    letter-spacing: 0;
+    /*letter-spacing: 0;*/
     margin-bottom: 1.5625vw;
     text-transform: uppercase;
     font-weight: bold;
@@ -2605,7 +2605,7 @@
 .tasting_modal .tasting_wine_title_list li {
     font-size: 2.2rem;
     line-height: 4rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
 }
 
 .tasting_modal .tasting_price {

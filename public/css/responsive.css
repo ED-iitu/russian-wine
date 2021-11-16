@@ -920,7 +920,7 @@
 	    line-height: 17px;
 	    border: 1px solid #c02323;
 	    display: inline-block;
-	    letter-spacing: 1.3px;
+	    /*letter-spacing: 1.3px;*/
 	}
 	/*shop-fullwish-list*/
 	.main-shop-fullwidth .container .post .featured-post {

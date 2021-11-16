@@ -98,7 +98,7 @@ html {
     font-weight: normal;
     font-size: 1.6rem;
     line-height: 3rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
 }
 
 .breadcrumb i {
@@ -126,7 +126,7 @@ h1.pageHeading {
     font-weight: bold;
     font-size: 7rem;
     line-height: 3.6rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     margin-top: 1.8rem;
     margin-bottom: 3.2rem;
 }
@@ -135,7 +135,7 @@ h1.pageHeading {
     font-weight: normal;
     font-size: 2rem;
     line-height: 3rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     padding-bottom: 1.6rem;
 }
 
@@ -168,7 +168,7 @@ select#inputState:focus {
     width: 100%;
     outline: 0;
     line-height: 3.5rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
 }
 
@@ -190,7 +190,7 @@ select#inputState:focus {
     width: auto;
     outline: 0;
     line-height: 2rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #827E7E;
     float: right;
     border-radius: 25px;
@@ -248,7 +248,7 @@ select#inputState:focus {
     line-height: 2rem;
     display: flex;
     align-items: center;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
 }
 
@@ -263,7 +263,7 @@ select#inputState:focus {
 .sortingTitle {
     font-size: 1.8rem;
     line-height: 3.6rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #726C6C;
     float: right;
     padding-right: 1rem;
@@ -356,7 +356,7 @@ select#inputState:focus {
     background: #da224d;
     font: 1.6rem ProximaNova-Bold;
     text-align: center;
-    letter-spacing: -.01em;
+    /*letter-spacing: -.01em;*/
     border-radius: 50px;
     border: none;
     padding: 1.3rem 4rem;
@@ -450,7 +450,7 @@ input {
     width: auto;
     outline: 0;
     line-height: 3.5rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
     padding: 0;
 }
@@ -478,7 +478,7 @@ input {
     width: auto;
     outline: 0;
     line-height: 3.5rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
     border-radius: 25px;
     border: 2px solid #827E7E;
@@ -536,7 +536,7 @@ input {
     width: 100%;
     outline: 0;
     line-height: 3.5rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
 }
 
@@ -558,7 +558,7 @@ input {
     font: 1.4rem ProximaNova-Reg;
     line-height: normal;
     text-align: center;
-    letter-spacing: 0.1em;
+    /*letter-spacing: 0.1em;*/
     border-radius: 50px;
     border: none;
     padding: .5vw 2.5vw;
@@ -698,7 +698,7 @@ input {
     height: auto;
     outline: 0;
     line-height: 2rem;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #827E7E;
     border-radius: 25px;
     width: 50%;
@@ -835,7 +835,7 @@ input {
 
 .tippy-content p {
     font: 0.747vw 'ProximaNova-Reg', sans-serif;
-    letter-spacing: -.01em;
+    /*letter-spacing: -.01em;*/
     line-height: 0.934vw;
     padding: 0;
 }
@@ -869,7 +869,7 @@ input {
     font: 0.782vw "ProximaNova-bold";
     line-height: normal;
     line-height: 1.564vw;
-    letter-spacing: 0.1em;
+    /*letter-spacing: 0.1em;*/
     text-transform: uppercase;
     color: #AFAFAF;
     margin-left: -4.169vw;
@@ -909,7 +909,7 @@ input {
     font: 1.564vw "ProximaNova-Bold";
     text-align: left;
     line-height: 1.824vw;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #A7A7A7;
     margin-top: 0;
     margin-bottom: 3.3355vw;
@@ -1021,7 +1021,7 @@ span.currency {
     font-weight: bold;
     font-size: 2.085vw;
     line-height: 2.345vw;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000;
     margin-bottom: 1.251vw;
 }
@@ -1029,7 +1029,7 @@ span.currency {
 .companyDesc p {
     font-size: 1.147vw;
     line-height: 1.772vw;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000;
 }
 
@@ -1037,14 +1037,14 @@ span.currency {
     font-size: 1.564vw;
     line-height: 2.085vw;
     color: #A8A8A8;
-    letter-spacing: -.02rem;
+    /*letter-spacing: -.02rem;*/
     padding: .1rem;
 }
 
 .description p {
     font-size: 18px;
     line-height: 1.772vw;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
     padding: .261vw 0;
     margin-bottom: 2.085vw;
@@ -1066,7 +1066,7 @@ span.currency {
     padding: 0.365vw 1.564vw !important;
     margin-top: 0.5215vw;
     border-radius: 50px !important;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
 }
 
 #checkoutpage {
@@ -1370,7 +1370,7 @@ span.currency {
         font-weight: bold;
         font-size: 5rem;
         line-height: 1.6rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         margin-top: 1.8rem;
         margin-bottom: 3.2rem;
     }
@@ -1379,7 +1379,7 @@ span.currency {
         font-weight: normal;
         font-size: 1.6rem;
         line-height: 2rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         padding-bottom: 1.6rem;
     }
 
@@ -1393,7 +1393,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 2rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 38%;
@@ -1409,7 +1409,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 2rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 10rem;
@@ -1418,7 +1418,7 @@ span.currency {
     .sortingTitle {
         font-size: 1.6rem;
         line-height: 3.6rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #726C6C;
         padding-right: 1rem;
         position: relative;
@@ -1751,7 +1751,7 @@ span.currency {
         font-weight: bold;
         font-size: 4rem;
         line-height: 1.2em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         margin-top: 0;
     }
 
@@ -1759,7 +1759,7 @@ span.currency {
         font-weight: normal;
         font-size: 3.3vw;
         line-height: 1.5em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         padding-bottom: 1rem;
         font-family: ProximaNova-Reg;
     }
@@ -1794,7 +1794,7 @@ span.currency {
         font-weight: bold;
         font-size: 8vw;
         line-height: 1.3333em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         margin-top: 0;
         margin-bottom: 3vw;
     }
@@ -1841,7 +1841,7 @@ span.currency {
         font-size: 3.5vw;
         line-height: 3em;
         text-align: center;
-        letter-spacing: 0.1em;
+        /*letter-spacing: 0.1em;*/
         text-transform: uppercase;
         font-family: ProximaNova-bold;
         color: #000 !important;
@@ -1850,7 +1850,7 @@ span.currency {
     .sortingTitle {
         font-size: 1.7rem;
         line-height: 3.6rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #726C6C !important;
         float: left;
         padding-right: 1rem;
@@ -1883,7 +1883,7 @@ span.currency {
         line-height: 20px;
         display: flex;
         align-items: center;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         font-family: ProximaNova-bold;
         color: #000 !important;
         margin: 2.7rem 2rem;
@@ -1916,7 +1916,7 @@ span.currency {
         line-height: 2.2rem;
         font-weight: bold;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        /*letter-spacing: 0.1em;*/
         margin: 1.2rem auto;
     }
 
@@ -2028,7 +2028,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 1.5em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #000000;
         padding: 0;
         margin-left: -.5rem;
@@ -2056,7 +2056,7 @@ span.currency {
         font-size: 2rem;
         line-height: 4rem;
         text-align: center;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #000000;
         margin: 0;
         margin-bottom: 3vw;
@@ -2067,7 +2067,7 @@ span.currency {
     .sortOverlayClear {
         font-size: 4vw;
         line-height: 1.6em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #ffffff !important;
         font-family: ProximaNova-Reg, sans-serif !important;
         float: left;
@@ -2102,7 +2102,7 @@ span.currency {
     .tippy-content p {
         font: 1.2rem 'ProximaNova-Reg', sans-serif;
         line-height: normal;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         line-height: 2rem;
         padding: 0;
     }
@@ -2129,7 +2129,7 @@ span.currency {
         line-height: 40px;
         display: flex;
         align-items: center;
-        letter-spacing: 0.05em;
+        /*letter-spacing: 0.05em;*/
         text-transform: uppercase;
         width: 100%;
     }
@@ -2255,7 +2255,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 1.5em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #000000;
         padding: 0;
         margin-left: 0;
@@ -2277,7 +2277,7 @@ span.currency {
         border: 0;
         background: transparent;
         line-height: 3.5rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #DA224D;
         margin: 0 auto;
     }
@@ -2296,7 +2296,7 @@ span.currency {
         border: 0;
         background: transparent;
         line-height: 3.5rem;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #DA224D;
         margin: 0 auto;
         position: relative;
@@ -2685,7 +2685,7 @@ span.currency {
         background: #da224d;
         font: 1.4rem ProximaNova-Reg;
         text-align: center;
-        letter-spacing: 0.1em;
+        /*letter-spacing: 0.1em;*/
         border-radius: 50px;
         border: none;
         padding: 4vw 12vw;
@@ -2734,7 +2734,7 @@ span.currency {
         background: #da224d;
         font: 3.5vw ProximaNova-bold;
         text-align: center;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         border-radius: 50px;
         border: none;
         padding: 2.5rem 15rem;
@@ -2790,7 +2790,7 @@ span.currency {
         background: #da224d;
         font: 3.5vw ProximaNova-bold;
         text-align: center;
-        letter-spacing: -.01em;
+        /*letter-spacing: -.01em;*/
         border-radius: 50px;
         border: none;
         padding: 2.5rem 15rem;
@@ -2847,7 +2847,7 @@ span.currency {
 .sortingTitle {
     font-size: 0.9vw;
     line-height: 2.1vw;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #726C6C;
     padding-right: 0.6vw;
     position: relative;
@@ -3247,7 +3247,7 @@ span.currency {
         width: 11vw;;
         outline: 0;
         line-height: 1.3;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 11vw;
@@ -3269,7 +3269,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 1.3;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 10vw;
@@ -3291,7 +3291,7 @@ span.currency {
     .sortingTitle {
         font-size: 0.9vw;
         line-height: 2.1vw;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #726C6C;
         padding-right: 0.6vw;
         position: relative;
@@ -3339,7 +3339,7 @@ span.currency {
         width: auto;
         outline: 0;
         line-height: 1.3;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 10vw;
@@ -3354,7 +3354,7 @@ span.currency {
     .sortingTitle {
         font-size: 0.9vw;
         line-height: 2.1vw;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #726C6C;
         padding-right: 0.6vw;
         position: relative;
@@ -3417,7 +3417,7 @@ span.currency {
         line-height: 1.2em;
         font-weight: bold;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        /*letter-spacing: 0.1em;*/
         margin: 2vw auto;
     }
     .collapseBtn span {
@@ -3441,7 +3441,7 @@ span.currency {
             line-height: normal;
         width: 100%;
         line-height: 1.5em;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
     }
     .liveSearchIcon {
         height: 4vw;

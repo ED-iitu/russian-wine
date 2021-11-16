@@ -485,7 +485,7 @@ header #form-language .language-select {
     min-width: 160px;
     display: block;
     font: .885vw ProximaNova-Bold;
-    letter-spacing: .05vw;
+    /*letter-spacing: .05vw;*/
     padding: 10px 1vw;
 }
 
@@ -1950,7 +1950,7 @@ header #form-language .language-select {
     font-size: 3.646vw;
     color: #fff;
     font-family: ProximaNova-Bold;
-    letter-spacing: .1vw;
+    /*letter-spacing: .1vw;*/
     text-align: center;
     margin: 0;
     padding: 5.208vw 0 0
@@ -2070,7 +2070,7 @@ header #form-language .language-select {
     font: .677vw ProximaNova-Reg;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: .1vw
+    /*letter-spacing: .1vw*/
 }
 
 #vinotheque .wine p {
@@ -2821,7 +2821,7 @@ header #form-language .language-select {
 }
 
 .bold_font{
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
     font: 0.8333333333333334VW 'ProximaNova-Bold';
     /*font-family: 'ProximaNova-Bold', sans-serif !important;*/
 }
@@ -3194,7 +3194,7 @@ header #form-language .language-select {
     right: 4.87vw;
     width: 5.703vw;
     top: 1.432vw;
-    letter-spacing: .05vw;
+    /*letter-spacing: .05vw;*/
     line-height: calc(1.849vw - 4px);
     border-radius: 15vw;
     text-transform: uppercase;
@@ -3273,7 +3273,7 @@ header #form-language .language-select {
     right: 11.068vw;
     width: 6.797vw;
     top: 1.432vw;
-    letter-spacing: .05vw;
+    /*letter-spacing: .05vw;*/
     line-height: 1.849vw;
     border-radius: 15vw;
     text-transform: uppercase;
@@ -3341,7 +3341,7 @@ header #form-language .language-select {
     padding: 18px 40px;
     border-radius: 50px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
     transition: .2s all linear
 }
 
@@ -3362,7 +3362,7 @@ header #form-language .language-select {
     border-radius: 0;
     padding: 18px 40px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
     transition: .2s all linear
 }
 
@@ -3522,7 +3522,7 @@ footer h5 {
     color: #9F91A4;
     text-transform: uppercase;
     padding-bottom: 0.833vw;
-    letter-spacing: 0.156vw;
+    letter-spacing: 0.2em;
     margin: 0;
 }
 
@@ -5697,7 +5697,8 @@ h2.price {
     .nav-folderized ul {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 1s ease-in
+        transition: max-height 1s ease-in;
+        margin-bottom: 2rem;
     }
 
     .nav-folderized .nav h5 .fa {
@@ -7946,7 +7947,7 @@ h2.price {
     padding: .295vw 1.12vw;
     border-radius: 15vw;
     cursor: pointer;
-    letter-spacing: .078vw;
+    /*letter-spacing: .078vw;*/
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
@@ -8214,7 +8215,7 @@ h2.price {
 @media (min-width: 992px) {
     #menu .nav > li > a {
         font: .885vw ProximaNova-Bold;
-        letter-spacing: .05vw;
+        /*letter-spacing: .05vw;*/
         padding: 10px 1vw;
     }
 
@@ -8266,7 +8267,7 @@ h2.price {
         float: left;
         text-align: center;
         font: .729vw ProximaNova-Bold;
-        letter-spacing: .1vw;
+        /*letter-spacing: .1vw;*/
         padding-top: .1vw
     }
 
@@ -8481,7 +8482,7 @@ h2.price {
 
     #type-filter .options .col-md-5 .options-wrap {
         height: 18.68vw;
-        letter-spacing: .05vw
+        /*letter-spacing: .05vw*/
     }
 
     #winery-filter .options-wrap.wineries_cont {
@@ -8771,7 +8772,7 @@ h2.price {
         background: #ea2b58;
         font: 3.889vw ProximaNova-Bold;
         text-transform: uppercase;
-        letter-spacing: .4vw;
+        /*letter-spacing: .4vw;*/
         border: none
     }
 
@@ -8786,7 +8787,7 @@ h2.price {
         height: 15.556vw;
         border-bottom: 1px solid #23252b;
         text-transform: uppercase;
-        letter-spacing: .1vw;
+        /*letter-spacing: .1vw;*/
         background-repeat: no-repeat
     }
 
@@ -8931,7 +8932,7 @@ h2.price {
 
     .multi-select .options .options-apply a,
     .region-apply a {
-        letter-spacing: .5vw;
+        /*letter-spacing: .5vw;*/
         width: 100%;
         font: 3.889vw ProximaNova-Bold;
         line-height: 16.667vw;
@@ -9021,8 +9022,8 @@ h2.price {
 
     #mob-sbros,
     #mob-access {
-        letter-spacing: .5vw;
-        letter-spacing: .1vw;
+        /*letter-spacing: .5vw;*/
+        /*letter-spacing: .1vw;*/
         width: 50%;
         height: 16.667vw;
         font: 3.889vw ProximaNova-Bold;
@@ -9114,12 +9115,12 @@ h2.price {
 
     .region-cont .region_check {
         padding-left: 11.25vw;
-        letter-spacing: .5vw
+        /*letter-spacing: .5vw*/
     }
 
     .selected-title {
         padding-left: 0;
-        letter-spacing: .5vw
+        /*letter-spacing: .5vw*/
     }
 
     .pagination > li > * {
@@ -9245,7 +9246,7 @@ img {
         top: 2.135vw;
         text-transform: uppercase;
         left: 2.604vw;
-        letter-spacing: .1vw
+        /*letter-spacing: .1vw*/
     }
 
     .bannerstitle:first-child button,
@@ -9257,7 +9258,7 @@ img {
         background: #da224d;
         font: .833vw ProximaNova-Bold;
         text-align: center;
-        letter-spacing: .1vw;
+        /*letter-spacing: .1vw;*/
         border-radius: 15vw;
         border: none;
         color: #fff
@@ -9337,7 +9338,7 @@ img {
     #cart a {
         font: 0.781vw ProximaNova-Bold;
         text-transform: uppercase;
-        letter-spacing: .208vw;
+        /*letter-spacing: .208vw;*/
         color: #fff;
         display: flex !important;
         align-items: center;
@@ -9949,7 +9950,7 @@ section#specials #specials-cont div.col-md-4 {
     border-radius: 15vw;
     display: block;
     color: #fff;
-    letter-spacing: .1vw
+    /*letter-spacing: .1vw*/
 }
 
 #homelast + footer {
@@ -9982,7 +9983,7 @@ section#specials #specials-cont div.col-md-4 {
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    letter-spacing: .1vw
+    /*letter-spacing: .1vw*/
 }
 
 #deg_order {
@@ -10133,7 +10134,7 @@ section#specials #specials-cont div.col-md-4 {
         top: 7.135vw;
         text-transform: uppercase;
         left: 7.604vw;
-        letter-spacing: .1vw
+        /*letter-spacing: .1vw*/
     }
 
     .bannerstitle h6 span {
@@ -10785,13 +10786,13 @@ section#specials #specials-cont div.col-md-4 {
     .bannerstitle:first-child button,
     .bannerstitle:nth-child(2) button {
         position: absolute;
-        letter-spacing: .139vw;
+        /*letter-spacing: .139vw;*/
         bottom: 5.556vw;
         height: 13.889vw;
         background: #da224d;
         font: 3.889vw ProximaNova-Bold;
         text-align: center;
-        letter-spacing: .1vw;
+        /*letter-spacing: .1vw;*/
         border-radius: 15vw;
         border: none;
         color: #fff
@@ -11608,7 +11609,7 @@ section#specials #specials-cont div.col-md-4 {
     color: #23252b;
     text-align: left;
     text-transform: none;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
     padding-right: 8vw;
     margin-bottom: 1vw;
     margin-top: 0;
@@ -11631,7 +11632,7 @@ section#specials #specials-cont div.col-md-4 {
     padding: 0.7vw 0;
     font: 0.938vw ProximaNova-Reg;
     margin-bottom: 1.125vw !important;
-    letter-spacing: 0.07vw;
+    /*letter-spacing: 0.07vw;*/
     box-shadow: none;
     border-radius: 0;
 }
@@ -11737,7 +11738,7 @@ section#specials #specials-cont div.col-md-4 {
     text-align: left;
     text-transform: none;
     margin: 0 0 2.344vw;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
     color: #fff;
 }
 
@@ -11802,7 +11803,7 @@ section#specials #specials-cont div.col-md-4 {
     width: 10.416vw;
     color: #fff;
     border: none;
-    letter-spacing: .05em;
+    /*letter-spacing: .05em;*/
 }
 
 
@@ -12139,7 +12140,7 @@ section#specials #specials-cont div.col-md-4 {
         width: 100%;
         height: 16.667vw;
         font-size: 5vw !important;
-        letter-spacing: 0.5vw;
+        /*letter-spacing: 0.5vw;*/
     }
 
     #agreement_checkbox {
@@ -12186,7 +12187,7 @@ section#specials #specials-cont div.col-md-4 {
         font: 5vw ProximaNova-Light;
         color: #fff;
         box-sizing: border-box;
-        letter-spacing: 0.2vw;
+        /*letter-spacing: 0.2vw;*/
         line-height: 1.8;
         margin-bottom: 2.833vw;
     }
@@ -12330,7 +12331,7 @@ section#specials #specials-cont div.col-md-4 {
     height: 100%;
     display: block;
     top: 73.885VH;
-    letter-spacing: 0.2604vw;
+    /*letter-spacing: 0.2604vw;*/
     transition: 0.5s;
     text-align: left;
 }
@@ -12422,7 +12423,7 @@ section#specials #specials-cont div.col-md-4 {
         top: 36.75VH;
         width: 100vw;
         text-align: center;
-        letter-spacing: 15px;
+        /*letter-spacing: 15px;*/
     }
 
     #home_slid .swiper-button-next,
@@ -12490,7 +12491,7 @@ section#specials #specials-cont div.col-md-4 {
         text-transform: uppercase;
         height: 7.8125VW;
         line-height: 1.4;
-        letter-spacing: 0.8vw;
+        /*letter-spacing: 0.8vw;*/
     }
 
     #home_slid .swiper-slide .inner > * {
@@ -12630,7 +12631,7 @@ h1.forwc {
     font-size: 2.34375VW;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.7604vw;
+    /*letter-spacing: 0.7604vw;*/
     font-family: 'ProximaNova-Bold';
 }
 
@@ -12650,7 +12651,7 @@ h1.forwc {
     border-radius: 10vw;
     padding-left: 0;
     border: none;
-    letter-spacing: 0.15625VW;
+    /*letter-spacing: 0.15625VW;*/
     margin-left: 2.34375VW;
     position: Absolute;
     top: 86.648VH;
@@ -12768,7 +12769,7 @@ nav ul > li:hover #inda-club {
         top: 36.75VH;
         width: calc(100vw - 22.222vw);
         text-align: center;
-        letter-spacing: 0px;
+        /*letter-spacing: 0px;*/
         left: calc(11.111vw + 7.5px);
     }
 
@@ -12806,7 +12807,7 @@ nav ul > li:hover #inda-club {
         font-family: 'ProximaNova-Bold';
         text-transform: uppercase;
         height: 8.333vw;
-        letter-spacing: 0.278vw;
+        /*letter-spacing: 0.278vw;*/
         width: auto;
         font-size: 5vw;
     }
@@ -13003,7 +13004,7 @@ nav ul > li:hover #inda-club {
 
 #firstblock .text_s_s {
     padding: 0 8.333333333333332VW;
-    letter-spacing: 0.02vw;
+    /*letter-spacing: 0.02vw;*/
     margin-top: -18vw;
 }
 
@@ -13025,7 +13026,7 @@ nav ul > li:hover #inda-club {
 
 #sety-title {
     font-size: 18.229166666666664VW;
-    letter-spacing: 8.75vw;
+    /*letter-spacing: 8.75vw;*/
     max-width: 80vw;
     padding: 0 0 0 7.229166666666666VW;
     color: #4b4c58;
@@ -13041,7 +13042,7 @@ nav ul > li:hover #inda-club {
     font-size: 1.5625VW;
     color: #fff;
     font-family: 'ProximaNova-Bold';
-    letter-spacing: 0.30833333333333334VW;
+    /*letter-spacing: 0.30833333333333334VW;*/
     text-transform: uppercase;
     margin: 0;
 }
@@ -13169,7 +13170,7 @@ nav ul > li:hover #inda-club {
 }
 
 #pod_lastblock .col-sp-12 button {
-    letter-spacing: 0.13vw;
+    /*letter-spacing: 0.13vw;*/
     height: 50px;
     width: 11VW;
     text-align: center;
@@ -13186,7 +13187,7 @@ nav ul > li:hover #inda-club {
 
     #pod_lastblock .col-sp-12 button {
         margin-bottom: -0.2vw;
-        letter-spacing: 0.13vw;
+        /*letter-spacing: 0.13vw;*/
         height: 45px;
         width: 11.5VW;
         text-align: center;
@@ -13308,7 +13309,7 @@ header.other img {
     text-align: left;
     font: 2.604166666666667VW 'ProximaNova-Bold';
     margin: 0;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
     text-transform: none;
     padding-right: 7vw;
     color: #fff;
@@ -13323,7 +13324,7 @@ header.other img {
     color: #fff;
     line-height: 1.4;
     margin-top: 0;
-    letter-spacing: 0.05vw;
+    /*letter-spacing: 0.05vw;*/
 }
 
 
@@ -13385,7 +13386,7 @@ header.other img {
     border-radius: 50px;
     border: 0;
     display: block;
-    letter-spacing: 0.13vw;
+    /*letter-spacing: 0.13vw;*/
 }
 
 #imennoe {
@@ -13464,7 +13465,7 @@ form h2 {
 .done .content-cont h1 {
     font: 2.4vw 'ProximaNova-Bold';
     text-transform: none;
-    letter-spacing: 0.05vw;
+    /*letter-spacing: 0.05vw;*/
     margin: 0 0 2.646vw;
     text-align: left;
 }
@@ -13546,7 +13547,7 @@ form h2 {
 }
 
 #bottle .col-sp-12 + .col-sp-12 p {
-    letter-spacing: 0.03vw;
+    /*letter-spacing: 0.03vw;*/
     line-height: 1.8;
     color: #fff;
     font: 0.9375vw 'ProximaNova-Reg', sans-serif;;
@@ -13558,7 +13559,7 @@ form h2 {
     font: 0.9375vw 'ProximaNova-Bold';
     text-transform: uppercase;
     margin-bottom: 1.302vw;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
 }
 
 #bottle h2 {
@@ -13637,7 +13638,7 @@ form h2 {
     color: #fff;
     border-radius: 50px;
     border: none;
-    letter-spacing: 0.13vw;
+    /*letter-spacing: 0.13vw;*/
     margin-top: 3vw;
 }
 
@@ -13650,7 +13651,7 @@ form h2 {
     color: #fff;
     border-radius: 50px;
     border: none;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
     position: relative;
     z-index: 1;
 }
@@ -13665,14 +13666,14 @@ form h2 {
     .tirajwc,
     .proizvoditelwc {
         font: 0.8333333333333334VW 'ProximaNova-Bold';
-        letter-spacing: 0.1vw;
+        /*letter-spacing: 0.1vw;*/
     }
 
     .sort-vinogradawc span,
     .vyderzhkawc span,
     .tirajwc span {
         font: 0.8333333333333334VW 'ProximaNova-Reg', sans-serif;;
-        letter-spacing: 0.1vw;
+        /*letter-spacing: 0.1vw;*/
     }
 
     .volumewc,
@@ -14056,7 +14057,7 @@ label {
     margin-bottom: 4.4VW;
     text-align: left;
     text-transform: none;
-    letter-spacing: 1;
+    /*letter-spacing: 1;*/
     margin-top: 0;
 }
 
@@ -14079,7 +14080,7 @@ label {
     margin-bottom: 2.864vw;
     margin-top: 1.9vw;
     font: 0.9375VW 'ProximaNova-Bold';
-    letter-spacing: 0.2vw;
+    /*letter-spacing: 0.2vw;*/
     text-transform: uppercase;
     background: #ea2b58;
     color: #fff;
@@ -14271,7 +14272,7 @@ label {
 #fastorder_data h4 {
     font: 2.604vw 'ProximaNova-Bold';
     color: #fff;
-    letter-spacing: 0.104vw;
+    /*letter-spacing: 0.104vw;*/
     padding-right: 1vw;
     margin: 1.385vw auto;
 }
@@ -14755,7 +14756,7 @@ select:-internal-autofill-selected {
 
 #sikory_page h1 {
     text-transform: none;
-    letter-spacing: 0;
+    /*letter-spacing: 0;*/
 }
 
 .swiper-container-v .swiper-button-next,
@@ -14792,7 +14793,7 @@ select:-internal-autofill-selected {
     font: 2.5vw ProximaNova-Bold;
     position: relative;
     margin-top: 0;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
     text-align: left;
     text-transform: none;
     z-index: 1050;
@@ -14802,13 +14803,13 @@ select:-internal-autofill-selected {
     font: 1.146vw ProximaNova-Bold;
     margin-bottom: 1.563vw;
     text-transform: uppercase;
-    letter-spacing: 0.2vw;
+    /*letter-spacing: 0.2vw;*/
 }
 
 #information-winerywc .winery-rt {
     font: 1.250vw ProximaNova-Reg;
     line-height: 1.4;
-    letter-spacing: 0.05vw;
+    /*letter-spacing: 0.05vw;*/
 }
 
 #information-winerywc .swiper-pagination-current:before,
@@ -15129,7 +15130,7 @@ header ul li.active span:after {
 }
 
 .mobile #blur_cont #firstblock .text_s_s p + p {
-    letter-spacing: 0;
+    /*letter-spacing: 0;*/
     margin-top: 5vw;
     margin-bottom: 5.1vw;
 }
@@ -15139,7 +15140,7 @@ header ul li.active span:after {
     height: 15.278vw;
     font: 3.889vw ProximaNova-Bold;
     text-transform: uppercase;
-    letter-spacing: 0.556vw;
+    /*letter-spacing: 0.556vw;*/
     margin: 0;
 }
 
@@ -15151,7 +15152,7 @@ header ul li.active span:after {
     padding: 0;
     font: 27.778vw ProximaNova-Bold;
     max-width: 100vw;
-    letter-spacing: 8.75vw;
+    /*letter-spacing: 8.75vw;*/
 }
 
 .mobile #secondblock .col-sp-8 {
@@ -15168,7 +15169,7 @@ header ul li.active span:after {
     width: 100%;
     text-align: center;
     margin-top: 8.333vw;
-    letter-spacing: 1.556vw;
+    /*letter-spacing: 1.556vw;*/
 }
 
 .mobile #blur_cont .podpiska-thumb .description {
@@ -15237,7 +15238,7 @@ header ul li.active span:after {
     width: 100%;
     height: 16.667vw;
     font: 3.889vw ProximaNova-Bold;
-    letter-spacing: 0.3vw;
+    /*letter-spacing: 0.3vw;*/
 }
 
 .mobile #pod_lastblock {
@@ -15262,7 +15263,7 @@ header ul li.active span:after {
     margin-right: auto;
     height: 15.278vw;
     font: 3.611vw ProximaNova-Bold;
-    letter-spacing: 0.3vw;
+    /*letter-spacing: 0.3vw;*/
     margin-top: 7.778vw;
     margin-bottom: 10vw;
 }
@@ -15631,7 +15632,7 @@ header ul li.active span:after {
     #bottle .col-sp-12 + .col-sp-12 p {
         font: 5vw ProximaNova-Reg;
         margin-bottom: 13.889vw;
-        letter-spacing: 0.2vw;
+        /*letter-spacing: 0.2vw;*/
         line-height: 1.8;
     }
 
@@ -15639,7 +15640,7 @@ header ul li.active span:after {
         font: 5vw ProximaNova-Bold;
         text-transform: uppercase;
         margin-bottom: 5.556vw;
-        letter-spacing: 0.3vw;
+        /*letter-spacing: 0.3vw;*/
         line-height: 1.8;
     }
 
@@ -15668,7 +15669,7 @@ header ul li.active span:after {
         float: right;
         font: 3.611vw ProximaNova-Bold;
         text-transform: uppercase;
-        letter-spacing: 0.5vw;
+        /*letter-spacing: 0.5vw;*/
         margin-top: 0 !important;
     }
 
@@ -15688,7 +15689,7 @@ header ul li.active span:after {
         font: 3.611vw ProximaNova-Bold;
         text-transform: uppercase;
         text-align: center;
-        letter-spacing: 0.694vw;
+        /*letter-spacing: 0.694vw;*/
         float: left;
         padding: 5vw 0 23.611vw;
         width: 100%;
@@ -16146,7 +16147,7 @@ header ul li.active span:after {
     top: 6.250vw;
     right: 66.667vw;
     text-align: left;
-    letter-spacing: 0;
+    /*letter-spacing: 0;*/
     line-height: 1;
 }
 
@@ -16257,7 +16258,7 @@ header ul li.active span:after {
     color: #fff;
     border-radius: 15vw;
     text-transform: uppercase;
-    letter-spacing: 0.1vw;
+    /*letter-spacing: 0.1vw;*/
 }
 
 #sety-footer .right-side {
@@ -16337,7 +16338,7 @@ header ul li.active span:after {
     font: 0.938vw ProximaNova-Bold;
     text-transform: uppercase;
     padding: 0 2.344vw;
-    letter-spacing: 0.208vw;
+    /*letter-spacing: 0.208vw;*/
     line-height: 2.240vw;
 }
 
@@ -16783,7 +16784,7 @@ header ul li.active span:after {
         #information-winerywc .col-ss-6 #imennoe {
             border-radius: 30px;
             z-index: 999;
-            letter-spacing: 0.4vh;
+            /*letter-spacing: 0.4vh;*/
             width: 100% !important;
             position: fixed;
             bottom: 0;
@@ -16795,7 +16796,7 @@ header ul li.active span:after {
         }
 
         #information-winerywc .col-ss-6 h6 {
-            letter-spacing: 0.4vh;
+            /*letter-spacing: 0.4vh;*/
             font-size: 2.500vh;
             margin: 0 0 2vh;
         }
@@ -17248,7 +17249,7 @@ header ul li.active span:after {
         width: 252px;
         height: 55px;
         font-size: 13px;
-        letter-spacing: 3px;
+        /*letter-spacing: 3px;*/
         margin: 27.5px auto 35px;
     }
 
@@ -17421,7 +17422,7 @@ header ul li.active span:after {
 .featured_cont .swiper-slide .meta span {
     font: 0.729vw 'ProximaNova-Bold';
     text-transform: uppercase;
-    letter-spacing: 0.052vw;
+    /*letter-spacing: 0.052vw;*/
 }
 
 .featured_cont .swiper-slide .meta .price-vinoteka span {
@@ -17551,7 +17552,7 @@ header ul li.active span:after {
     justify-content: center;
     background: #DA224D;
     border-radius: 100px;
-    letter-spacing: 1.6px;
+    /*letter-spacing: 1.6px;*/
     margin: 0 auto;
     text-transform: uppercase;
 
@@ -17879,7 +17880,7 @@ input[type=number] {
         width: 37.500vw;
         height: 10.833vw;
         font: 2.778vw 'ProximaNova-Bold';
-        letter-spacing: 1px;
+        /*letter-spacing: 1px;*/
         left: 31.250vw;
         top: auto;
         bottom: 0;
@@ -17920,7 +17921,7 @@ input[type=number] {
 
     footer li a {
         font-size: 4.444vw;
-        padding: 0 0 0 calc(3.056vw + 15px);
+        padding: 0 0 0 calc(3.056vw - 5px);
     }
 
     .all_wines {
@@ -18147,7 +18148,7 @@ p.likeSlider img {
     line-height: 2.345vw;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    /*letter-spacing: 0.1em;*/
 }
 
 #myOverlay .overlay-results {
@@ -18160,7 +18161,7 @@ p.likeSlider img {
     line-height: 60px;
     display: flex;
     align-items: center;
-    letter-spacing: -0.01em;
+    /*letter-spacing: -0.01em;*/
     color: #000000;
     transition: .3s all ease-in-out;
     width: 100vw;
@@ -18187,7 +18188,7 @@ p.likeSlider img {
     #information-winerywc .col-ss-6 #imennoe {
         border-radius: 30px !important;
         z-index: 999;
-        letter-spacing: 0.4vh;
+        /*letter-spacing: 0.4vh;*/
         width: 100% !important;
         position: relative;
         bottom: 0;
@@ -18246,7 +18247,7 @@ p.likeSlider img {
         width: auto;
         outline: 0;
         line-height: 1.3;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #827E7E;
         border-radius: 25px;
         left: 11vw;
@@ -18261,7 +18262,7 @@ p.likeSlider img {
     .sortingTitle {
         font-size: 0.9vw;
         line-height: 2.1vw;
-        letter-spacing: -0.01em;
+        /*letter-spacing: -0.01em;*/
         color: #726C6C;
         padding-right: 0.6vw;
         position: relative;
