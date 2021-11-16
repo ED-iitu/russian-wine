@@ -36,7 +36,7 @@ new Swiper('#winemakers_slider.swiper-container', {
 
 
 if ($(window).width() < 991) {
-    var swiper = new Swiper('#spec-cont', {
+    var swiper_set = new Swiper('#spec-cont', {
         slidesPerView: 'auto',
         spaceBetween: 0,
         loop: true,
@@ -60,7 +60,7 @@ if ($(window).width() < 991) {
         },
     });
 }
-;
+
 var swiper1 = new Swiper('#featured_slide0.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 0,
