@@ -211,19 +211,19 @@
                         <h2 id="bottle-main-title">{{$wine->title}}</h2>
                         <div class="description-1">
                             <span>Особенности производства</span>
-                            <p>{!!  $wine->production_feature!!}</p>
+                            {!!  $wine->production_feature!!}
                         </div>
                         <div class="description-2">
                             <span>Дегустационные характеристики</span>
-                            <p>{!! $wine->feature!!}</p>
+                            {!! $wine->feature!!}
                         </div>
                         <div class="description-3">
                             <span>Гастрономическое сочетание</span>
-                            <p>{!! $wine->combination!!}</p>
+                            {!! $wine->combination!!}
                         </div>
                         <div class="description-4">
                             <span>Подача</span>
-                            <p>{!! $wine->innings!!}</p>
+                            {!! $wine->innings!!}
                         </div>
                     </div>
                 </div>
