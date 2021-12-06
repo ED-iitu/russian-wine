@@ -1562,7 +1562,7 @@ span.currency {
     }
 
     #product-product.product-temp1 .iblock, #product-product.product-temp1 .iblock span, #product-product.product-temp1 .type {
-        font-size: 13px !important;
+        font-size: 16px !important;
     }
 
     #product-product.product-temp1 .type, #product-product .type {
@@ -1628,12 +1628,11 @@ span.currency {
     }
 
     #product-product.product-temp1 .iblock span, #product-product .iblock span {
-        font-size: 18px;
         font-weight: 900;
         display: inline-block;
         line-height: 2em;
         text-transform: capitalize;
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
