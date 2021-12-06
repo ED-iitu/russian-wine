@@ -16003,7 +16003,7 @@ header ul li.active span:after {
 
     header ul li a,
     #menu .dropdown-inner li a {
-        padding: 0 3px !important;
+        padding: 12px 15px !important;
         margin-top: 0 !important;
         text-transform: uppercase;
         width: 100% !important;
