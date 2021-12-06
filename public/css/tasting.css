@@ -2884,7 +2884,7 @@ p.user_agreement {
         margin: 5rem 0 2rem;
     }
     #tasting-page .question_form::before {
-        left: 0.4rem;
+        left: 1.4rem;
         width: 15%;
         top: -8rem;
         height: calc(100% + 8rem);

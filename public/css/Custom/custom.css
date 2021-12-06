@@ -2203,7 +2203,7 @@ span.currency {
 
     }
     .wine #button-carts.active {
-        font-size: 2.6vw!important;
+        font-size: 2.3vw!important;
         background-image: unset;
         width: 50%;
 
@@ -2508,7 +2508,9 @@ span.currency {
     .show-more {
         background: unset;
     }
-
+    #tasting-page .question_form::after {
+        right: 0;
+    }
     #winemakers .description p {
         font-size: 4rem;
         line-height: 1.5;

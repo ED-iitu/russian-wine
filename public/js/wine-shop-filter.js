@@ -292,20 +292,21 @@ $(".custom-option").on("click", function () {
 });
 
 function search(type, search_type = null) {
-    var search_input, filter, inputs, label_text, i;
+    let search_input, filter, inputs, label_text, i;
     search_input = document.getElementById("search-main-" + type);
     filter = search_input.value.toUpperCase();
-    var input_type = type.replace('-mob', '')
+    let input_type = type.replace('-mob', '')
     inputs = $('input[name="' + input_type + '[]"]').map((i, el) => $(el).val()).get();
+    let main_type = type
+    if (search_type == 'mobile') {
+        main_type +='-full-'
+    }
     for (i = 0; i < inputs.length; i++) {
-        label_text = $("label[for='shop-" + type + inputs[i] + "']").text()
-        if (inputs[i] == 42) {
-        }
+        label_text = $("label[for='shop-" + main_type + inputs[i] + "']").text()
         if (label_text.toUpperCase().indexOf(filter) > -1) {
             $("#form-" + type + "-" + inputs[i]).show()
         } else {
             $("#form-" + type + "-" + inputs[i]).hide()
-
         }
     }
     if (search_type == 'mobile') {
@@ -319,6 +320,7 @@ function search(type, search_type = null) {
             $('#btnCollapse-' + input_type + '-overlay').hide()
             $('.letter-title').hide()
             $(".no-letter-"+ input_type+ "-overlay").hide()
+
         }
     } else {
         if (filter.length === 0) {
