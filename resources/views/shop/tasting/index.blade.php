@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="col-md-5 pl-10 mob_pl">
-                        <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon">
+                        <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon" loading="lazy">
                         <p class="quotes_text">Я продаю и продвигаю Русские Вина в течение 10 лет. Успешно работал на
                             крупных
                             винных заводах и небольших винодельнях, объехал все винные хозяйства РФ и могу рассказать о
@@ -35,7 +35,7 @@
                             выпускает гаражные вина. Я привожу редкие вина, тираж которых может быть ограничен всего
                             одной бочкой</p>
                         <div class="col-md-4">
-                            <img alt="portrait" class="portrait"
+                            <img alt="portrait" class="portrait" loading="lazy"
                                  src="{{asset('image/page/testing/portrait_img_new.png')}}">
                         </div>
                         <div class="col-md-7 portrait_info">
@@ -59,7 +59,7 @@
                                     <a class="preview"
                                        onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'block');$('body').addClass('nooverflow');">
                                         <img alt="{{$tasting->title}}" src="{{Voyager::image($tasting->image)}}"
-                                             class="imp_prod">
+                                             class="imp_prod" loading="lazy">
                                     </a>
                                 </div>
                                 <div class="description">
@@ -142,7 +142,7 @@
                             <div class="swiper-inner">
                                 <h5>{{$comment->full_name}}</h5>
                                 <img alt="quotes_red_icon"
-                                     src="{{asset('image/quotes-red.png')}}">
+                                     src="{{asset('image/quotes-red.png')}}" loading="lazy">
                                 <div class="testimonial">
                                     {{$comment->body}}
                                 </div>
