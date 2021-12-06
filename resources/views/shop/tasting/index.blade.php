@@ -120,7 +120,7 @@
                                     <div class="inner_ban in139">
                                         <img src="{{Voyager::image($method->image)}}"
                                              alt="{{$method->title}}"
-                                             class="img-responsive">
+                                             class="img-responsive" loading="lazy">
                                         <div class="desc">
                                             {{$method->title}}
                                         </div>
