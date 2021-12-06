@@ -3421,6 +3421,7 @@ span.currency {
         text-transform: uppercase;
         /*letter-spacing: 0.1em;*/
         margin: 2vw auto;
+        z-index: 1000;
     }
     .collapseBtn span {
         font-size: 4vw;
