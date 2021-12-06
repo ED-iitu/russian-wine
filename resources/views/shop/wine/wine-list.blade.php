@@ -63,7 +63,7 @@
                 <h2>По вашему фильтру ничего не найдено</h2>
             </div>
         @endif
-        <div class="col-md-12 col-xs-12 mt-lg text-center">
+        <div class="col-md-12 col-xs-12 mt-lg text-center" onclick="return scroll_up();">
             {{$wines->appends(request()->input())->links()}}
         </div>
         @push('scripts')
