@@ -225,7 +225,7 @@
     <div class="message_body">
         <div class="icon_close"
              onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
-        <h2 class="text-center m-b-50">Сообщение</h2>
+        <h2 class="text-center m-b-50" style="color: black">Сообщение</h2>
         @if (session()->get('success'))
             <h3 class="text-center text-success">{!! session('success') !!}</h3>
         @endif
