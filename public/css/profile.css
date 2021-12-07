@@ -68,6 +68,10 @@ input::placeholder {
     vertical-align: middle !important;
 }
 
+#profile .sets-block table td {
+    max-height: 100px;
+}
+
 #profile #sets_table {
     border-bottom: 1px solid;
 }
