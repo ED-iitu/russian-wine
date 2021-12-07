@@ -30,7 +30,7 @@
                                         <form method="post" action="{{route('profile-set-order')}}">
                                             <input type="hidden" value="{{$set->id}}" name="sets[]">
                                             @csrf
-                                            <input class="btn-danger" type="submit" id="form-send-btn" value='Повторить заказ'>
+                                            <input style="font:1.7rem ProximaNova-Reg; padding: 4vw 8vw;" class="btn-danger" type="submit" id="form-send-btn" value='Повторить заказ'>
                                         </form>
                                     </td>
                                 </tr>
@@ -41,7 +41,7 @@
                             <div class="mt-lg text-center">
                                 <h3 style="color: black; font-size: 20px">Вы не заказали ни одного сета</h3>
                                 <a href={{route('wine_shop')}}>
-                                    <button class="btn-danger">Перейти в Винотеку</button>
+                                    <button class="btn-danger" >Перейти в Винотеку</button>
                                 </a>
                             </div>
                         @endif
