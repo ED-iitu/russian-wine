@@ -43,10 +43,6 @@ input::placeholder {
     vertical-align: middle;
 }
 
-#profile .favorite_block table td img {
-    width: 100px;
-}
-
 #profile .order-table-block {
     margin: 50px;
 }
@@ -212,5 +208,14 @@ input::placeholder {
 @media (max-width: 760px){
     #profile {
         margin-top: 0;
+    }
+    #profile .favorite_block table td img {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #profile .favorite_block table td img {
+        width: 100px;
     }
 }
