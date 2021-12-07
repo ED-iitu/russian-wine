@@ -233,7 +233,7 @@ input::placeholder {
 
 @media only screen and (max-width: 600px) {
     #profile .favorite_block table td {
-        padding: 6px;
+        padding: 7px;
     }
 
     #profile .sets-block table td {
@@ -241,6 +241,11 @@ input::placeholder {
     }
 
     #profile .sets-block .btn-danger {
+        font: 1.7rem ProximaNova-Reg;
+        padding: 4vw 8vw;
+    }
+
+    #profile .favorite_block .btn-danger {
         font: 1.7rem ProximaNova-Reg;
         padding: 4vw 8vw;
     }
