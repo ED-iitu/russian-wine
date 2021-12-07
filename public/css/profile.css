@@ -68,7 +68,7 @@ input::placeholder {
     vertical-align: middle !important;
 }
 
-#profile .sets-block table td {
+#profile .sets-block table td img {
     max-height: 100px;
 }
 
