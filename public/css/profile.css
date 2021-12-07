@@ -218,12 +218,20 @@ input::placeholder {
         margin-top: 0;
     }
     #profile .favorite_block table td img {
-        width: 100px;
+        width: 75px;
+    }
+
+    #profile .sets-block table td {
+        vertical-align: middle !important;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    #profile .favorite_block table td img {
-        width: 100px;
+    #profile .favorite_block table td {
+        padding: 6px;
+    }
+
+    #profile .sets-block table td {
+        padding: 6px;
     }
 }
