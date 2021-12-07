@@ -250,7 +250,7 @@ input::placeholder {
         padding: 4vw 8vw;
     }
 
-    .orderBtnv .btn-danger {
+    .orderBtn .btn-danger {
         font: 2.3rem ProximaNova-Reg;
         padding: 0vw 8vw;
         width: 250px;
