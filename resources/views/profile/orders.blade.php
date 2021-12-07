@@ -113,7 +113,7 @@
                         @csrf
                         <input type="hidden" value="" name="orders" id="ordersModal">
                         <div class="orderBtn" style="margin-top: 30px; bottom: 0">
-                            <button type="submit" id="reorder" class="btn-danger" style="width: 300px !important;">Повторить заказ</button>
+                            <button type="submit" id="reorder" class="btn-danger">Повторить заказ</button>
                         </div>
                     </form>
                 </div>
