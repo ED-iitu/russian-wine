@@ -17,7 +17,7 @@
                             @foreach($sets as $set)
 
                                 <tr>
-                                    <td width="20%">
+                                    <td class="text-center">
                                         <a href="{{route('set', $set->slug)}}"><img src="{{Voyager::image($set->image)}}"
                                              alt="{{$set->title}}"></a>
                                     </td>

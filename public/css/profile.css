@@ -64,8 +64,8 @@ input::placeholder {
 
 }
 
-#profile #sets_table table td {
-    vertical-align: middle;
+#profile .sets-block table td {
+    vertical-align: middle !important;
 }
 
 #profile #sets_table {
