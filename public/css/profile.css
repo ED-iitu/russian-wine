@@ -61,7 +61,11 @@ input::placeholder {
 }
 
 #profile #sets_table .text-center {
-    padding-top: 70px;
+
+}
+
+#profile #sets_table table td {
+    vertical-align: middle;
 }
 
 #profile #sets_table {
