@@ -30,7 +30,7 @@
                                         <form method="post" action="{{route('profile-set-order')}}">
                                             <input type="hidden" value="{{$set->id}}" name="sets[]">
                                             @csrf
-                                            <input style="font:1.7rem ProximaNova-Reg; padding: 4vw 8vw;" class="btn-danger" type="submit" id="form-send-btn" value='Повторить заказ'>
+                                            <input class="btn-danger" type="submit" id="form-send-btn" value='Повторить заказ'>
                                         </form>
                                     </td>
                                 </tr>

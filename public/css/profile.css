@@ -224,6 +224,11 @@ input::placeholder {
     #profile .sets-block table td {
         vertical-align: middle !important;
     }
+
+    #profile .sets-block .btn-danger {
+        font: 1.7rem ProximaNova-Reg;
+        padding: 4vw 8vw;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -233,5 +238,10 @@ input::placeholder {
 
     #profile .sets-block table td {
         padding: 6px;
+    }
+
+    #profile .sets-block .btn-danger {
+        font: 1.7rem ProximaNova-Reg;
+        padding: 4vw 8vw;
     }
 }
