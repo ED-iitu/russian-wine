@@ -43,6 +43,10 @@ input::placeholder {
     vertical-align: middle;
 }
 
+#profile .favorite_block table td img {
+    width: 100px;
+}
+
 #profile .order-table-block {
     margin: 50px;
 }
@@ -159,7 +163,7 @@ input::placeholder {
     border: 2px solid #000000;
     border-radius: 0.5rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-    padding: 10px;
+    padding: 8px;
     display: inline-block;
     position: relative;
     vertical-align: middle;
@@ -194,7 +198,6 @@ input::placeholder {
 
 .form-group-checkbox {
     display: block;
-    margin-bottom: 15px;
 }
 
 .form-group-checkbox input {
