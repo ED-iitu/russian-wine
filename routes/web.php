@@ -42,6 +42,7 @@ Route::post('personal-wine/order', 'Shop\IndexController@personal_wine_order')->
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tasting_checkout');
 Route::post('/tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
+Route::post('/tasting/contact', 'Shop\TastingsController@contact')->name('tasting_contact');
 
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
 Route::post('/wine-tour/save', 'Page\IndexController@tour_save')->name('tour_order');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Order;
 use App\Models\Page;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Mail\IndexController as SendMail;
 
@@ -13,7 +14,7 @@ use App\Http\Controllers\Mail\IndexController as SendMail;
 class IndexController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function tour()
     {
@@ -22,7 +23,7 @@ class IndexController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function tour_save(Request $request)
     {
@@ -34,17 +35,15 @@ class IndexController extends Controller
        // SendMail::tour($request);
 
         $message = 'Заявка на Винный тур успешно создана! Мы с вами свяжемся в ближайшее время!';
-
         return view('shop.checkout.success', [
             'message' => $message
         ]);
-       // return redirect()->back()->with('success', trans('order.success.tour'));
     }
 
 
     /**
      * @param $slug
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function simple_page($slug)
     {
@@ -55,7 +54,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function where_to_by()
     {
@@ -64,4 +63,5 @@ class IndexController extends Controller
             'contacts' => $contacts
         ]);
     }
+
 }

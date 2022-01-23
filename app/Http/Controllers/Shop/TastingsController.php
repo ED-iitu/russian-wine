@@ -6,13 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Tasting;
 use App\Models\TastingMethod;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TastingMail;
+use Illuminate\View\View;
+
 
 class TastingsController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -28,7 +34,7 @@ class TastingsController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function checkout(Request $request)
     {
@@ -44,7 +50,7 @@ class TastingsController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return Application|Factory|View
      */
     public function order(Request $request)
     {
@@ -63,6 +69,17 @@ class TastingsController extends Controller
         return view('shop.checkout.success', [
             'message' => $message
         ]);
-        return redirect()->route('home')->with('success', trans('order.success.tasting'));
     }
+
+    public static function contact(Request $request)
+    {
+        $order = new \stdClass();
+        $order->name = $request['name'];
+        $order->contact = $request['contact'];
+        $order->message = $request['message'];
+        $order->sender = env('MAIL_USERNAME');
+        Mail::to(env('MAIL_USERNAME'))->send(new  TastingMail($order));
+        return true;
+    }
+
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('body_class', 'footer-hide')
 @section('content')
-<div id="common-success" class="container">
+<div id="common-success" class="container-fluid">
 
     <div class="row">
         <div id="content" class="">

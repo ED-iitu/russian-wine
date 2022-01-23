@@ -165,15 +165,16 @@
                     </div>
                     <div class="col-md-12 col-md-offset-1">
                         <div class="col-md-5 question_block">
-                            <form class="question_form">
+                            <form class="question_form" method="post" action="{{route('tasting_contact')}}">
+                                @csrf
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Имя">
+                                    <input class="form-control" type="text" placeholder="Имя" name="name">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Телефон или email">
+                                    <input class="form-control" name="contact" type="text" placeholder="Телефон или email">
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Сообщение"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
                                 </div>
                                 <button type="submit" class="btn">Отправить</button>
                                 <p class="user_agreement">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответствии с условиями Пользовательского соглашения.</p>

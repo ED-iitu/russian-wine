@@ -78,13 +78,12 @@ class IndexController extends Controller
         return view('shop.checkout.success', [
             'message' => $message
         ]);
-        //return redirect()->back()->with('success', 'Заявка успешно отправлена');
 
     }
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return Application|Factory|View
      */
     public function set_order(Request $request)
     {
@@ -118,7 +117,6 @@ class IndexController extends Controller
         return view('shop.checkout.success', [
             'message' => $message
         ]);
-//        return redirect()->back()->with('success', 'Заявка успешно отправлена');
     }
 
     /**

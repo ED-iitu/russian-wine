@@ -1069,7 +1069,7 @@ span.currency {
     /*letter-spacing: -0.01em;*/
 }
 
-#checkoutpage {
+#checkout_page {
     background-image: url(/image/bg/checkout_bg.png);
 }
 
@@ -3491,4 +3491,7 @@ span.currency {
         font-size: 10rem !important;
     }
 
+}
+.full-height {
+    height: 100%;
 }
