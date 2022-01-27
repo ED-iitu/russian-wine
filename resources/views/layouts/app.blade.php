@@ -60,8 +60,7 @@
 <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.easing.js') }}"></script>
 <!-- <script src="{{ asset('swiperJs/swiper.min.js') }}"></script> -->
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper@6/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/cart.js') }}"></script>
 <script src="{{ asset('js/header_cart.js') }}"></script>
