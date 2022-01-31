@@ -5,14 +5,14 @@
                 <div class="swiper-slide">
                     <div class="wine">
                         <div class="image">
-                            <p onclick="add_delete_favorite({{$wine->id}}, 'delete')" class="likeSlider unlike-{{$wine->id}}" id="{{$wine->id}}"
-                               style="display: {{in_array($wine->id, $favorite) ? '' : 'none'}}">
-                                <img src="{{ asset ('image/un_like.svg') }}" alt="unlike for this wine" loading="lazy">
-                            </p>
-                            <p onclick="add_delete_favorite({{$wine->id}}, 'add')" class="likeSlider like-{{$wine->id}}" id="{{$wine->id}}"
-                               style="display: {{in_array($wine->id, $favorite) ? 'none' : ''}}">
-                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine" loading="lazy">
-                            </p>
+{{--                            <p onclick="add_delete_favorite({{$wine->id}}, 'delete')" class="likeSlider unlike-{{$wine->id}}" id="{{$wine->id}}"--}}
+{{--                               style="display: {{in_array($wine->id, $favorite) ? '' : 'none'}}">--}}
+{{--                                <img src="{{ asset ('image/un_like.svg') }}" alt="unlike for this wine" loading="lazy">--}}
+{{--                            </p>--}}
+{{--                            <p onclick="add_delete_favorite({{$wine->id}}, 'add')" class="likeSlider like-{{$wine->id}}" id="{{$wine->id}}"--}}
+{{--                               style="display: {{in_array($wine->id, $favorite) ? 'none' : ''}}">--}}
+{{--                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine" loading="lazy">--}}
+{{--                            </p>--}}
                             <a href="{{route('wine-bread', $wine->slug)}}" class="preview">
                                 <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy">
                                 <span class="attributes"></span>

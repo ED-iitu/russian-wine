@@ -47,10 +47,10 @@
                                             <b>{{$favorite->price}}</b>
                                             <span class="currency">о</span>
                                         </td>
-                                        <td>
-                                            <button type="submit" onclick="add_delete_favorite({{$favorite->id}}, 'delete')" class="delete_favorite" id="{{$favorite->id}}"><i
-                                                    class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </td>
+{{--                                        <td>--}}
+{{--                                            <button type="submit" onclick="add_delete_favorite({{$favorite->id}}, 'delete')" class="delete_favorite" id="{{$favorite->id}}"><i--}}
+{{--                                                    class="fa fa-trash" aria-hidden="true"></i></button>--}}
+{{--                                        </td>--}}
                                     </tr>
                                     </tbody>
                                 @endforeach

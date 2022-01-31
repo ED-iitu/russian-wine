@@ -88,17 +88,18 @@
                         <img alt="search icon" src="{{ asset ('image/search.svg') }}">
                     </a>
                 </div>
-                <div id="login">
-                    @if(Auth::guard('client')->check())
-                        <a href="{{route('profile-favorite')}}">
-                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">
-                        </a>
-                    @else
-                        <a onclick="login_modal()">
-                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">
-                        </a>
-                    @endif
-                </div>
+{{--                Hide auth--}}
+{{--                <div id="login">--}}
+{{--                    @if(Auth::guard('client')->check())--}}
+{{--                        <a href="{{route('profile-favorite')}}">--}}
+{{--                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">--}}
+{{--                        </a>--}}
+{{--                    @else--}}
+{{--                        <a onclick="login_modal()">--}}
+{{--                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">--}}
+{{--                        </a>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                         <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
