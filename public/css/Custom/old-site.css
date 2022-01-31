@@ -11591,7 +11591,7 @@ button {
 
 #checkout_page {
     margin-top: 4.844vw;
-    position: absolute;
+    /*position: absolute;*/
     /*top: 0;*/
     /*left: 0;*/
     /*width: 100%;*/
@@ -11599,6 +11599,7 @@ button {
     /*background-size: cover;*/
     /*padding: 6.458vw 29.167vw 0;*/
     /*box-sizing: border-box;*/
+    padding-bottom: 17.5rem;
 }
 
 #content-checkout #buttons {

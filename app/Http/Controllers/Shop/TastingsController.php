@@ -79,7 +79,10 @@ class TastingsController extends Controller
         $order->message = $request['message'];
         $order->sender = env('MAIL_USERNAME');
         Mail::to(env('MAIL_USERNAME'))->send(new  TastingMail($order));
-        return true;
+        $message = 'Мы сообщение успешно отправлено. <br>В ближайшее время свяжемся с Вами';
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
     }
 
 }
