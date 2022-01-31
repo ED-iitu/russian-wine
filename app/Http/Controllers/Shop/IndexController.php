@@ -425,10 +425,10 @@ class IndexController extends Controller
         if ($cart_session != false) {
             $cart_info = '';
             $total_sum = 0;
-
+            $orders = [];
             foreach ($cart_session as $item) {
                 if ($item['type'] == 'set') {
-                    $product = Set::select('title', 'price', 'image', 'id', 'in_subscription')->where('id', '=', $item['product_id'])->first();
+                    $product = Set::select('title', 'price', 'image', 'id', 'in_subscription', 'model')->where('id', '=', $item['product_id'])->first();
                     if ($product->in_subscription) {
                         $product_type = 'Подписка на сеты';
                     } else {
@@ -436,10 +436,19 @@ class IndexController extends Controller
                     }
 
                 } elseif ($item['type'] == 'wine') {
-                    $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    $product = Wine::select('title', 'price', 'image', 'id', 'model')->where('id', '=', $item['product_id'])->first();
                     $product_type = 'Вино';
 
                 }
+                $order_product = [
+                    'title' => $product->title,
+                    'model' => $product->model,
+                    'type' => $product_type,
+                    'qty' => $item['qty'],
+                    'price' => (int)$product->price,
+                    'total_price' => (int)$product->price * $item['qty'],
+                ];
+                array_push($orders, $order_product);
                 if ($product) {
                     $total_sum += (int)$product->price * $item['qty'];
                     $cart_info .= 'Название: <b>' . $product->title . '</b> Тип продуката: <b>' . $product_type . '. </b>Количество: <b>' . $item['qty'] . '</b> штук <br>  ';
@@ -454,8 +463,10 @@ class IndexController extends Controller
             $saveRequest->message = $cart_info;
             $saveRequest->request = json_encode($cart_session);
             $saveRequest->save();
-            session()->forget('cart');
-            $request['message'] = $cart_info;
+//            session()->forget('cart');
+            $request['orders'] = $orders;
+            $request['total'] = $total_sum;
+            $request['order_id'] = $saveRequest->id;
             SendMail::order($request);
 
             return redirect()->route('checkout_success');

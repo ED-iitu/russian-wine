@@ -15,9 +15,11 @@ class IndexController extends Controller
         $order->name = $request['name'];
         $order->phone = $request['phone'];
         $order->email = $request['email'];
-        $order->cart_info = $request['message'];
+        $order->order_id = $request['order_id'];
+        $order->orders = $request['orders'];
+        $order->total = $request['total'];
         $order->sender = env('MAIL_USERNAME');
-        Mail::to(env('MAIL_USERNAME'))->send(new  OrderMail($order));
+        Mail::to([$request['email'], env('MAIL_USERNAME')] )->send(new  OrderMail($order));
         return true;
 
     }
