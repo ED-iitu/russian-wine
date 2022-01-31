@@ -11610,7 +11610,7 @@ button {
     /*top: 89px;*/
     /*left: 29.167vw;*/
     /*right: 29.167vw;*/
-    background: #fff;
+    background-color: #fff;
     color: #23252b;
     bottom: 0;
     padding: 1.042vw 4.167vw 0;
@@ -12103,7 +12103,6 @@ button {
         right: 0;
         padding: 3.556vw 6.556vw 12vw;
         overflow: auto;
-        z-index: 200;
     }
 
     #content-checkout h1 {
