@@ -45,8 +45,12 @@ class IndexController extends Controller
         $classes = WineClass::orderBy('title', 'ASC')->get();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
-        $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
-            ->orderByRaw('-sort_id DESC')->paginate(30)->onEachSide(0);
+        $wines = Wine::where('status', '=', 'ACTIVE')
+            ->filter($filters)
+            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->orderByRaw('-sort_id DESC')
+            ->paginate(30)
+            ->onEachSide(0);
         $bread_crumbs = [];
         $request_filter = \request()->input();
         if ($request_filter) {
@@ -95,7 +99,10 @@ class IndexController extends Controller
     {
 
         $bread_crumbs = $this->bread_crumbs();
-        $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
+        $wine = Wine::where('slug', '=', $slug)
+            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->where('status', '=', 'ACTIVE')
+            ->firstOrFail();
         if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
         } else {
@@ -104,6 +111,7 @@ class IndexController extends Controller
         if ($wine->vintage_id) {
             $vintages = Wine::where('status', '=', 'ACTIVE')
                 ->where('price', '>', 0)
+                ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
                 ->where('vintage_id', '=', $wine->vintage_id)
                 ->get();
         } else {
@@ -136,7 +144,10 @@ class IndexController extends Controller
      */
     public function wine_info($slug)
     {
-        $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
+        $wine = Wine::where('slug', '=', $slug)
+            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->where('status', '=', 'ACTIVE')
+            ->firstOrFail();
         if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
         } else {
@@ -155,6 +166,7 @@ class IndexController extends Controller
         if ($wine->vintage_id) {
             $vintages = Wine::where('status', '=', 'ACTIVE')
                 ->where('price', '>', 0)
+                ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
                 ->where('vintage_id', '=', $wine->vintage_id)
                 ->get();
         } else {

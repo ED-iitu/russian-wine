@@ -228,7 +228,8 @@
                         <div class="row bigDesc">
                             <div class="col-md-6">
                                 <a href="#description-info">
-                                    <h3 class="hover_red" style="text-transform: uppercase;">Характеристики
+                                    <h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">
+                                        Характеристики
                                         <svg class="icon-red" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
 
