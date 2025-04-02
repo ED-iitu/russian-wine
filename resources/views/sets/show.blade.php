@@ -181,7 +181,7 @@
                     <div class="col-sp-12">
                         <img src="{{Voyager::image($wine->image)}}" class="main_img">
                         <div class="bottle-image">
-                            <div class="attributes proizvoditelwc" style="padding-left: 0 !important; text-align: center;">{{$wine->winery->title}}</div>
+                            <div class="attributes proizvoditelwc" style="padding-left: 0 !important; text-align: center;">{{$wine->winery->title ?? ""}}</div>
                             <div class="attributes colorwc">
                                 <img src="{{Voyager::image($wine->color->image)}}">
                                 {{$wine->color->title}}
