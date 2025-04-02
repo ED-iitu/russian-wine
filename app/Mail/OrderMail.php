@@ -29,7 +29,8 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_FROM_ADDRESS'))
+        $fromAddress = "info@russianvine.ru";
+        return $this->from($fromAddress)
             ->subject('Заказ на сайте')
             ->view('mails.order', ['mail' => $this->mail]);
     }
