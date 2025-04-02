@@ -24,7 +24,7 @@ class IndexController extends Controller
         $order->total = $request['total'];
         $order->sender = env('MAIL_USERNAME');
 
-        Log::info($order);
+        Log::info($order->email);
         Mail::to([$request['email'], env('MAIL_USERNAME')] )->send(new  OrderMail($order));
         return true;
 
