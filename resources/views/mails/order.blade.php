@@ -27,8 +27,8 @@
                             <b>Дата заказа:</b> {{ date('Y-m-d H:i:s') }}<br>
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
-                            <b>E-mail:</b> <a href="{{$mail->email}}" rel="noopener noreferrer"
-                                              target="_blank">{{$mail->email}}</a><br>
+                            <b>E-mail:</b> <a href="pelivan96e@gmail.com" rel="noopener noreferrer"
+                                              target="_blank">pelivan96e@gmail.com</a><br>
                             <b>Телефон:</b> <span><span>{{$mail->phone}}</span></span><br>
                         </td>
                     </tr>
