@@ -6,11 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Mail\OrderMail;
 use App\Mail\TourMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
     public static function order($request)
     {
+
+        Log::info($request);
+
         $order = new \stdClass();
         $order->name = $request['name'];
         $order->phone = $request['phone'];
