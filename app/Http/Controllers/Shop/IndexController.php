@@ -467,7 +467,17 @@ class IndexController extends Controller
             $request['orders'] = $orders;
             $request['total'] = $total_sum;
             $request['order_id'] = $saveRequest->id;
-            SendMail::order($request);
+
+            $emailData = [
+                'name'     => $request['name'],
+                'email'    => $request['email'],
+                'total'    => $total_sum,
+                'orders'   => $orders,
+                'order_id' => $saveRequest->id,
+                'phone'    => $request['phone'],
+            ];
+
+            SendMail::order($emailData);
 
             return redirect()->route('checkout_success');
         } else {
