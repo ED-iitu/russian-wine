@@ -31,6 +31,6 @@ class OrderMail extends Mailable
     {
         return $this->from(env('MAIL_FROM_ADDRESS'))
             ->subject('Заказ на сайте')
-            ->view('mails.order');
+            ->view('mails.order', ['mail' => $this->mail]);
     }
 }

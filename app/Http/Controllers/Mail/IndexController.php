@@ -25,9 +25,9 @@ class IndexController extends Controller
         $order->sender = env('MAIL_USERNAME');
 
         Log::info($order->email);
+        Log::info(env('MAIL_USERNAME'));
         Mail::to([$request['email'], env('MAIL_USERNAME')] )->send(new  OrderMail($order));
         return true;
-
     }
 
     public static function tour($request)
