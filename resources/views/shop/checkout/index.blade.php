@@ -40,10 +40,10 @@
                                                             </div>
 
                                                             <div class="form-group required">
-                                                                <img src="{{ captcha_src() }}" alt="captcha">
+                                                                <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
                                                                 <input type="text" name="captcha" required>
                                                                 {{-- Обновить капчу без перезагрузки --}}
-                                                                <button type="button" onclick="refreshCaptcha()">Обновить</button>
+                                                                <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
                                                             </div>
 
                                                             @if(isset($input_hidden))
