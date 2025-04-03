@@ -235,10 +235,11 @@
                                     </div>
                                     <h2><a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->title}}</a>
                                     </h2>
-                                    <p>@if(isset($wine->winery))
+                                    <p>
+                                        @if(isset($wine->winery) && $wine->winery->title)
                                             {{$wine->winery->title}}
                                         @else
-                                            {{$wine->manufacture->title}}
+                                            {{$wine->manufacture->title ?? ""}}
                                         @endif
                                     </p>
                                     <div class="meta">
