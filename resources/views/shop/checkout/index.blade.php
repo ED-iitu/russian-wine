@@ -38,6 +38,11 @@
                                                                        placeholder="Телефон"
                                                                        id="input-payment-phone" class="form-control">
                                                             </div>
+                                                            {{-- Капча --}}
+                                                            {!! NoCaptcha::display() !!}
+                                                            @error('g-recaptcha-response')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                            @enderror
                                                             @if(isset($input_hidden))
                                                                 <input type="hidden" name="checkout_id"
                                                                        value="{{$input_hidden}}">

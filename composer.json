@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "mews/captcha": "^3.3",
         "spatie/laravel-sitemap": "^5.8",
         "tcg/voyager": "^1.4"
     },

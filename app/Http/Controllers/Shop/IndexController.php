@@ -421,6 +421,10 @@ class IndexController extends Controller
      */
     public function checkout_order(Request $request)
     {
+        $request->validate([
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
             $cart_info = '';
