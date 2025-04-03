@@ -38,8 +38,14 @@
                                                                        placeholder="Телефон"
                                                                        id="input-payment-phone" class="form-control">
                                                             </div>
-                                                            <img src="{{ captcha_src() }}" alt="captcha">
-                                                            <input type="text" name="captcha" required>
+
+                                                            <div class="form-group required">
+                                                                <img src="{{ captcha_src() }}" alt="captcha">
+                                                                <input type="text" name="captcha" required>
+                                                                {{-- Обновить капчу без перезагрузки --}}
+                                                                <button type="button" onclick="refreshCaptcha()">Обновить</button>
+                                                            </div>
+
                                                             @if(isset($input_hidden))
                                                                 <input type="hidden" name="checkout_id"
                                                                        value="{{$input_hidden}}">
@@ -99,4 +105,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function refreshCaptcha() {
+            fetch('/refresh-captcha')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('img[alt=captcha]').src = data.captcha;
+                });
+        }
+    </script>
 @endsection

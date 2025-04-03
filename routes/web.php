@@ -24,6 +24,10 @@ Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
 Route::get('/sets', 'Shop\SetController@index')->name('sets');
 
+Route::get('/refresh-captcha', function() {
+    return response()->json(['captcha' => captcha_src()]);
+});
+
 Route::get('/wineries', 'Page\WineryController@index')->name('wineries');
 Route::get('/micro_winery', 'Page\WineryController@micro_winery')->name('micro_winery');
 Route::get('/winery/{slug}', 'Page\WineryController@show')->name('winery');
