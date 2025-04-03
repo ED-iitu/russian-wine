@@ -422,7 +422,7 @@ class IndexController extends Controller
     public function checkout_order(Request $request)
     {
         $request->validate([
-            'g-recaptcha-response' => 'required|captcha',
+            'captcha' => 'required|captcha'
         ]);
 
         $cart_session = session()->get('cart');
