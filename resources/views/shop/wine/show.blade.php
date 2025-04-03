@@ -47,7 +47,7 @@
                                                 @else
                                                     <a href="#">
                                                               <span
-                                                                  class="iblock">Производитель<br><span>{{$wine->manufacture->title}}</span></span>
+                                                                  class="iblock">Производитель<br><span>{{$wine->manufacture->title ?? "Отсутствует"}}</span></span>
                                                     </a>
                                                 @endif
                                             </div>

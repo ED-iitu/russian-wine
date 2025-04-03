@@ -239,7 +239,7 @@
                                         @if(isset($wine->winery) && $wine->winery->title)
                                             {{$wine->winery->title}}
                                         @else
-                                            {{$wine->manufacture->title ?? ""}}
+                                            {{$wine->manufacture->title}}
                                         @endif
                                     </p>
                                     <div class="meta">
