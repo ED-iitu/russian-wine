@@ -73,6 +73,10 @@ class TastingsController extends Controller
 
     public static function contact(Request $request)
     {
+        $request->validate([
+            'captcha' => 'required|captcha'
+        ]);
+
         $order = new \stdClass();
         $order->name = $request['name'];
         $order->contact = $request['contact'];
