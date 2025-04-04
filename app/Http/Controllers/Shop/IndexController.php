@@ -487,6 +487,8 @@ class IndexController extends Controller
 
             SendMail::order($emailData);
 
+            session()->forget('cart');
+
             return redirect()->route('checkout_success');
         } else {
             return redirect()->back();
