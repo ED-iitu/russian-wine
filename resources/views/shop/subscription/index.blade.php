@@ -141,6 +141,12 @@
                    required="required"
                    onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
             <input type="text" id="text1" name="message" placeholder="Сообщение">
+            <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
+
+            <input type="text" name="captcha" placeholder="Введите капчу" required>
+
+            {{-- Обновить капчу без перезагрузки --}}
+            <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
             <button type="submit" id="feedsend" value="Отправить">Отправить сообщение</button>
         </form>
     </div>
