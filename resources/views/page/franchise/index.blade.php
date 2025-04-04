@@ -187,15 +187,13 @@
                                         <input name="phone" class="form-control" type="text"
                                                placeholder="Телефон" required>
                                     </div>
-                                    <div class="p-t-1">
-                                        <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
-                                    </div>
                                     <div class="p-t-0">
+                                        <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px; margin-top: 20px;">
                                         <input class="form-control" type="text" name="captcha" placeholder="Введите капчу" required>
                                     </div>
-                                    <div class="p-t-1">
+                                    <div class="p-t-0">
                                         {{-- Обновить капчу без перезагрузки --}}
-                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
+                                        <button class="form-control" type="button" onclick="refreshCaptcha()" style="margin-top: 10px;">Обновить капчу</button>
                                     </div>
                                     <div class="text-left p-t-0">
                                         <input type="submit" class="btn-danger"
