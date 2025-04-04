@@ -26,7 +26,7 @@ class GenerateSitemap extends Command
             ->setPriority(1.0));
 
 
-        $sitemap->add(Url::create('/wine-shop')
+        $sitemap->add(Url::create('/wineshop')
             ->setLastModificationDate(now())
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
@@ -47,7 +47,7 @@ class GenerateSitemap extends Command
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
 
-        $sitemap->add(Url::create('/tastings')
+        $sitemap->add(Url::create('degustacii')
             ->setLastModificationDate(now())
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
