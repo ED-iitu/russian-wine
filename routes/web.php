@@ -43,7 +43,7 @@ Route::post('/franchise/order', 'Page\FranchiseController@order')->name('franchi
 Route::get('/personal-wine', 'Shop\IndexController@personal_wine')->name('personal-wine');
 Route::post('personal-wine/order', 'Shop\IndexController@personal_wine_order')->name('personal-wine-order');
 
-Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
+Route::get('/degustacii', 'Shop\TastingsController@index')->name('tastings');
 Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tasting_checkout');
 Route::post('/tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
 Route::post('/tasting/contact', 'Shop\TastingsController@contact')->name('tasting_contact');
