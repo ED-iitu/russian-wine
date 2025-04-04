@@ -180,7 +180,7 @@
                                     <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
                                 </div>
                                 <div class="form-group required">
-                                    <input type="text" name="captcha" required>
+                                    <input class="form-control" type="text" name="captcha" placeholder="Введите капчу" required>
                                 </div>
                                 {{-- Обновить капчу без перезагрузки --}}
                                 <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
