@@ -22,6 +22,10 @@ class FranchiseController extends Controller
 
     public function order(Request $request)
     {
+        $request->validate([
+            'captcha' => 'required|captcha'
+        ]);
+
         $saveRequest = new Order();
         $saveRequest->name = $request['name'];
         $saveRequest->phone = $request['phone'];

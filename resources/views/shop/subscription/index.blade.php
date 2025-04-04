@@ -150,4 +150,14 @@
             <button type="submit" id="feedsend" value="Отправить">Отправить сообщение</button>
         </form>
     </div>
+
+    <script>
+        function refreshCaptcha() {
+            fetch('/refresh-captcha')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('img[alt=captcha]').src = data.captcha;
+                });
+        }
+    </script>
 @endsection

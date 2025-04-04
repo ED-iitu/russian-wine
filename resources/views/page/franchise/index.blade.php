@@ -187,6 +187,16 @@
                                         <input name="phone" class="form-control" type="text"
                                                placeholder="Телефон" required>
                                     </div>
+                                    <div class="p-t-0">
+                                        <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
+                                    </div>
+                                    <div class="p-t-0">
+                                        <input class="form-control" type="text" name="captcha" placeholder="Введите капчу" required>
+                                    </div>
+                                    <div class="p-t-0">
+                                        {{-- Обновить капчу без перезагрузки --}}
+                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
+                                    </div>
                                     <div class="text-left p-t-0">
                                         <input type="submit" class="btn-danger"
                                                value="Оставить заявку" style="font-size: 2.4rem">
@@ -201,6 +211,16 @@
     </div>
 @endsection
 @push('scripts')
+    <script>
+        function refreshCaptcha() {
+            fetch('/refresh-captcha')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('img[alt=captcha]').src = data.captcha;
+                });
+        }
+    </script>
+
     <script type="text/javascript"><!--
         var mySwiper = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
