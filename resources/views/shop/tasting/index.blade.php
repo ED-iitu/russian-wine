@@ -176,12 +176,14 @@
                                 <div class="form-group">
                                     <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
                                 </div>
-                                <div class="form-group required">
+                                <div class="form-group">
                                     <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
-                                    <input type="text" name="captcha" required>
-                                    {{-- Обновить капчу без перезагрузки --}}
-                                    <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
                                 </div>
+                                <div class="form-group required">
+                                    <input type="text" name="captcha" required>
+                                </div>
+                                {{-- Обновить капчу без перезагрузки --}}
+                                <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
                                 <button type="submit" class="btn">Отправить</button>
                                 <p class="user_agreement">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответствии с условиями Пользовательского соглашения.</p>
                             </form>
