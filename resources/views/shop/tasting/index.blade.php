@@ -176,6 +176,12 @@
                                 <div class="form-group">
                                     <textarea class="form-control" name="message" placeholder="Сообщение"></textarea>
                                 </div>
+                                <div class="form-group required">
+                                    <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
+                                    <input type="text" name="captcha" required>
+                                    {{-- Обновить капчу без перезагрузки --}}
+                                    <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
+                                </div>
                                 <button type="submit" class="btn">Отправить</button>
                                 <p class="user_agreement">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответствии с условиями Пользовательского соглашения.</p>
                             </form>
@@ -308,6 +314,16 @@
                     return false;
                   });
                 });
+        </script>
+
+        <script>
+            function refreshCaptcha() {
+                fetch('/refresh-captcha')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.querySelector('img[alt=captcha]').src = data.captcha;
+                    });
+            }
         </script>
     @endforeach
 @endsection
