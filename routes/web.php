@@ -22,7 +22,7 @@ Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wineshop', 'Shop\IndexController@wine_list')->name('wine_shop');
 Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
-Route::get('/sets', 'Shop\SetController@index')->name('sets');
+Route::get('/sety', 'Shop\SetController@index')->name('sets');
 
 Route::get('/refresh-captcha', function() {
     return response()->json(['captcha' => captcha_src()]);
@@ -33,7 +33,7 @@ Route::get('/micro_winery', 'Page\WineryController@micro_winery')->name('micro_w
 Route::get('/winery/{slug}', 'Page\WineryController@show')->name('winery');
 Route::get('/set-{slug}', 'Shop\SetController@show')->name('set');
 
-Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscription');
+Route::get('/podpiska', 'Shop\SubscriptionController@index')->name('subscription');
 Route::post('/ask-question', 'Shop\SubscriptionController@save_question')->name('ask-question');
 
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');

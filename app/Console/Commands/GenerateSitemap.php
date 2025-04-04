@@ -32,12 +32,12 @@ class GenerateSitemap extends Command
             ->setPriority(0.9));
 
 
-        $sitemap->add(Url::create('/sets')
+        $sitemap->add(Url::create('/sety')
             ->setLastModificationDate(now())
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
 
-        $sitemap->add(Url::create('/subscription')
+        $sitemap->add(Url::create('/podpiska')
             ->setLastModificationDate(now())
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
