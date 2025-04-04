@@ -197,6 +197,10 @@ class IndexController extends Controller
      */
     public function personal_wine_order(Request $request)
     {
+        $request->validate([
+            'captcha' => 'required|captcha'
+        ]);
+
         $saveRequest = new Order();
 
         if (filter_var($request['contact'], FILTER_VALIDATE_EMAIL)) {
