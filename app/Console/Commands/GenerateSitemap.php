@@ -47,6 +47,21 @@ class GenerateSitemap extends Command
             ->setChangeFrequency('daily')
             ->setPriority(0.9));
 
+        $sitemap->add(Url::create('/tastings')
+            ->setLastModificationDate(now())
+            ->setChangeFrequency('daily')
+            ->setPriority(0.9));
+
+        $sitemap->add(Url::create('/personal-wine')
+            ->setLastModificationDate(now())
+            ->setChangeFrequency('daily')
+            ->setPriority(0.9));
+
+        $sitemap->add(Url::create('/winemaking-regions')
+            ->setLastModificationDate(now())
+            ->setChangeFrequency('daily')
+            ->setPriority(0.9));
+
         // Добавляем товары
         $products = Wine::all();
         foreach ($products as $product) {
