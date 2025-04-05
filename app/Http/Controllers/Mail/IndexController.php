@@ -22,6 +22,7 @@ class IndexController extends Controller
         $order->order_id = $request['order_id'];
         $order->orders = $request['orders'];
         $order->total = $request['total'];
+        $order->type  = $request['type'] ?? null;
         $order->sender = env('MAIL_USERNAME');
 
         $from = "info@russianvine.ru";

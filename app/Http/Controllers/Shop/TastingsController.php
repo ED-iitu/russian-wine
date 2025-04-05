@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Mail\IndexController as SendMail;
 use App\Mail\OrderMail;
 use App\Models\Comment;
 use App\Models\Tasting;
@@ -91,7 +92,9 @@ class TastingsController extends Controller
             'phone'    => $request['phone'],
         ];
 
-        Mail::to(env('MAIL_USERNAME'))->send(new  OrderMail($emailData));
+        SendMail::order($emailData);
+
+       // Mail::to(env('MAIL_USERNAME'))->send(new  OrderMail($emailData));
 
 
         return view('shop.checkout.success', [
