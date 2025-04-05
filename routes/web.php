@@ -30,7 +30,7 @@ Route::get('/refresh-captcha', function() {
 
 Route::get('/wineries', 'Page\WineryController@index')->name('wineries');
 Route::get('/micro_winery', 'Page\WineryController@micro_winery')->name('micro_winery');
-Route::get('/{slug}', 'Page\WineryController@show')->name('winery');
+Route::get('/winery/{slug}', 'Page\WineryController@show')->name('winery');
 Route::get('/set-{slug}', 'Shop\SetController@show')->name('set');
 
 Route::get('/podpiska', 'Shop\SubscriptionController@index')->name('subscription');
