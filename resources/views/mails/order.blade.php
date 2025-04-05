@@ -62,22 +62,22 @@
                     @foreach($mail->orders as $order)
                     <tr>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
-                            {{$order->title}}
+                            {{$order['title']}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
-                            {{$order->type}}
+                            {{$order['type']}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
-                            {{$order->model}}
+                            {{$order['model']}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:right">
-                            {{$order->qty}}
+                            {{$order['qty']}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:right">
-                            {{$order->price}}
+                            {{$order['price']}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:right">
-                            {{$order->total_price}}
+                            {{$order['total_price']}}
                         </td>
                     </tr>
                     @endforeach
