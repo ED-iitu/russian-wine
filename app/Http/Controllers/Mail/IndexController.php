@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mail;
 
 use App\Http\Controllers\Controller;
 use App\Mail\OrderMail;
+use App\Mail\PersonalWineMail;
 use App\Mail\TourMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
@@ -53,6 +54,6 @@ class IndexController extends Controller
         $to = "info@russianvine.ru";
         Log::info(env('MAIL_USERNAME'));
 
-        Mail::to($to)->send(new  TourMail($message));
+        Mail::to($to)->send(new  PersonalWineMail($message));
     }
 }
