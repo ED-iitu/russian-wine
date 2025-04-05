@@ -62,7 +62,7 @@
                     @foreach($mail->orders as $order)
                     <tr>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
-                            {{$order['title']}}
+                            {{$order['title'] ?? "Дегустация"}}
                         </td>
                         <td style="border-bottom-color:#dddddd;border-bottom-style:solid;border-bottom-width:1px;border-right-color:#dddddd;border-right-style:solid;border-right-width:1px;font-size:12px;padding:7px;text-align:left">
                             {{$order['type']}}
