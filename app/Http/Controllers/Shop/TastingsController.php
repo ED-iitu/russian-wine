@@ -74,11 +74,8 @@ class TastingsController extends Controller
         $saveRequest->save();
         $message = 'Мы забранировали для вас дегустацию. <br>В ближайшее время свяжемся с Вами';
 
-        $emailData = [
-            'name'     => $request['name'],
-            'email'    => $request['email'],
-            'total'    => $tasting->price,
-            'orders'   => [
+        $orders[] = [
+            [
                 'title'       => $tasting->title ,
                 'model'       => "-",
                 'type'        => Order::TYPE_TASTING,
@@ -86,6 +83,13 @@ class TastingsController extends Controller
                 'price'       => $tasting->price,
                 'total_price' => $tasting->price,
             ],
+        ];
+
+        $emailData = [
+            'name'     => $request['name'],
+            'email'    => $request['email'],
+            'total'    => $tasting->price,
+            'orders'   => $orders,
             'type'     => Order::TYPE_TASTING,
             'order_id' => $saveRequest->id,
             'phone'    => $request['phone'],
