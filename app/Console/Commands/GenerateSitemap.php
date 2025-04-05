@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Winery;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
@@ -66,6 +67,14 @@ class GenerateSitemap extends Command
         $products = Wine::all();
         foreach ($products as $product) {
             $sitemap->add(Url::create(route('wine', ['slug' => $product->slug]))
+                ->setLastModificationDate($product->updated_at ?? now())
+                ->setChangeFrequency('weekly')
+                ->setPriority(0.8));
+        }
+
+        $wineries = Winery::all();
+        foreach ($wineries as $winery) {
+            $sitemap->add(Url::create(route('winery', ['slug' => $winery->slug]))
                 ->setLastModificationDate($product->updated_at ?? now())
                 ->setChangeFrequency('weekly')
                 ->setPriority(0.8));
