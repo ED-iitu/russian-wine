@@ -85,7 +85,7 @@ Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets'
 //подписки в ЛК
 Route::get('/profile/subscription', 'Profile\IndexController@subscription')->name('profile-subscription');
 
-//Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
+Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
 Route::post('/profile/reorder', 'Profile\IndexController@reorder')->name('reorder');
 
