@@ -38,12 +38,12 @@
                                                     <div class="winery-slide item active">
                                                         <div class="row">
                                                             <div class="image">
-                                                                <a href="{{route('winery', $winery->slug)}}">
+                                                                <a href="{{ route('winery', ['slug' => $winery->slug]) }}">
                                                                     <img
-                                                                        src="{{Voyager::image($winery->catalog_image)}}"
-                                                                        class="back-win" alt="{{$winery->title}}">
-                                                                    <img src="{{Voyager::image($winery->logo_image)}}"
-                                                                         alt="{{$winery->title}}"
+                                                                            src="{{ Voyager::image($winery->catalog_image) }}"
+                                                                            class="back-win" alt="{{ $winery->title }}">
+                                                                    <img src="{{ Voyager::image($winery->logo_image) }}"
+                                                                         alt="{{ $winery->title }}"
                                                                          class="wine_logo_catalog">
                                                                 </a>
                                                             </div>
