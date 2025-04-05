@@ -74,31 +74,24 @@ class TastingsController extends Controller
         $saveRequest->save();
         $message = 'Мы забранировали для вас дегустацию. <br>В ближайшее время свяжемся с Вами';
 
-        $order_product = [
-            'title'       => $tasting->title ,
-            'model'       => "-",
-            'type'        => Order::TYPE_TASTING,
-            'qty'         => 1,
-            'price'       => $tasting->price,
-            'total_price' => $tasting->price,
-        ];
-
-        Log::info($order_product['title']);
-
         $emailData = [
             'name'     => $request['name'],
             'email'    => $request['email'],
             'total'    => $tasting->price,
-            'orders'   => $order_product,
+            'orders'   => [
+                'title'       => $tasting->title ,
+                'model'       => "-",
+                'type'        => Order::TYPE_TASTING,
+                'qty'         => 1,
+                'price'       => $tasting->price,
+                'total_price' => $tasting->price,
+            ],
             'type'     => Order::TYPE_TASTING,
             'order_id' => $saveRequest->id,
             'phone'    => $request['phone'],
         ];
 
         SendMail::order($emailData);
-
-       // Mail::to(env('MAIL_USERNAME'))->send(new  OrderMail($emailData));
-
 
         return view('shop.checkout.success', [
             'message' => $message
