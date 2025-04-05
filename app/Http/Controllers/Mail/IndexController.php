@@ -24,10 +24,10 @@ class IndexController extends Controller
         $order->total = $request['total'];
         $order->sender = env('MAIL_USERNAME');
 
-//        $from = "info@russianvine.ru";
-//        Log::info($order->email);
-//        Log::info(env('MAIL_USERNAME'));
-//        Mail::to([$request['email'], $from] )->send(new  OrderMail($order));
+        $from = "info@russianvine.ru";
+        Log::info($order->email);
+        Log::info(env('MAIL_USERNAME'));
+        Mail::to([$request['email'], $from] )->send(new  OrderMail($order));
         return true;
     }
 
