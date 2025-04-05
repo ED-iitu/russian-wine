@@ -75,14 +75,12 @@ class TastingsController extends Controller
         $message = 'Мы забранировали для вас дегустацию. <br>В ближайшее время свяжемся с Вами';
 
         $orders[] = [
-            [
-                'title'       => $tasting->title ,
-                'model'       => "-",
-                'type'        => Order::TYPE_TASTING,
-                'qty'         => 1,
-                'price'       => $tasting->price,
-                'total_price' => $tasting->price,
-            ],
+            'title'       => $tasting->title ,
+            'model'       => "-",
+            'type'        => Order::TYPE_TASTING,
+            'qty'         => 1,
+            'price'       => $tasting->price,
+            'total_price' => $tasting->price,
         ];
 
         $emailData = [
