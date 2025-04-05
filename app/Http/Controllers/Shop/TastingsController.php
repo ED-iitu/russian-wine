@@ -15,6 +15,7 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TastingMail;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Log;
 
 
 class TastingsController extends Controller
@@ -81,6 +82,8 @@ class TastingsController extends Controller
             'price'       => $tasting->price,
             'total_price' => $tasting->price,
         ];
+
+        Log::info($order_product['title']);
 
         $emailData = [
             'name'     => $request['name'],
