@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderMail;
 use App\Models\Comment;
 use App\Models\Tasting;
 use App\Models\TastingMethod;
@@ -70,6 +71,29 @@ class TastingsController extends Controller
         $saveRequest->request = json_encode($request_info);
         $saveRequest->save();
         $message = 'Мы забранировали для вас дегустацию. <br>В ближайшее время свяжемся с Вами';
+
+        $order_product = [
+            'title'       => $tasting->title ,
+            'model'       => "-",
+            'type'        => Order::TYPE_TASTING,
+            'qty'         => 1,
+            'price'       => $tasting->price,
+            'total_price' => $tasting->price,
+        ];
+
+        $emailData = [
+            'name'     => $request['name'],
+            'email'    => $request['email'],
+            'total'    => $tasting->price,
+            'orders'   => $order_product,
+            'type'     => Order::TYPE_TASTING,
+            'order_id' => $saveRequest->id,
+            'phone'    => $request['phone'],
+        ];
+
+        Mail::to(env('MAIL_USERNAME'))->send(new  OrderMail($emailData));
+
+
         return view('shop.checkout.success', [
             'message' => $message
         ]);
