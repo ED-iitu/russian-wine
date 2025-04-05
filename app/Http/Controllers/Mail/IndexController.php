@@ -50,6 +50,9 @@ class IndexController extends Controller
         $message->contact = $request['contact'];
         $message->message = $request['message'];
 
-        Mail::to(env('MAIL_USERNAME'))->send(new  TourMail($message));
+        $to = "info@russianvine.ru";
+        Log::info(env('MAIL_USERNAME'));
+
+        Mail::to($to)->send(new  TourMail($message));
     }
 }
