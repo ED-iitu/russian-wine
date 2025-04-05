@@ -316,6 +316,15 @@
                                            placeholder="E-mail" value="" name="email" required>
                                 </div>
                             </div>
+
+                            <div class="form-group required">
+                                <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
+                                <input type="text" name="captcha" required>
+                                {{-- Обновить капчу без перезагрузки --}}
+                                <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
+                            </div>
+
+
                             <input type="hidden" value="{{$home_tasting->id}}" name="checkout_id">
                             <input class="btn btn-quickorder-one" type="submit" value="Заказать дегустацию">
                         </form>
@@ -333,6 +342,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function refreshCaptcha() {
+            fetch('/refresh-captcha')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('img[alt=captcha]').src = data.captcha;
+                });
+        }
+    </script>
 @endif
 <div id="policy" style="display: none">
     <script>
