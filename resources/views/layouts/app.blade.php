@@ -176,8 +176,7 @@
     </script>
 @endif
 @if($route == 'where_to_by' or $route == 'regions' or $route == 'winery' )
-<script async="" defer=""
-        src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;libraries=places&amp;language=ru"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMRFUCD3ip1GgDjklyxp2K_watXsQJopI&callback=initMap&libraries=places&language=ru" async defer></script>
 @endif
 </body>
 </html>

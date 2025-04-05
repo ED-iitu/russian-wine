@@ -54,6 +54,10 @@ class TastingsController extends Controller
      */
     public function order(Request $request)
     {
+        $request->validate([
+            'captcha' => 'required|captcha'
+        ]);
+
         $tasting = Tasting::where('id', '=', $request['checkout_id'])->firstOrFail();
         $message_info = 'Название: <b>' . $tasting->title . '</b> Цена: <b>' . $tasting->price;
         $request_info = ['tasting_id' => $tasting->id, 'title' => $tasting->title, 'price' => $tasting->price, 'qty' => 1];
