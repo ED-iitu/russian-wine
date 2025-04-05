@@ -84,11 +84,9 @@ Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets'
 //подписки в ЛК
 Route::get('/profile/subscription', 'Profile\IndexController@subscription')->name('profile-subscription');
 
-
-
 Route::post('/profile/reorder', 'Profile\IndexController@reorder')->name('reorder');
 
-Route::get('/{slug}', 'Page\WineryController@show')
+Route::get('/winery/{slug}', 'Page\WineryController@show')
     ->where('slug', '[a-z0-9-]+')
     ->name('winery');
 
