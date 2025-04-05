@@ -29,7 +29,8 @@ class PersonalWineMail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_FROM_ADDRESS'))
+        $to = "info@russianvine.ru";
+        return $this->from($to)
             ->subject('Заказ на именное вино')
             ->view('mails.personal_wine');
     }
