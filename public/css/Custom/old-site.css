@@ -16854,9 +16854,9 @@ header ul li.active span:after {
         }
 
         #modal_sviaz h2#form-title-feedback {
-            font-size: 7.031vh;
+            font-size: 4vh;
             margin-top: 0;
-            margin-bottom: 8.594vh;
+            margin-bottom: 3vh;
         }
 
         #modal_sviaz input[type=text]:placeholder,
