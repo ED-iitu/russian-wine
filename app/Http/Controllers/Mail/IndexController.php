@@ -41,4 +41,15 @@ class IndexController extends Controller
         Mail::to(env('MAIL_USERNAME'))->send(new  TourMail($order));
         return true;
     }
+
+    public static function personalWine($request)
+    {
+        $message = new \stdClass();
+
+        $message->name    = $request['name'];
+        $message->contact = $request['contact'];
+        $message->message = $request['message'];
+
+        Mail::to(env('MAIL_USERNAME'))->send(new  TourMail($message));
+    }
 }

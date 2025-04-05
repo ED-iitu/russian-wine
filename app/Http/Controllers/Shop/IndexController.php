@@ -212,6 +212,15 @@ class IndexController extends Controller
         $saveRequest->type = Order::TYPE_NOMINAL_WINE;
         $saveRequest->message = $request['message'];
         $saveRequest->save();
+
+        $messageData = [
+            'name'    => $request['name'] ?? 'NoName',
+            'contact' => $request['contact'],
+            'message' => $request['message'],
+        ];
+
+        SendMail::personalWine($messageData);
+
         $message = 'Мы забранировали для вас именное вино. В ближайшее время свяжемся с Вами';
         return view('shop.checkout.success', [
             'message' => $message
