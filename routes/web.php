@@ -30,7 +30,7 @@ Route::get('/refresh-captcha', function() {
 
 Route::get('/wineries', 'Page\WineryController@index')->name('wineries');
 Route::get('/micro_winery', 'Page\WineryController@micro_winery')->name('micro_winery');
-Route::get('/winery/{slug}', 'Page\WineryController@show')->name('winery');
+Route::get('/{slug}', 'Page\WineryController@show')->name('winery');
 Route::get('/set-{slug}', 'Shop\SetController@show')->name('set');
 
 Route::get('/podpiska', 'Shop\SubscriptionController@index')->name('subscription');
@@ -85,7 +85,7 @@ Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets'
 //подписки в ЛК
 Route::get('/profile/subscription', 'Profile\IndexController@subscription')->name('profile-subscription');
 
-Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
+//Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
 Route::post('/profile/reorder', 'Profile\IndexController@reorder')->name('reorder');
 
