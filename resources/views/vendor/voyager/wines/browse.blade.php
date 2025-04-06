@@ -15,14 +15,8 @@
             <div class="col-md-12">
                 <div class="panel panel-bordered">
                     <div class="panel-body">
-                        <!-- Начало панели поиска -->
-                        <form action="{{ route('voyager.wines.index') }}" method="GET" class="form-inline">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="search" placeholder="Поиск по товарам" value="{{ request('search') }}">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Поиск</button>
-                        </form>
-                        <!-- Конец панели поиска -->
+                        <!-- Стандартная панель поиска от Voyager -->
+                        @include('voyager::multilingual.language-selector')
 
                         <table id="dataTable" class="table table-hover">
                             <thead>
@@ -39,8 +33,7 @@
                             @foreach ($dataTypeContent->items() as $data)
                                 <tr>
                                     <td>{{ $data->title }}</td>
-                                    <td><img src="{{ asset ("/storage/" . $data->image) }}" style="width: 70px; height: 150px;"></td>
-
+                                    <td><img src="{{ asset ("/storage/" . $data->image) }}" style="width: 70px; height: 170px;"></td>
                                     <td>{{ $data->price }}</td>
                                     <td>{{ $data->model }}</td>
                                     <td>{{ $data->year }}</td>
@@ -75,7 +68,7 @@
                         </table>
                     </div>
                     <div class="panel-footer">
-                        <!-- Пагинация -->
+                        <!-- Стандартная пагинация от Voyager -->
                         <div class="pagination-wrapper">
                             {{ $dataTypeContent->links() }}
                         </div>
