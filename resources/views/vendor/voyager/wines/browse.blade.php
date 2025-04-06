@@ -15,6 +15,15 @@
             <div class="col-md-12">
                 <div class="panel panel-bordered">
                     <div class="panel-body">
+                        <!-- Начало панели поиска -->
+                        <form action="{{ route('voyager.wines.index') }}" method="GET" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="search" placeholder="Поиск по товарам" value="{{ request('search') }}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Поиск</button>
+                        </form>
+                        <!-- Конец панели поиска -->
+
                         <table id="dataTable" class="table table-hover">
                             <thead>
                             <tr>
@@ -31,10 +40,16 @@
                                 <tr>
                                     <td>{{ $data->title }}</td>
                                     <td><img src="{{ asset ("/storage/" . $data->image) }}" style="width: 70px; height: 150px;"></td>
+
                                     <td>{{ $data->price }}</td>
                                     <td>{{ $data->model }}</td>
                                     <td>{{ $data->year }}</td>
                                     <td>
+                                        <!-- Кнопка "Посмотреть" -->
+                                        <a href="{{ route('voyager.wines.show', $data->id) }}" class="btn btn-sm btn-info">
+                                            <i class="voyager-eye"></i> Посмотреть
+                                        </a>
+
                                         <!-- Кнопка "Редактировать" -->
                                         <a href="{{ route('voyager.wines.edit', $data->id) }}" class="btn btn-sm btn-primary">
                                             <i class="voyager-edit"></i> Редактировать
