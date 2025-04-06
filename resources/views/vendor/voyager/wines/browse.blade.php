@@ -19,6 +19,7 @@
                             <thead>
                             <tr>
                                 <th>Название</th>
+                                <th>Картинка</th>
                                 <th>Цена</th>
                                 <th>Модель</th>
                                 <th>Год</th>
@@ -29,6 +30,7 @@
                             @foreach ($dataTypeContent->items() as $data)
                                 <tr>
                                     <td>{{ $data->title }}</td>
+                                    <td>{{ $data->image }}</td>
                                     <td>{{ $data->price }}</td>
                                     <td>{{ $data->model }}</td>
                                     <td>{{ $data->year }}</td>
