@@ -10,8 +10,6 @@ class VoyagerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        parent::boot();
-
         // Добавляем кастомное действие
         Voyager::addActions([
             DuplicateWine::class
