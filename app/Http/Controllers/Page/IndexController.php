@@ -69,49 +69,70 @@ class IndexController extends Controller
 
     public function show($slug)
     {
-        $winery = Winery::where('slug', '=', $slug)->with('images', 'wines')->firstOrFail();
+        // Попытка найти винодельню
+        $winery = Winery::where('slug', '=', $slug)
+            ->with('images', 'wines')
+            ->first(); // Используем first вместо firstOrFail
 
+        // Если винодельня найдена, возвращаем её страницу
         if ($winery) {
             return view('page.winery.show', [
                 'winery' => $winery
             ]);
         }
 
+        // Если винодельня не найдена, ищем товар
         $wine = Wine::where('slug', '=', $slug)
             ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
             ->where('status', '=', 'ACTIVE')
-            ->firstOrFail();
-        if (isset($wine->winery)) {
-            $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
-        } else {
-            $wines = Wine::where('price', '>', 0)->limit(20)->get();
-        }
-        $is_favorite = false;
-        if (Auth::guard('client')->user()) {
-            $client = Auth::guard('client')->user();
-            $favorite_wines = $client->wines()->get();
-            foreach ($favorite_wines as $favorite_wine) {
-                if ($favorite_wine->id == $wine->id) {
-                    $is_favorite = true;
+            ->first(); // Также используем first вместо firstOrFail
+
+        // Если товар найден
+        if ($wine) {
+            if (isset($wine->winery)) {
+                $wines = Wine::where('winery_id', '=', $wine->winery->id)
+                    ->where('price', '>', 0)
+                    ->get();
+            } else {
+                $wines = Wine::where('price', '>', 0)
+                    ->limit(20)
+                    ->get();
+            }
+
+            // Проверка, является ли товар в избранном
+            $is_favorite = false;
+            if (Auth::guard('client')->user()) {
+                $client = Auth::guard('client')->user();
+                $favorite_wines = $client->wines()->get();
+                foreach ($favorite_wines as $favorite_wine) {
+                    if ($favorite_wine->id == $wine->id) {
+                        $is_favorite = true;
+                    }
                 }
             }
-        }
-        if ($wine->vintage_id) {
-            $vintages = Wine::where('status', '=', 'ACTIVE')
-                ->where('price', '>', 0)
-                ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
-                ->where('vintage_id', '=', $wine->vintage_id)
-                ->get();
-        } else {
-            $vintages = null;
-        }
-        return view('shop.wine.show', [
-            'wine' => $wine,
-            'wines' => $wines,
-            'is_favorite' => $is_favorite,
-            'vintages' => $vintages
-        ]);
 
+            // Получение винтажей, если у товара есть винтаж
+            if ($wine->vintage_id) {
+                $vintages = Wine::where('status', '=', 'ACTIVE')
+                    ->where('price', '>', 0)
+                    ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+                    ->where('vintage_id', '=', $wine->vintage_id)
+                    ->get();
+            } else {
+                $vintages = null;
+            }
+
+            return view('shop.wine.show', [
+                'wine' => $wine,
+                'wines' => $wines,
+                'is_favorite' => $is_favorite,
+                'vintages' => $vintages
+            ]);
+        }
+
+        // Если не найдено ни винодельни, ни товара, отправляем на свою обработку
+        return response()->view('errors.not_found', [], 404);
     }
+
 
 }
