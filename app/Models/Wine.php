@@ -81,5 +81,17 @@ class Wine extends Model
     {
         return $filters->apply($builder);
     }
+
+    // В модели Wine.php
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            return $query->where('title', 'like', '%'.$search.'%')
+                ->orWhere('model', 'like', '%'.$search.'%')
+                ->orWhere('price', 'like', '%'.$search.'%');
+        }
+
+        return $query;
+    }
 }
 
