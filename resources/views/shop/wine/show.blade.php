@@ -37,7 +37,7 @@
                                         <div class="col-xs-5 col-md-5 col-xs-offset-7 col-md-offset-6">
                                             <div class="manufacturer">
                                                 @if(isset($wine->winery))
-                                                    <a href="{{route('winery', $wine->winery->slug )}}">
+                                                    <a href="{{route('wine_or_winery', $wine->winery->slug )}}">
                                                       <span class="iblock" style="text-align: right;">
                                                           <span class="light_font">Производитель</span>
                                                           <br>
@@ -275,7 +275,7 @@
                             <div class="col-md-8 companyDesc">
                                 <h3 class="companyTitle">{{$wine->winery->title}}</h3>
                                 {!! $wine->winery->description !!}
-                                <a href="{{route('winery', $wine->winery->slug)}}" class="btn btn-secondary toCompany">
+                                <a href="{{route('wine_or_winery', $wine->winery->slug)}}" class="btn btn-secondary toCompany">
                                     Подробнее о винодельне
                                 </a>
                             </div>
