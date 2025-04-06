@@ -32,8 +32,9 @@ class DuplicateWine extends AbstractAction
     {
         // Action button class
         return [
-            'class' => 'btn btn-sm btn-primary pull-right',
-            'style' => 'margin-right:5px'
+            'class'   => 'btn btn-sm btn-danger pull-right duplicate',
+            'data-id' => $this->data->{$this->data->getKeyName()},
+            'id'      => 'duplicate-'.$this->data->{$this->data->getKeyName()},
         ];
     }
 
