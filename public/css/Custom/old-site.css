@@ -16851,6 +16851,7 @@ header ul li.active span:after {
             padding: 10vw 5vw 6vh;
             background: #261f30 !important;
             pointer-events: all;
+            overflow-y: auto; /* Разрешаем вертикальную прокрутку */
         }
 
         #modal_sviaz h2#form-title-feedback {
