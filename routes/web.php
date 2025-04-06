@@ -96,7 +96,7 @@ Route::get('/{slug}', 'Page\WineryController@show')
     ->where('slug', '[a-z0-9-]+')
     ->name('winery');
 
-Route::get('/{slug}', 'Shop\IndexController@wine_info')->name('wine');
+Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 
 
 
