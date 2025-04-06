@@ -92,11 +92,13 @@ Route::post('/profile/reorder', 'Profile\IndexController@reorder')->name('reorde
 
 Route::get('/page/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
-Route::get('/{slug}', 'Page\WineryController@show')
-    ->where('slug', '[a-z0-9-]+')
-    ->name('winery');
+//Route::get('/{slug}', 'Page\WineryController@show')
+//    ->where('slug', '[a-z0-9-]+')
+//    ->name('winery');
+//
+//Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 
-Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
+Route::get('/{slug}', 'Page\IndexController@show')->name('wine_or_winery');
 
 
 

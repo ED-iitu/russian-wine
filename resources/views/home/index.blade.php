@@ -316,7 +316,7 @@
                                     <ul>
                                         <li>
                                             @if($winemaker->winery)
-                                                <p><a class="text-black" href="{{route('winery', $winemaker->winery->slug)}}">{{$winemaker->winery->title}}</a> </p>
+                                                <p><a class="text-black" href="{{route('wine_or_winery', $winemaker->winery->slug)}}">{{$winemaker->winery->title}}</a> </p>
                                             @endif
                                         </li>
                                         <li>

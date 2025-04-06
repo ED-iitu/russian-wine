@@ -13,12 +13,12 @@
 {{--                               style="display: {{in_array($wine->id, $favorite) ? 'none' : ''}}">--}}
 {{--                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine" loading="lazy">--}}
 {{--                            </p>--}}
-                            <a href="{{route('wine', $wine->slug)}}" class="preview">
+                            <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
                                 <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy">
                                 <span class="attributes"></span>
                             </a>
                         </div>
-                        <h2><a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->title}}</a>
+                        <h2><a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">{{$wine->title}}</a>
                         </h2>
                         <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                         <div class="meta">
@@ -30,7 +30,7 @@
                             <span class="year"> {{$wine->year}}</span>
                             <div class="price-vinoteka">
 
-                                <a href="{{route('wine', $wine->slug)}}" class="preview">
+                                <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
                                     @if($wine->price > 0)
                                     {{$wine->price}}
                                     <span>п</span>
