@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\WineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/wines/duplicate/{id}', [\App\Http\Controllers\Admin\WineBreadController::class, 'duplicate'])
-    ->name('admin.wines.duplicate')
-    ->middleware(['admin.user']);
-
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('wines/{id}/duplicate', [WineController::class, 'duplicate'])->name('admin.wines.duplicate');
     Voyager::routes();
 });
 
