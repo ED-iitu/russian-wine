@@ -66,16 +66,17 @@ class GenerateSitemap extends Command
         // Добавляем товары
         $products = Wine::all();
         foreach ($products as $product) {
-            $sitemap->add(Url::create(route('wine', ['slug' => $product->slug]))
-                ->setLastModificationDate($product->updated_at ?? now())
+            $sitemap->add(Url::create(route('wine_or_winery', ['slug' => $product->slug])) // Используем общий роут
+            ->setLastModificationDate($product->updated_at ?? now())
                 ->setChangeFrequency('weekly')
                 ->setPriority(0.8));
         }
 
+// Добавляем винодельни
         $wineries = Winery::all();
         foreach ($wineries as $winery) {
-            $sitemap->add(Url::create(route('winery', ['slug' => $winery->slug]))
-                ->setLastModificationDate($product->updated_at ?? now())
+            $sitemap->add(Url::create(route('wine_or_winery', ['slug' => $winery->slug])) // Используем общий роут
+            ->setLastModificationDate($winery->updated_at ?? now())
                 ->setChangeFrequency('weekly')
                 ->setPriority(0.8));
         }
