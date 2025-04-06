@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\WineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@dublicate')->name('admin.wines.duplicate');
+
 
 
 Route::group(['prefix' => 'admin'], function () {
