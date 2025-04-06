@@ -30,7 +30,7 @@
                             @foreach ($dataTypeContent->items() as $data)
                                 <tr>
                                     <td>{{ $data->title }}</td>
-                                    <td><img src="{{ asset ("/storage/" . $data->image) }}"></td>
+                                    <td><img src="{{ asset ("/storage/" . $data->image) }}" style="width: 70px; height: 150px;"></td>
                                     <td>{{ $data->price }}</td>
                                     <td>{{ $data->model }}</td>
                                     <td>{{ $data->year }}</td>
