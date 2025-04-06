@@ -25,7 +25,7 @@ class DuplicateWine extends AbstractAction
 
     public function massAction($id)
     {
-        return route('admin.wines.duplicate', ['id' => $id]);
+        return route('admin.wines.duplicate', ['id' => $id[0]]);
     }
 
     public function getAttributes()
