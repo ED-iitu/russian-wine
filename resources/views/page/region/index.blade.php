@@ -91,7 +91,7 @@
                                         @foreach($region->wineries as $wineries)
                                             <div class="col-xs-6 col-sm-3 col-md-2 text-center image-border">
                                                 <div style="height: 260px;">
-                                                    <a href="{{route('winery', $wineries->slug)}}"
+                                                    <a href="{{route('wine_or_winery', $wineries->slug)}}"
                                                        class="p-t-60 p-b-60">
                                                     <span class="middle-box">
                                                         <img alt="{{$wineries->title}}"

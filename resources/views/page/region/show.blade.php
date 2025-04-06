@@ -136,7 +136,7 @@
                                                 <div class="row p-b-30">
                                                     <div class="col-lg-3 col-sm-3 col-xs-12 text-center">
                                                         <div class="image">
-                                                            <a href="{{route('winery', $winery->slug)}}">
+                                                            <a href="{{route('wine_or_winery', $winery->slug)}}">
                                                                 <img alt="{{$winery->title}}"
                                                                      src="{{Voyager::image($winery->logo_image)}}"></a>
                                                         </div>
@@ -144,14 +144,14 @@
                                                     <div class="col-lg-8 col-sm-7 col-xs-12">
                                                         <h4>
                                                             <a class="red-link"
-                                                               href="{{route('winery', $winery->slug)}}">{{$winery->title}}</a>
+                                                               href="{{route('wine_or_winery', $winery->slug)}}">{{$winery->title}}</a>
                                                         </h4>
                                                         <div class="dash"></div>
                                                         {!!  $winery->description !!}
                                                     </div>
                                                 </div>
                                                 <div class="next">
-                                                    <a href="{{route('winery', $winery->slug)}}" class="" role="button" data-slide="next">
+                                                    <a href="{{route('wine_or_winery', $winery->slug)}}" class="" role="button" data-slide="next">
                                                         <img alt="link" src="{{asset('image/icon_arrow_right.png')}}">
                                                     </a>
                                                 </div>
@@ -197,13 +197,13 @@
                                         @foreach($region->wines as $wine)
                                             <div class="swiper-slide item text-center">
                                                 <div class="wine">
-                                                    <a href="{{route('wine', $wine->slug)}}" class="preview">
+                                                    <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
                                                         <img src="{{Voyager::image($wine->image)}}"
                                                              alt="{{$wine->title}}" style="max-height: 465px">
                                                     </a>
                                                     <div class="hidden-sm hidden-xs">
                                                         <h2>
-                                                            <a href="{{route('wine', $wine->slug)}}" class="preview">
+                                                            <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
                                                                 {{$wine->title}}
                                                             </a>
                                                         </h2>
