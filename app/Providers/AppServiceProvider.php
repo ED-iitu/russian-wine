@@ -30,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
     {
         setlocale(LC_TIME, 'ru_RU.UTF-8');
         Carbon::setLocale(config('app.locale'));
-        //Voyager::addAction(\App\Actions\DuplicateWine::class);
+        Voyager::addAction(\App\Actions\DuplicateWine::class);
     }
 }
