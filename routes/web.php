@@ -97,7 +97,7 @@ Route::get('/page/{slug}', 'Page\IndexController@simple_page')->name('simple_pag
 
 Route::get('/{slug}', 'Page\IndexController@show')->name('wine_or_winery');
 
-Route::get('admin/wines/{id}/duplicate', [WineController::class, 'duplicate'])->name('admin.wines.duplicate');
+Route::get('admin/wines/{id}/duplicate', 'App\Http\Controllers\Admin\WineController@dublicate')->name('admin.wines.duplicate');
 
 
 
