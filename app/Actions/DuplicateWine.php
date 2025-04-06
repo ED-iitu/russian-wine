@@ -23,9 +23,19 @@ class DuplicateWine extends AbstractAction
         return route('admin.wines.duplicate', ['id' => $this->data->id]);
     }
 
-    public function massAction(Request $request)
+    public function massAction($id)
     {
-        // Обработка массовых действий (если нужно)
+        dd($id);
+        return route('admin.wines.duplicate', ['id' => $id]);
+    }
+
+    public function getAttributes()
+    {
+        // Action button class
+        return [
+            'class' => 'btn btn-sm btn-primary pull-right',
+            'style' => 'margin-right:5px'
+        ];
     }
 
     public function getPermissions()
