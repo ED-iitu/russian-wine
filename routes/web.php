@@ -25,7 +25,6 @@ Auth::routes();
 
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wineshop', 'Shop\IndexController@wine_list')->name('wine_shop');
-Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
 Route::get('/sety', 'Shop\SetController@index')->name('sets');
 
@@ -96,6 +95,8 @@ Route::get('/page/{slug}', 'Page\IndexController@simple_page')->name('simple_pag
 Route::get('/{slug}', 'Page\WineryController@show')
     ->where('slug', '[a-z0-9-]+')
     ->name('winery');
+
+Route::get('/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 
 
 
