@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@dublicate')->name('admin.wines.duplicate');
+Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@duplicate')->name('admin.wines.duplicate');
 
 Auth::routes();
 
