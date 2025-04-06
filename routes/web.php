@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/admin/wines/duplicate/{id}', [\App\Http\Controllers\Admin\WineBreadController::class, 'duplicate'])
+    ->name('admin.wines.duplicate')
+    ->middleware(['admin.user']);
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
