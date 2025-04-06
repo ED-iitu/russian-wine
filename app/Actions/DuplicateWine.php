@@ -1,6 +1,7 @@
 <?php
 namespace App\Actions;
 
+use Illuminate\Support\Facades\Redirect;
 use TCG\Voyager\Actions\AbstractAction;
 use Illuminate\Http\Request;
 use App\Models\Wine;
@@ -25,7 +26,7 @@ class DuplicateWine extends AbstractAction
 
     public function massAction($id)
     {
-        return route('admin.wines.duplicate', ['id' => $id[0]]);
+        return Redirect::route('admin.wines.duplicate', ['id' => $id[0]]);
     }
 
     public function getAttributes()
