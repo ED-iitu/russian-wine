@@ -302,13 +302,13 @@
                                         <div class="swiper-slide">
                                             <div class="wine new_wine">
                                                 <div class="slider_image">
-                                                    <a href="{{route('wine', $feature_wine->slug)}}" class="preview">
+                                                    <a href="{{route('wine_or_winery', $feature_wine->slug)}}" class="preview">
                                                         <img alt="{{$wine->title}}"
                                                              src="{{ Voyager::image($feature_wine->image) }}">
                                                         <span class="attributes"></span>
                                                     </a>
                                                 </div>
-                                                <h2><a href="{{route('wine', $feature_wine->slug)}}"
+                                                <h2><a href="{{route('wine_or_winery', $feature_wine->slug)}}"
                                                        class="preview">{{$feature_wine->title}}</a>
                                                 </h2>
                                                 <p>{{isset($feature_wine->winery) ? $feature_wine->winery->title : ''}}</p>
@@ -321,7 +321,7 @@
                                                         class="sep"> | </span>
                                                     <span class=""> {{$feature_wine->year}}</span>
                                                     <div class="price-vinoteka">
-                                                        <a href="{{route('wine', $feature_wine->slug)}}"
+                                                        <a href="{{route('wine_or_winery', $feature_wine->slug)}}"
                                                            class="preview">{{$feature_wine->price}}
                                                             <span>п</span></a>
                                                     </div>
