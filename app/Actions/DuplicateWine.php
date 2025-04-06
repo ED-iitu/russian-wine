@@ -25,7 +25,6 @@ class DuplicateWine extends AbstractAction
 
     public function massAction($id)
     {
-        dd($id);
         return route('admin.wines.duplicate', ['id' => $id]);
     }
 
