@@ -10,7 +10,7 @@ class VoyagerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // Регистрация кастомного действия
-        Voyager::addAction(DuplicateWine::class);
+        $voyager = new Voyager();
+        $voyager->addAction(DuplicateWine::class);
     }
 }
