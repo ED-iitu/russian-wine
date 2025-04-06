@@ -85,6 +85,16 @@ return [
         'autoload_migrations' => true,
     ],
 
+    'data_types' => [
+        'wines' => [
+            'searchable' => [
+                'title',
+                'model',
+                'price',
+            ],
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Multilingual configuration

@@ -15,9 +15,23 @@
             <div class="col-md-12">
                 <div class="panel panel-bordered">
                     <div class="panel-body">
-                        <!-- Стандартная панель поиска от Voyager -->
-                        @include('voyager::multilingual.language-selector')
+                        <!-- Панель поиска от Voyager -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Панель поиска, если она есть -->
+                                @include('voyager::multilingual.language-selector')
 
+                                <!-- Поиск -->
+                                <form method="GET" action="{{ route('voyager.wines.index') }}">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="search" placeholder="Поиск" value="{{ request('search') }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Поиск</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Таблица с товарами -->
                         <table id="dataTable" class="table table-hover">
                             <thead>
                             <tr>
