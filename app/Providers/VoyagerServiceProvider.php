@@ -8,8 +8,6 @@ class VoyagerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        parent::boot();
-
         Voyager::addAction(DuplicateWine::class);
     }
 }

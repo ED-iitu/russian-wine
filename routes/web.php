@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'admin'], function () {
-    //Route::get('wines/{id}/duplicate', [WineController::class, 'duplicate'])->name('admin.wines.duplicate');
     Voyager::routes();
 });
 
@@ -97,6 +96,8 @@ Route::get('/page/{slug}', 'Page\IndexController@simple_page')->name('simple_pag
 //Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 
 Route::get('/{slug}', 'Page\IndexController@show')->name('wine_or_winery');
+
+Route::get('admin/wines/{id}/duplicate', [WineController::class, 'duplicate'])->name('admin.wines.duplicate');
 
 
 
