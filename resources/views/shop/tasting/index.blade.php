@@ -274,7 +274,7 @@
                     <div class="modalOverflowSlider">
                     <div class="modalOverflowWrap">
                         @foreach($tasting->wines as  $wine)
-                            <a href="{{route('wine_winery', $wine->slug)}}">
+                            <a href="{{route('wine_or_winery', $wine->slug)}}">
                                 <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
                             </a>
                         @endforeach
