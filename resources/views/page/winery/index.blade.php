@@ -38,7 +38,7 @@
                                                     <div class="winery-slide item active">
                                                         <div class="row">
                                                             <div class="image">
-                                                                <a href="{{ route('winery', ['slug' => $winery->slug]) }}">
+                                                                <a href="{{ route('wine_or_winery', ['slug' => $winery->slug]) }}">
                                                                     <img
                                                                             src="{{ Voyager::image($winery->catalog_image) }}"
                                                                             class="back-win" alt="{{ $winery->title }}">
@@ -49,7 +49,7 @@
                                                             </div>
                                                             <div class="col-lg-12 col-sm-12 col-xs-12">
                                                                 <h2>
-                                                                    <a href="{{route('winery', $winery->slug)}}">{{$winery->title}}</a>
+                                                                    <a href="{{route('wine_or_winery', $winery->slug)}}">{{$winery->title}}</a>
                                                                 </h2>
                                                                 <div class="dash"></div>
                                                                 <div class="desc-container">
@@ -71,7 +71,7 @@
                                                 <div class="winery-slide item active">
                                                     <div class="row">
                                                         <div class="image">
-                                                            <a href="{{route('winery', $winery->slug)}}">
+                                                            <a href="{{route('wine_or_winery', $winery->slug)}}">
                                                                 <img src="{{Voyager::image($winery->catalog_image)}}"
                                                                      class="back-win" alt="{{$winery->title}}">
                                                                 <img src="{{Voyager::image($winery->logo_image)}}"
@@ -80,7 +80,7 @@
                                                         </div>
                                                         <div class="col-lg-12 col-sm-12 col-xs-12">
                                                             <h2>
-                                                                <a href="{{route('winery', $winery->slug)}}">{{$winery->title}}</a>
+                                                                <a href="{{route('wine_or_winery', $winery->slug)}}">{{$winery->title}}</a>
                                                             </h2>
                                                             <div class="dash"></div>
                                                             <div class="desc-container">
