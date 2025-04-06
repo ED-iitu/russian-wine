@@ -30,7 +30,7 @@
                             @foreach ($dataTypeContent->items() as $data)
                                 <tr>
                                     <td>{{ $data->title }}</td>
-                                    <td>{{ $data->image }}</td>
+                                    <td><img src="{{ $data->image }}"></td>
                                     <td>{{ $data->price }}</td>
                                     <td>{{ $data->model }}</td>
                                     <td>{{ $data->year }}</td>
