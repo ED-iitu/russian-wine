@@ -13418,6 +13418,7 @@ header.other img {
     right: 0;
     bottom: 0;
     z-index: 1050;
+    overflow-y: auto;
 }
 
 #modal_sviaz.show {
