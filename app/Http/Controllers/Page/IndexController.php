@@ -29,12 +29,16 @@ class IndexController extends Controller
      */
     public function tour_save(Request $request)
     {
+        $request->validate([
+            'captcha' => 'required|captcha'
+        ]);
+
         $saveRequest = new Order();
         $saveRequest->name = $request['name'];
         $saveRequest->phone = $request['phone'];
         $saveRequest->type = Order::TYPE_TOUR;
         $saveRequest->save();
-       // SendMail::tour($request);
+        SendMail::tour($request);
 
         $message = 'Заявка на Винный тур успешно создана! Мы с вами свяжемся в ближайшее время!';
         return view('shop.checkout.success', [
