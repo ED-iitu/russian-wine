@@ -201,7 +201,7 @@
                                                placeholder="Введите капчу" value="" name="captcha" required>
                                     </div>
                                     <div class="p-t-10">
-                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
+                                        <button class="form-control" type="button" onclick="refreshCaptcha2()">Обновить капчу</button>
                                     </div>
                                     <div class="form-group text-center">
                                         <button type="submit" class="text-center btn-danger m-t-10">
