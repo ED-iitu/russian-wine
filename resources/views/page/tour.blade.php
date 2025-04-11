@@ -193,16 +193,16 @@
                                         <input name="phone" required class="form-control" type="text"
                                                placeholder="Телефон">
                                     </div>
-                                    <div class="">
-                                        <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
-                                    </div>
-                                    <div class="">
-                                        <input class="form-control contact-email" type="text"
-                                               placeholder="Введите капчу" value="" name="captcha" required>
-                                    </div>
-                                    <div class="p-t-10">
-                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
-                                    </div>
+{{--                                    <div class="">--}}
+{{--                                        <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="">--}}
+{{--                                        <input class="form-control contact-email" type="text"--}}
+{{--                                               placeholder="Введите капчу" value="" name="captcha" required>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="p-t-10">--}}
+{{--                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>--}}
+{{--                                    </div>--}}
                                     <div class="form-group text-center">
                                         <button type="submit" class="text-center btn-danger m-t-10">
                                             Оставить заявку
