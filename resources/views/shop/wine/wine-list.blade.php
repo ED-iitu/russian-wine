@@ -73,7 +73,7 @@
                     scroll_up()
                 })
                 function scroll_up() {
-                    $('html, body').animate({scrollTop: 0}, 2000);
+                    $('html, body').animate({scrollTop: 0}, 100);
                 }
             </script>
         @endpush
