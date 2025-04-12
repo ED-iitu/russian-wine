@@ -88,7 +88,7 @@
                                             <li><p>Вина:
                                                     @foreach($winemaker->wines as $wine)
                                                         <a class="text-black"
-                                                           href="{{route('wine', $wine->slug)}}"> {{$wine->title}}</a>
+                                                           href="{{route('wine_or_winery', $wine->slug)}}"> {{$wine->title}}</a>
                                                         @if(!$loop->last)
                                                             ,@endif
                                                     @endforeach
