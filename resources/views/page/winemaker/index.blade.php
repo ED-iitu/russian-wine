@@ -26,7 +26,7 @@
                                         <div id="in_par" class="text-center">
                                             <p>
                                                 @if(isset($winemaker->winery))
-                                                    <a href="{{route('winery', $winemaker->winery->slug)}}">
+                                                    <a href="{{route('wine_or_winery', $winemaker->winery->slug)}}">
                                                         {{$winemaker->winery->title}}
                                                     </a>  |
                                                 @endif
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="winery-link">
 
-                                            <a href="{{ isset($winemaker->winery) ? route('winery', $winemaker->winery->slug) : '#'}}">
+                                            <a href="{{ isset($winemaker->winery) ? route('wine_or_winery', $winemaker->winery->slug) : '#'}}">
                                                 <p>{{isset($winemaker->winery) ? $winemaker->winery->title : ''}}</p>
                                                 <span class="icon-icon_arrow_right"></span>
                                             </a>
@@ -74,7 +74,7 @@
                                                 <p>
                                                     @if(isset($winemaker->winery))
                                                         <a class="text-black"
-                                                           href="{{route('winery', $winemaker->winery->slug)}}">
+                                                           href="{{route('wine_or_winery', $winemaker->winery->slug)}}">
                                                             {{$winemaker->winery->title}}
                                                         </a>
                                                     @endif
