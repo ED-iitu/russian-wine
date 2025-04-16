@@ -23,6 +23,7 @@ Auth::routes();
 
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wineshop', 'Shop\IndexController@wine_list')->name('wine_shop');
+Route::get('/wine-shop', 'Shop\IndexController@wine_list');
 Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
 Route::get('/sety', 'Shop\SetController@index')->name('sets');
 
