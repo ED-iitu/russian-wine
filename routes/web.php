@@ -46,6 +46,7 @@ Route::get('/personal-wine', 'Shop\IndexController@personal_wine')->name('person
 Route::post('personal-wine/order', 'Shop\IndexController@personal_wine_order')->name('personal-wine-order');
 
 Route::get('/degustacii', 'Shop\TastingsController@index')->name('tastings');
+Route::get('/tasting', 'Shop\TastingsController@index');
 Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tasting_checkout');
 Route::post('/tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
 Route::post('/tasting/contact', 'Shop\TastingsController@contact')->name('tasting_contact');
