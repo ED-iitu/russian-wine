@@ -38,13 +38,13 @@
                                 <input name="phone" required class="form-control" type="text" placeholder="Телефон">
                             </div>
                             <div class="">
-                                <img id="captcha1" src="{{ captcha_src() }}" alt="captcha1" style="width: 190px; height: 70px;">
+                                <img id="captcha" src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
                             </div>
                             <div class="p-t-10">
                                 <input class="form-control contact-email" type="text" placeholder="Введите капчу" value="" name="captcha" required>
                             </div>
                             <div class="p-t-10">
-                                <button class="form-control" type="button" onclick="refreshCaptcha('captcha1')">Обновить капчу</button>
+                                <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
                             </div>
                             <input type="hidden" name="form_id" value="form1">
                             <div class="form-group text-center p-t-10">
@@ -155,13 +155,13 @@
                                         <input name="phone" required class="form-control" type="text" placeholder="Телефон">
                                     </div>
                                     <div class="">
-                                        <img id="captcha2" src="{{ captcha_src() }}" alt="captcha2" style="width: 190px; height: 70px;">
+                                        <img id="captcha" src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
                                     </div>
                                     <div class="">
                                         <input class="form-control contact-email" type="text" placeholder="Введите капчу" value="" name="captcha" required>
                                     </div>
                                     <div class="p-t-10">
-                                        <button class="form-control" type="button" onclick="refreshCaptcha('captcha2')">Обновить капчу</button>
+                                        <button class="form-control" type="button" onclick="refreshCaptcha()">Обновить капчу</button>
                                     </div>
                                     <input type="hidden" name="form_id" value="form2">
                                     <div class="form-group text-center">
@@ -179,11 +179,11 @@
     </div>
 
     <script>
-        function refreshCaptcha(captchaId) {
+        function refreshCaptcha() {
             fetch('/refresh-captcha')
                 .then(response => response.json())
                 .then(data => {
-                    document.querySelector(`#${captchaId}`).src = data.captcha;
+                    document.querySelector(`#captcha`).src = data.captcha;
                 });
         }
     </script>
