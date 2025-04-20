@@ -31,11 +31,11 @@ class IndexController extends Controller
     {
         if ($request->form_id === 'form1') {
             $request->validate([
-                'captcha1' => 'required|captcha',
+                'captcha' => 'required|captcha',
             ]);
         } elseif ($request->form_id === 'form2') {
             $request->validate([
-                'captcha2' => 'required|captcha',
+                'captcha' => 'required|captcha',
             ]);
         } else {
             abort(400, 'Неизвестная форма');

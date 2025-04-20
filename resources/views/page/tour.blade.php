@@ -42,7 +42,7 @@
                             </div>
                             <div class="p-t-10">
                                 <input class="form-control contact-email" type="text"
-                                       placeholder="Введите капчу" value="" name="captcha1" required>
+                                       placeholder="Введите капчу" value="" name="captcha" required>
                             </div>
                             <div class="p-t-10">
                                 <button class="form-control" type="button" onclick="refreshCaptcha1()">Обновить капчу</button>
@@ -199,7 +199,7 @@
                                     </div>
                                     <div class="">
                                         <input class="form-control contact-email" type="text"
-                                               placeholder="Введите капчу" value="" name="captcha2" required>
+                                               placeholder="Введите капчу" value="" name="captcha" required>
                                     </div>
                                     <div class="p-t-10">
                                         <button class="form-control" type="button" onclick="refreshCaptcha2()">Обновить капчу</button>
