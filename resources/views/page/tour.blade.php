@@ -38,14 +38,13 @@
                                 <input name="phone" required class="form-control" type="text" placeholder="Телефон">
                             </div>
                             <div class="">
-                                <img src="{{ captcha_src() }}" alt="captcha1" style="width: 190px; height: 70px;">
+                                <img id="captcha1" src="{{ captcha_src() }}" alt="captcha1" style="width: 190px; height: 70px;">
                             </div>
                             <div class="p-t-10">
-                                <input class="form-control contact-email" type="text"
-                                       placeholder="Введите капчу" value="" name="captcha" required>
+                                <input class="form-control contact-email" type="text" placeholder="Введите капчу" value="" name="captcha" required>
                             </div>
                             <div class="p-t-10">
-                                <button class="form-control" type="button" onclick="refreshCaptcha1()">Обновить капчу</button>
+                                <button class="form-control" type="button" onclick="refreshCaptcha('captcha1')">Обновить капчу</button>
                             </div>
                             <input type="hidden" name="form_id" value="form1">
                             <div class="form-group text-center p-t-10">
@@ -55,6 +54,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Пример винного тура -->
             <div class="background-white">
                 <div class="wine-tour-title"><h2>Винный тур</h2></div>
                 <div class="container container-lg">
@@ -77,6 +78,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Программа тура -->
             <div class="container container-lg">
                 <div class="row p-t-100">
                     <div class="program">
@@ -135,49 +138,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container container-lg">
-                <div class="row p-t-60 p-b-100">
-                    <div class="col-xs-12 col-md-10 col-md-offset-1 text-center tour-what-title">
-                        <h2>Это тур выходного дня с знакомством терруара Мысхако, виноделом и винами, а также местной
-                            кухней.
-                            Даты поездки и стоимость тура согласовываются с Вами персонально</h2>
-                    </div>
-                </div>
-            </div>
-            <div style="overflow: hidden">
-                <div class="row p-b-100 background-white">
-                    <div class="col-xs-12">
-                        <img src="{{asset('image/page/tour/tour_field.jpg')}}" class="img-responsive">
-                    </div>
-                </div>
-            </div>
-            <div class="background-white">
-                <div id="tour-carousel" class="carousel slide" data-ride="carousel">
-                    <a href="#tour-carousel" class="carousel-control arrow-left" data-slide="prev"><span
-                            class="icon-icon_left"></span></a>
-                    <a href="#tour-carousel" class="carousel-control arrow-right" data-slide="next">
-                        <span class="icon-icon_right"></span></a>
 
-                    <div class="carousel-inner" role="listbox">
-                        <!-- slide start -->
-                        <div class="item active">
-                            <img src="{{asset('image/page/tour/tour_photo.jpg')}}" class="img-responsive">
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('image/page/tour/tour_photo.jpg')}}" class="img-responsive">
-                        </div><!-- slide end -->
-                    </div>
-                    <div class="dots mt-md">
-                        <div class="text-center">
-                            <ul class="carousel-indicators">
-                                <li data-target="#tour-carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#tour-carousel" data-slide-to="1" class=""></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <!-- Заказать тур форма 2 -->
             <div class="background-white p-b-100">
                 <div class="container container-lg">
                     <div class="row">
@@ -187,22 +149,19 @@
                                 <form method="post" class="form-common" action="{{route('tour_order')}}">
                                     @csrf
                                     <div class="">
-                                        <input name="name"  required class="form-control" type="text"
-                                               placeholder="Имя">
+                                        <input name="name" required class="form-control" type="text" placeholder="Имя">
                                     </div>
                                     <div class="p-t-30">
-                                        <input name="phone" required class="form-control" type="text"
-                                               placeholder="Телефон">
+                                        <input name="phone" required class="form-control" type="text" placeholder="Телефон">
                                     </div>
                                     <div class="">
-                                        <img src="{{ captcha_src() }}" alt="captcha2" style="width: 190px; height: 70px;">
+                                        <img id="captcha2" src="{{ captcha_src() }}" alt="captcha2" style="width: 190px; height: 70px;">
                                     </div>
                                     <div class="">
-                                        <input class="form-control contact-email" type="text"
-                                               placeholder="Введите капчу" value="" name="captcha" required>
+                                        <input class="form-control contact-email" type="text" placeholder="Введите капчу" value="" name="captcha" required>
                                     </div>
                                     <div class="p-t-10">
-                                        <button class="form-control" type="button" onclick="refreshCaptcha2()">Обновить капчу</button>
+                                        <button class="form-control" type="button" onclick="refreshCaptcha('captcha2')">Обновить капчу</button>
                                     </div>
                                     <input type="hidden" name="form_id" value="form2">
                                     <div class="form-group text-center">
@@ -220,19 +179,11 @@
     </div>
 
     <script>
-        function refreshCaptcha1() {
+        function refreshCaptcha(captchaId) {
             fetch('/refresh-captcha')
                 .then(response => response.json())
                 .then(data => {
-                    document.querySelector('img[alt=captcha1]').src = data.captcha;
-                });
-        }
-
-        function refreshCaptcha2() {
-            fetch('/refresh-captcha')
-                .then(response => response.json())
-                .then(data => {
-                    document.querySelector('img[alt=captcha2]').src = data.captcha;
+                    document.querySelector(`#${captchaId}`).src = data.captcha;
                 });
         }
     </script>
