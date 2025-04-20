@@ -29,17 +29,9 @@ class IndexController extends Controller
      */
     public function tour_save(Request $request)
     {
-        if ($request->form_id === 'form1') {
-            $request->validate([
-                'captcha' => 'required|captcha',
-            ]);
-        } elseif ($request->form_id === 'form2') {
-            $request->validate([
-                'captcha' => 'required|captcha',
-            ]);
-        } else {
-            abort(400, 'Неизвестная форма');
-        }
+        $request->validate([
+            'captcha' => 'required|captcha',
+        ]);
 
         $saveRequest = new Order();
         $saveRequest->name = $request['name'];
