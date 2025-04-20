@@ -42,11 +42,12 @@
                             </div>
                             <div class="p-t-10">
                                 <input class="form-control contact-email" type="text"
-                                       placeholder="Введите капчу" value="" name="captcha" required>
+                                       placeholder="Введите капчу" value="" name="captcha1" required>
                             </div>
                             <div class="p-t-10">
                                 <button class="form-control" type="button" onclick="refreshCaptcha1()">Обновить капчу</button>
                             </div>
+                            <input type="hidden" name="form_id" value="form1">
                             <div class="form-group text-center p-t-10">
                                 <button type="submit" class="btn-danger">Отправиться в тур</button>
                             </div>
@@ -198,11 +199,12 @@
                                     </div>
                                     <div class="">
                                         <input class="form-control contact-email" type="text"
-                                               placeholder="Введите капчу" value="" name="captcha" required>
+                                               placeholder="Введите капчу" value="" name="captcha2" required>
                                     </div>
                                     <div class="p-t-10">
                                         <button class="form-control" type="button" onclick="refreshCaptcha2()">Обновить капчу</button>
                                     </div>
+                                    <input type="hidden" name="form_id" value="form2">
                                     <div class="form-group text-center">
                                         <button type="submit" class="text-center btn-danger m-t-10">
                                             Оставить заявку
