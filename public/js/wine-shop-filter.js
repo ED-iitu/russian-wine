@@ -37,15 +37,18 @@ $(document).ready(function () {
     if (url_parameters.length === 0) clear_for_load()
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
-
         $('li').removeClass('active');
         $(this).parent('li').addClass('active');
 
         var page = $(this).attr('href').split('page=')[1];
-        var filter = $('#searching-form').serialize()
-        wine_filter_search(filter, page)
 
+        // Тут выбираем форму в зависимости от ширины экрана
+        var formSelector = window.innerWidth <= 768 ? '#searching-form-mobile' : '#searching-form';
+        var filter = $(formSelector).serialize();
+
+        wine_filter_search(filter, page);
     });
+
 
 
 });
