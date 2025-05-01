@@ -32,7 +32,7 @@
                                 <div class="mb-3">
                                     <i class="fa fa-money-bill-wave fa-3x text-success"></i>
                                 </div>
-                                <h1 class="display-4">{{ number_format($totalAmount) }} ₸</h1>
+                                <h1 class="display-4">{{ number_format($totalAmount) }} Рублей</h1>
                                 <p>Общая сумма</p>
                             </div>
                         </div>
@@ -46,6 +46,7 @@
 @endsection
 
 @section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xh6ghhO7c7IgzvTr0tw6+NxG7GgZlEctITyGDQXLb2OE+jYjZz4HqHy2CFKqos1lJ1HLLFTRRyThwAy6AvFVyg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .dimmer {
             position: relative;
@@ -95,9 +96,4 @@
             margin-bottom: 10px;
         }
     </style>
-@endsection
-
-@section('javascript')
-    <!-- Font Awesome (если ещё не подключён) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 @endsection
