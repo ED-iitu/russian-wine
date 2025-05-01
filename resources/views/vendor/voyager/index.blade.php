@@ -1,26 +1,26 @@
 @extends('voyager::master')
 
 @section('content')
-    <div class="container">
-        <div class="page-content">
-            <h1 class="page-title">Дашборд</h1>
 
-            <div class="row">
-                <!-- Панель с количеством заказов -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="card-title">Кол-во заказов</h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <h1 class="display-4">{{ $totalOrders }}</h1>
-                            <p>Всего заказов</p>
-                        </div>
+    <div class="container-fluid">
+        <h1 class="page-title">Дашборд</h1>
+
+        <div class="row">
+            <!-- Панель с количеством заказов -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title">Кол-во заказов</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1 class="display-4">{{ $totalOrders }}</h1>
+                        <p>Всего заказов</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 @endsection
 
