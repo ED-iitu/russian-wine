@@ -6,12 +6,15 @@
         <h1 class="page-title">Дашборд</h1>
 
         <div class="row">
-            <!-- Панель с количеством заказов -->
+            <!-- Количество заказов -->
             <div class="col-md-4 mb-4">
                 <div class="panel panel-bordered">
                     <div class="panel-body text-center">
                         <div class="dimmer">
                             <div class="dimmer-content">
+                                <div class="mb-3">
+                                    <i class="fa fa-shopping-cart fa-3x text-primary"></i>
+                                </div>
                                 <h1 class="display-4">{{ $totalOrders }}</h1>
                                 <p>Кол-во заказов</p>
                             </div>
@@ -20,21 +23,25 @@
                 </div>
             </div>
 
+            <!-- Общая сумма -->
             <div class="col-md-4 mb-4">
                 <div class="panel panel-bordered">
                     <div class="panel-body text-center">
                         <div class="dimmer">
                             <div class="dimmer-content">
-                                <h1 class="display-4">{{ $totalAmount }}</h1>
+                                <div class="mb-3">
+                                    <i class="fa fa-money-bill-wave fa-3x text-success"></i>
+                                </div>
+                                <h1 class="display-4">{{ number_format($totalAmount) }} ₸</h1>
                                 <p>Общая сумма</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
 
 @endsection
 
@@ -52,10 +59,6 @@
         .dimmer:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .dimmer-content {
-            z-index: 2;
         }
 
         .dimmer-content h1 {
@@ -87,5 +90,14 @@
         .row {
             margin-top: 20px;
         }
+
+        .fa {
+            margin-bottom: 10px;
+        }
     </style>
+@endsection
+
+@section('javascript')
+    <!-- Font Awesome (если ещё не подключён) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 @endsection
