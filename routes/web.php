@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin', ['Admin\DashboardController@index'])->name('voyager.dashboard');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('admin', 'Admin\DashboardController@index')->name('voyager.dashboard');
 
 Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@duplicate')->name('admin.wines.duplicate');
 
