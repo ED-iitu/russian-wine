@@ -16,10 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'Admin\DashboardController@index')->name('voyager.dashboard');
     Voyager::routes();
 });
-
-Route::get('admin', 'Admin\DashboardController@index')->name('voyager.dashboard');
 
 Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@duplicate')->name('admin.wines.duplicate');
 
