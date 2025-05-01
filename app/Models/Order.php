@@ -23,12 +23,19 @@ class Order extends Model
 
         // Проходим по всем заказам
         foreach ($orders as $order) {
-            // Ищем число после "Общая сумма: "
-            preg_match('/Общая сумма:\s*(\d+)/', $order->message, $matches);
+            // Проверяем, если поле message не пустое
+            if (empty($order->message)) {
+                continue;
+            }
+
+            // Ищем число после "Общая сумма: " (обновленное регулярное выражение)
+            preg_match('/Общая сумма[:\s]*([\d,]+)/', $order->message, $matches);
 
             // Если найдено число, добавляем его к общей сумме
             if (isset($matches[1])) {
-                $totalAmount += (int)$matches[1];
+                // Преобразуем сумму в число, удалив запятые, если они есть
+                $amount = str_replace(',', '', $matches[1]);
+                $totalAmount += (int)$amount;
             }
         }
 
