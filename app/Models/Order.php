@@ -14,4 +14,25 @@ class Order extends Model
     const TYPE_FAVORITE = 6;
     const TYPE_QUESTION = 7;
 
+    public static function getTotalOrdersAmount()
+    {
+        // Получаем все заказы
+        $orders = self::all();
+
+        $totalAmount = 0;
+
+        // Проходим по всем заказам
+        foreach ($orders as $order) {
+            // Ищем число после "Общая сумма: "
+            preg_match('/Общая сумма:\s*(\d+)/', $order->message, $matches);
+
+            // Если найдено число, добавляем его к общей сумме
+            if (isset($matches[1])) {
+                $totalAmount += (int)$matches[1];
+            }
+        }
+
+        return $totalAmount;
+    }
+
 }

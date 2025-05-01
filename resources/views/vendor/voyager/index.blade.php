@@ -19,6 +19,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="panel panel-bordered">
+                    <div class="panel-body text-center">
+                        <div class="dimmer">
+                            <div class="dimmer-content">
+                                <h1 class="display-4">{{ $totalAmount }}</h1>
+                                <p>Общая сумма</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

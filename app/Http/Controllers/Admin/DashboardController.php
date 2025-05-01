@@ -7,7 +7,8 @@ class DashboardController
     public function index()
     {
         $totalOrders = Order::count();
+        $totalAmount = Order::getTotalOrdersAmount();
 
-        return view('vendor.voyager.index', compact('totalOrders'));
+        return view('vendor.voyager.index', compact('totalOrders', 'totalAmount'));
     }
 }
