@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Order extends Model
 {
@@ -23,6 +24,7 @@ class Order extends Model
 
         // Проходим по всем заказам
         foreach ($orders as $order) {
+            Log::info($order->message);
             // Проверяем, если поле message не пустое
             if (empty($order->message)) {
                 continue;
