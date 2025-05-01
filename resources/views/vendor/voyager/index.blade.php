@@ -7,14 +7,15 @@
 
         <div class="row">
             <!-- Панель с количеством заказов -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h4 class="card-title">Кол-во заказов</h4>
-                    </div>
-                    <div class="card-body text-center">
-                        <h1 class="display-4">{{ $totalOrders }}</h1>
-                        <p>Всего заказов</p>
+            <div class="col-md-4 mb-4">
+                <div class="panel panel-bordered">
+                    <div class="panel-body text-center">
+                        <div class="dimmer">
+                            <div class="dimmer-content">
+                                <h1 class="display-4">{{ $totalOrders }}</h1>
+                                <p>Кол-во заказов</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,39 +27,52 @@
 
 @section('css')
     <style>
-        .card {
+        .dimmer {
+            position: relative;
+            background: #f8f9fa;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card:hover {
+        .dimmer:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .card-header {
-            border-radius: 10px 10px 0 0;
-            padding: 15px;
+        .dimmer-content {
+            z-index: 2;
         }
 
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        .display-4 {
+        .dimmer-content h1 {
             font-size: 3rem;
             font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .dimmer-content p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .panel {
+            border-radius: 10px;
+            border: none;
+            background: transparent;
+        }
+
+        .panel-body {
+            padding: 0;
         }
 
         .page-title {
             font-size: 2rem;
             margin-bottom: 30px;
+        }
+
+        .row {
+            margin-top: 20px;
         }
     </style>
 @endsection
