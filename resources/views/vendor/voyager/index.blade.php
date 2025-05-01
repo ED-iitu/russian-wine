@@ -1,5 +1,7 @@
 @extends('voyager::master')
 
 @section('content')
-    <h1>Custom Dashboard</h1>
+    <div class="page-content">
+        <h1>Custom Dashboard</h1>
+    </div>
 @endsection
