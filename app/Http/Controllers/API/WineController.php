@@ -19,7 +19,7 @@ class WineController extends Controller
         $query->with(['color', 'region', 'sugar', 'winery', 'manufacture']);
 
         foreach ($request->all() as $field => $value) {
-            if (in_array($field, ['color_id', 'sugar_id', 'year', 'region_id'])) { // только разрешённые поля
+            if (in_array($field, ['color_id', 'sugar_id', 'year', 'region_id', 'fortress', 'sort_id', 'class_id'])) { // только разрешённые поля
                 $query->where($field, $value);
             }
         }
