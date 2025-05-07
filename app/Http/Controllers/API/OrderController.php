@@ -53,7 +53,7 @@ class OrderController extends Controller
         $saveRequest->email   = $validated['email'];
         $saveRequest->type    = Order::TYPE_CART;
         $saveRequest->message = $cart_info;
-        $saveRequest->request = $requestData;
+        $saveRequest->request = json_encode($requestData);
         $saveRequest->save();
 
         $emailData = [
