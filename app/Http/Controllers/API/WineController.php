@@ -16,7 +16,7 @@ class WineController extends Controller
         $query = Wine::query();
 
         // Загрузка всех связанных моделей
-        $query->with(['color', 'region', 'sugar']);
+        $query->with(['color', 'region', 'sugar', 'winery']);
 
         foreach ($request->all() as $field => $value) {
             if (in_array($field, ['color_id', 'sugar_id', 'year', 'region_id'])) { // только разрешённые поля
