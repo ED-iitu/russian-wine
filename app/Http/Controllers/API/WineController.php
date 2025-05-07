@@ -50,7 +50,7 @@ class WineController extends Controller
 
     public function show($id)
     {
-        $wine = Wine::findOrFail($id);
+        $wine = Wine::with(['color', 'region', 'sugar', 'winery', 'manufacture'])->findOrFail($id);
 
         return response()->json($wine);
     }
