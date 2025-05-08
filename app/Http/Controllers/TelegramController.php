@@ -23,11 +23,25 @@ class TelegramController extends Controller
 
     private function sendMessage($chatId, $text)
     {
-        $token = env('7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo');
+        $url = "https://api.telegram.org/bot" . '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo' . "/sendMessage";
 
-        Http::post("https://api.telegram.org/bot{$token}/sendMessage", [
+        $data = [
             'chat_id' => $chatId,
             'text' => $text,
-        ]);
+        ];
+
+        $options = [
+            'http' => [
+                'method'  => 'POST',
+                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+                'content' => http_build_query($data),
+            ],
+        ];
+
+        $context = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+
+        Log::info('Telegram API Response: ' . $response);
     }
+
 }
