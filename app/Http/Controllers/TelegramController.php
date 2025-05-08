@@ -3,17 +3,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class TelegramController extends Controller
 {
     public function webhook(Request $request)
     {
+        Log::info('TELEGRAM DATA: ' . json_encode($request->all()));
+
         $data = $request->all();
 
-        // Проверяем, есть ли текст и это команда /start
         if (isset($data['message']['text']) && $data['message']['text'] === '/start') {
             $chatId = $data['message']['chat']['id'];
-            $this->sendMessage($chatId, 'Добро пожаловать! Вы начали работу с ботом.');
+            $this->sendMessage($chatId, 'Привет! Добро пожаловать в бота 🎉');
         }
 
         return response('OK', 200);
