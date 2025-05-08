@@ -21,7 +21,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('admin/wines/{id}/duplicate', 'Admin\WineController@duplicate')->name('admin.wines.duplicate');
-Route::post('/telegram/webhook', 'TelegramController@webhook');
 Auth::routes();
 
 Route::get('', 'Home\IndexController@index')->name('home');

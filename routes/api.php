@@ -19,6 +19,7 @@ Route::get('/wines', 'API\WineController@index');
 Route::get('/wines/filters', 'API\WineController@filters');
 Route::get('/wines/{id}', 'API\WineController@show');
 Route::post('/order', 'API\OrderController@createOrder');
+Route::post('/telegram/webhook', 'TelegramController@webhook');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
