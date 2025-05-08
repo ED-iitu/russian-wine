@@ -41,7 +41,7 @@ class TelegramController extends Controller
             } elseif ($callbackData === 'age_no') {
                 $this->sendMessage($chatId, 'Вам нет 18 лет. Пожалуйста, покиньте бот.');
             } elseif ($callbackData === 'help') {
-                $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов о заказах и вин напишите владельцу магазина @russianvine');
+                $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов о заказах и винах напишите владельцу магазина @russianvine');
             } elseif ($callbackData === 'contacts') {
                 $this->sendMessage($chatId, 'Контакты: russianvine.ru/contacts');
             }
