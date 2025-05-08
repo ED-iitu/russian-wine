@@ -39,6 +39,9 @@ class TelegramController extends Controller
                 ];
                 $this->sendMessageWithKeyboard($chatId, 'Добро пожаловать в наш бот! Выберите одну из команд ниже:', $keyboard);
             } elseif ($callbackData === 'age_no') {
+                $messageId = $data['callback_query']['message']['message_id'];
+                // Удаляем кнопки
+                $this->editMessageReplyMarkup($chatId, $messageId);
                 $this->sendMessage($chatId, 'Вам нет 18 лет. Пожалуйста, покиньте бот.');
             } elseif ($callbackData === 'help') {
                 $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов о заказах и винах напишите владельцу магазина @russianvine');
@@ -149,6 +152,19 @@ class TelegramController extends Controller
         $context = stream_context_create($options);
         file_get_contents($url, false, $context);
     }
+
+    private function editMessageReplyMarkup($chatId, $messageId)
+    {
+        $url = "https://api.telegram.org/bot7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo/editMessageReplyMarkup";
+        $data = [
+            'chat_id' => $chatId,
+            'message_id' => $messageId,
+            'reply_markup' => json_encode(['inline_keyboard' => []]) // удаляет кнопки
+        ];
+
+        $this->sendTelegramRequest($url, $data);
+    }
+
 
 
 }
