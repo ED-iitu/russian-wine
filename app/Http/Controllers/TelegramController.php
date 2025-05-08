@@ -40,6 +40,9 @@ class TelegramController extends Controller
                 $this->sendMessageWithKeyboard($chatId, 'Добро пожаловать в наш бот! Выберите одну из команд ниже:', $keyboard);
             } elseif ($callbackData === 'age_no') {
                 $messageId = $data['callback_query']['message']['message_id'];
+
+                // Отвечаем, чтобы Telegram не показывал "загрузку"
+                $this->answerCallbackQuery($callbackId);
                 // Удаляем кнопки
                 $this->editMessageReplyMarkup($chatId, $messageId);
                 $this->sendMessage($chatId, 'Вам нет 18 лет. Пожалуйста, покиньте бот.');
@@ -164,6 +167,21 @@ class TelegramController extends Controller
 
         $this->sendTelegramRequest($url, $data);
     }
+
+    private function sendTelegramRequest($url, $data)
+    {
+        $options = [
+            'http' => [
+                'method'  => 'POST',
+                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+                'content' => http_build_query($data),
+            ],
+        ];
+
+        $context = stream_context_create($options);
+        file_get_contents($url, false, $context);
+    }
+
 
 
 
