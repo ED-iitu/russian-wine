@@ -91,7 +91,8 @@ class TelegramController extends Controller
 
     private function answerCallbackQuery($callbackQueryId)
     {
-        $url = "https://api.telegram.org/bot" . '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo' . "/answerCallbackQuery";
+        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $url              = "https://api.telegram.org/bot" . $telegramBotToken . "/answerCallbackQuery";
 
         $data = [
             'callback_query_id' => $callbackQueryId,
@@ -113,11 +114,12 @@ class TelegramController extends Controller
 
     private function sendMessage($chatId, $text)
     {
-        $url = "https://api.telegram.org/bot" . '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo' . "/sendMessage";
+        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $url              = "https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage";
 
         $data = [
             'chat_id' => $chatId,
-            'text' => $text,
+            'text'    => $text,
         ];
 
         $options = [
@@ -128,7 +130,7 @@ class TelegramController extends Controller
             ],
         ];
 
-        $context = stream_context_create($options);
+        $context  = stream_context_create($options);
         $response = file_get_contents($url, false, $context);
 
         Log::info('Telegram API Response: ' . $response);
@@ -136,7 +138,8 @@ class TelegramController extends Controller
 
     private function sendMessageWithKeyboard($chatId, $text, $keyboard)
     {
-        $url = "https://api.telegram.org/bot" . '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo' . "/sendMessage";
+        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $url = "https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage";
 
         $data = [
             'chat_id' => $chatId,
@@ -158,7 +161,8 @@ class TelegramController extends Controller
 
     private function editMessageReplyMarkup($chatId, $messageId)
     {
-        $url = "https://api.telegram.org/bot7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo/editMessageReplyMarkup";
+        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $url = "https://api.telegram.org/bot" . $telegramBotToken . "/editMessageReplyMarkup";
         $data = [
             'chat_id' => $chatId,
             'message_id' => $messageId,
@@ -181,8 +185,4 @@ class TelegramController extends Controller
         $context = stream_context_create($options);
         file_get_contents($url, false, $context);
     }
-
-
-
-
 }
