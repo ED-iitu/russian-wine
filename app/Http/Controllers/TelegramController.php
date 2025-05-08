@@ -24,11 +24,9 @@ class TelegramController extends Controller
 
             // Ответ в чат
             if ($callbackData === 'help') {
-                $this->sendMessage($chatId, 'Помощь: используйте /catalog для просмотра каталога и /order для оформления заказа.');
+                $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов напишите Владельцу магазина @russianvine');
             } elseif ($callbackData === 'contacts') {
-                $this->sendMessage($chatId, 'Контакты: russianvine.ru/contacts');
-            } elseif ($callbackData === 'store') {
-                $this->sendMessage($chatId, 'Каталог вин: https://russianvine.ru');
+                $this->sendMessage($chatId, 'Контакты: russianvine.ru/where-to-buy');
             }
 
             return response('OK', 200);
@@ -47,7 +45,10 @@ class TelegramController extends Controller
                             ['text' => 'Контакты', 'callback_data' => 'contacts'],
                         ],
                         [
-                            ['text' => 'Посмотреть каталог вин', 'callback_data' => 'store'],
+                            [
+                                'text' => 'Открыть каталог вин 🍷',
+                                'web_app' => ['url' => 'https://russianvine.ru/telegram-app'] // сюда подставь ссылку на твою mini app
+                            ],
                         ]
                     ]
                 ];
