@@ -13,31 +13,16 @@ class TelegramController extends Controller
 
         Log::info('Telegram Data: ' . json_encode($data));
 
-        // Обработка нажатия кнопок
+        // Обработка callback кнопок
         if (isset($data['callback_query'])) {
             $callbackId = $data['callback_query']['id'];
             $chatId = $data['callback_query']['message']['chat']['id'];
             $callbackData = $data['callback_query']['data'];
 
-            // Ответ на callback (убирает крутилку)
             $this->answerCallbackQuery($callbackId);
 
-            // Ответ в чат
-            if ($callbackData === 'help') {
-                $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов напишите Владельцу магазина @russianvine');
-            } elseif ($callbackData === 'contacts') {
-                $this->sendMessage($chatId, 'Контакты: russianvine.ru/where-to-buy');
-            }
-
-            return response('OK', 200);
-        }
-
-        // Обработка обычных сообщений
-        if (isset($data['message']['text'])) {
-            $chatId = $data['message']['chat']['id'];
-            $text = $data['message']['text'];
-
-            if ($text === '/start') {
+            if ($callbackData === 'age_yes') {
+                // Показываем основное меню
                 $keyboard = [
                     'inline_keyboard' => [
                         [
@@ -47,18 +32,56 @@ class TelegramController extends Controller
                         [
                             [
                                 'text' => 'Открыть каталог вин 🍷',
-                                'web_app' => ['url' => 'https://russianvine.ru/telegram-app'] // сюда подставь ссылку на твою mini app
+                                'web_app' => ['url' => 'https://russianvine.ru/telegram-app']
                             ],
                         ]
                     ]
                 ];
-
                 $this->sendMessageWithKeyboard($chatId, 'Добро пожаловать в наш бот! Выберите одну из команд ниже:', $keyboard);
+            } elseif ($callbackData === 'age_no') {
+                $this->sendMessage($chatId, 'Вам нет 18 лет. Пожалуйста, покиньте бот.');
+            } elseif ($callbackData === 'help') {
+                $this->sendMessage($chatId, 'Помощь: используйте /catalog для просмотра каталога и /order для оформления заказа.');
+            } elseif ($callbackData === 'contacts') {
+                $this->sendMessage($chatId, 'Контакты: russianvine.ru/contacts');
+            }
+
+            return response('OK', 200);
+        }
+
+        // Обработка текста
+        if (isset($data['message']['text'])) {
+            $chatId = $data['message']['chat']['id'];
+            $text = $data['message']['text'];
+
+            if ($text === '/start') {
+                $keyboard = [
+                    'inline_keyboard' => [
+                        [
+                            ['text' => 'Да', 'callback_data' => 'age_yes'],
+                            ['text' => 'Нет', 'callback_data' => 'age_no'],
+                        ]
+                    ]
+                ];
+                $this->sendMessageWithKeyboard($chatId, 'Вам есть 18 лет?', $keyboard);
+            } elseif ($text === '/store') {
+                $keyboard = [
+                    'inline_keyboard' => [
+                        [
+                            [
+                                'text' => 'Открыть каталог вин 🍷',
+                                'web_app' => ['url' => 'https://russianvine.ru/telegram-app']
+                            ],
+                        ]
+                    ]
+                ];
+                $this->sendMessageWithKeyboard($chatId, 'Нажмите кнопку ниже, чтобы открыть каталог вин:', $keyboard);
             }
         }
 
         return response('OK', 200);
     }
+
 
     private function answerCallbackQuery($callbackQueryId)
     {
