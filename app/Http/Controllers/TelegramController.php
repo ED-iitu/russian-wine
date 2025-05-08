@@ -76,7 +76,7 @@ class TelegramController extends Controller
                         [
                             [
                                 'text' => 'Открыть каталог вин 🍷',
-                                'web_app' => ['url' => 'https://russianvine.ru/telegram-app']
+                                'web_app' => ['url' => 'https://russianvine.ru']
                             ],
                         ]
                     ]
