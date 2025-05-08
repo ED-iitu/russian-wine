@@ -43,7 +43,7 @@ class TelegramController extends Controller
             } elseif ($callbackData === 'help') {
                 $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов о заказах и винах напишите владельцу магазина @russianvine');
             } elseif ($callbackData === 'contacts') {
-                $this->sendMessage($chatId, 'Контакты: russianvine.ru/contacts');
+                $this->sendMessage($chatId, 'Контакты: russianvine.ru/where-to-buy');
             }
 
             return response('OK', 200);
