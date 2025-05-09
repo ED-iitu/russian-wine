@@ -11,7 +11,7 @@ class TelegramController extends Controller
     {
         $data = $request->all();
 
-        Log::info('Telegram Data: ' . json_encode($data));
+        //Log::info('Telegram Data: ' . json_encode($data));
 
         // Обработка callback кнопок
         if (isset($data['callback_query'])) {
@@ -70,10 +70,14 @@ class TelegramController extends Controller
                         [
                             ['text' => 'Написать на почту', 'callback_data' => 'contact_email']
                         ],
+                        [
+                            [
+                                'text' => 'Открыть каталог вин 🍷',
+                                'web_app' => ['url' => 'https://russianvine.ru']
+                            ],
+                        ]
                     ]
                 ];
-
-                Log::info('Keyboard data: ' . json_encode($keyboard));
 
                 $this->sendMessageWithKeyboard($chatId, 'Контакты:', $keyboard);
             } elseif ($callbackData === 'contact_phone') {
