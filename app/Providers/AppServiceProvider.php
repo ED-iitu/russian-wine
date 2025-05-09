@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Set;
+use App\Models\TelegramMessage;
 use App\Models\Wine;
+use App\Observers\TelegramMessageObserver;
 use Illuminate\Support\ServiceProvider;
 use Carbon\Carbon;
 use Session;
@@ -31,5 +33,6 @@ class AppServiceProvider extends ServiceProvider
         setlocale(LC_TIME, 'ru_RU.UTF-8');
         Carbon::setLocale(config('app.locale'));
         Voyager::addAction(\App\Actions\DuplicateWine::class);
+        TelegramMessage::observe(TelegramMessageObserver::class);
     }
 }
