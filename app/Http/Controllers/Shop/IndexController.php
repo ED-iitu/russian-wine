@@ -441,19 +441,7 @@ class IndexController extends Controller
             'captcha' => 'required|captcha'
         ]);
 
-        $telegramId = session('telegram_chat_id');
-        Log::info('Full Request Dump', [
-            'method' => $request->method(),
-            'full_url' => $request->fullUrl(),
-            'ip' => $request->ip(),
-            'user_agent' => $request->userAgent(),
-            'headers' => $request->headers->all(),
-            'query' => $request->query(),
-            'body' => $request->all(),
-            'raw_body' => $request->getContent(),
-        ]);
-
-        Log::info('Chat ID: ' . $telegramId);
+        Log::info("CHAT_ID: " . $request->telegram_chat_id);
 
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
@@ -513,8 +501,8 @@ class IndexController extends Controller
 
             SendMail::order($emailData);
 
-            if ($telegramId) {
-                $user = User::where('telegram_id', $telegramId)->first();
+            if ($request->telegram_chat_id) {
+                $user = User::where('telegram_id', $request->telegram_chat_id)->first();
 
                 if ($user && $user->telegram_chat_id) {
                     $botToken = env('TELEGRAM_BOT_TOKEN');

@@ -110,20 +110,23 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tg = window.Telegram.WebApp;
-            tg.expand(); // раскрывает Web App на весь экран
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
+                const chatId = Telegram.WebApp.initDataUnsafe.user.id;
 
-            const chatId = tg.initDataUnsafe?.user?.id;
+                console.log('Telegram chat_id:', chatId);
 
-            // Вставляем chat_id в форму перед отправкой
-            const form = document.getElementById('order-form');
-            if (form && chatId) {
-                const hiddenInput = document.createElement('input');
-                hiddenInput.type = 'hidden';
-                hiddenInput.name = 'chat_id';
-                hiddenInput.value = chatId;
-                form.appendChild(hiddenInput);
+                // Вставим в форму hidden input
+                const form = document.getElementById('order_checkout');
+                if (form) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'telegram_chat_id';
+                    input.value = chatId;
+                    form.appendChild(input);
+                }
+            } else {
+                console.log('Telegram WebApp не инициализирован. Открыто не из Telegram?');
             }
         });
     </script>
