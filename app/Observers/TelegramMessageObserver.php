@@ -19,27 +19,33 @@ class TelegramMessageObserver
     {
         $botToken = env('TELEGRAM_BOT_TOKEN');
 
-        $users = User::whereNotNull('telegram_chat_id')->get();
+        if ($message->chat_id) {
+            $users = User::where('telegram_chat_id', $message->chat_id)->get();
+        } else {
+            $users = User::whereNotNull('telegram_chat_id')->get();
+        }
 
         foreach ($users as $user) {
-            if ($message->image) {
-                $imagePath = Storage::disk('public')->path($message->image);
+            if ($user->telegram_chat_id) {
+                if ($message->image) {
+                    $imagePath = Storage::disk('public')->path($message->image);
 
-                Http::attach(
-                    'photo',
-                    file_get_contents($imagePath),
-                    basename($imagePath)
-                )->post("https://api.telegram.org/bot{$botToken}/sendPhoto", [
-                    'chat_id' => $user->telegram_chat_id,
-                    'caption' => $message->message,
-                    'parse_mode' => 'HTML'
-                ]);
-            } else {
-                Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
-                    'chat_id' => $user->telegram_chat_id,
-                    'text' => $message->message,
-                    'parse_mode' => 'HTML'
-                ]);
+                    Http::attach(
+                        'photo',
+                        file_get_contents($imagePath),
+                        basename($imagePath)
+                    )->post("https://api.telegram.org/bot{$botToken}/sendPhoto", [
+                        'chat_id' => $user->telegram_chat_id,
+                        'caption' => $message->message,
+                        'parse_mode' => 'HTML'
+                    ]);
+                } else {
+                    Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
+                        'chat_id' => $user->telegram_chat_id,
+                        'text' => $message->message,
+                        'parse_mode' => 'HTML'
+                    ]);
+                }
             }
         }
     }
