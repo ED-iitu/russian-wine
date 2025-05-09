@@ -14,7 +14,7 @@ class TelegramController extends Controller
     {
         $data = $request->all();
 
-        //Log::info('Telegram Data: ' . json_encode($data));
+        Log::info('Telegram Data: ' . json_encode($data));
 
         // Обработка callback кнопок
         if (isset($data['callback_query'])) {
