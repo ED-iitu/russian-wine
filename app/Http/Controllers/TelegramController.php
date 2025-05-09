@@ -179,7 +179,9 @@ class TelegramController extends Controller
         ];
 
         $context = stream_context_create($options);
-        file_get_contents($url, false, $context);
+        $response = file_get_contents($url, false, $context);
+
+        Log::error('Telegram response: ' . $response);
     }
 
     private function editMessageReplyMarkup($chatId, $messageId)
