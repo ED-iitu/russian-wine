@@ -442,6 +442,7 @@ class IndexController extends Controller
         ]);
 
         $telegramId = session('telegram_chat_id');
+        Log::info('Order Request:', $request->all());
 
         Log::info('Chat ID: ' . $telegramId);
 
