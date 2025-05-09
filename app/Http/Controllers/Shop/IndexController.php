@@ -18,6 +18,7 @@ use App\Models\Sugar;
 use App\Filters\WineFilter;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\Mail\IndexController as SendMail;
@@ -495,6 +496,18 @@ class IndexController extends Controller
             ];
 
             SendMail::order($emailData);
+
+            // Отправка сообщения в Telegram, если chat_id получен
+            if ($request->filled('chat_id')) {
+                $botToken = env('TELEGRAM_BOT_TOKEN');
+                $message = "✅ Спасибо за заказ!\n📦 Мы скоро с вами свяжемся.";
+
+                Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
+                    'chat_id' => $request->chat_id,
+                    'text' => $message,
+                    'parse_mode' => 'HTML',
+                ]);
+            }
 
             session()->forget('cart');
 

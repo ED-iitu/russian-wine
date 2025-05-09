@@ -106,6 +106,29 @@
         </div>
     </div>
 
+    <!-- Подключаем Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tg = window.Telegram.WebApp;
+            tg.expand(); // раскрывает Web App на весь экран
+
+            const chatId = tg.initDataUnsafe?.user?.id;
+
+            // Вставляем chat_id в форму перед отправкой
+            const form = document.getElementById('order-form');
+            if (form && chatId) {
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'chat_id';
+                hiddenInput.value = chatId;
+                form.appendChild(hiddenInput);
+            }
+        });
+    </script>
+
+
     <script>
         function refreshCaptcha() {
             fetch('/refresh-captcha')
