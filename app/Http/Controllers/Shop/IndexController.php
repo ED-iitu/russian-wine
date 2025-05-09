@@ -10,6 +10,7 @@ use App\Models\Set;
 use App\Models\Wine;
 use App\Models\WineClass;
 use App\Models\Winery;
+use App\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -440,7 +441,9 @@ class IndexController extends Controller
             'captcha' => 'required|captcha'
         ]);
 
-        Log::info('Chat ID: ' . $request->chat_id);
+        $telegramId = session('telegram_chat_id');
+
+        Log::info('Chat ID: ' . $telegramId);
 
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
@@ -500,16 +503,19 @@ class IndexController extends Controller
 
             SendMail::order($emailData);
 
-            // Отправка сообщения в Telegram, если chat_id получен
-            if ($request->filled('chat_id')) {
-                $botToken = env('TELEGRAM_BOT_TOKEN');
-                $message = "✅ Спасибо за заказ!\n📦 Мы скоро с вами свяжемся.";
+            if ($telegramId) {
+                $user = User::where('telegram_id', $telegramId)->first();
 
-                Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
-                    'chat_id' => $request->chat_id,
-                    'text' => $message,
-                    'parse_mode' => 'HTML',
-                ]);
+                if ($user && $user->telegram_chat_id) {
+                    $botToken = env('TELEGRAM_BOT_TOKEN');
+                    $message = "Ваш заказ принят! Мы скоро с вами свяжемся 🍷";
+
+                    Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
+                        'chat_id' => $user->telegram_chat_id,
+                        'text' => $message,
+                        'parse_mode' => 'HTML'
+                    ]);
+                }
             }
 
             session()->forget('cart');

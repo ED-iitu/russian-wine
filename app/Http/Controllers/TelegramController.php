@@ -104,6 +104,8 @@ class TelegramController extends Controller
 
                 $email = "telegram_{$chatId}_$firstName@russianvine.ru";
 
+                session()->put('telegram_chat_id', $chatId); // сохраняем ID в сессию
+
                 User::firstOrCreate(
                     ['telegram_chat_id' => $chatId], // Уникальное поле для поиска
                     [
