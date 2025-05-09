@@ -16,6 +16,7 @@
                                                 <div class="col-sm-12">
                                                     <form method="post" id="order_checkout" action="{{$form_url}}">
                                                         @csrf
+                                                        <input type="hidden" name="telegram_chat_id" id="telegram_chat_id" value="">
                                                         <fieldset id="account">
                                                             <div class="form-group required">
                                                                 <label class="control-label"
@@ -108,23 +109,10 @@
 
     <!-- Подключаем Telegram Web App SDK -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
-                const chatId = Telegram.WebApp.initDataUnsafe.user.id;
-
-                console.log('Telegram chat_id:', chatId);
-
-                // Вставим в форму hidden input
-                const form = document.getElementById('order_checkout');
-                if (form) {
-                    const input = document.createElement('input');
-                    input.type = 'hidden';
-                    input.name = 'telegram_chat_id';
-                    input.value = chatId;
-                    form.appendChild(input);
-                }
+                document.getElementById('telegram_chat_id').value = Telegram.WebApp.initDataUnsafe.user.id;
             } else {
                 console.log('Telegram WebApp не инициализирован. Открыто не из Telegram?');
             }
