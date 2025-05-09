@@ -72,6 +72,8 @@ class TelegramController extends Controller
                     ]
                 ];
 
+                Log::info('Keyboard data: ' . json_encode($keyboard));
+
                 $this->sendMessageWithKeyboard($chatId, 'Контакты:', $keyboard);
             }
 
