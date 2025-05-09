@@ -172,18 +172,20 @@ class TelegramController extends Controller
             'reply_markup' => json_encode($keyboard),
         ];
 
-        $options = [
-            'http' => [
-                'method'  => 'POST',
-                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-                'content' => http_build_query($data),
-            ],
-        ];
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 
-        $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
+        $response = curl_exec($ch);
 
-        Log::error('Telegram response: ' . $response);
+        if (curl_errno($ch)) {
+            Log::error('cURL Error: ' . curl_error($ch));
+        } else {
+            Log::info('Telegram response: ' . $response);
+        }
+
+        curl_close($ch);
     }
 
     private function editMessageReplyMarkup($chatId, $messageId)
