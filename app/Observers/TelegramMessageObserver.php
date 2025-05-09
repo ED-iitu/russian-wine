@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\TelegramMessage;
+use App\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,26 +18,29 @@ class TelegramMessageObserver
     public function created(TelegramMessage $message)
     {
         $botToken = env('TELEGRAM_BOT_TOKEN');
-        $chatId   = 159875996;
 
-        if ($message->image) {
-            $imagePath = Storage::disk('public')->path($message->image);
+        $users = User::whereNotNull('telegram_chat_id')->get();
 
-            Http::attach(
-                'photo',
-                file_get_contents($imagePath),
-                basename($imagePath)
-            )->post("https://api.telegram.org/bot{$botToken}/sendPhoto", [
-                'chat_id' => $chatId,
-                'caption' => $message->message,
-                'parse_mode' => 'HTML'
-            ]);
-        } else {
-            Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
-                'chat_id' => $chatId,
-                'text' => $message->message,
-                'parse_mode' => 'HTML'
-            ]);
+        foreach ($users as $user) {
+            if ($message->image) {
+                $imagePath = Storage::disk('public')->path($message->image);
+
+                Http::attach(
+                    'photo',
+                    file_get_contents($imagePath),
+                    basename($imagePath)
+                )->post("https://api.telegram.org/bot{$botToken}/sendPhoto", [
+                    'chat_id' => $user->telegram_chat_id,
+                    'caption' => $message->message,
+                    'parse_mode' => 'HTML'
+                ]);
+            } else {
+                Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
+                    'chat_id' => $user->telegram_chat_id,
+                    'text' => $message->message,
+                    'parse_mode' => 'HTML'
+                ]);
+            }
         }
     }
 

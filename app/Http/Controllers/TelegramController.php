@@ -104,11 +104,11 @@ class TelegramController extends Controller
 
                 $email = "telegram_{$chatId}_$firstName@russianvine.ru";
 
-                // Ищем или создаем пользователя
                 User::firstOrCreate(
+                    ['telegram_chat_id' => $chatId], // Уникальное поле для поиска
                     [
-                        'name' => trim($firstName . ' ' . $lastName),
-                        'email' => $email,
+                        'name'     => trim($firstName . ' ' . $lastName),
+                        'email'    => $email,
                         'password' => Hash::make(Str::random(10)),
                     ]
                 );
