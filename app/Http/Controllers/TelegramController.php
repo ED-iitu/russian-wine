@@ -64,10 +64,11 @@ class TelegramController extends Controller
                             ['text' => 'Карты (Яндекс)', 'url' => 'https://yandex.kz/maps/ru/org/russkoye_vino/13229685349/?ll=37.482092%2C55.798356&z=16.15']
                         ],
                         [
+                            // Здесь меняем на callback_data
                             ['text' => 'Связаться с нами', 'callback_data' => 'contact_phone']
                         ],
                         [
-                            ['text' => 'info@russianvine.ru', 'url' => 'mailto:info@russianvine.ru']
+                            ['text' => 'Написать на почту', 'callback_data' => 'contact_email']
                         ],
                     ]
                 ];
@@ -78,6 +79,8 @@ class TelegramController extends Controller
             } elseif ($callbackData === 'contact_phone') {
                 $phoneNumberMessage = 'Позвоните нам: +7 (915) 457-60-81';
                 $this->sendMessage($chatId, $phoneNumberMessage);
+            } elseif ($callbackData === 'contact_email') {
+                $this->sendMessage($chatId, 'Напишите нам на почту: info@russianvine.ru');
             }
 
             return response('OK', 200);
