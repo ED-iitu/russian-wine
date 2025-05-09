@@ -49,7 +49,30 @@ class TelegramController extends Controller
             } elseif ($callbackData === 'help') {
                 $this->sendMessage($chatId, 'Помощь: Для дополнительных вопросов о заказах и винах напишите владельцу магазина @russianvine');
             } elseif ($callbackData === 'contacts') {
-                $this->sendMessage($chatId, 'Контакты: russianvine.ru/where-to-buy');
+                $keyboard = [
+                    'inline_keyboard' => [
+                        [
+                            ['text' => 'Ютуб', 'url' => 'https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg']
+                        ],
+                        [
+                            ['text' => 'Instagram', 'url' => 'https://www.instagram.com/russianvine.ru']
+                        ],
+                        [
+                            ['text' => 'Сайт (переход на сайт)', 'url' => 'https://russianvine.ru']
+                        ],
+                        [
+                            ['text' => 'Карты (Яндекс)', 'url' => 'https://yandex.kz/maps/ru/org/russkoye_vino/13229685349/?ll=37.482092%2C55.798356&z=16.15']
+                        ],
+                        [
+                            ['text' => 'Номер телефона', 'url' => 'tel:+7 (915) 457-60-81']
+                        ],
+                        [
+                            ['text' => 'info@russianvine.ru', 'url' => 'mailto:info@russianvine.ru']
+                        ],
+                    ]
+                ];
+
+                $this->sendMessageWithKeyboard($chatId, 'Контакты:', $keyboard);
             }
 
             return response('OK', 200);
