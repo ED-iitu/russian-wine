@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class TelegramController extends Controller
 {
@@ -96,6 +99,19 @@ class TelegramController extends Controller
             $text = $data['message']['text'];
 
             if ($text === '/start') {
+                $firstName = $data['message']['from']['first_name'] ?? '';
+                $lastName = $data['message']['from']['last_name'] ?? '';
+
+                $email = "telegram_{$chatId}_$firstName@russianvine.ru";
+
+                // Ищем или создаем пользователя
+                User::firstOrCreate(
+                    [
+                        'name' => trim($firstName . ' ' . $lastName),
+                        'email' => $email,
+                        'password' => Hash::make(Str::random(10)),
+                    ]
+                );
                 $keyboard = [
                     'inline_keyboard' => [
                         [
