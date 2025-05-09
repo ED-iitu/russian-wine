@@ -19,6 +19,7 @@ use App\Filters\WineFilter;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\Mail\IndexController as SendMail;
@@ -438,6 +439,8 @@ class IndexController extends Controller
         $request->validate([
             'captcha' => 'required|captcha'
         ]);
+
+        Log::info('Chat ID: ' . $request->chat_id);
 
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
