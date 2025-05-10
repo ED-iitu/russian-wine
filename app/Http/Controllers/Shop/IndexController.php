@@ -510,11 +510,13 @@ class IndexController extends Controller
                     $message = "Ваш заказ принят! Мы скоро с вами свяжемся 🍷\n\n";
                     $message .= $cart_info;
 
-                    Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
+                    $response = Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
                         'chat_id' => $user->telegram_chat_id,
                         'text' => $message,
                         'parse_mode' => 'HTML'
                     ]);
+
+                    Log::info($response);
                 }
             }
 
