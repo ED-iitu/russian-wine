@@ -441,8 +441,6 @@ class IndexController extends Controller
             'captcha' => 'required|captcha'
         ]);
 
-        Log::info('Chat ID received: ' . json_encode($request->all()));
-
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
             $cart_info = '';
@@ -502,7 +500,7 @@ class IndexController extends Controller
             SendMail::order($emailData);
 
             if ($request->telegram_chat_id) {
-                $user = User::where('telegram_id', $request->telegram_chat_id)->first();
+                $user = User::where('telegram_chat_id', $request->telegram_chat_id)->first();
 
                 if ($user && $user->telegram_chat_id) {
                     $botToken = env('TELEGRAM_BOT_TOKEN');

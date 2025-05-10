@@ -7,7 +7,6 @@
                 <div class="col-md-6 col-md-offset-3 full-height">
                     <div id="content-checkout">
                         <h1>Оформление заказа</h1>
-                        <p id="chat_id_debug" style="color:red;"></p>
                         <div class="-content ">
                             <div id="checkout_form_0">
                                 <div class="checkout">
