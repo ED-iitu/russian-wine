@@ -108,12 +108,10 @@
         </div>
     </div>
 
-    <!-- Подключаем Telegram Web App SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
-                const chatId = Telegram.WebApp.initDataUnsafe.user.id;
+            const chatId = sessionStorage.getItem('tg_user_id');
+            if (chatId) {
                 document.getElementById('telegram_chat_id').value = chatId;
                 document.getElementById('chat_id_debug').innerText = 'Chat ID: ' + chatId;
             } else {
@@ -128,6 +126,7 @@
             fetch('/refresh-captcha')
                 .then(response => response.json())
                 .then(data => {
+                    chat_id_debug
                     document.querySelector('img[alt=captcha]').src = data.captcha;
                 });
         }

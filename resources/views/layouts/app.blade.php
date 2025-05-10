@@ -81,7 +81,18 @@
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/cart.js') }}"></script>
 <script src="{{ asset('js/header_cart.js') }}"></script>
+<script src="https://telegram.org/js/telegram-web-app.js?57"></script>
 @stack('scripts')
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        if (Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            sessionStorage.setItem('tg_user_id', user.id);
+        } else {
+            console.log('Telegram WebApp не инициализировался.');
+        }
+    });
+</script>
 <script>
     @php
         $route = Request::route()->getName();
