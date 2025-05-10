@@ -108,7 +108,7 @@
     </div>
 
     <!-- Подключаем Telegram Web App SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
