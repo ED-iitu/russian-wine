@@ -441,6 +441,8 @@ class IndexController extends Controller
             'captcha' => 'required|captcha'
         ]);
 
+        Log::info(json_encode($request->all()));
+
         $cart_session = session()->get('cart');
         if ($cart_session != false) {
             $cart_info = '';
