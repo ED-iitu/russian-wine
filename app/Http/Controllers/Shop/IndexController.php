@@ -499,12 +499,14 @@ class IndexController extends Controller
 
             SendMail::order($emailData);
 
+            // Пример отправки сообщения в Telegram
             if ($request->telegram_chat_id) {
                 $user = User::where('telegram_chat_id', $request->telegram_chat_id)->first();
 
                 if ($user && $user->telegram_chat_id) {
                     $botToken = env('TELEGRAM_BOT_TOKEN');
-                    $message = "Ваш заказ принят! Мы скоро с вами свяжемся 🍷";
+                    $message = "Ваш заказ принят! Мы скоро с вами свяжемся 🍷\n\n";
+                    $message .= $cart_info;
 
                     Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
                         'chat_id' => $user->telegram_chat_id,
