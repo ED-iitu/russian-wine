@@ -7,6 +7,7 @@
                 <div class="col-md-6 col-md-offset-3 full-height">
                     <div id="content-checkout">
                         <h1>Оформление заказа</h1>
+                        <p id="chat_id_debug" style="color:red;"></p>
                         <div class="-content ">
                             <div id="checkout_form_0">
                                 <div class="checkout">
@@ -112,9 +113,11 @@
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe && Telegram.WebApp.initDataUnsafe.user) {
-                document.getElementById('telegram_chat_id').value = Telegram.WebApp.initDataUnsafe.user.id;
+                const chatId = Telegram.WebApp.initDataUnsafe.user.id;
+                document.getElementById('telegram_chat_id').value = chatId;
+                document.getElementById('chat_id_debug').innerText = 'Chat ID: ' + chatId;
             } else {
-                console.log('Telegram WebApp не инициализирован. Открыто не из Telegram?');
+                document.getElementById('chat_id_debug').innerText = 'Не удалось получить chat_id';
             }
         });
     </script>
