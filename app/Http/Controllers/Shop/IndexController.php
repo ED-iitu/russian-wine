@@ -510,7 +510,7 @@ class IndexController extends Controller
                     $message .= $cart_info;
 
                     // Заменяем <br> на переносы строк
-                    $message = str_replace('<br>', '\n', $message);
+                    $message = str_replace('<br>', '\n\n', $message);
 
                     $response = Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
                         'chat_id' => $user->telegram_chat_id,
