@@ -507,15 +507,19 @@ class IndexController extends Controller
 
                 if ($user && $user->telegram_chat_id) {
                     $botToken = env('TELEGRAM_BOT_TOKEN');
-                    $message = "Ваш заказ принят! Мы скоро с вами свяжемся 🍷\n\n";
+                    $message = "🎉 Ваш заказ принят! Мы скоро с вами свяжемся 🍷\n\n";
 
+                    // Пройдёмся по каждому товару
                     foreach ($orders as $order) {
-                        $message .= "Название: <b>{$order['title']}</b> Тип продуката: <b>{$order['type']}</b>. ";
-                        $message .= "Количество: <b>{$order['qty']} " . ($order['qty'] == 1 ? 'штука' : ($order['qty'] > 1 && $order['qty'] < 5 ? 'штуки' : 'штук')) . "</b>\n";
-                        $message .= "Цена: <b>{$order['price']} р.</b>\n\n";
+                        $message .= "🍇 <b>{$order['title']}</b>\n";
+                        $message .= "🔸 Тип: <b>{$order['type']}</b>\n";
+                        $message .= "🔢 Количество: <b>{$order['qty']} " . ($order['qty'] == 1 ? 'штука' : ($order['qty'] > 1 && $order['qty'] < 5 ? 'штуки' : 'штук')) . "</b>\n";
+                        $message .= "💰 Цена: <b>{$order['price']} р.</b>\n\n";
                     }
 
-                    $message .= "Общая сумма: <b>{$total_sum} р.</b>";
+                    // Итоговая сумма
+                    $message .= "🌟 <b>Итого: {$total_sum} р.</b>\n\n";
+                    $message .= "Спасибо за ваш заказ! Ожидайте подтверждения 📦";
 
                     // Отправка сообщения в Telegram
                     $response = Http::post("https://api.telegram.org/bot{$botToken}/sendMessage", [
