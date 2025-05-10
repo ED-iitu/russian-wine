@@ -161,10 +161,10 @@
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
                         <h2 class="text-center">Остались вопросы?</h2>
-                        <p class="text-center">Свяжитесь с нами по указанным данным или отправьте сообщение
+                        <p class="text-center">Свяжитесь с нами по указанным данным или отправьте сообщение</p>
                     </div>
                     <div class="col-md-12 col-md-offset-1">
-                        <div class="col-md-5 question_block">
+                        <div class="col-xs-12 col-sm-12 col-md-5 question_block">
                             <form class="question_form" method="post" action="{{route('tasting_contact')}}">
                                 @csrf
                                 <div class="form-group">
