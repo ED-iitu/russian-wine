@@ -2957,7 +2957,7 @@ header #form-language .language-select {
         font-size: 1.2vw;
         position: relative;
         display: inline-block;
-        top: 0.4vw;
+        top: 1vw;
         padding-left: 0;
         line-height: 1;
     }
@@ -2973,7 +2973,7 @@ header #form-language .language-select {
     #product-product.product-temp1 .amount .iblock span {
         font-size: 1.8vw;
         font-weight: 900;
-        text-transform: capitalize;
+        text-transform: lowercase;
         line-height: 1.2;
     }
 

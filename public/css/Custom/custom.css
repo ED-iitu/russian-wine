@@ -1239,7 +1239,7 @@ span.currency {
 #product-product.product-temp1 .aging .iblock, #product-product .aging .iblock {
     border-bottom: 1px solid #E1E1E1;
     width: 100%;
-    padding-left: 4.5vw;
+    padding-left: 5vw;
 }
 
 #product-product.product-temp1 .alcohol, #product-product .alcohol {
@@ -2605,6 +2605,7 @@ span.currency {
         font-size: 10px;
         float: right;
         margin-bottom: 5vw;
+        padding-left: 7vw;
     }
 
     #product-product.product-temp1 .aging .iblock, #product-product .aging .iblock {
@@ -2639,7 +2640,7 @@ span.currency {
         height: unset;
         margin-top: 0;
         line-height: 6em;
-        padding-left: 14vw;
+        padding-left: 11vw;
         margin-left: auto;
         text-align: left;
         width: 100%;
