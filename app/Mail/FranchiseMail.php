@@ -31,6 +31,6 @@ class FranchiseMail extends Mailable
     {
         return $this->from(env('MAIL_FROM_ADDRESS'))
             ->subject('Заказ на Франшизу')
-            ->view('mails.tour');
+            ->view('mails.franchise');
     }
 }
