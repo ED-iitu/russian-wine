@@ -128,7 +128,7 @@
                     if (wines.length > 0) {
                         for (var i = 0; i < 3; i++) {
                             var wine_desc = ((wines[i].production_feature.substring(1, 40)).replace('p>', '')).replace('</p>', '')
-                            res[i] = "<ul><li><a class='text-danger' href='/wine/" + wines[i].slug + "'><img id='search' src='/storage/" + wines[i].image + "' class='xs-thumb'>" + wines[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
+                            res[i] = "<ul><li><a class='text-danger' href='" + wines[i].slug + "'><img id='search' src='/storage/" + wines[i].image + "' class='xs-thumb'>" + wines[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
                         }
                         $("#searchResult").html(res)
                         $(".allResults").attr("href", "{{route('wine_shop')}}?" + data.link)
