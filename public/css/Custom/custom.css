@@ -2585,6 +2585,7 @@ span.currency {
         float: left;
     }
     #product-product.product-temp1 .species .iblock, #product-product .species .iblock {
+        text-align: right;
         padding: 0;
     }
     #product-product.product-temp1 .col-xs-offset-6 {
@@ -2630,6 +2631,7 @@ span.currency {
         text-align: right;
         white-space: nowrap;
         padding-left: 0.5em;
+        margin-top: -1px;
     }
 
     #product-product.product-temp1 .amount {
@@ -2656,8 +2658,9 @@ span.currency {
         height: unset;
         line-height: 2em;
         position: relative;
-        margin-left: -6vw;
+        margin-left: -4vw;
         float: left;
+        margin-top: -32px;
     }
 
     #product-product.product-temp1 .species .iblock span {
