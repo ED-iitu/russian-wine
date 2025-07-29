@@ -7078,7 +7078,7 @@ h2.price {
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
-        height: 45px !important;
+        height: 35px !important;
         left: -43px !important;
         top: -12px !important;
         margin: 0 !important
@@ -7175,7 +7175,7 @@ h2.price {
 
     #product-product.product-temp1 .type img,
     #product-product.product-temp1 .species img {
-        width: 60px
+        width: 45px
     }
 
     #product-product.product-temp1 .type,

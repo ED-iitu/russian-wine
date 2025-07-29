@@ -1562,7 +1562,7 @@ span.currency {
     }
 
     #product-product.product-temp1 .iblock, #product-product.product-temp1 .iblock span, #product-product.product-temp1 .type {
-        font-size: 16px !important;
+        font-size: 12px !important;
     }
 
     #product-product.product-temp1 .type, #product-product .type {
@@ -1632,7 +1632,7 @@ span.currency {
         display: inline-block;
         line-height: 2em;
         text-transform: capitalize;
-        font-size: 16px !important;
+        font-size: 12px !important;
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
@@ -2553,7 +2553,7 @@ span.currency {
     #product-product.product-temp1 .image img {
         width: auto;
         margin-top: 0;
-        max-height: 130vw;
+        max-height: 100vw;
         min-height: unset;
     }
     #winetours .btn-danger {
@@ -2625,7 +2625,7 @@ span.currency {
     #product-product.product-temp1 .alcohol, #product-product .alcohol {
         margin-top: 10vw;
         color: #DEDDDF;
-        font-size: 7.1vw;
+        font-size: 5vw;
         font-weight: 900;
         text-align: right;
         white-space: nowrap;
@@ -2674,12 +2674,12 @@ span.currency {
 
     #product-product.product-temp1 .volume {
         margin-top: 120px;
-        font-size: 9vw;
+        font-size: 7vw;
         font-weight: 900;
         text-align: left;
         padding-left: 19vw;
         color: #DEDDDF;
-        margin-top: 7vw !important;
+        margin-top: 1vw !important;
     }
 
     .btn-danger {
