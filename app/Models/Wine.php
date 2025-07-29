@@ -61,6 +61,11 @@ class Wine extends Model
         return $this->belongsTo('App\Models\Manufacturer', 'manufacturer_id', 'id');
     }
 
+    public function grapeSorts()
+    {
+        return $this->belongsToMany(GrapeSort::class);
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
