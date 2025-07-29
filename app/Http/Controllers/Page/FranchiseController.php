@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Mail\IndexController as SendMail;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Models\Order;
@@ -34,6 +35,7 @@ class FranchiseController extends Controller
 
         $message = 'Заявка на получение Франшизы успешно создана! Мы с вами свяжемся в ближайшее время!';
 
+        SendMail::franchise($request);
         return view('shop.checkout.success', [
             'message' => $message
         ]);

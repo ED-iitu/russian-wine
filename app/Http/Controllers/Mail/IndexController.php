@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mail;
 
 use App\Http\Controllers\Controller;
+use App\Mail\FranchiseMail;
 use App\Mail\OrderMail;
 use App\Mail\PersonalWineMail;
 use App\Mail\TourMail;
@@ -40,6 +41,16 @@ class IndexController extends Controller
         $order->phone = $request['phone'];
         $order->sender = env('MAIL_USERNAME');
         Mail::to(env('MAIL_USERNAME'))->send(new  TourMail($order));
+        return true;
+    }
+
+    public static function franchise($request)
+    {
+        $order = new \stdClass();
+        $order->name = $request['name'];
+        $order->phone = $request['phone'];
+        $order->sender = env('MAIL_USERNAME');
+        Mail::to(env('MAIL_USERNAME'))->send(new  FranchiseMail($order));
         return true;
     }
 
