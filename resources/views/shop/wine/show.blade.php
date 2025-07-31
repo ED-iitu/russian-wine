@@ -114,7 +114,7 @@
                                     </div>
 
                                 </div>
-                                <div class="additional-info" style="margin-top: 30px">
+                                <div class="additional-info desktopHidden" style="margin-top: 30px">
                                     <div class="price-vinoteka col-md-12">
                                         <a href="#" class="preview wine_show_price">
                                             @if($wine->price > 0)
