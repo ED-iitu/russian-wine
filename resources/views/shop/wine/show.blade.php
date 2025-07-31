@@ -114,14 +114,14 @@
                                     </div>
 
                                 </div>
-                                <div class="additional-info">
+                                <div class="additional-info" style="margin-top: 30px">
                                     <div class="price">
-                                        Цена: {{$wine->price}}
+                                        Цена: {{$wine->price}} ₽
                                     </div>
                                     <div class="similar-wines">
                                         <a href="https://russianvine.ru/wineshop?winery[]=76">
-                                            <h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">
-                                                Другие вина винодельни
+                                            <h3 class="hover_red" style="text-transform: uppercase; font-size: 4vw;">
+                                                Другие вина винодельни ->
                                             </h3>
                                         </a>
                                     </div>
