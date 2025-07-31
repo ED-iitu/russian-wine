@@ -131,7 +131,7 @@
 
 
                                     <div class="similar-wines">
-                                        <a href="https://russianvine.ru/wineshop?winery[]={{$wine->winery->id}}">
+                                        <a href="https://russianvine.ru/wineshop?winery[]={{$wine->winery->id ?? 76}}">
                                             <h3 class="hover_red" style="text-transform: uppercase; font-size: 4vw;">
                                                 Другие вина винодельни ➔
                                             </h3>
