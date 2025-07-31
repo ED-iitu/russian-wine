@@ -121,7 +121,7 @@
                                     <div class="similar-wines">
                                         <a href="https://russianvine.ru/wineshop?winery[]=76">
                                             <h3 class="hover_red" style="text-transform: uppercase; font-size: 4vw;">
-                                                Другие вина винодельни ->
+                                                Другие вина винодельни ➔
                                             </h3>
                                         </a>
                                     </div>
