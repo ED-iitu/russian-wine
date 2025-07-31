@@ -115,9 +115,21 @@
 
                                 </div>
                                 <div class="additional-info" style="margin-top: 30px">
-                                    <div class="preview wine_show_price">
-                                        {{$wine->price}} ₽
+                                    <div class="price-vinoteka col-md-12">
+                                        <a href="#" class="preview wine_show_price">
+                                            @if($wine->price > 0)
+                                                {{$wine->price}}
+                                                <span style="background: none;">п</span>
+                                            @else
+                                                Коллекция
+                                            @endif
+
+                                        </a>
+                                        <input type="hidden" value="{{$wine->price}}" class="wine_price">
+
                                     </div>
+
+
                                     <div class="similar-wines">
                                         <a href="https://russianvine.ru/wineshop?winery[]={{$wine->winery->id}}">
                                             <h3 class="hover_red" style="text-transform: uppercase; font-size: 4vw;">
