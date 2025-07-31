@@ -1632,7 +1632,7 @@ span.currency {
         display: inline-block;
         line-height: 2em;
         text-transform: capitalize;
-        font-size: 12px !important;
+        font-size: 10px !important;
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
@@ -1692,13 +1692,13 @@ span.currency {
     }
 
     #product-product .button_cont .prod_quantity input {
-        margin-top: -5px;
+        margin-top: 5px;
         width: 70px;
         background: transparent;
         background-size: auto;
         border: none;
         text-align: center;
-        font-size: 40px;
+        font-size: 30px;
         font-family: 'ProximaNova-Reg', sans-serif;
     }
 
