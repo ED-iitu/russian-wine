@@ -100,7 +100,7 @@
                                         <div class="col-xs-6">
                                             <div class="species">
                                                           <span class="iblock"><span
-                                                                  class="light_font">Сорт винограда</span><br>
+                                                                  class="light_font">Виноград</span><br>
                                                                 <span class="bold_font">{{$wine->sort->title}}</span>
                                                           </span>
                                                 <img src="{{asset('image/vinograd.png')}}" alt="">
