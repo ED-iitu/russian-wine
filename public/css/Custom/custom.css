@@ -2594,8 +2594,9 @@ span.currency {
         float: left;
     }
     #product-product.product-temp1 .species .iblock, #product-product .species .iblock {
-        text-align: right;
+        text-align: left;
         padding: 0;
+        width: 90%;
     }
     #product-product.product-temp1 .col-xs-offset-6 {
         padding-left: 1vw;
