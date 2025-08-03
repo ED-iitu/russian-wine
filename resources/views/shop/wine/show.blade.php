@@ -38,7 +38,7 @@
                                             <div class="manufacturer">
                                                 @if(isset($wine->winery))
                                                     <a href="{{route('wine_or_winery', $wine->winery->slug )}}">
-                                                      <span class="iblock" style="text-align: left;">
+                                                      <span class="iblock">
                                                           <span class="light_font">Производитель</span>
                                                           <br>
                                                           <span class="bold_font">{{$wine->manufacture->title}}</span>

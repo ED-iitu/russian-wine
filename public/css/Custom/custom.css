@@ -1272,7 +1272,7 @@ span.currency {
 }
 
 #product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
-    text-align: right;
+    text-align: left;
     width: 100%;
     border-bottom: 1px solid #E1E1E1;
 }
@@ -1518,7 +1518,7 @@ span.currency {
     }
 
     #product-product.product-temp1 h2, #product-product h2 {
-        font-size: 20px;
+        font-size: 15px;
     }
 
 
