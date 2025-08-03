@@ -1272,8 +1272,8 @@ span.currency {
 }
 
 #product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
-    text-align: left;
-    width: 100%;
+    text-align: right;
+    width: 80%;
     border-bottom: 1px solid #E1E1E1;
 }
 
