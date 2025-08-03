@@ -2656,7 +2656,7 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .image img, #product-product .image img {
-    height: 45vw;
+    height: 40vw;
     width: auto;
     -moz-transition: .5s all linear;
     -webkit-transition: .5s all linear;
