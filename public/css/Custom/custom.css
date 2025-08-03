@@ -1277,6 +1277,15 @@ span.currency {
     border-bottom: 1px solid #E1E1E1;
 }
 
+@media screen and (max-width: 576px) {
+    #product-product.product-temp1 .manufacturer .iblock,
+    #product-product .manufacturer .iblock {
+        text-align: left; /* или center, если так лучше смотрится */
+        width: 100%;
+        border-bottom: 1px solid #E1E1E1;
+    }
+}
+
 #product-product.product-temp1 .species, #product-product .species {
     margin-top: 3.388vw;
     text-align: right;
