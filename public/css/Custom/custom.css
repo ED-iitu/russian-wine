@@ -1272,9 +1272,10 @@ span.currency {
 }
 
 #product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
-    text-align: right;
-    width: 90%;
+    text-align: left;
+    width: 100%;
     border-bottom: 1px solid #E1E1E1;
+    margin-left: 140px;
 }
 
 @media screen and (max-width: 576px) {
@@ -1283,6 +1284,7 @@ span.currency {
         text-align: left; /* или center, если так лучше смотрится */
         width: 100%;
         border-bottom: 1px solid #E1E1E1;
+        margin-left: 0;
     }
 }
 
