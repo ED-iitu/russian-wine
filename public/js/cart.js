@@ -1,25 +1,58 @@
-function update_count(wine_id, currency_type, page = null, css_class = null) {
-    var wine_cart_btn = $('.cart-btn-' + wine_id),
+// function update_count(wine_id, currency_type, page = null, css_class = null) {
+//     var wine_cart_btn = $('.cart-btn-' + wine_id),
+//
+//         wine_count = $('#wine-' + wine_id),
+//         currency_symbol = (currency_type == 'minus') ? -1 : 1,
+//         qua = parseInt(wine_count.val()) + currency_symbol,
+//         price = $('.wine_price').val(),
+//         wine_cart_text = 'В корзину';
+//     if (css_class) {
+//         wine_count = $('.' + css_class + '-' + wine_id);
+//     }
+//     if (qua > 0) {
+//         $('.wine_show_price').html(price * qua + ' <span class="currency">п</span>')
+//         wine_count.val(qua)
+//         wine_cart_btn.attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
+//         if (page == 'wine-show') {
+//             wine_cart_text = '<span>Добавить в корзину</span>'
+//         }
+//         wine_cart_btn.removeClass('active');
+//         wine_cart_btn.html(wine_cart_text);
+//     }
+// }
 
-        wine_count = $('#wine-' + wine_id),
-        currency_symbol = (currency_type == 'minus') ? -1 : 1,
-        qua = parseInt(wine_count.val()) + currency_symbol,
-        price = $('.wine_price').val(),
-        wine_cart_text = 'В корзину';
+
+function update_count(wine_id, currency_type, page = null, css_class = null) {
+    let wine_cart_btn = $('.cart-btn-' + wine_id);
+    let wine_count;
+
     if (css_class) {
         wine_count = $('.' + css_class + '-' + wine_id);
+    } else {
+        wine_count = $('#wine-' + wine_id);
     }
-    if (qua > 0) {
-        $('.wine_show_price').html(price * qua + ' <span class="currency">п</span>')
-        wine_count.val(qua)
-        wine_cart_btn.attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
-        if (page == 'wine-show') {
-            wine_cart_text = '<span>Добавить в корзину</span>'
-        }
-        wine_cart_btn.removeClass('active');
-        wine_cart_btn.html(wine_cart_text);
-    }
+
+    if (!wine_count.length) return; // input не найден
+
+    let currentValue = parseInt(wine_count.val());
+    if (isNaN(currentValue)) currentValue = 1;
+
+    let qua = (currency_type === 'minus') ? currentValue - 1 : currentValue + 1;
+    if (qua < 1) qua = 1;
+
+    let price = parseFloat($('.wine_price').val()) || 0;
+    let total_price = price * qua;
+
+    $('.wine_show_price').html(total_price + ' <span class="currency">п</span>');
+    wine_count.val(qua);
+
+    let wine_cart_text = (page === 'wine-show') ? '<span>Добавить в корзину</span>' : 'В корзину';
+    wine_cart_btn
+        .removeClass('active')
+        .html(wine_cart_text)
+        .attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
 }
+
 
 function cart_add(wine_id, qtn, type) {
     var wine_btn = $('.cart-btn-' + wine_id)
