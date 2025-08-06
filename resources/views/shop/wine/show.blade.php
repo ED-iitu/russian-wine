@@ -99,11 +99,21 @@
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <div class="species">
-                                                          <span class="iblock"><span
-                                                                  class="light_font">Виноград</span><br>
-                                                                <span class="bold_font">{{$wine->sort->title}}</span>
-                                                          </span>
-                                                <img src="{{asset('image/vinograd.png')}}" alt="">
+                                            <span class="iblock">
+                                                <span class="light_font">Виноград</span><br>
+
+                                                @if($wine->grapeSorts->isNotEmpty())
+                                                    <span class="bold_font">
+                                                        {{ $wine->grapeSorts->pluck('name')->join(', ') }}
+                                                    </span>
+                                                @else
+                                                    <span class="bold_font">
+                                                        {{ $wine->sort->title }}
+                                                    </span>
+                                                @endif
+                                            </span>
+
+                                                <img src="{{ asset('image/vinograd.png') }}" alt="">
                                             </div>
                                         </div>
                                     </div>

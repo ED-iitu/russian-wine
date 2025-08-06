@@ -148,7 +148,7 @@ class IndexController extends Controller
     public function wine_info($slug)
     {
         $wine = Wine::where('slug', '=', $slug)
-            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region', 'grapeSorts')
             ->where('status', '=', 'ACTIVE')
             ->firstOrFail();
         if (isset($wine->winery)) {
