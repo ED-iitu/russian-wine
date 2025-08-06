@@ -104,7 +104,7 @@
 
                                                 @if($wine->grapeSorts->isNotEmpty())
                                                     <span class="bold_font">
-                                                        {{ $wine->grapeSorts->pluck('name')->join(', ') }}
+                                                        {{ $wine->grapeSorts->pluck('title')->join(', ') }}
                                                     </span>
                                                 @else
                                                     <span class="bold_font">
