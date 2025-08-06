@@ -20,42 +20,34 @@
 //         wine_cart_btn.html(wine_cart_text);
 //     }
 // }
-
-
 function update_count(wine_id, currency_type, page = null, css_class = null) {
-    let wine_cart_btn = $('.cart-btn-' + wine_id);
-    let wine_count;
+    const wine_count = document.getElementById(`wine-${wine_id}`);
+    if (!wine_count) return;
 
-    if (css_class) {
-        wine_count = $('.' + css_class + '-' + wine_id);
-    } else {
-        wine_count = $('#wine-' + wine_id);
+    let current = parseInt(wine_count.value);
+    if (isNaN(current) || current < 1) current = 1;
+
+    let newCount = currency_type === 'plus' ? current + 1 : current - 1;
+    if (newCount < 1) newCount = 1;
+
+    wine_count.value = newCount;
+
+    const priceInput = document.querySelector(`.wine_price-${wine_id}`);
+    const price = parseFloat(priceInput?.value || 0);
+
+    const total = price * newCount;
+
+    const priceContainer = document.querySelector(`.wine_show_price-${wine_id}`);
+    if (priceContainer) {
+        priceContainer.innerHTML = `${total} <span class="currency">п</span>`;
     }
 
-    if (!wine_count.length) return;
-
-    let currentValue = parseInt(wine_count.val());
-    if (isNaN(currentValue) || currentValue < 1) currentValue = 1;
-
-    let qua = currentValue;
-    if (currency_type === 'plus') {
-        qua += 1;
-    } else if (currency_type === 'minus' && currentValue > 1) {
-        qua -= 1;
+    const btn = document.querySelector(`.cart-btn-${wine_id}`);
+    if (btn) {
+        btn.classList.remove('active');
+        btn.innerHTML = page === 'wine-show' ? '<span>Добавить в корзину</span>' : 'В корзину';
+        btn.setAttribute('onclick', `cart_add('${wine_id}', '${newCount}', 'wine'); $(this).addClass('active')`);
     }
-
-    wine_count.val(qua);
-
-    let price = parseFloat($('.wine_price').val()) || 0;
-    let total_price = price * qua;
-
-    $('.wine_show_price').html(total_price + ' <span class="currency">п</span>');
-
-    let wine_cart_text = (page === 'wine-show') ? '<span>Добавить в корзину</span>' : 'В корзину';
-    wine_cart_btn
-        .removeClass('active')
-        .html(wine_cart_text)
-        .attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
 }
 
 function cart_add(wine_id, qtn, type) {
