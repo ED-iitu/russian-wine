@@ -193,7 +193,11 @@
                             </div>
                             <div class="attributes sort-vinogradawc">
                                 <span>Сорт винограда</span>
-                                {{$wine->sort->title}}
+                                @if(!empty($wine->sort))
+                                    {{ $wine->sort->title }}
+                                @else
+                                    Без сорта
+                                @endif
                             </div>
                             <div class="attributes tirajwc">
                                 <span>Тираж</span>
