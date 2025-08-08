@@ -323,22 +323,18 @@
                                             @if($winemaker->region)
                                                 <p><a class="text-black" href="{{route('region', $winemaker->region->slug)}}">{{$winemaker->region->title}}</a> </p>
                                             @endif
-                                        <li><p>Вина:
+                                        <li>
+                                            <p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    @php
-                                                        $sortId = $wine->sort->id ?? null;
-                                                        $sortText = $wine->sort->name ?? 'Без сорта'; // или другое название по умолчанию
-                                                        $wineryId = $winemaker->winery->id ?? '';
-                                                    @endphp
-
-                                                    @if($sortId)
-                                                        <a href="{{ route('wine_shop') }}?sort[]={{ $sortId }}&winery[]={{ $wineryId }}" class="text-black">
+                                                    @if(!empty($wine->sort))
+                                                        <a href="{{ route('wine_shop') }}?sort[]={{ $wine->sort->id }}&winery[]={{ $winemaker->winery->id ?? '' }}"
+                                                           class="text-black">
                                                             {{ $wine->title }}@if(!$loop->last),@endif
                                                         </a>
                                                     @else
                                                         <span class="text-black">
-            {{ $wine->title }} ({{ $sortText }})@if(!$loop->last),@endif
-        </span>
+                    {{ $wine->title }}@if(!$loop->last),@endif
+                </span>
                                                     @endif
                                                 @endforeach
                                             </p>
