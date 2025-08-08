@@ -325,10 +325,21 @@
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    <a href="{{route('wine_shop')}}?sort[]={{$wine->sort->id}}&winery[]={{($winemaker->winery) ? $winemaker->winery->id : ''}}"
-                                                       class="text-black">
-                                                        {{$wine->title}}@if(!$loop->last),@endif
-                                                    </a>
+                                                    @php
+                                                        $sortId = $wine->sort->id ?? null;
+                                                        $sortText = $wine->sort->name ?? 'Без сорта'; // или другое название по умолчанию
+                                                        $wineryId = $winemaker->winery->id ?? '';
+                                                    @endphp
+
+                                                    @if($sortId)
+                                                        <a href="{{ route('wine_shop') }}?sort[]={{ $sortId }}&winery[]={{ $wineryId }}" class="text-black">
+                                                            {{ $wine->title }}@if(!$loop->last),@endif
+                                                        </a>
+                                                    @else
+                                                        <span class="text-black">
+            {{ $wine->title }} ({{ $sortText }})@if(!$loop->last),@endif
+        </span>
+                                                    @endif
                                                 @endforeach
                                             </p>
                                         </li>
