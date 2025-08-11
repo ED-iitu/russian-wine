@@ -100,7 +100,7 @@
                                         <div class="col-xs-6">
                                             <div class="species">
                                             <span class="iblock">
-                                                <span class="bold_font">Виноград</span><br>
+                                                <span class="light_font">Виноград</span><br>
 
                                                 @if($wine->grapeSorts->isNotEmpty())
                                                     <ul class="bold_font">
