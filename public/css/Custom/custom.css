@@ -1583,7 +1583,7 @@ span.currency {
         text-align: left;
         border-bottom: none;
         padding-right: 0;
-        margin-left: auto;
+        margin-left: -5vw;
         font-size: 10px;
         padding-left: 0;
         border-bottom: 1px solid #E1E1E1;
@@ -1643,7 +1643,7 @@ span.currency {
         display: inline-block;
         line-height: 2em;
         text-transform: capitalize;
-        font-size: 10px !important;
+        font-size: 9px !important;
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
@@ -2671,7 +2671,7 @@ span.currency {
         height: unset;
         line-height: 2em;
         position: relative;
-        margin-left: -4vw;
+        margin-left: -10vw;
         float: left;
         margin-top: -32px;
     }
@@ -2684,7 +2684,7 @@ span.currency {
 
     #product-product.product-temp1 .row .col-xs-6 .species img {
         position: absolute;
-        top: 10.5vw;
+        top: 17.5vw;
         left: 12vw;
     }
 
