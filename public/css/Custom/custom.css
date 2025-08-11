@@ -2677,9 +2677,14 @@ span.currency {
         height: unset;
         line-height: 2em;
         position: relative;
-        margin-left: -10vw;
+        margin-left: -7vw;
         float: left;
         margin-top: -32px;
+    }
+
+    #product-product.product-temp1 .species, #product-product .species .bold_font {
+        font-size: 7px;
+        list-style-type: none;
     }
 
     #product-product.product-temp1 .species .iblock span {
