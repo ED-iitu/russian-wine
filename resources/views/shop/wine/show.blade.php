@@ -103,9 +103,11 @@
                                                 <span class="light_font">Виноград</span><br>
 
                                                 @if($wine->grapeSorts->isNotEmpty())
-                                                    <span class="bold_font">
-                                                        {{ $wine->grapeSorts->pluck('title')->join(', ') }}
-                                                    </span>
+                                                    <ul class="bold_font">
+                                                        @foreach($wine->grapeSorts as $sort)
+                                                            <li>{{ $sort->title }}</li>
+                                                        @endforeach
+                                                    </ul>
                                                 @else
                                                     <span class="bold_font">
                                                         {{ $wine->sort->title }}
