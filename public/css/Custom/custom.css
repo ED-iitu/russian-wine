@@ -1288,24 +1288,6 @@ span.currency {
     }
 }
 
-@media screen and (max-width: 1800px) {
-    #product-product.product-temp1 .manufacturer .iblock,
-    #product-product .manufacturer .iblock {
-        text-align: left;
-        width: 100%;
-        border-bottom: 1px solid #E1E1E1;
-        margin-left: 70px;
-    }
-
-    #product-product.product-temp1 .amount .iblock {
-        padding-left: 7vw;
-    }
-
-    .priceContainer .button_cont button#button-carts {
-        left: 2.4vw;
-    }
-}
-
 #product-product.product-temp1 .species, #product-product .species {
     margin-top: 3.388vw;
     text-align: right;
@@ -1601,13 +1583,13 @@ span.currency {
         text-align: left;
         border-bottom: none;
         padding-right: 0;
+        margin-left: auto;
         font-size: 10px;
         padding-left: 0;
         border-bottom: 1px solid #E1E1E1;
         font-weight: 900;
         /*text-transform: uppercase;*/
         float: left;
-        margin-left: -12px;
     }
 
     #product-product.product-temp1 .row .col-xs-6 img {
@@ -1661,7 +1643,7 @@ span.currency {
         display: inline-block;
         line-height: 2em;
         text-transform: capitalize;
-        font-size: 9px !important;
+        font-size: 10px !important;
     }
 
     #product-product.product-temp1 .row .col-xs-6 .alcohol img {
@@ -2689,7 +2671,7 @@ span.currency {
         height: unset;
         line-height: 2em;
         position: relative;
-        margin-left: -9vw;
+        margin-left: -4vw;
         float: left;
         margin-top: -32px;
     }
@@ -2702,7 +2684,7 @@ span.currency {
 
     #product-product.product-temp1 .row .col-xs-6 .species img {
         position: absolute;
-        top: 17.5vw;
+        top: 10.5vw;
         left: 12vw;
     }
 
