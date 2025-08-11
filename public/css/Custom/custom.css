@@ -93,6 +93,11 @@ html {
         left: 1.4vw !important;
     }
 }
+@media (max-width: 1500px) {
+    .priceContainer .button_cont button#button-carts {
+        left: 2.4vw !important;
+    }
+}
 
 .breadcrumb {
     background-color: #fff !important;
