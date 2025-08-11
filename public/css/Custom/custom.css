@@ -1193,7 +1193,7 @@ span.currency {
 }
 
 .prod_quantity.col-md-cstm span {
-    transform: scale(0.56);
+    transform: scale(0.90);
     cursor: pointer;
 }
 
