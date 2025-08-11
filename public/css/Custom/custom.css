@@ -88,6 +88,12 @@ html {
     padding: .8rem 0;
 }
 
+@media (max-width: 1400px) {
+    .priceContainer .button_cont button#button-carts {
+        left: 1.4vw;
+    }
+}
+
 .breadcrumb {
     background-color: #fff !important;
 }
