@@ -78,6 +78,26 @@ html {
     transition: all .3s ease;
 }
 
+
+.priceContainer .button_cont {
+    display: flex;
+    flex-wrap: wrap; /* чтобы на узких экранах переносилось */
+    align-items: center; /* выравнивание по вертикали */
+    justify-content: flex-start;
+    gap: 1rem; /* расстояние между элементами */
+}
+
+#button-carts {
+    min-width: 180px;
+    padding: 1rem 2rem;
+}
+
+@media (min-width: 992px) {
+    .priceContainer .button_cont {
+        flex-wrap: nowrap;
+    }
+}
+
 .subHeader {
     text-align: center;
     border-bottom: 2px solid black;
