@@ -10,7 +10,7 @@ class GiftCardController extends Controller
     public function index()
     {
         $amounts = [5000, 10000, 15000, 20000];
-        return view('giftcards.index', compact('amounts'));
+        return view('page.giftcards.index', compact('amounts'));
     }
 
     public function buy(Request $request)
@@ -32,11 +32,11 @@ class GiftCardController extends Controller
 
         // TODO: интеграция с платёжкой
         // redirect на страницу оплаты
-        return redirect()->route('giftcards.success')->with('success', 'Заказ создан! (MVP)');
+        return redirect()->route('page.giftcards.success')->with('success', 'Заказ создан! (MVP)');
     }
 
     public function success()
     {
-        return view('giftcards.success');
+        return view('page.giftcards.success');
     }
 }
