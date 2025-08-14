@@ -100,7 +100,6 @@
             }
             .wine-layout {
                 gap: 20px;
-                flex-direction: column;
                 align-items: center;
             }
             .wine-col {
