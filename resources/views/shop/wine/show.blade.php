@@ -8,12 +8,12 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 20px;
+            gap: 25px;
         }
         .wine-col {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 145px;
             flex: 1;
             min-width: 120px;
         }
