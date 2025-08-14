@@ -17,19 +17,19 @@
             flex: 1;
             min-width: 120px;
         }
-        .wine-col .col-right .label {
+        .wine-col .col-right .wine-block .label {
             text-align: left;
         }
 
-        .wine-col .col-right .value {
+        .wine-col .col-right .wine-block .value {
             text-align: left;
         }
 
-        .wine-col .col-left .label {
+        .wine-col .col-left .wine-block .label {
             text-align: right;
         }
 
-        .wine-col .col-left .value {
+        .wine-col .col-left .wine-block .value {
             text-align: right;
         }
 
