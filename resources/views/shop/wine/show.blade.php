@@ -65,12 +65,12 @@
 
         .alcohol-new {
             color: #DEDDDF;
-            font-size: 18px;
+            font-size: 25px;
         }
 
         .volume-new {
             color: #DEDDDF;
-            font-size: 18px;
+            font-size: 25px;
         }
 
         .alcohol-new img {
@@ -183,10 +183,10 @@
                                             <span class="value">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
                                     </div>
-                                    <div class="wine-block left">
-                                        <span class="label"></span>
-                                        <span class="value volume-new">{{ $wine->volume }}</span>
-                                    </div>
+{{--                                    <div class="wine-block left">--}}
+{{--                                        <span class="label"></span>--}}
+{{--                                        <span class="value volume-new">{{ $wine->volume }}</span>--}}
+{{--                                    </div>--}}
                                 </div>
 
                                 <!-- Центр с бутылкой -->
