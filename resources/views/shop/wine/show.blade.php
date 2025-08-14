@@ -65,7 +65,7 @@
 
         .alcohol-new {
             color: #DEDDDF;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .alcohol-new img {
@@ -119,7 +119,7 @@
             }
 
             .alcohol-new {
-                font-size: 15px;
+                font-size: 15px !important;
             }
 
             .alcohol-new img {
