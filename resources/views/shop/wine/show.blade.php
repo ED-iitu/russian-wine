@@ -69,7 +69,7 @@
             }
 
             .wine-layout {
-                gap: 20px;
+                gap: 30px;
             }
             .wine-col {
                 gap: 35px;
