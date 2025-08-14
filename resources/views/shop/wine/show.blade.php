@@ -93,6 +93,19 @@
                 font-size: 11px;
             }
         }
+        @media (max-width: 360px) {
+            .wine-image img {
+                max-width: 60px;
+            }
+            .wine-block.left .label,
+            .wine-block.right .label {
+                font-size: 10px;
+            }
+            .wine-block.left .value,
+            .wine-block.right .value {
+                font-size: 9px;
+            }
+        }
 
     </style>
     <div id="product-product" class="product-temp1">
