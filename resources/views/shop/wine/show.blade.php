@@ -8,56 +8,39 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: clamp(15px, 4vw, 60px);
-            flex-wrap: wrap; /* чтобы на мобильных колонки становились вертикально */
+            gap: 20px;
         }
-
         .wine-col {
             display: flex;
             flex-direction: column;
-            gap: clamp(12px, 2vw, 24px);
-            flex: 1 1 180px;
-            min-width: 140px;
+            gap: 20px;
+            flex: 1;
+            min-width: 120px;
         }
-
         .wine-block {
             display: flex;
             flex-direction: column;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
         }
-
         .wine-block .label {
             font-size: 14px;
             color: #777;
-            margin-bottom: 4px;
         }
-
         .wine-block .value {
             font-weight: bold;
             font-size: 16px;
-            line-height: 1.4;
         }
-
         .wine-block ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
-        .wine-image {
-            flex: 0 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
         .wine-image img {
-            max-width: clamp(140px, 25vw, 400px);
+            max-width: 100%;
             height: auto;
             display: block;
         }
     </style>
+
     <div id="product-product" class="product-temp1">
         <div class="background-white">
             <div id="content" class="single_product_Container">
