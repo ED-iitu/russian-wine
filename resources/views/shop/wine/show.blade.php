@@ -64,6 +64,10 @@
         }
 
         @media (max-width: 768px) {
+            .close_icon {
+                max-width: 70%;
+            }
+
             .wine-image img {
                 max-width: 85px; /* для мобилки */
             }
@@ -109,7 +113,7 @@
                         </div>
                         <div class="mobileToShop">
                             <a href="{{route('wine_shop')}}" class="pageControl">
-                                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+                                <img alt="close_icon" class="close_icon" src="{{asset('image/closeicon.png')}}">
                             </a>
                         </div>
                         <div class="showcase">
