@@ -34,10 +34,15 @@
             padding: 0;
             margin: 0;
         }
+
+        .wine-image {
+            display: flex;
+            justify-content: center;
+        }
+
         .wine-image img {
-            max-width: 100%;
+            max-width: 180px; /* или любое подходящее значение */
             height: auto;
-            display: block;
         }
     </style>
 
