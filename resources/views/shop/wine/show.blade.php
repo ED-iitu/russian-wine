@@ -69,24 +69,24 @@
             }
 
             .wine-layout {
-                gap: 30px;
+                gap: 20px;
             }
             .wine-col {
-                gap: 20px;
+                gap: 35px;
             }
 
             .wine-block.left .label {
-                font-size: 11px;
+                font-size: 10px;
             }
             .wine-block.right .label {
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .wine-block.left .value {
-                font-size: 12px;
+                font-size: 9px;
             }
             .wine-block.right .value {
-                font-size: 12px;
+                font-size: 9px;
             }
         }
     </style>
