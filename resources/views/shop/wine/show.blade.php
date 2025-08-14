@@ -68,6 +68,11 @@
             font-size: 18px;
         }
 
+        .volume-new {
+            color: #DEDDDF;
+            font-size: 18px;
+        }
+
         .alcohol-new img {
             max-width: 10%;
         }
@@ -104,6 +109,9 @@
         }
         @media (max-width: 360px) {
             .alcohol-new {
+                font-size: 15px !important;
+            }
+            .volume-new {
                 font-size: 15px !important;
             }
             .wine-layout {
@@ -176,8 +184,8 @@
                                         @endif
                                     </div>
                                     <div class="wine-block left">
-                                        <span class="label">Объем</span>
-                                        <span class="value volume">{{ $wine->volume }}</span>
+                                        <span class="label"></span>
+                                        <span class="value volume-new">{{ $wine->volume }}</span>
                                     </div>
                                 </div>
 
