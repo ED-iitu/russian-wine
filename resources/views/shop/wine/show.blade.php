@@ -22,17 +22,32 @@
             display: flex;
             flex-direction: column;
         }
-        .wine-block .label {
+        .wine-block .label-left {
+            font-size: 14px;
+            color: #777;
+            padding: 0;
+            text-align: right;
+        }
+
+        .wine-block .label-right {
             font-size: 14px;
             color: #777;
             padding: 0;
             text-align: left;
         }
-        .wine-block .value {
+
+        .wine-block .value-left {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .wine-block .value-right {
             font-weight: bold;
             font-size: 16px;
             text-align: left;
         }
+
         .wine-block ul {
             list-style: none;
             padding: 0;
@@ -85,28 +100,28 @@
                                 <!-- Левая колонка -->
                                 <div class="wine-col">
                                     <div class="wine-block">
-                                        <span class="label">Тип</span>
-                                        <span class="value">{{ $wine->color->title ?? '—' }}</span>
+                                        <span class="label-left">Тип</span>
+                                        <span class="value-left">{{ $wine->color->title ?? '—' }}</span>
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Крепость</span>
-                                        <span class="value">{{ $wine->fortress }}%</span>
+                                        <span class="label-left">Крепость</span>
+                                        <span class="value-left">{{ $wine->fortress }}%</span>
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Виноград</span>
+                                        <span class="label-left">Виноград</span>
                                         @if($wine->grapeSorts->isNotEmpty())
-                                            <ul class="value">
+                                            <ul class="value-left">
                                                 @foreach($wine->grapeSorts as $sort)
                                                     <li>{{ $sort->title }}</li>
                                                 @endforeach
                                             </ul>
                                         @else
-                                            <span class="value">{{ $wine->sort->title ?? '—' }}</span>
+                                            <span class="value-left">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Объем</span>
-                                        <span class="value">{{ $wine->volume }}</span>
+                                        <span class="label-left">Объем</span>
+                                        <span class="value-left">{{ $wine->volume }}</span>
                                     </div>
                                 </div>
 
@@ -118,20 +133,20 @@
                                 <!-- Правая колонка -->
                                 <div class="wine-col">
                                     <div class="wine-block">
-                                        <span class="label">Производитель</span>
-                                        <span class="value">{{ $wine->manufacture->title ?? 'Отсутствует' }}</span>
+                                        <span class="label-right">Производитель</span>
+                                        <span class="value-right">{{ $wine->manufacture->title ?? 'Отсутствует' }}</span>
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Выдержка</span>
-                                        <span class="value">{{ $wine->excerpt->title ?? '—' }}</span>
+                                        <span class="label-right">Выдержка</span>
+                                        <span class="value-right">{{ $wine->excerpt->title ?? '—' }}</span>
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Тираж</span>
-                                        <span class="value">{{ $wine->edition }} бутылок</span>
+                                        <span class="label-right">Тираж</span>
+                                        <span class="value-right">{{ $wine->edition }} бутылок</span>
                                     </div>
                                     <div class="wine-block">
-                                        <span class="label">Цена</span>
-                                        <span class="value">
+                                        <span class="label-right">Цена</span>
+                                        <span class="value-right">
                     @if($wine->price > 0)
                                                 {{ $wine->price }}₽
                                             @else
