@@ -4,64 +4,27 @@
 @section('keywords', $wine->meta_keywords)
 @section('content')
     <style>
-        /* Для больших экранов (десктоп) */
         .wine-layout {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 35px; /* было 30px */
+            gap: 30px;
         }
-
         .wine-col {
             display: flex;
             flex-direction: column;
-            gap: 145px; /* было 20px */
+            gap: 20px;
             flex: 1;
             min-width: 120px;
         }
 
-        .wine-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        .wine-image img {
-            max-width: 180px; /* бутылка на больших экранах */
-            height: auto;
-        }
-
-        /* Для планшетов */
-        @media (max-width: 1024px) {
+        @media (min-width: 1400px) {
             .wine-layout {
-                gap: 35px;
+                gap: 35px; /* вместо 30px */
             }
 
             .wine-col {
-                gap: 100px; /* немного меньше */
-            }
-
-            .wine-image img {
-                max-width: 150px;
-            }
-        }
-
-        /* Для мобильных */
-        @media (max-width: 768px) {
-            .wine-layout {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .wine-col {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-            }
-
-            .wine-image img {
-                max-width: 90px; /* бутылка на мобилке */
+                gap: 145px; /* вместо 20px */
             }
         }
 
