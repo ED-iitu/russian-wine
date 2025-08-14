@@ -78,7 +78,7 @@
         }
 
         .vinograd-img {
-            margin-left: 80px;
+            margin-left: 200px;
             max-width: 50%;
         }
 
@@ -136,6 +136,11 @@
 
             .alcohol-new img {
                 max-width: 7%;
+            }
+
+            .vinograd-img {
+                margin-left: 80px;
+                max-width: 50%;
             }
         }
 
