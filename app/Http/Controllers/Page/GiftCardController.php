@@ -2,11 +2,41 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\GiftCardPurchase;
 
 class GiftCardController extends Controller
 {
     public function index()
     {
-        return view('page.gift_card');
+        $amounts = [5000, 10000, 15000, 20000];
+        return view('giftcards.index', compact('amounts'));
+    }
+
+    public function buy(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required|in:5000,10000,15000,20000',
+            'name'   => 'required|string|max:255',
+            'email'  => 'required|email|max:255',
+            'phone'  => 'nullable|string|max:20',
+        ]);
+
+        $purchase = GiftCardPurchase::create([
+            'amount' => $request->amount,
+            'name'   => $request->name,
+            'email'  => $request->email,
+            'phone'  => $request->phone,
+            'status' => 'new',
+        ]);
+
+        // TODO: интеграция с платёжкой
+        // redirect на страницу оплаты
+        return redirect()->route('giftcards.success')->with('success', 'Заказ создан! (MVP)');
+    }
+
+    public function success()
+    {
+        return view('giftcards.success');
     }
 }
