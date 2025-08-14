@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Крепость</span>
-                                        <span class="value">{{ $wine->fortress }}%</span>
+                                        <span class="value"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Виноград</span>
