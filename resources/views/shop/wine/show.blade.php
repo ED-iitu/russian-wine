@@ -17,18 +17,37 @@
             flex: 1;
             min-width: 120px;
         }
+
         .wine-block {
             display: flex;
             flex-direction: column;
         }
-        .wine-block .label {
+
+        .wine-block.left .label {
+            padding: 0;
             font-size: 14px;
             color: #777;
+            text-align: right;
         }
-        .wine-block .value {
+        .wine-block.right .label {
+            padding: 0;
+            font-size: 14px;
+            color: #777;
+            text-align: left;
+        }
+
+        .wine-block.left .value {
             font-weight: bold;
             font-size: 16px;
+            text-align: right;
         }
+
+        .wine-block.right .value {
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+        }
+
         .wine-block ul {
             list-style: none;
             padding: 0;
@@ -78,15 +97,15 @@
                             <div class="wine-layout">
                                 <!-- Левая колонка -->
                                 <div class="wine-col">
-                                    <div class="wine-block">
+                                    <div class="wine-block left">
                                         <span class="label">Тип</span>
                                         <span class="value">{{ $wine->color->title ?? '—' }}</span>
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block left">
                                         <span class="label">Крепость</span>
                                         <span class="value">{{ $wine->fortress }}%</span>
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block left">
                                         <span class="label">Виноград</span>
                                         @if($wine->grapeSorts->isNotEmpty())
                                             <ul class="value">
@@ -98,7 +117,7 @@
                                             <span class="value">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block left">
                                         <span class="label">Объем</span>
                                         <span class="value">{{ $wine->volume }}</span>
                                     </div>
@@ -111,19 +130,19 @@
 
                                 <!-- Правая колонка -->
                                 <div class="wine-col">
-                                    <div class="wine-block">
+                                    <div class="wine-block right">
                                         <span class="label">Производитель</span>
                                         <span class="value">{{ $wine->manufacture->title ?? 'Отсутствует' }}</span>
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block right">
                                         <span class="label">Выдержка</span>
                                         <span class="value">{{ $wine->excerpt->title ?? '—' }}</span>
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block right">
                                         <span class="label">Тираж</span>
                                         <span class="value">{{ $wine->edition }} бутылок</span>
                                     </div>
-                                    <div class="wine-block">
+                                    <div class="wine-block right">
                                         <span class="label">Цена</span>
                                         <span class="value">
                     @if($wine->price > 0)
