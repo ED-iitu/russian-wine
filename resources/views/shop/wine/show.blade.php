@@ -8,7 +8,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 25px;
+            gap: 30px;
         }
         .wine-col {
             display: flex;
@@ -65,7 +65,28 @@
 
         @media (max-width: 768px) {
             .wine-image img {
-                max-width: 90px; /* для мобилки */
+                max-width: 85px; /* для мобилки */
+            }
+
+            .wine-layout {
+                gap: 30px;
+            }
+            .wine-col {
+                gap: 20px;
+            }
+
+            .wine-block.left .label {
+                font-size: 11px;
+            }
+            .wine-block.right .label {
+                font-size: 11px;
+            }
+
+            .wine-block.left .value {
+                font-size: 12px;
+            }
+            .wine-block.right .value {
+                font-size: 12px;
             }
         }
     </style>
