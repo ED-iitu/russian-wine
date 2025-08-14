@@ -65,12 +65,12 @@
 
         .alcohol-new {
             color: #DEDDDF;
-            font-size: 25px;
+            font-size: 25px !important;
         }
 
         .volume-new {
             color: #DEDDDF;
-            font-size: 25px;
+            font-size: 25px !important;
         }
 
         .alcohol-new img {
