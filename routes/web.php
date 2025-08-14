@@ -102,4 +102,6 @@ Route::get('/page/{slug}', 'Page\IndexController@simple_page')->name('simple_pag
 
 Route::get('/{slug}', 'Page\IndexController@show')->name('wine_or_winery');
 
+Route::get('/gift-card','Page\GiftCardController@index')->name('gift-card');
+
 
