@@ -5,40 +5,58 @@
 @section('content')
 
     <style>
-        .wine-details {
+        /* === 3-column wine layout (left specs — bottle — right specs) === */
+        .rv-spec {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: stretch;               /* растягиваем колонки по высоте бутылки */
+            gap: clamp(12px, 4vw, 56px);        /* адаптивный отступ между колонками */
         }
-        .wine-left, .wine-right {
-            flex: 1;
-            min-width: 250px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .wine-block {
+
+        .rv-col {
+            flex: 1 1 0;                        /* колонки поджимаются, но не переносятся */
+            min-width: 0;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;     /* ровно 4 блока распределены по высоте */
+            gap: clamp(8px, 1.3vw, 14px);
         }
-        .wine-block .label {
-            font-size: 14px;
-            color: #777;
+
+        .rv-bottle {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
-        .wine-block .value {
-            font-weight: bold;
-            font-size: 16px;
+        .rv-bottle img {
+            display: block;
+            width: clamp(140px, 28vw, 420px);
+            height: auto;
+            max-height: min(72vh, 720px);
         }
-        .wine-block ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+
+        .rv-item { display: flex; flex-direction: column; gap: 6px; }
+        .rv-item--border { padding-bottom: 10px; border-bottom: 1px solid #E9E9E9; }
+
+        .rv-label  { color: #8E8E8E; font-size: clamp(12px, 1.7vw, 15px); line-height: 1.2; }
+        .rv-value  { font-weight: 700; font-size: clamp(14px, 2vw, 18px); line-height: 1.3; }
+
+        .rv-list { list-style: none; padding: 0; margin: 0; }
+        .rv-list li + li { margin-top: 4px; }
+
+        .rv-item.alcohol .rv-value { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+        .rv-item.alcohol img { width: clamp(16px, 3vw, 28px); height: auto; }
+
+        .rv-item.species .grape-icon { margin-top: 8px; opacity: .25; width: clamp(50px, 10vw, 100px); height: auto; }
+
+        .rv-item.amount .rv-value b { font-weight: 800; }
+        .rv-item.volume .rv-value { opacity: .25; font-size: clamp(22px, 6vw, 56px); font-weight: 800; }
+
         @media (max-width: 768px) {
-            .wine-details {
-                flex-direction: column;
-            }
+            .rv-spec { gap: clamp(8px, 2.5vw, 16px); }
+            /* чтобы не дублировать цену на мобилке (ниже есть mobile-price) */
+            .rv-col .rv-item.price { display: none; }
         }
+        /* === /3-column wine layout === */
     </style>
 
     <div id="product-product" class="product-temp1">
@@ -65,105 +83,106 @@
                         </div>
                         <div class="showcase">
                             <h2 class="desktopHidden">{{$wine->title}}</h2>
-                            <div class="height_90">
-                                <div class="image">
-                                    <img src="{{Voyager::image($wine->image)}}" title="{{$wine->title}}"
-                                         alt="{{$wine->title}}">
-                                </div>
-                                <div class="back">
-                                    <div class="row">
-                                        <div class="col-xs-5 col-md-5 col-xs-offset-7 col-md-offset-6">
-                                            <div class="manufacturer">
-                                                @if(isset($wine->winery))
-                                                    <a href="{{route('wine_or_winery', $wine->winery->slug )}}">
-                                                      <span class="iblock">
-                                                          <span class="light_font">Производитель</span>
-                                                          <br>
-                                                          <span class="bold_font">{{$wine->manufacture->title}}</span>
-                                                      </span>
-                                                    </a>
-                                                @else
-                                                    <a href="#">
-                                                              <span
-                                                                      class="iblock">Производитель<br><span>{{$wine->manufacture->title ?? "Отсутствует"}}</span></span>
-                                                    </a>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-md-6 col-lg-6">
-                                            <div class="type bold_font">
-                                                @if(isset($wine->color))
-                                                    <!-- <img src="{{Voyager::image($wine->color->image)}}"
-                                                         alt="">  -->{{$wine->color->title}}
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div
-                                                class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6">
-                                            <div class="aging">
-                                                @if(isset($wine->excerpt))
-                                                    <span
-                                                            class="iblock"><span class="light_font">Выдержка</span><br><span
-                                                                class="bold_font">{{$wine->excerpt->title}}</span>
-                                                  @if($wine->excerpt->type == 1)
-                                                            <span class="icon-icon_champagne"></span>
-                                                        @elseif($wine->excerpt->type == 2)
-                                                            <span class="icon-icon_barrel"></span>
-                                                        @endif
-                                              </span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-md-6 ">
-                                            <div class="alcohol">
-                                                <img src="{{asset('image/gradus.png')}}" alt="">{{$wine->fortress}}%
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-xs-offset-6">
-                                            <div class="amount"><span
-                                                        class="iblock"><span class="light_font">Тираж</span><br><span>{{$wine->edition}} <span
-                                                                class="bottles bold_font">бутылок</span></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="species">
-                                            <span class="iblock">
-                                                <span class="light_font">Виноград</span><br>
 
+                            <div class="height_90">
+                                <!-- ТРИ КОЛОНКИ: слева — центровая бутылка — справа -->
+                                <div class="rv-spec">
+                                    <!-- Левая колонка (4 блока) -->
+                                    <div class="rv-col">
+                                        <div class="rv-item rv-item--border type">
+                                            <span class="rv-label">Тип</span>
+                                            @if(isset($wine->color))
+                                                <span class="rv-value bold_font">{{$wine->color->title}}</span>
+                                            @else
+                                                <span class="rv-value">—</span>
+                                            @endif
+                                        </div>
+
+                                        <div class="rv-item alcohol">
+                                            <span class="rv-label">Крепость</span>
+                                            <span class="rv-value">
+                        <img src="{{asset('image/gradus.png')}}" alt="">
+                        {{$wine->fortress}}%
+                    </span>
+                                        </div>
+
+                                        <div class="rv-item species">
+                                            <span class="rv-label">Виноград</span>
+                                            <div class="rv-value">
                                                 @if($wine->grapeSorts->isNotEmpty())
-                                                    <ul class="bold_font">
+                                                    <ul class="rv-list">
                                                         @foreach($wine->grapeSorts as $sort)
                                                             <li>{{ $sort->title }}</li>
                                                         @endforeach
                                                     </ul>
                                                 @else
-                                                    <span class="bold_font">
-                                                        {{ $wine->sort->title }}
-                                                    </span>
+                                                    <span>{{ $wine->sort->title ?? '—' }}</span>
                                                 @endif
-                                            </span>
-
-                                                <img src="{{ asset('image/vinograd.png') }}" alt="">
                                             </div>
+                                            <img class="grape-icon" src="{{ asset('image/vinograd.png') }}" alt="">
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-xs-offset-6">
-                                            <div class="volume">{{$wine->volume}}</div>
+
+                                        <div class="rv-item volume">
+                                            <span class="rv-label">Объем</span>
+                                            <span class="rv-value">{{$wine->volume}}</span>
                                         </div>
                                     </div>
 
+                                    <!-- Центр — бутылка -->
+                                    <div class="rv-bottle">
+                                        <img src="{{Voyager::image($wine->image)}}" title="{{$wine->title}}" alt="{{$wine->title}}">
+                                    </div>
+
+                                    <!-- Правая колонка (4 блока) -->
+                                    <div class="rv-col">
+                                        <div class="rv-item rv-item--border manufacturer">
+                                            <span class="rv-label">Производитель</span>
+                                            <span class="rv-value">
+                        @if(isset($wine->winery))
+                                                    <a href="{{route('wine_or_winery', $wine->winery->slug )}}">
+                                {{$wine->manufacture->title}}
+                            </a>
+                                                @else
+                                                    {{$wine->manufacture->title ?? "Отсутствует"}}
+                                                @endif
+                    </span>
+                                        </div>
+
+                                        <div class="rv-item aging">
+                                            <span class="rv-label">Выдержка</span>
+                                            @if(isset($wine->excerpt))
+                                                <span class="rv-value">
+                            {{$wine->excerpt->title}}
+                                                    @if($wine->excerpt->type == 1)
+                                                        <span class="icon-icon_champagne"></span>
+                                                    @elseif($wine->excerpt->type == 2)
+                                                        <span class="icon-icon_barrel"></span>
+                                                    @endif
+                        </span>
+                                            @else
+                                                <span class="rv-value">—</span>
+                                            @endif
+                                        </div>
+
+                                        <div class="rv-item amount">
+                                            <span class="rv-label">Тираж</span>
+                                            <span class="rv-value"><b>{{$wine->edition}}</b> бутылок</span>
+                                        </div>
+
+                                        <div class="rv-item price">
+                                            <span class="rv-label">Цена</span>
+                                            <span class="rv-value">
+                        @if($wine->price > 0)
+                                                    {{$wine->price}}<span style="background: none;">п</span>
+                                                @else
+                                                    Коллекция
+                                                @endif
+                    </span>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <!-- Блоки ниже оставил как у тебя (виден только на мобилке / desktopHidden) -->
                                 <div class="additional-info desktopHidden" style="margin-top: 30px">
                                     <div class="price-vinoteka col-md-12">
                                         <a href="#" class="preview wine_show_price">
@@ -173,12 +192,9 @@
                                             @else
                                                 Коллекция
                                             @endif
-
                                         </a>
                                         <input type="hidden" value="{{$wine->price}}" class="wine_price">
-
                                     </div>
-
 
                                     <div class="similar-wines">
                                         <a href="https://russianvine.ru/wineshop?winery[]={{$wine->winery->id ?? 76}}">
