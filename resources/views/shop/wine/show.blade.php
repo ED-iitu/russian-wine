@@ -209,14 +209,8 @@
                                         <span class="value">{{ $wine->edition }} бутылок</span>
                                     </div>
                                     <div class="wine-block right">
-                                        <span class="label">Цена</span>
-                                        <span class="value">
-                    @if($wine->price > 0)
-                                                {{ $wine->price }}₽
-                                            @else
-                                                Коллекция
-                                            @endif
-                </span>
+                                        <span class="label"></span>
+                                        <span class="value volume-new">{{ $wine->volume }}</span>
                                     </div>
                                 </div>
                             </div>
