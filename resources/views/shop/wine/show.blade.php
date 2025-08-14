@@ -98,7 +98,7 @@
                 gap: 15px;
             }
             .wine-image img {
-                max-width: 60px;
+                max-width: 75px;
             }
             .wine-block.left .label,
             .wine-block.right .label {
