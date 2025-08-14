@@ -17,6 +17,22 @@
             flex: 1;
             min-width: 120px;
         }
+        .wine-col .col-right .label {
+            text-align: left;
+        }
+
+        .wine-col .col-right .value {
+            text-align: left;
+        }
+
+        .wine-col .col-left .label {
+            text-align: right;
+        }
+
+        .wine-col .col-left .value {
+            text-align: right;
+        }
+
         .wine-block {
             display: flex;
             flex-direction: column;
@@ -24,6 +40,7 @@
         .wine-block .label {
             font-size: 14px;
             color: #777;
+            padding: 0;
         }
         .wine-block .value {
             font-weight: bold;
@@ -79,7 +96,7 @@
 
                             <div class="wine-layout">
                                 <!-- Левая колонка -->
-                                <div class="wine-col">
+                                <div class="wine-col col-left">
                                     <div class="wine-block">
                                         <span class="label">Тип</span>
                                         <span class="value">{{ $wine->color->title ?? '—' }}</span>
@@ -112,7 +129,7 @@
                                 </div>
 
                                 <!-- Правая колонка -->
-                                <div class="wine-col">
+                                <div class="wine-col col-right">
                                     <div class="wine-block">
                                         <span class="label">Производитель</span>
                                         <span class="value">{{ $wine->manufacture->title ?? 'Отсутствует' }}</span>
