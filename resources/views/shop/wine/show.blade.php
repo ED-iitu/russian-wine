@@ -65,6 +65,11 @@
 
         .alcohol-new {
             color: #DEDDDF;
+            font-size: 16px;
+        }
+
+        .alcohol-new img {
+            max-width: 10%;
         }
 
         @media (max-width: 768px) {
@@ -112,6 +117,14 @@
             .wine-block.right .value {
                 font-size: 9px;
             }
+
+            .alcohol-new {
+                font-size: 15px;
+            }
+
+            .alcohol-new img {
+                max-width: 7%;
+            }
         }
 
     </style>
@@ -148,8 +161,8 @@
                                         <span class="value">{{ $wine->color->title ?? '—' }}</span>
                                     </div>
                                     <div class="wine-block left">
-                                        <span class="label">Крепость</span>
-                                        <span class="value alcohol-new"><img style="max-width: 10%" src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
+                                        <span class="label"></span>
+                                        <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Виноград</span>
