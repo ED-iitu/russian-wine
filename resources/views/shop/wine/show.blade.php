@@ -177,7 +177,7 @@
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Объем</span>
-                                        <span class="value">{{ $wine->volume }}</span>
+                                        <span class="value volume">{{ $wine->volume }}</span>
                                     </div>
                                 </div>
 
