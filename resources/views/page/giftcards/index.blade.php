@@ -12,7 +12,7 @@
                     <div class="product_cont">
                         <div class="product_info">
                             <h4>Карта № {{$key + 1}}</h4>
-                            <span>{{amount}} <b>п</b></span>
+                            <span>{{$amount}} <b>п</b></span>
                         </div>
                         <a href="">
                             <img alt="" src="">
