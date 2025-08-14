@@ -94,6 +94,9 @@
             }
         }
         @media (max-width: 360px) {
+            .wine-layout {
+                gap: 15px;
+            }
             .wine-image img {
                 max-width: 60px;
             }
