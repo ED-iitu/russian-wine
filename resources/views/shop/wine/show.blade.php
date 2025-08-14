@@ -103,6 +103,9 @@
             }
         }
         @media (max-width: 360px) {
+            .alcohol-new {
+                font-size: 15px !important;
+            }
             .wine-layout {
                 gap: 15px;
             }
@@ -116,10 +119,6 @@
             .wine-block.left .value,
             .wine-block.right .value {
                 font-size: 9px;
-            }
-
-            .alcohol-new {
-                font-size: 15px !important;
             }
 
             .alcohol-new img {
