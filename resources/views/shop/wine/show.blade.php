@@ -78,7 +78,7 @@
         }
 
         .vinograd-img {
-            margin-left: 200px;
+            margin-left: 125px;
             max-width: 50%;
         }
 
