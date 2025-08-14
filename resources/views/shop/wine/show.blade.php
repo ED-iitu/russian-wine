@@ -182,6 +182,7 @@
                                         @else
                                             <span class="value">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
+                                        <img src="{{ asset('image/vinograd.png') }}" alt="">
                                     </div>
 {{--                                    <div class="wine-block left">--}}
 {{--                                        <span class="label"></span>--}}
