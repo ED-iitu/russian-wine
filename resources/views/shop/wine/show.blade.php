@@ -8,7 +8,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 30px;
+            gap: 20px;
         }
         .wine-col {
             display: flex;
@@ -33,14 +33,14 @@
             flex-direction: column;
         }
         .wine-block .label-left {
-            font-size: 14px;
+            font-size: 13px;
             color: #777;
             padding: 0;
             text-align: right;
         }
 
         .wine-block .label-right {
-            font-size: 14px;
+            font-size: 13px;
             color: #777;
             padding: 0;
             text-align: left;
@@ -48,13 +48,13 @@
 
         .wine-block .value-left {
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             text-align: right;
         }
 
         .wine-block .value-right {
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             text-align: left;
         }
 
