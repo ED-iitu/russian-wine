@@ -63,6 +63,10 @@
             height: auto;
         }
 
+        .alcohol-new {
+            color: #DEDDDF;
+        }
+
         @media (max-width: 768px) {
             .close_icon {
                 max-width: 70%;
@@ -145,7 +149,7 @@
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Крепость</span>
-                                        <span class="value alcohol"><img style="max-width: 10%" src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
+                                        <span class="value alcohol-new"><img style="max-width: 10%" src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
                                     </div>
                                     <div class="wine-block left">
                                         <span class="label">Виноград</span>
