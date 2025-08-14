@@ -76,17 +76,17 @@
             }
 
             .wine-block.left .label {
-                font-size: 10px;
+                font-size: 12px;
             }
             .wine-block.right .label {
-                font-size: 10px;
+                font-size: 12px;
             }
 
             .wine-block.left .value {
-                font-size: 9px;
+                font-size: 11px;
             }
             .wine-block.right .value {
-                font-size: 9px;
+                font-size: 11px;
             }
         }
     </style>
