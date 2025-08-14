@@ -34,10 +34,20 @@
             padding: 0;
             margin: 0;
         }
+        .wine-image {
+            display: flex;
+            justify-content: center;
+        }
+
         .wine-image img {
-            max-width: 100%;
+            max-width: 180px; /* для десктопа */
             height: auto;
-            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .wine-image img {
+                max-width: 90px; /* для мобилки */
+            }
         }
     </style>
     <div id="product-product" class="product-temp1">
