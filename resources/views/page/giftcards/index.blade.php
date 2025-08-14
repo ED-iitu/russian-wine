@@ -1,12 +1,23 @@
 @extends('layouts.app')
 @section('title', '🎁 Подарочные карты «Русское Вино» — дарите вкус и эмоции!')
 @section('content')
-    <div class="row subHeader">
-        <ul class="breadcrumb" id="breadcrumb">
-            <li><a href="{{route('home')}}">Главная</a></li>
-            <li><a href="{{route('wine_shop')}}">Подарочные карты</a></li>
-        </ul>
-        <h1 class="pageHeading">🎁 Подарочные карты «Русское Вино» — дарите вкус и эмоции!</h1>
-        <p class="pageDesc">Идеальный подарок для ценителей вина — от 5 000 до 20 000 рублей.</p>
+    <div id="blur_cont">
+        <div id="blur-cont" class="sety-category">
+            <div id="sety-banner">
+                <h1 class="forwc">Подарочные карты</h1>
+                <p>🎁 Подарочные карты «Русское Вино» — дарите вкус и эмоции!</p>
+            </div>
+            <div id="sety-section">
+                <div class="product_cont">
+                    <div class="product_info">
+                        <a href="">123</a>
+                        <span>5000 <b>п</b></span>
+                    </div>
+                    <a href="">
+                        <img alt="123" src="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
