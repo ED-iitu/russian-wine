@@ -77,6 +77,11 @@
             max-width: 10%;
         }
 
+        .vinograd-img {
+            margin-left: 80px;
+            max-width: 50%;
+        }
+
         @media (max-width: 768px) {
             .close_icon {
                 max-width: 70%;
@@ -182,7 +187,7 @@
                                         @else
                                             <span class="value">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
-                                        <img src="{{ asset('image/vinograd.png') }}" alt="">
+                                        <img class="vinograd-img" src="{{ asset('image/vinograd.png') }}" alt="">
                                     </div>
 {{--                                    <div class="wine-block left">--}}
 {{--                                        <span class="label"></span>--}}
