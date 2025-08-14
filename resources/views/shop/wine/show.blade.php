@@ -44,6 +44,12 @@
             max-width: 180px; /* или любое подходящее значение */
             height: auto;
         }
+
+        @media (max-width: 768px) {
+            .wine-image img {
+                max-width: 90px; /* для мобилки */
+            }
+        }
     </style>
 
     <div id="product-product" class="product-temp1">
