@@ -97,7 +97,7 @@
                 gap: 30px;
             }
             .wine-col {
-                gap: 35px;
+                gap: 65px;
             }
 
             .wine-block.left .label {
