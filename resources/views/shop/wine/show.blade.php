@@ -40,12 +40,14 @@
             font-weight: bold;
             font-size: 16px;
             text-align: right;
+            font: 0.8333333333333334VW 'ProximaNova-Bold';
         }
 
         .wine-block.right .value {
             font-weight: bold;
             font-size: 16px;
             text-align: left;
+            font: 0.8333333333333334VW 'ProximaNova-Bold';
         }
 
         .wine-block ul {
