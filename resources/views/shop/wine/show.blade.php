@@ -25,6 +25,10 @@
             padding: 10px 0;
         }
 
+        .wine-block.no-line::after {
+            display: none;
+        }
+
         .wine-block::after {
             content: "";
             position: absolute;
@@ -196,11 +200,11 @@
                                         <span class="label">Тип</span>
                                         <span class="value">{{ $wine->color->title ?? '—' }}</span>
                                     </div>
-                                    <div class="wine-block left">
+                                    <div class="wine-block left no-line">
                                         <span class="label"></span>
                                         <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
                                     </div>
-                                    <div class="wine-block left">
+                                    <div class="wine-block left no-line">
                                         <span class="label">Виноград</span>
                                         @if($wine->grapeSorts->isNotEmpty())
                                             <ul class="value">
@@ -244,7 +248,7 @@
                                         <span class="label">Тираж</span>
                                         <span class="value">{{ $wine->edition }} бутылок</span>
                                     </div>
-                                    <div class="wine-block right">
+                                    <div class="wine-block right no-line">
                                         <span class="label"></span>
                                         <span class="value volume-new">{{ $wine->volume }}</span>
                                     </div>
