@@ -258,8 +258,8 @@
                                         @else
                                             <span class="value">{{ $wine->sort->title ?? '—' }}</span>
                                         @endif
-                                        <img class="vinograd-img" src="{{ asset('image/vinograd.png') }}" alt="">
                                     </div>
+                                    <img class="vinograd-img" src="{{ asset('image/vinograd.png') }}" alt="">
                                     <div class="wine-block left no-line">
                                         <span class="label"></span>
                                         <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
