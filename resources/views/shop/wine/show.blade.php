@@ -23,13 +23,19 @@
             flex-direction: column;
         }
 
-        .wine-block {
-            padding: 5px 0;
-            border-bottom: 1px solid #e0e0e0;
+        .wine-block::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0; /* для левой колонки */
+            width: 120%; /* делаем линию длиннее */
+            height: 1px;
+            background: #e0e0e0;
         }
 
-        .wine-block:last-child {
-            border-bottom: none; /* у последнего блока линии не будет */
+        .wine-col.right .wine-block::after {
+            left: auto;
+            right: 0; /* для правой колонки линия уходит влево */
         }
 
         .wine-block.left .label {
