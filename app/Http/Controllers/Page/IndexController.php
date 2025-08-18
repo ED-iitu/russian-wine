@@ -98,7 +98,7 @@ class IndexController extends Controller
         if ($wine) {
             if (isset($wine->winery)) {
                 $wines = Wine::where('winery_id', '=', $wine->winery->id)
-                    ->where('price', '>', 0)
+                    ->limit(20)
                     ->get();
             } else {
                 $wines = Wine::where('price', '>', 0)
