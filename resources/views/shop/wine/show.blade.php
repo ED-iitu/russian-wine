@@ -39,6 +39,16 @@
             background: #e0e0e0;
         }
 
+        .wine-block.right::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -35px; /* для левой колонки */
+            width: 120%; /* делаем линию длиннее */
+            height: 1px;
+            background: #e0e0e0;
+        }
+
         .wine-col.right .wine-block::after {
             left: auto;
             right: 0; /* для правой колонки линия уходит влево */
