@@ -233,6 +233,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="price-vinoteka col-md-12">
+                                <a href="#" class="preview wine_show_price">
+                                    {{$wine->price ?? 0}}
+                                    <span style="background: none;">п</span>
+
+                                </a>
+
+                            </div>
                             <div class="similar-wines desktopHidden">
                                 <a href="https://russianvine.ru/wineshop?winery[]={{$wine->winery->id ?? 76}}">
                                     <h3 class="hover_red" style="text-transform: uppercase; font-size: 4vw;">
