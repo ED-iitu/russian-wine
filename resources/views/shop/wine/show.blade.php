@@ -21,6 +21,8 @@
         .wine-block {
             display: flex;
             flex-direction: column;
+            position: relative;
+            padding: 10px 0;
         }
 
         .wine-block::after {
