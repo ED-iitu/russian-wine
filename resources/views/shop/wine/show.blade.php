@@ -5,6 +5,7 @@
 @section('content')
     <style>
         .wine-layout {
+            margin-top: 25px;
             display: flex;
             justify-content: center;
             align-items: flex-start;
