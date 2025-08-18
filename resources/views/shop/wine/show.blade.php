@@ -29,11 +29,11 @@
             display: none;
         }
 
-        .wine-block::after {
+        .wine-block.left::after {
             content: "";
             position: absolute;
             bottom: 0;
-            left: 0; /* для левой колонки */
+            left: 35px; /* для левой колонки */
             width: 120%; /* делаем линию длиннее */
             height: 1px;
             background: #e0e0e0;
@@ -204,7 +204,7 @@
                                         <span class="label"></span>
                                         <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
                                     </div>
-                                    <div class="wine-block left no-line">
+                                    <div class="wine-block left">
                                         <span class="label">Виноград</span>
                                         @if($wine->grapeSorts->isNotEmpty())
                                             <ul class="value">
