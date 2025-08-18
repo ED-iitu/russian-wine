@@ -34,7 +34,7 @@
             content: "";
             position: absolute;
             bottom: 0;
-            left: 45px; /* для левой колонки */
+            left: 59px; /* для левой колонки */
             width: 120%; /* делаем линию длиннее */
             height: 1px;
             background: #e0e0e0;
