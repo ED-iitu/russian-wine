@@ -26,69 +26,34 @@
             padding: 10px 0;
         }
 
-        /* отключение линии у конкретного блока */
-        .wine-block.no-line::before,
         .wine-block.no-line::after {
             display: none;
         }
 
-        /* левая часть линии */
         .wine-block.left::after {
             content: "";
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: calc(50% - 120px); /* 120px = половина ширины бутылки */
+            left: 59px; /* для левой колонки */
+            width: 120%; /* делаем линию длиннее */
             height: 1.3px;
             background: #e0e0e0;
         }
 
-        /* правая часть линии */
         .wine-block.right::after {
             content: "";
             position: absolute;
             bottom: 0;
-            right: 0;
-            width: calc(50% - 120px);
+            left: -90px; /* для левой колонки */
+            width: 125%; /* делаем линию длиннее */
             height: 1.3px;
             background: #e0e0e0;
         }
 
-        /*.wine-block {*/
-        /*    display: flex;*/
-        /*    flex-direction: column;*/
-        /*    position: relative;*/
-        /*    padding: 10px 0;*/
-        /*}*/
-
-        /*.wine-block.no-line::after {*/
-        /*    display: none;*/
-        /*}*/
-
-        /*.wine-block.left::after {*/
-        /*    content: "";*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    left: 59px; !* для левой колонки *!*/
-        /*    width: 120%; !* делаем линию длиннее *!*/
-        /*    height: 1.3px;*/
-        /*    background: #e0e0e0;*/
-        /*}*/
-
-        /*.wine-block.right::after {*/
-        /*    content: "";*/
-        /*    position: absolute;*/
-        /*    bottom: 0;*/
-        /*    left: -90px; !* для левой колонки *!*/
-        /*    width: 125%; !* делаем линию длиннее *!*/
-        /*    height: 1.3px;*/
-        /*    background: #e0e0e0;*/
-        /*}*/
-
-        /*.wine-col.right .wine-block::after {*/
-        /*    left: auto;*/
-        /*    right: 0; !* для правой колонки линия уходит влево *!*/
-        /*}*/
+        .wine-col.right .wine-block::after {
+            left: auto;
+            right: 0; /* для правой колонки линия уходит влево */
+        }
 
         .wine-block.left .label {
             padding: 0;
