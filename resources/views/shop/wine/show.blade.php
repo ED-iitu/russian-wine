@@ -203,7 +203,7 @@
                 bottom: 0;
                 left: 38px; /* для левой колонки */
                 width: 100%; /* делаем линию длиннее */
-                height: 1.3px;
+                height: 1.1px;
                 background: #e0e0e0;
             }
 
@@ -213,7 +213,7 @@
                 bottom: 0;
                 left: -40px; /* для левой колонки */
                 width: 110%; /* делаем линию длиннее */
-                height: 1.3px;
+                height: 1.1px;
                 background: #e0e0e0;
             }
         }
