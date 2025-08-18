@@ -155,6 +155,7 @@ class IndexController extends Controller
 
         $data = $wine->toArray();
         Log::info($data);
+        Log::info('TEST');
 
         if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
