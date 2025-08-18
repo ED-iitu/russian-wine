@@ -33,7 +33,6 @@ class IndexController extends Controller
      */
     public function wine_list(WineFilter $filters)
     {
-        Log::info('WINE LIST');
         $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
             ->get();
         $mobile_wineries = $wineries->groupBy(function ($item) {
@@ -101,7 +100,6 @@ class IndexController extends Controller
      */
     public function wine_bread($slug)
     {
-        Log::info('wine_bread');
         $bread_crumbs = $this->bread_crumbs();
         $wine = Wine::where('slug', '=', $slug)
             ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
@@ -153,10 +151,6 @@ class IndexController extends Controller
             ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region', 'grapeSorts')
             ->where('status', '=', 'ACTIVE')
             ->firstOrFail();
-
-        $data = $wine->toArray();
-        Log::info($data);
-        Log::info('TEST');
 
         if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
@@ -424,15 +418,22 @@ class IndexController extends Controller
                     $total_sum += (int)$product->price * $item['qty'];
                 }
             }
-            if ($total_sum == 0) {
-                return redirect()->back();
-            } else {
-                $form_url = route('checkout_order');
-                return view('shop.checkout.index', [
-                    'total_price' => $total_sum,
-                    'form_url' => $form_url,
-                ]);
-            }
+
+            $form_url = route('checkout_order');
+            return view('shop.checkout.index', [
+                'total_price' => $total_sum,
+                'form_url' => $form_url,
+            ]);
+
+//            if ($total_sum == 0) {
+//                return redirect()->back();
+//            } else {
+//                $form_url = route('checkout_order');
+//                return view('shop.checkout.index', [
+//                    'total_price' => $total_sum,
+//                    'form_url' => $form_url,
+//                ]);
+//            }
         } else {
             return redirect()->back();
         }
