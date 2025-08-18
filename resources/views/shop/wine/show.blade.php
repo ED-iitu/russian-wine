@@ -169,6 +169,9 @@
             }
         }
         @media (max-width: 360px) {
+            .wine-col {
+                gap: 50px;
+            }
             .alcohol-new {
                 font-size: 15px !important;
             }
@@ -197,7 +200,7 @@
             .vinograd-img {
                 margin-left: 80px;
                 max-width: 50%;
-                margin-top: -45px;
+                margin-top: -70px;
             }
 
             .wine-block.left::after {
