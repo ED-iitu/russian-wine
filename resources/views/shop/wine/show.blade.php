@@ -98,9 +98,14 @@
         }
 
         .alcohol-new {
-            color: #DEDDDF;
-            font: 30px 'ProximaNova' !important;
+            font-family: "Proxima Nova", sans-serif;
             font-weight: 700 !important;
+            font-size: 30px !important;
+            line-height: 36px;
+            letter-spacing: -0.01em; /* -1% */
+            text-align: right;
+            vertical-align: middle;
+            color: #DEDDDF;
         }
 
         .volume-new {
