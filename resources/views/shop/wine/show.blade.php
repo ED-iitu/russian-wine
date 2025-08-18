@@ -36,7 +36,7 @@
             bottom: 0;
             left: 59px; /* для левой колонки */
             width: 120%; /* делаем линию длиннее */
-            height: 1px;
+            height: 1.3px;
             background: #e0e0e0;
         }
 
@@ -46,7 +46,7 @@
             bottom: 0;
             left: -90px; /* для левой колонки */
             width: 125%; /* делаем линию длиннее */
-            height: 1px;
+            height: 1.3px;
             background: #e0e0e0;
         }
 
@@ -203,7 +203,7 @@
                 bottom: 0;
                 left: 38px; /* для левой колонки */
                 width: 100%; /* делаем линию длиннее */
-                height: 1px;
+                height: 1.3px;
                 background: #e0e0e0;
             }
 
@@ -213,7 +213,7 @@
                 bottom: 0;
                 left: -40px; /* для левой колонки */
                 width: 110%; /* делаем линию длиннее */
-                height: 1px;
+                height: 1.3px;
                 background: #e0e0e0;
             }
         }
