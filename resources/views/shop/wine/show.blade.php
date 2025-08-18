@@ -93,10 +93,8 @@
         }
 
         .wine-image img {
-            position: relative;
             max-width: 180px; /* для десктопа */
             height: auto;
-            z-index: 2; /* бутылка поверх линии */
         }
 
         .alcohol-new {
