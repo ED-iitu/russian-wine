@@ -12,6 +12,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Mail\IndexController as SendMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
@@ -90,6 +91,8 @@ class IndexController extends Controller
             ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
             ->where('status', '=', 'ACTIVE')
             ->first(); // Также используем first вместо firstOrFail
+
+        Log::info($wine);
 
         // Если товар найден
         if ($wine) {
