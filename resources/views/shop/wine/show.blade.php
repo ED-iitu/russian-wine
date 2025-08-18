@@ -115,6 +115,7 @@
         .vinograd-img {
             margin-left: 125px;
             max-width: 50%;
+            margin-top: -150px;
         }
 
         @media (max-width: 768px) {
@@ -196,6 +197,7 @@
             .vinograd-img {
                 margin-left: 80px;
                 max-width: 50%;
+                margin-top: -45px;
             }
 
             .wine-block.left::after {
