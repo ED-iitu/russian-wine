@@ -233,7 +233,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="price-vinoteka col-md-12">
+                            <div class="price-vinoteka col-md-12" style="text-align: center">
                                 <a href="#" class="preview wine_show_price">
                                     {{$wine->price ?? 0}}
                                     <span style="background: none;">п</span>
