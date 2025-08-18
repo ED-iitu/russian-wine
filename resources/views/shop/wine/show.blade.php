@@ -99,7 +99,8 @@
 
         .alcohol-new {
             color: #DEDDDF;
-            font-size: 25px !important;
+            font: 30px 'ProximaNova' !important;
+            font-weight: 700 !important;
         }
 
         .volume-new {
@@ -172,7 +173,7 @@
                 gap: 32px;
             }
             .alcohol-new {
-                font-size: 15px !important;
+                font: 15px 'ProximaNova' !important;
             }
             .volume-new {
                 font-size: 15px !important;
