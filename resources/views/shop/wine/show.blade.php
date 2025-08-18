@@ -110,7 +110,9 @@
 
         .volume-new {
             color: #DEDDDF;
-            font-size: 25px !important;
+            font-size: 30px !important;
+            font-family: "Proxima Nova", sans-serif;
+            font-weight: 700 !important;
         }
 
         .alcohol-new img {
