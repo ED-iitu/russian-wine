@@ -23,6 +23,7 @@
             flex-direction: column;
             position: relative;
             padding: 10px 0;
+            z-index: 1; /* линия на "фоне" */
         }
 
         .wine-block.no-line::after {
@@ -43,8 +44,8 @@
             content: "";
             position: absolute;
             bottom: 0;
-            left: -35px; /* для левой колонки */
-            width: 120%; /* делаем линию длиннее */
+            left: -60px; /* для левой колонки */
+            width: 125%; /* делаем линию длиннее */
             height: 1px;
             background: #e0e0e0;
         }
@@ -92,8 +93,10 @@
         }
 
         .wine-image img {
+            position: relative;
             max-width: 180px; /* для десктопа */
             height: auto;
+            z-index: 2; /* бутылка поверх линии */
         }
 
         .alcohol-new {
