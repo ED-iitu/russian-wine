@@ -178,7 +178,7 @@
                 gap: 32px;
             }
             .alcohol-new {
-                font: 15px 'ProximaNova' !important;
+                font-size: 15px !important;
             }
             .volume-new {
                 font-size: 15px !important;
