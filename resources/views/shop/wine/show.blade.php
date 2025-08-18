@@ -248,14 +248,6 @@
                                 <!-- Левая колонка -->
                                 <div class="wine-col">
                                     <div class="wine-block left">
-                                        <span class="label">Тип</span>
-                                        <span class="value">{{ $wine->color->title ?? '—' }}</span>
-                                    </div>
-                                    <div class="wine-block left no-line">
-                                        <span class="label"></span>
-                                        <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
-                                    </div>
-                                    <div class="wine-block left">
                                         <span class="label">Виноград</span>
                                         @if($wine->grapeSorts->isNotEmpty())
                                             <ul class="value">
@@ -268,6 +260,16 @@
                                         @endif
                                         <img class="vinograd-img" src="{{ asset('image/vinograd.png') }}" alt="">
                                     </div>
+                                    <div class="wine-block left no-line">
+                                        <span class="label"></span>
+                                        <span class="value alcohol-new"><img src="{{asset('image/gradus.png')}}" alt="">{{ $wine->fortress }}%</span>
+                                    </div>
+
+                                    <div class="wine-block left">
+                                        <span class="label">Тип</span>
+                                        <span class="value">{{ $wine->color->title ?? '—' }}</span>
+                                    </div>
+
 {{--                                    <div class="wine-block left">--}}
 {{--                                        <span class="label"></span>--}}
 {{--                                        <span class="value volume-new">{{ $wine->volume }}</span>--}}
