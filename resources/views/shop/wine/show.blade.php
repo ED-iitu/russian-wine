@@ -145,6 +145,26 @@
             .wine-block.right .value {
                 font-size: 11px;
             }
+
+            .wine-block.left::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 38px; /* для левой колонки */
+                width: 100%; /* делаем линию длиннее */
+                height: 1px;
+                background: #e0e0e0;
+            }
+
+            .wine-block.right::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -40px; /* для левой колонки */
+                width: 110%; /* делаем линию длиннее */
+                height: 1px;
+                background: #e0e0e0;
+            }
         }
         @media (max-width: 360px) {
             .alcohol-new {
@@ -175,6 +195,26 @@
             .vinograd-img {
                 margin-left: 80px;
                 max-width: 50%;
+            }
+
+            .wine-block.left::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 38px; /* для левой колонки */
+                width: 100%; /* делаем линию длиннее */
+                height: 1px;
+                background: #e0e0e0;
+            }
+
+            .wine-block.right::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -40px; /* для левой колонки */
+                width: 110%; /* делаем линию длиннее */
+                height: 1px;
+                background: #e0e0e0;
             }
         }
 
