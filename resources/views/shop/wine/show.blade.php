@@ -200,7 +200,7 @@
             .vinograd-img {
                 margin-left: 80px;
                 max-width: 50%;
-                margin-top: -70px;
+                margin-top: -55px;
             }
 
             .wine-block.left::after {
