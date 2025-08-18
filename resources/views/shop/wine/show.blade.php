@@ -23,6 +23,15 @@
             flex-direction: column;
         }
 
+        .wine-block {
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .wine-block:last-child {
+            border-bottom: none; /* у последнего блока линии не будет */
+        }
+
         .wine-block.left .label {
             padding: 0;
             font-size: 14px;
