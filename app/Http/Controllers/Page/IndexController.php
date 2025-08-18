@@ -92,8 +92,6 @@ class IndexController extends Controller
             ->where('status', '=', 'ACTIVE')
             ->first(); // Также используем first вместо firstOrFail
 
-        Log::info($wine->winery->title);
-
         // Если товар найден
         if ($wine) {
             if (isset($wine->winery)) {

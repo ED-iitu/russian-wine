@@ -211,7 +211,13 @@
                                 <div class="wine-col">
                                     <div class="wine-block right">
                                         <span class="label">Производитель</span>
-                                        <span class="value">{{ $wine->manufacture->title ?? 'Отсутствует' }}</span>
+                                        <span class="value">
+                                            @if ( $wine->manufacture->id == 29)
+                                                {{ $wine->winery->title ?? 'Отсутствует' }}
+                                            @else
+                                                {{ $wine->manufacture->title ?? 'Отсутствует' }}
+                                            @endif
+                                        </span>
                                     </div>
                                     <div class="wine-block right">
                                         <span class="label">Выдержка</span>
