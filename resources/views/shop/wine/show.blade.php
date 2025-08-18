@@ -24,8 +24,14 @@
         }
 
         .wine-block {
+            justify-content: space-between;
+            align-items: center;
             padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0; /* серая линия */
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .wine-block:last-child {
+            border-bottom: none;
         }
 
         .wine-block:last-child {
