@@ -33,6 +33,7 @@ class IndexController extends Controller
      */
     public function wine_list(WineFilter $filters)
     {
+        Log::info('WINE LIST');
         $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
             ->get();
         $mobile_wineries = $wineries->groupBy(function ($item) {
@@ -100,7 +101,7 @@ class IndexController extends Controller
      */
     public function wine_bread($slug)
     {
-
+        Log::info('wine_bread');
         $bread_crumbs = $this->bread_crumbs();
         $wine = Wine::where('slug', '=', $slug)
             ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
