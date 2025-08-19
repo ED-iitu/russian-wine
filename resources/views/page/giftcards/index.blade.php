@@ -117,7 +117,7 @@
             font-size: 1.1rem;
             border-radius: 30px;
             border: none;
-            background: #8c2e1b;
+            background: #DA224D;
             color: #fff;
             font-weight: 600;
             cursor: pointer;
