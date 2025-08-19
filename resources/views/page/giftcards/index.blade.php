@@ -56,7 +56,7 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: #3a2c27;
             display: flex;
             flex-direction: column;
