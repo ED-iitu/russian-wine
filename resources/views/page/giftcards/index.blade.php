@@ -191,6 +191,64 @@
         .close-btn:hover {
             color: #000;
         }
+
+        .faq-block {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .faq-block h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 15px;
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 15px 15px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 
     <div class="container">
@@ -237,6 +295,38 @@
 
             <div class="cta-block">
                 <button>Купить подарочную карту</button>
+            </div>
+        </div>
+
+        <!-- How it works / FAQ Section -->
+        <div class="faq-block">
+            <h2>❓ Как это работает</h2>
+            <div class="faq-item">
+                <button class="faq-question">1. Как купить подарочную карту?</button>
+                <div class="faq-answer">
+                    Просто выберите номинал карты, нажмите кнопку «Купить» и оформите заказ.
+                    Карту можно получить в электронном виде или в подарочной упаковке.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">2. В каком виде я получу карту?</button>
+                <div class="faq-answer">
+                    Мы отправляем подарочные карты на e-mail в электронном виде.
+                    По желанию можно заказать красивую физическую упаковку с доставкой.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">3. Можно ли использовать карту частями?</button>
+                <div class="faq-answer">
+                    Да, баланс карты можно тратить на несколько покупок, пока сумма не будет исчерпана.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">4. Что делать, если карта потерялась?</button>
+                <div class="faq-answer">
+                    Не переживайте — мы можем восстановить электронную карту, если она была активирована.
+                    Обратитесь в поддержку.
+                </div>
             </div>
         </div>
     </div>
