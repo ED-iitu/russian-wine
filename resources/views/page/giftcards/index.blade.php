@@ -114,7 +114,7 @@
 
         .cta-block button {
             padding: 15px 40px;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             border-radius: 30px;
             border: none;
             background: #DA224D;
@@ -125,7 +125,7 @@
         }
 
         .cta-block button:hover {
-            background: #6d2314;
+            background: #DA244D;
         }
     </style>
 
