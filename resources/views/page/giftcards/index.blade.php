@@ -125,7 +125,71 @@
         }
 
         .cta-block button:hover {
-            background: #DA244D;
+            background: #b81d40;
+        }
+
+        /* Модалка */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: #3a2c27;
+        }
+
+        .modal-content input, .modal-content select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1.3rem;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content button {
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 1.4rem;
+            border-radius: 25px;
+            border: none;
+            background: #DA224D;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background: #b81d40;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .close-btn:hover {
+            color: #000;
         }
     </style>
 
@@ -152,19 +216,19 @@
             <div class="gift-cards">
                 <h2>Номиналы карты</h2>
                 <div class="cards-grid">
-                    <div class="card-item">
+                    <div class="card-item" data-amount="5000">
                         <h3>5 000 ₽</h3>
                         <p>Идеально для первого знакомства</p>
                     </div>
-                    <div class="card-item">
+                    <div class="card-item" data-amount="10000">
                         <h3>10 000 ₽</h3>
                         <p>Попробовать классику и новинки</p>
                     </div>
-                    <div class="card-item">
+                    <div class="card-item" data-amount="15000">
                         <h3>15 000 ₽</h3>
                         <p>Большой выбор для ценителей</p>
                     </div>
-                    <div class="card-item">
+                    <div class="card-item" data-amount="20000">
                         <h3>20 000 ₽</h3>
                         <p>Лучший подарок для гурмана</p>
                     </div>
@@ -176,4 +240,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Модалка -->
+    <div class="modal" id="giftModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Оформление подарочной карты</h2>
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Телефон" required>
+                <select id="cardAmount" required>
+                    <option value="">Выберите номинал</option>
+                    <option value="5000">5 000 ₽</option>
+                    <option value="10000">10 000 ₽</option>
+                    <option value="15000">15 000 ₽</option>
+                    <option value="20000">20 000 ₽</option>
+                </select>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('giftModal');
+        const closeModal = document.getElementById('closeModal');
+        const cardItems = document.querySelectorAll('.card-item');
+        const cardAmountSelect = document.getElementById('cardAmount');
+
+        cardItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const amount = item.getAttribute('data-amount');
+                cardAmountSelect.value = amount;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.onclick = () => modal.style.display = 'none';
+
+        window.onclick = (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
 @endsection
