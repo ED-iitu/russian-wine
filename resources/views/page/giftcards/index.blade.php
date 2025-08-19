@@ -6,175 +6,172 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin-top: 130px;
             text-align: center;
-            margin-top: 120px;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #faf4ef, #fff);
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #fff5f5, #fce8e8);
             border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .gift-banner h1 {
-            font-size: 2.2rem;
+            font-size: 44px;
             font-weight: 700;
-            margin-bottom: 15px;
-            color: #3a2c27;
+            margin-bottom: 20px;
+            color: #6b0f1a;
+            line-height: 1.3;
         }
 
         .gift-banner p {
-            font-size: 1.2rem;
-            color: #6a5d58;
+            font-size: 22px;
+            max-width: 800px;
+            color: #444;
+            line-height: 1.6;
         }
 
         .gift-content {
-            margin: 50px auto;
-            max-width: 950px;
+            margin-top: 70px;
             text-align: center;
         }
 
         .gift-content h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: #3a2c27;
-        }
-
-        .gift-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #4d403c;
-            margin-bottom: 30px;
-        }
-
-        .gift-benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .benefit {
-            background: #fff;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            font-size: 1rem;
-            color: #3a2c27;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .benefit span {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .gift-cards {
-            margin: 50px 0;
-        }
-
-        .cards-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .card-item {
-            background: #fff;
-            border: 2px solid #d7c5b3;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            width: 200px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card-item:hover {
-            background: #f9f5f2;
-            transform: translateY(-5px);
-            border-color: #c09a7e;
-        }
-
-        .card-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #3a2c27;
-        }
-
-        .card-item p {
-            font-size: 0.95rem;
-            color: #6a5d58;
-        }
-
-        .cta-block {
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-block button {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            border: none;
-            background: #8c2e1b;
-            color: #fff;
+            font-size: 30px;
             font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s ease;
+            margin-bottom: 30px;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .cta-block button:hover {
-            background: #6d2314;
+        .advantages {
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            text-align: left;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .advantages ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .advantages li {
+            background: #fff;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            font-size: 20px;
+        }
+
+        .nominals {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nominal-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px 40px;
+            font-size: 26px;
+            font-weight: bold;
+            color: #6b0f1a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .nominal-card:hover {
+            transform: scale(1.05);
+            background: #6b0f1a;
+            color: #fff;
+        }
+
+        .cta {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .cta button {
+            background: #6b0f1a;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta button:hover {
+            background: #8e1c28;
+        }
+
+        @media (max-width: 768px) {
+            .gift-banner h1 {
+                font-size: 32px;
+            }
+
+            .gift-banner p {
+                font-size: 18px;
+            }
+
+            .gift-content h2 {
+                font-size: 22px;
+            }
+
+            .advantages li {
+                font-size: 18px;
+            }
+
+            .nominal-card {
+                font-size: 22px;
+                padding: 20px 30px;
+            }
+
+            .cta button {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
         }
     </style>
 
-    <div class="container">
-        <div class="gift-banner">
-            <h1>🎁 Подарочные карты «Русское Вино»</h1>
-            <p>Идеальный подарок для ценителей вина — от 5 000 до 20 000 рублей.</p>
+    <div class="gift-banner">
+        <h1>🎁 Подарочные карты «Русское Вино»</h1>
+        <p>Дарите вкус и эмоции! Идеальный подарок для ценителей вина — от 5 000 до 20 000 рублей.</p>
+    </div>
+
+    <div class="gift-content">
+        <h2>
+            Подарочная карта «Русское Вино» — это не просто сертификат, а целое винное приключение.
+            Получатель сможет выбрать любое вино из нашего каталога, попробовать новые вкусы и открыть для себя уникальные российские винодельни.
+        </h2>
+
+        <div class="advantages">
+            <strong>Преимущества:</strong>
+            <ul>
+                <li>📦 Доставка по всей России</li>
+                <li>🍷 Более 200 позиций вина на выбор</li>
+                <li>⏳ Срок действия — 12 месяцев</li>
+                <li>💌 Электронный и физический формат</li>
+            </ul>
         </div>
 
-        <div class="gift-content">
-            <h2>🍷 Дарите вкус, эмоции и новые открытия</h2>
-            <p>
-                Подарочная карта «Русское Вино» — это не просто сертификат, а настоящее винное приключение.
-                Получатель сможет выбрать любое вино из нашего каталога, открыть новые вкусы и насладиться
-                уникальными российскими винодельнями.
-            </p>
+        <h2>Выберите номинал:</h2>
+        <div class="nominals">
+            <div class="nominal-card">5 000 ₽</div>
+            <div class="nominal-card">10 000 ₽</div>
+            <div class="nominal-card">15 000 ₽</div>
+            <div class="nominal-card">20 000 ₽</div>
+        </div>
 
-            <div class="gift-benefits">
-                <div class="benefit"><span>📦</span> Доставка по всей России</div>
-                <div class="benefit"><span>🍷</span> Более 200 вин на выбор</div>
-                <div class="benefit"><span>⏳</span> Срок действия — 12 месяцев</div>
-                <div class="benefit"><span>💌</span> Электронный и физический формат</div>
-            </div>
-
-            <div class="gift-cards">
-                <h2>Выберите номинал карты</h2>
-                <div class="cards-grid">
-                    <div class="card-item">
-                        <h3>5 000 ₽</h3>
-                        <p>Идеально для первого знакомства</p>
-                    </div>
-                    <div class="card-item">
-                        <h3>10 000 ₽</h3>
-                        <p>Попробовать классику и новинки</p>
-                    </div>
-                    <div class="card-item">
-                        <h3>15 000 ₽</h3>
-                        <p>Большой выбор для ценителей</p>
-                    </div>
-                    <div class="card-item">
-                        <h3>20 000 ₽</h3>
-                        <p>Лучший подарок для гурмана</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-block">
-                <button>Купить подарочную карту</button>
-            </div>
+        <div class="cta">
+            <button>🛒 Купить подарочную карту</button>
         </div>
     </div>
 @endsection
