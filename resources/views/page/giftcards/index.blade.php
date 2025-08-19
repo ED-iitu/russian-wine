@@ -14,14 +14,14 @@
         }
 
         .gift-banner h1 {
-            font-size: 2.2rem;
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 15px;
             color: #3a2c27;
         }
 
         .gift-banner p {
-            font-size: 1.2rem;
+            font-size: 2rem;
             color: #6a5d58;
         }
 
@@ -32,13 +32,13 @@
         }
 
         .gift-content h2 {
-            font-size: 1.6rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             color: #3a2c27;
         }
 
         .gift-content p {
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 1.6;
             color: #4d403c;
             margin-bottom: 30px;
@@ -97,13 +97,13 @@
         }
 
         .card-item h3 {
-            font-size: 1.4rem;
+            font-size: 3rem;
             margin-bottom: 10px;
             color: #3a2c27;
         }
 
         .card-item p {
-            font-size: 0.95rem;
+            font-size: 1.5rem;
             color: #6a5d58;
         }
 
@@ -144,14 +144,13 @@
             </p>
 
             <div class="gift-benefits">
-                <div class="benefit"><span>📦</span> Доставка по всей России</div>
                 <div class="benefit"><span>🍷</span> Более 200 вин на выбор</div>
                 <div class="benefit"><span>⏳</span> Срок действия — 12 месяцев</div>
-                <div class="benefit"><span>💌</span> Электронный и физический формат</div>
+                <div class="benefit"><span>💌</span> Электронный формат</div>
             </div>
 
             <div class="gift-cards">
-                <h2>Выберите номинал карты</h2>
+                <h2>Номиналы карты</h2>
                 <div class="cards-grid">
                     <div class="card-item">
                         <h3>5 000 ₽</h3>
