@@ -95,6 +95,7 @@
         .wine-image img {
             max-width: 180px; /* для десктопа */
             height: auto;
+            z-index: 2;
         }
 
         .alcohol-new {
@@ -190,6 +191,7 @@
             }
             .wine-image img {
                 max-width: 75px;
+                z-index: 2;
             }
             .wine-block.left .label,
             .wine-block.right .label {
