@@ -267,7 +267,9 @@
         const closeModal = document.getElementById('closeModal');
         const cardItems = document.querySelectorAll('.card-item');
         const cardAmountSelect = document.getElementById('cardAmount');
+        const ctaButton = document.querySelector('.cta-block button');
 
+        // Клик по карточке — сразу открывает модалку и подставляет номинал
         cardItems.forEach(item => {
             item.addEventListener('click', () => {
                 const amount = item.getAttribute('data-amount');
@@ -276,6 +278,13 @@
             });
         });
 
+        // Клик по кнопке "Купить подарочную карту"
+        ctaButton.addEventListener('click', () => {
+            cardAmountSelect.value = ""; // сбрасываем выбор
+            modal.style.display = 'flex';
+        });
+
+        // Закрытие модалки
         closeModal.onclick = () => modal.style.display = 'none';
 
         window.onclick = (e) => {
