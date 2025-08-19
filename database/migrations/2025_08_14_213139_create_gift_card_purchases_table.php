@@ -21,6 +21,7 @@ class CreateGiftCardPurchasesTable extends Migration
             $table->string('phone')->nullable();
             $table->string('status')->default('new'); // new, paid
             $table->string('payment_id')->nullable();
+            $table->string('card_number')->nullable();
             $table->timestamps();
         });
     }
