@@ -2,176 +2,176 @@
 @section('title', '🎁 Подарочные карты «Русское Вино» — дарите вкус и эмоции!')
 @section('content')
     <style>
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+        }
+
         .gift-banner {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             margin-top: 130px;
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #fff5f5, #fce8e8);
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #faf5f0, #fdfdfd);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
 
         .gift-banner h1 {
-            font-size: 44px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #6b0f1a;
             line-height: 1.3;
         }
 
         .gift-banner p {
             font-size: 22px;
+            color: #555;
             max-width: 800px;
-            color: #444;
             line-height: 1.6;
         }
 
         .gift-content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .gift-content h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .gift-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gift-benefit {
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out;
+            font-size: 20px;
+        }
+
+        .gift-benefit:hover {
+            transform: translateY(-5px);
+        }
+
+        .gift-benefit span {
+            display: block;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .gift-cards {
             margin-top: 70px;
             text-align: center;
         }
 
-        .gift-content h2 {
-            font-size: 30px;
-            font-weight: 600;
+        .gift-cards h3 {
+            font-size: 28px;
             margin-bottom: 30px;
-            color: #333;
-            line-height: 1.6;
         }
 
-        .advantages {
-            margin: 40px auto;
-            max-width: 800px;
-            padding: 20px;
-            text-align: left;
-            font-size: 20px;
-            line-height: 1.8;
-        }
-
-        .advantages ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .advantages li {
-            background: #fff;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            font-size: 20px;
-        }
-
-        .nominals {
-            margin-top: 60px;
+        .gift-card-options {
             display: flex;
             justify-content: center;
-            gap: 25px;
             flex-wrap: wrap;
+            gap: 25px;
         }
 
-        .nominal-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 25px 40px;
-            font-size: 26px;
-            font-weight: bold;
-            color: #6b0f1a;
+        .gift-card {
+            background: #faf5f0;
+            padding: 30px;
+            border-radius: 18px;
+            font-size: 22px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.07);
+            min-width: 180px;
         }
 
-        .nominal-card:hover {
-            transform: scale(1.05);
-            background: #6b0f1a;
-            color: #fff;
+        .gift-card:hover {
+            background: #f0e6de;
+            transform: translateY(-4px);
         }
 
-        .cta {
+        .cta-section {
             margin-top: 80px;
             text-align: center;
         }
 
-        .cta button {
-            background: #6b0f1a;
+        .cta-button {
+            display: inline-block;
+            background: #7c2f24;
             color: #fff;
-            padding: 20px 40px;
             font-size: 22px;
-            border: none;
+            font-weight: 600;
+            padding: 18px 40px;
             border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
         }
 
-        .cta button:hover {
-            background: #8e1c28;
-        }
-
-        @media (max-width: 768px) {
-            .gift-banner h1 {
-                font-size: 32px;
-            }
-
-            .gift-banner p {
-                font-size: 18px;
-            }
-
-            .gift-content h2 {
-                font-size: 22px;
-            }
-
-            .advantages li {
-                font-size: 18px;
-            }
-
-            .nominal-card {
-                font-size: 22px;
-                padding: 20px 30px;
-            }
-
-            .cta button {
-                font-size: 20px;
-                padding: 15px 30px;
-            }
+        .cta-button:hover {
+            background: #5a1f18;
         }
     </style>
 
-    <div class="gift-banner">
-        <h1>🎁 Подарочные карты «Русское Вино»</h1>
-        <p>Дарите вкус и эмоции! Идеальный подарок для ценителей вина — от 5 000 до 20 000 рублей.</p>
-    </div>
-
-    <div class="gift-content">
-        <h2>
-            Подарочная карта «Русское Вино» — это не просто сертификат, а целое винное приключение.
-            Получатель сможет выбрать любое вино из нашего каталога, попробовать новые вкусы и открыть для себя уникальные российские винодельни.
-        </h2>
-
-        <div class="advantages">
-            <strong>Преимущества:</strong>
-            <ul>
-                <li>📦 Доставка по всей России</li>
-                <li>🍷 Более 200 позиций вина на выбор</li>
-                <li>⏳ Срок действия — 12 месяцев</li>
-                <li>💌 Электронный и физический формат</li>
-            </ul>
+    <div class="container">
+        <div class="gift-banner">
+            <h1>🎁 Подарочные карты «Русское Вино»</h1>
+            <p>Идеальный подарок для ценителей вина — от <strong>5 000</strong> до <strong>20 000</strong> рублей. Дарите вкус и эмоции!</p>
         </div>
 
-        <h2>Выберите номинал:</h2>
-        <div class="nominals">
-            <div class="nominal-card">5 000 ₽</div>
-            <div class="nominal-card">10 000 ₽</div>
-            <div class="nominal-card">15 000 ₽</div>
-            <div class="nominal-card">20 000 ₽</div>
+        <div class="gift-content">
+            <h2>
+                Подарочная карта «Русское Вино» — это не просто сертификат, а целое винное приключение.
+                Получатель сможет выбрать любое вино из нашего каталога, попробовать новые вкусы и открыть для себя уникальные российские винодельни.
+            </h2>
+
+            <div class="gift-benefits">
+                <div class="gift-benefit">
+                    <span>📦</span>
+                    Доставка по всей России
+                </div>
+                <div class="gift-benefit">
+                    <span>🍷</span>
+                    Более 200 позиций вина на выбор
+                </div>
+                <div class="gift-benefit">
+                    <span>⏳</span>
+                    Срок действия — 12 месяцев
+                </div>
+                <div class="gift-benefit">
+                    <span>💌</span>
+                    Электронный и физический формат
+                </div>
+            </div>
         </div>
 
-        <div class="cta">
-            <button>🛒 Купить подарочную карту</button>
+        <div class="gift-cards">
+            <h3>Выберите номинал карты</h3>
+            <div class="gift-card-options">
+                <div class="gift-card">5 000 ₽</div>
+                <div class="gift-card">10 000 ₽</div>
+                <div class="gift-card">15 000 ₽</div>
+                <div class="gift-card">20 000 ₽</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="#" class="cta-button">Купить подарочную карту</a>
         </div>
     </div>
 @endsection
