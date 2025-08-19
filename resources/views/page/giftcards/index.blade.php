@@ -38,7 +38,7 @@
         }
 
         .gift-content p {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             line-height: 1.6;
             color: #4d403c;
             margin-bottom: 30px;
