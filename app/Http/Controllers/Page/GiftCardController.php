@@ -23,7 +23,7 @@ class GiftCardController extends Controller
             'phone'  => 'nullable|string|max:20',
         ]);
 
-        $cardNumber = strtoupper(Str::random(10)); // генерим номер карты
+        $cardNumber = implode(' ', str_split(str_pad(mt_rand(0, 9999999999999999), 16, '0', STR_PAD_LEFT), 4));
         $purchase   = GiftCardPurchase::create([
             'amount'      => $request->amount,
             'name'        => $request->name,
