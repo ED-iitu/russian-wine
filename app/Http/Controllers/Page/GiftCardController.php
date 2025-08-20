@@ -40,6 +40,6 @@ class GiftCardController extends Controller
 
     public function success()
     {
-        return view('giftcards.success');
+        return view('page.giftcards.success');
     }
 }
