@@ -40,6 +40,8 @@ class GiftCardController extends Controller
 
     public function success()
     {
-        return view('page.giftcards.success');
+        return view('page.giftcards.success', [
+            'message' => 'Заявка на покупку подарочной карты успешно отправлена!'
+        ]);
     }
 }
