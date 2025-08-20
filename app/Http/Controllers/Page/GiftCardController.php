@@ -35,11 +35,11 @@ class GiftCardController extends Controller
 
         // TODO: интеграция с платёжкой
         // redirect на страницу оплаты
-        return redirect()->route('page.giftcards.success')->with('success', 'Заказ создан! (MVP)');
+        return redirect()->route('giftcards.success')->with('success', 'Заказ создан! (MVP)');
     }
 
     public function success()
     {
-        return view('page.giftcards.success');
+        return view('giftcards.success');
     }
 }
