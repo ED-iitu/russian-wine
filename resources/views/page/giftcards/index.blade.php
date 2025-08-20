@@ -311,11 +311,60 @@
 
         @media (max-width: 768px) {
             .gift-banner {
+                letter-spacing: 1px;
                 margin-top: 20px;
             }
 
             .gift-banner p {
                 font-size: 2.5rem;
+            }
+
+            .gift-content h2 {
+                font-size: 3.5rem;
+            }
+
+            .gift-content p {
+                font-size: 2rem;
+            }
+
+            .benefit {
+                font-size: 2.5rem;
+            }
+
+            .benefit span {
+                font-size: 4rem;
+            }
+
+            .card-item {
+                width: 280px;
+            }
+
+            .card-item h3 {
+                font-size: 4rem;
+            }
+
+            .card-item p {
+                font-size: 2.5rem;
+            }
+
+            .cta-block button {
+                font-size: 2.5rem;
+            }
+
+            .faq-block h2 {
+                font-size: 27px;
+            }
+
+            .modal-content h2 {
+                font-size: 3.2rem;
+            }
+
+            .modal-content input, .modal-content select {
+                font-size: 2.3rem;
+            }
+
+            .modal-content button {
+                font-size: 2.4rem;
             }
         }
     </style>
