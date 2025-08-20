@@ -453,11 +453,12 @@
         <div class="modal-content">
             <span class="close-btn" id="closeModal">&times;</span>
             <h2>Оформление подарочной карты</h2>
-            <form>
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Телефон" required>
-                <select id="cardAmount" required>
+            <form method="post" action="{{ route('giftcards.buy') }}">
+                @csrf
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <select id="cardAmount" name="amount" required>
                     <option value="">Выберите номинал</option>
                     <option value="5000">5 000 ₽</option>
                     <option value="10000">10 000 ₽</option>

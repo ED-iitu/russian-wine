@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Page;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\GiftCardPurchase;
+use Illuminate\Support\Str;
 
 class GiftCardController extends Controller
 {
@@ -22,12 +23,14 @@ class GiftCardController extends Controller
             'phone'  => 'nullable|string|max:20',
         ]);
 
-        $purchase = GiftCardPurchase::create([
-            'amount' => $request->amount,
-            'name'   => $request->name,
-            'email'  => $request->email,
-            'phone'  => $request->phone,
-            'status' => 'new',
+        $cardNumber = strtoupper(Str::random(10)); // генерим номер карты
+        $purchase   = GiftCardPurchase::create([
+            'amount'      => $request->amount,
+            'name'        => $request->name,
+            'email'       => $request->email,
+            'phone'       => $request->phone,
+            'card_number' => $cardNumber,
+            'status'      => 'new',
         ]);
 
         // TODO: интеграция с платёжкой
