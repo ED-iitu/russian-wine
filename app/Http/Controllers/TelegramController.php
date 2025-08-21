@@ -145,6 +145,8 @@ class TelegramController extends Controller
     private function answerCallbackQuery($callbackQueryId)
     {
         $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+
+        Log::info($telegramBotToken);
         $url              = "https://api.telegram.org/bot" . $telegramBotToken . "/answerCallbackQuery";
 
         $data = [

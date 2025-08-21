@@ -35,7 +35,7 @@ class GiftCardController extends Controller
 
         // TODO: интеграция с платёжкой
         // redirect на страницу оплаты
-        return redirect()->route('giftcards.success')->with('success', 'Заказ создан! (MVP)');
+        return redirect()->route('giftcards.success');
     }
 
     public function success()
@@ -43,5 +43,17 @@ class GiftCardController extends Controller
         return view('page.giftcards.success', [
             'message' => 'Заявка на покупку подарочной карты успешно отправлена!'
         ]);
+    }
+
+    public function download(GiftCardGenerator $generator)
+    {
+        // Пример: генерим случайный номер карты и номинал
+        $cardNumber = implode(' ', str_split(str_pad(mt_rand(0, 9999999999999999), 16, '0', STR_PAD_LEFT), 4));
+
+        $amount = rand(1000, 10000);
+
+        $filePath = $generator->generate($cardNumber, $amount);
+
+        return response()->download($filePath)->deleteFileAfterSend(true);
     }
 }

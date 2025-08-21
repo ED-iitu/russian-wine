@@ -105,5 +105,7 @@ Route::get('/{slug}', 'Page\IndexController@show')->name('wine_or_winery');
 Route::get('/store/gift-cards', 'Page\GiftCardController@index')->name('giftcards.index');
 Route::post('/store/gift-cards/buy', 'Page\GiftCardController@buy')->name('giftcards.buy');
 Route::get('/store/gift-cards/success', 'Page\GiftCardController@success')->name('giftcards.success');
+Route::get('/store/gift-card/download', 'Page\GiftCardController@download')->name('gift-card.download');
+
 
 
