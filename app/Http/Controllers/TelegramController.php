@@ -144,7 +144,7 @@ class TelegramController extends Controller
 
     private function answerCallbackQuery($callbackQueryId)
     {
-        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $telegramBotToken = '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo';
 
         Log::info($telegramBotToken);
         $url              = "https://api.telegram.org/bot" . $telegramBotToken . "/answerCallbackQuery";
@@ -169,7 +169,7 @@ class TelegramController extends Controller
 
     private function sendMessage($chatId, $text)
     {
-        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $telegramBotToken = '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo';
         $url              = "https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage";
 
         $data = [
@@ -193,7 +193,7 @@ class TelegramController extends Controller
 
     private function sendMessageWithKeyboard($chatId, $text, $keyboard)
     {
-        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $telegramBotToken = '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo';
         Log::info($telegramBotToken);
         $url = "https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage";
 
@@ -221,7 +221,7 @@ class TelegramController extends Controller
 
     private function editMessageReplyMarkup($chatId, $messageId)
     {
-        $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        $telegramBotToken = '7472810776:AAEZls-YtfWyL0T9mnzQFXnukSAnOg-owoo';
         $url = "https://api.telegram.org/bot" . $telegramBotToken . "/editMessageReplyMarkup";
         $data = [
             'chat_id' => $chatId,
