@@ -194,6 +194,7 @@ class TelegramController extends Controller
     private function sendMessageWithKeyboard($chatId, $text, $keyboard)
     {
         $telegramBotToken = env('TELEGRAM_BOT_TOKEN');
+        Log::info($telegramBotToken);
         $url = "https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage";
 
         $data = [
