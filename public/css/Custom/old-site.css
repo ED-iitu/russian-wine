@@ -6507,6 +6507,12 @@ h2.price {
     display: none !important
 }
 
+@media (min-width: 360px) {
+    #simplecheckout_cart tr td.image {
+        width: 15rem;
+    }
+}
+
 @media (min-width: 768px) {
     #product-product.product-temp1 #price .price-title {
         font-size: 1.3vw;
