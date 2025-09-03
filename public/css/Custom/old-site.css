@@ -6507,7 +6507,7 @@ h2.price {
     display: none !important
 }
 
-@media (min-width: 360px) {
+@media (max-width: 360px) {
     #simplecheckout_cart tr td.image {
         width: 15rem;
     }
