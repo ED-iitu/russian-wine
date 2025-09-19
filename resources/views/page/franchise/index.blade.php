@@ -16,6 +16,11 @@
             background: none;
             box-shadow: none;
         }
+
+        .form-common input::placeholder {
+            color: #231F20; /* или любой нужный */
+            opacity: 1;     /* чтобы не было блеклым */
+        }
     </style>
     <div id="franchise">
         <div id="content">
