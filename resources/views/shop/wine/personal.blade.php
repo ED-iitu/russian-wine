@@ -368,9 +368,9 @@
             @csrf
             <h2 id="form-title-feedback">Оставить заявку</h2>
             <input type="text" name="name" placeholder="Имя" required="required">
-            <input type="text" name="contact" placeholder="Телефон или e-mail"
+            <input type="number" name="contact" placeholder="Телефон"
                    required="required"
-                   onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
+                   onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон');">
             <input type="text" id="text1" name="message" placeholder="Сообщение">
             <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
 
