@@ -6,6 +6,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/franchise.css') }}">
 @endpush
 @section('content')
+    <style>
+        .form-common input[type="number"] {
+            font-size: inherit;
+            padding-left: 0;
+            border: none;
+            border-bottom: 2px solid #231F20;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+        }
+    </style>
     <div id="franchise">
         <div id="content">
             <div class="heading-wrap">
