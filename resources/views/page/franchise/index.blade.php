@@ -184,8 +184,12 @@
                                                placeholder="Имя" required>
                                     </div>
                                     <div class="p-t-0">
-                                        <input name="phone" class="form-control" type="text"
+                                        <input name="phone" class="form-control" type="number"
                                                placeholder="Телефон" required>
+                                    </div>
+                                    <div class="p-t-0">
+                                        <input name="city" class="form-control" type="text"
+                                               placeholder="Город" required>
                                     </div>
                                     <div class="p-t-0">
                                         <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px; margin-top: 20px;">

@@ -49,6 +49,7 @@ class IndexController extends Controller
         $order = new \stdClass();
         $order->name = $request['name'];
         $order->phone = $request['phone'];
+        $order->city = $request['city'];
         $order->sender = env('MAIL_USERNAME');
         Mail::to(env('MAIL_USERNAME'))->send(new  FranchiseMail($order));
         return true;

@@ -5,4 +5,5 @@
 <div>
     <p><b>Имя</b> {{ $mail->name }}</p>
     <p><b>Телефон:</b> {{ $mail->phone }}</p>
+    <p><b>Город:</b> {{ $mail->city }}</p>
 </div>

@@ -30,6 +30,7 @@ class FranchiseController extends Controller
         $saveRequest = new Order();
         $saveRequest->name = $request['name'];
         $saveRequest->phone = $request['phone'];
+        $saveRequest->city  = $request['city'];
         $saveRequest->type = Order::TYPE_FRANCHISE;
         $saveRequest->save();
 
