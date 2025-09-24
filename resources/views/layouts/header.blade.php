@@ -100,12 +100,6 @@
 {{--                        </a>--}}
 {{--                    @endif--}}
 {{--                </div>--}}
-
-                <!-- Мобильная кнопка поиска -->
-                <button type="button" class="btn btn-navbar visible-xs"
-                        onclick="$('#myOverlay').addClass('open'); $('#searchResult').show();">
-                    <img alt="search icon" src="{{ asset ('image/search.svg') }}" style="width:20px; height:20px;">
-                </button>
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                         <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
