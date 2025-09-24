@@ -27,6 +27,13 @@
             -webkit-align-items: center;
             align-items: center;
         }
+
+        @media (max-width: 991px) {
+            #modal_sviaz input[type=number], #modal_sviaz textarea {
+                font-size: 5vw;
+                margin-bottom: 5vh;
+            }
+        }
     </style>
 
     <div id="information-informationwc" class="imennoe">
