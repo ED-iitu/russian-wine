@@ -1,3 +1,11 @@
+<style>
+    .mobile-search {
+        color: white;
+        display: inline-block;
+        margin-right: 15px; /* расстояние между лупой и корзиной */
+    }
+</style>
+
 <header id="head_f"
         class="home_header">
     <div class="container container-lg">
@@ -100,6 +108,15 @@
 {{--                        </a>--}}
 {{--                    @endif--}}
 {{--                </div>--}}
+
+                <!-- Кнопка поиска -->
+                <div class="mobile-search desktopHidden">
+                    <a onclick="$('#myOverlay').addClass('open', 1000); $('#searchResult').show();
+                $('#white-logo').hide(); $('.overlay-results').hide();  $('#black-logo').show()"
+                       id="searchStart">
+                        <img alt="search icon" src="{{ asset ('image/search.svg') }}" style="width:22px; height:22px;">
+                    </a>
+                </div>
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                         <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
