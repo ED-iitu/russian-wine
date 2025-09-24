@@ -108,7 +108,7 @@
 {{--                    @endif--}}
 {{--                </div>--}}
                 <!-- Кнопка поиска -->
-                <div id="navSearch" class="mobile-search">
+                <div id="navSearch" class="mobile-search desktopHidden">
                     <a onclick="$('#myOverlay').addClass('open', 1000); $('#searchResult').show();
                 $('#white-logo').hide(); $('.overlay-results').hide();  $('#black-logo').show()"
                        id="searchStart">
