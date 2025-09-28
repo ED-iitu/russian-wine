@@ -61,6 +61,7 @@ function cart_add(wine_id, qtn, type) {
 
 function cart_button_click(wine_id, qtn, type) {
     var btn = $('.cart-btn-' + wine_id);
+    var qtn = parseInt($('#wine-' + wine_id).val()) || 1;
 
     if (btn.hasClass('active')) {
         // Удаляем
