@@ -97,7 +97,7 @@ function cart_remove() {
     })
 }
 
-function cart_remove_from_button(wine_id, qnt, type) {
+function cart_remove_from_button(wine_id, type) {
     var wine_btn = $('.cart-btn-' + wine_id);
 
     $.ajax({
