@@ -17737,6 +17737,10 @@ input[type=number] {
         display: none;
     }
 
+    .button_cont button#button-carts.active span {
+        display: contents;
+    }
+
     header.home_header#head_f {
         position: relative !important;
         background: #120D1D;
