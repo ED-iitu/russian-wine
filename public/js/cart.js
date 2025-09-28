@@ -36,12 +36,12 @@ function update_count(wine_id, currency_type, page = null) {
     if (qua > 0) {
         $('.wine_show_price').html((price * qua) + ' <span class="currency">п</span>');
         wine_count.val(qua);
-        wine_cart_btn.attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
+        //wine_cart_btn.attr("onclick", "cart_add('" + wine_id + "', '" + qua + "', 'wine'); $(this).addClass('active')");
         if (page == 'wine-show') {
             wine_cart_text = '<span>Добавить в корзину</span>';
         }
-        wine_cart_btn.removeClass('active');
-        wine_cart_btn.html(wine_cart_text);
+       // wine_cart_btn.removeClass('active');
+       // wine_cart_btn.html(wine_cart_text);
     }
 }
 
