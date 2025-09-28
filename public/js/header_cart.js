@@ -103,8 +103,7 @@ function cart_remove_from_button(wine_id, qnt, type) {
     $.ajax({
         url: '/cart/remove/' + type + '/' + wine_id + '/0',
         success: function (data) {
-            wine_btn.removeClass('active');
-            wine_btn.text('В корзину');
+            wine_btn.removeClass('active').find('span').text('В корзину');
             recountTotal();
             count_wines();
             countItem();

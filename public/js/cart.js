@@ -52,8 +52,7 @@ function cart_add(wine_id, qtn, type) {
         success: function (data) {
         },
         complete: function () {
-            wine_btn.addClass('active');
-            wine_btn.text('Удалить');
+            wine_btn.addClass('active').find('span').text('Удалить');
             cart_table_update()
             countItem();
         }
@@ -61,15 +60,13 @@ function cart_add(wine_id, qtn, type) {
 }
 
 function cart_button_click(wine_id, qtn, type) {
-    var btn = $('.cart-btn-' + wine_id); // ищем кнопку по id товара
+    var btn = $('.cart-btn-' + wine_id);
 
-    if ($(btn).hasClass('active')) {
+    if (btn.hasClass('active')) {
         // Удаляем
-        cart_remove_from_button(wine_id, qtn, type);
-        btn.removeClass('active').find('span').text('В корзину');
+        cart_remove_from_button(wine_id, type);
     } else {
         // Добавляем
         cart_add(wine_id, qtn, type);
-        btn.addClass('active').find('span').text('Удалить');
     }
 }
