@@ -49,8 +49,11 @@
                                            value="1">
                                     <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                 </div>
+{{--                                <button id="button-carts" class="cart-btn-{{$wine->id}}"--}}
+{{--                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">--}}
+{{--                                    <span>В корзину</span></button>--}}
                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">
+                                        onclick="cart_button_click('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">
                                     <span>В корзину</span></button>
                             </div>
                         </div>

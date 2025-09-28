@@ -59,3 +59,15 @@ function cart_add(wine_id, qtn, type) {
         }
     });
 }
+
+function cart_button_click(btn, qtn, type) {
+    var wine_id = $(btn).data('id');
+
+    if ($(btn).hasClass('active')) {
+        // Удаляем
+        cart_remove_from_button(wine_id, type);
+    } else {
+        // Добавляем
+        cart_add(wine_id, qtn, type);
+    }
+}
