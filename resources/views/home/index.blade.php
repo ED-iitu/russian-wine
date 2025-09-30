@@ -262,7 +262,7 @@
                                                 <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus', null, 'new')"></span>
                                             </div>
                                             <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                    onclick="cart_add('{{$wine->id}}', 1, 'wine', null, 'new');">
+                                                    onclick="cart_button_click('{{$wine->id}}', 1, 'wine', null, 'new');">
                                                 <span>В корзину</span></button>
                                         </div>
                                     </div>
