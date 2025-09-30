@@ -107,7 +107,7 @@ function cart_remove_from_button(wine_id, type) {
             recountTotal();
             count_wines();
             countItem();
-            cart_table_update();
+            // cart_table_update();
         }
     });
 }
