@@ -17643,7 +17643,7 @@ input[type=number] {
 
     .featured_cont .swiper-slide {
         width: 50vw;
-        height: 84.722vw;
+        height: 85vw;
     }
 
     #swinemakers .swiper-slide.swiper-slide-prev {
@@ -17709,6 +17709,7 @@ input[type=number] {
         overflow: visible;
         float: left;
         width: 100%;
+        margin-top: 5vw;
     }
 
     .scol.col-rs-8 {
