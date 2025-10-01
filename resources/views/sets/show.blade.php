@@ -122,7 +122,8 @@
 		                        </div>
 	                        </span>
                             <div style="float: left; width: 100%;">
-                                <button class="add-cart set-buy-btn cart-btn-{{$set->id}}"
+                                <button class="add-cart set-buy-btn btn-danger cart-btn-{{$set->id}}"
+                                        style="padding: .75vw 3.5vw;"
                                         onclick="cart_button_click('{{$set->id}}', 1, 'set')">
                                     В корзину
                                 </button>
