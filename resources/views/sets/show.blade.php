@@ -122,10 +122,9 @@
 		                        </div>
 	                        </span>
                             <div style="float: left; width: 100%;">
-                                <button class="add-cart  set-buy-btn btn-danger" style="padding: .75vw 3.5vw;"
-                                        onclick="cart_button_click('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине')">
-                                    в
-                                    корзину
+                                <button class="add-cart set-buy-btn cart-btn-{{$set->id}}"
+                                        onclick="cart_button_click('{{$set->id}}', 1, 'set')">
+                                    В корзину
                                 </button>
                             </div>
                             @else
@@ -136,10 +135,9 @@
                                        @endif
                                    </div>
 	                            </span>
-                                <button class="add-cart set-buy-btn btn-danger"
-                                        onclick="cart_button_click('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('Удалить')">
-                                    в
-                                    корзину
+                                <button class="add-cart set-buy-btn cart-btn-{{$set->id}} btn-danger"
+                                        onclick="cart_button_click('{{$set->id}}', 1, 'set')">
+                                    В корзину
                                 </button>
                             @endif
                         </div>
@@ -158,9 +156,10 @@
               @endif
           </div>
         	</span>
-            <button id="podpisatsa" onclick="cart_button_click('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('Удалить');$(this).css({'backgroundColor' : '#261F30'})">
-                в
-                корзину
+            <button id="podpisatsa"
+                    class="cart-btn-{{$set->id}}"
+                    onclick="cart_button_click('{{$set->id}}', 1, 'set')">
+                В корзину
             </button>
         </div>
     </div>

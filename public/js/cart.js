@@ -66,8 +66,10 @@ function cart_button_click(wine_id, qtn, type) {
     if (btn.hasClass('active')) {
         // Удаляем
         cart_remove_from_button(wine_id, type);
+        btn.removeClass('active').text('В корзину');
     } else {
         // Добавляем
         cart_add(wine_id, qtn, type);
+        btn.addClass('active').text('Удалить');
     }
 }
