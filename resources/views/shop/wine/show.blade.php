@@ -345,7 +345,7 @@
                                 <span class="qua_plus" onclick="update_count({{$wine->id}},'plus')"></span>
                             </div>
                             <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                    onclick="cart_add('{{$wine->id}}', 1, 'wine'); $(this).addClass('active')">
+                                    onclick="cart_button_click('{{$wine->id}}', 1, 'wine'); $(this).addClass('active')">
                                 <span>В корзину</span></button>
                         </div>
                     </div>
@@ -429,7 +429,7 @@
 
                                             <div class="col-md-12">
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');">
+                                                        onclick="cart_button_click('{{$wine->id}}', 1, 'wine');">
                                                     <span>Добавить в корзину</span>
                                                 </button>
                                             </div>
@@ -559,7 +559,7 @@
                                                                   onclick="update_count({{$feature_wine->id}}, 'plus')"></span>
                                                         </div>
                                                         <button id="button-carts" class="cart-btn-{{$feature_wine->id}}"
-                                                                onclick="cart_add('{{$feature_wine->id}}', 1, 'wine');">
+                                                                onclick="cart_button_click('{{$feature_wine->id}}', 1, 'wine');">
                                                             <span>В корзину</span></button>
                                                     </div>
                                                 </div>
