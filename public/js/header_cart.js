@@ -23,6 +23,7 @@ function countItem() {
                 $('.not_empty_cart').show();
                 $('.empty_cart').hide();
             } else if (data.count === 0) {
+                $('.empty_cart_block').addClass('empty-cart');
                 $('.not_empty_cart').hide();
                 $('.empty_cart').show();
             }
