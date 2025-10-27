@@ -363,7 +363,7 @@ class IndexController extends Controller
         $countProduct = 0;
         $cart_products = [];
         $countCartItems = session()->get('cart');
-        if ($countCartItems != false) {
+        if ($countCartItems) {
             foreach ($countCartItems as $item) {
                 if ($item['type'] == 'wine') {
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
@@ -388,7 +388,13 @@ class IndexController extends Controller
                         'total' => $price
                     ];
                     array_push($cart_products, $product_array);
-                    $total_sum += (int)$product->price * $item['qty'];
+
+                    if ($item['type'] == 'set') {
+                        $total_sum = (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
+                    } else {
+                        $total_sum += (int)$product->price * $item['qty'];
+                    }
+
                     $countProduct += 1;
                 }
             }
