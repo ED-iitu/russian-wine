@@ -59,7 +59,22 @@ function cart_add(wine_id, qtn, type) {
     });
 }
 
-function cart_button_click(wine_id, qtn, type) {
+// function cart_button_click(wine_id, qtn, type) {
+//     var btn = $('.cart-btn-' + wine_id);
+//     var qtn = parseInt($('#wine-' + wine_id).val()) || 1;
+//
+//     if (btn.hasClass('active')) {
+//         // Удаляем
+//         cart_remove_from_button(wine_id, type);
+//         btn.removeClass('active').text('В корзину');
+//     } else {
+//         // Добавляем
+//         cart_add(wine_id, qtn, type);
+//         btn.addClass('active').text('Удалить');
+//     }
+// }
+
+window.cart_button_click = function(wine_id, qtn, type) {
     var btn = $('.cart-btn-' + wine_id);
     var qtn = parseInt($('#wine-' + wine_id).val()) || 1;
 
@@ -72,4 +87,4 @@ function cart_button_click(wine_id, qtn, type) {
         cart_add(wine_id, qtn, type);
         btn.addClass('active').text('Удалить');
     }
-}
+};
