@@ -349,5 +349,6 @@
         </section>
         @push('scripts')
             <script src="{{ asset('js/favorite.js') }}"></script>
+            <script src="{{ asset('js/cart.js') }}"></script>
     @endpush
 @endsection
