@@ -505,5 +505,6 @@
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <script src="{{ asset('js/wine-shop-filter.js')}}"></script>
         <script src="{{ asset('js/favorite.js') }}"></script>
+        <script src="{{ asset('js/cart.js') }}"></script>
     @endpush
 @endsection
