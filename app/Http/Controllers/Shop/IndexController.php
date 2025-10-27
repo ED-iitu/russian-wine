@@ -371,7 +371,8 @@ class IndexController extends Controller
                 } elseif ($item['type'] == 'set') {
                     $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                     if ($item['qty'] >= 12) {
-                        $price = (int)$product->price * $item['qty'] - ((int)$product->price * $item['qty'] * 0.2);
+                        $price = (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
+//                        $price = (int)$product->price * $item['qty'] - ((int)$product->price * $item['qty'] * 0.2);
                     } else {
                         $price = (int)$product->price * $item['qty'];
                     }
