@@ -422,9 +422,9 @@ class IndexController extends Controller
             $total_sum = 0;
             foreach ($countCartItems as $item) {
                 if ($item['type'] == 'set') {
-                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    $product = Set::select('title', 'price', 'image', 'id', 'in_subscription')->where('id', '=', $item['product_id'])->first();
                 } elseif ($item['type'] == 'wine') {
-                    $product = Wine::select('title', 'price', 'image', 'id', 'in_subscription')->where('id', '=', $item['product_id'])->first();
+                    $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                 }
                 if ($product) {
                     Log::info('Расчет стоимости заказа', [
