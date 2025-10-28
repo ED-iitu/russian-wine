@@ -427,6 +427,12 @@ class IndexController extends Controller
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                 }
                 if ($product) {
+                    Log::info('Расчет стоимости заказа', [
+                        'type' => $item['type'],
+                        'qty'  => $item['qty'],
+                        'inSub' => $product->in_subscription,
+                    ]);
+
                     if ($item['type'] == 'set' && $item['qty'] >=12 && $product->in_subscription) {
                         $total_sum += (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
                     } else {
