@@ -248,6 +248,11 @@ class IndexController extends Controller
         if ($qty > $countItem) {
             return response()->json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
+
+        if ($type === 'set' && $checkProduct->in_subscription && $qty > 12) {
+            return response()->json(['error' => 'Годовая подписка, только в кол-ве 12'], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        }
+
         $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type, 'price' => $checkProduct->price];
         $sessionItems = session()->get('cart');
         if ($sessionItems and count($sessionItems) > 0) {
