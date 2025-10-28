@@ -394,8 +394,8 @@ class IndexController extends Controller
                     ];
                     array_push($cart_products, $product_array);
 
-                    if ($item['type'] == 'set') {
-                        $total_sum = (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
+                    if ($item['qty'] >= 12 && $item['type'] == 'set') {
+                        $total_sum += (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
                     } else {
                         $total_sum += (int)$product->price * $item['qty'];
                     }
@@ -427,7 +427,11 @@ class IndexController extends Controller
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                 }
                 if ($product) {
-                    $total_sum += (int)$product->price * $item['qty'];
+                    if ($item['type'] == 'set' && $item['qty'] >=12) {
+                        $total_sum += (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
+                    } else {
+                        $total_sum += (int)$product->price * $item['qty'];
+                    }
                 }
             }
 
