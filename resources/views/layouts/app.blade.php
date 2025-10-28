@@ -187,27 +187,87 @@
     function close_modal() {
         $('.auth_register_modal').addClass('hide')
     }
-</script>
 
-@stack('scripts')
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navEntries = performance.getEntriesByType("navigation");
-        if (navEntries.length && navEntries[0].type === "back_forward") {
-            location.reload(true);
+    // Вставь в конец <body> (главный глобальный скрипт)
+    (function () {
+        function cssRulesPresent() {
+            try {
+                var sheets = Array.from(document.styleSheets);
+                if (!sheets.length) return false;
+                // если хоть в одном stylesheet есть правила — считаем, что стили загрузились
+                for (var i = 0; i < sheets.length; i++) {
+                    var ss = sheets[i];
+                    try {
+                        if (ss.cssRules && ss.cssRules.length > 0) return true;
+                    } catch (e) {
+                        // если доступ запрещён (CORS) — считаем, что правило есть (безопасно)
+                        return true;
+                    }
+                }
+                return false;
+            } catch (e) {
+                return false;
+            }
         }
-    });
 
-    window.addEventListener('popstate', () => {
-        location.reload();
-    });
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            location.reload();
+        function bodyLooksStyled() {
+            try {
+                var s = getComputedStyle(document.body);
+                // проверяем пару характерных свойств: font-family обычно переопределён, margin часто 8px по-умолчанию в браузере
+                // если font-family — браузерный дефолт ("Times New Roman" или "serif") — скорее всего стили не применились
+                var ff = s.getPropertyValue('font-family') || '';
+                var bg = s.getPropertyValue('background-image') || '';
+                var color = s.getPropertyValue('color') || '';
+                // грубая эвристика: если font-family содержит 'serif' или 'Times' — возможно стили не загружены
+                if (/serif|Times|Times New Roman/i.test(ff) && (!bg || bg === 'none')) {
+                    return false;
+                }
+                // если цвет равен браузерному чёрному — не гарантия, но вместе с font check даёт индикацию
+                return true;
+            } catch (e) {
+                return true;
+            }
         }
-    });
-</script>
 
+        function shouldReload() {
+            // если нет правил CSS И/ИЛИ тело выглядит неотформатированным — перезагружаем
+            if (!cssRulesPresent()) return true;
+            if (!bodyLooksStyled()) return true;
+            return false;
+        }
+
+        function handleBackCheck() {
+            // даём браузеру 50-150ms чтобы восстановить/подгрузить ресурсы из bfcache
+            setTimeout(function () {
+                if (shouldReload()) {
+                    // console.log('[hack] Detected missing styles after back navigation — reloading');
+                    location.reload();
+                }
+            }, 120);
+        }
+
+        window.addEventListener('pageshow', function (ev) {
+            // pageshow может не иметь persisted в Chrome — всё равно делаем проверку
+            handleBackCheck();
+        });
+
+        window.addEventListener('popstate', function () {
+            handleBackCheck();
+        });
+
+        // На случай прямого перехода / восстановления сразу после load
+        window.addEventListener('DOMContentLoaded', function () {
+            // небольшая отложенная проверка и на первичную загрузку
+            setTimeout(function () {
+                if (shouldReload()) {
+                    // если это нормальная первая загрузка и стили реально отсутствуют - перезагрузим один раз
+                    location.reload();
+                }
+            }, 500);
+        });
+    })();
+
+</script>
 
 @include('layouts.modal')
 @if (session()->get('success') or session()->get('error') or session()->get('warning') or session()->get('info') or session()->get('status') or $errors->any())
