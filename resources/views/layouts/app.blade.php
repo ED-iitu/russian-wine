@@ -191,6 +191,13 @@
 
 @stack('scripts')
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navEntries = performance.getEntriesByType("navigation");
+        if (navEntries.length && navEntries[0].type === "back_forward") {
+            location.reload(true);
+        }
+    });
+
     window.addEventListener('popstate', () => {
         location.reload();
     });
