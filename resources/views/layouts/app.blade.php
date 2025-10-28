@@ -8,6 +8,8 @@
     <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))"/>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <meta http-equiv="Pragma" content="no-cache">
     <!-- Owl carousel  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}">
     <!-- Swiper.js  -->
