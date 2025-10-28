@@ -483,13 +483,20 @@ class IndexController extends Controller
                     $product = Set::select('title', 'price', 'image', 'id', 'in_subscription', 'model')->where('id', '=', $item['product_id'])->first();
                     if ($product->in_subscription) {
                         $product_type = 'Подписка на сеты';
+
+                        if ($item['qty'] >= 12) {
+                            $totalPrice = (int)$product->price * $item['qty'] * 0.8;
+                        }
+
                     } else {
                         $product_type = 'Сеты';
+                        $totalPrice = (int)$product->price * $item['qty'];
                     }
 
                 } elseif ($item['type'] == 'wine') {
                     $product = Wine::select('title', 'price', 'image', 'id', 'model')->where('id', '=', $item['product_id'])->first();
                     $product_type = 'Вино';
+                    $totalPrice = (int)$product->price * $item['qty'];
 
                 }
                 $order_product = [
@@ -498,11 +505,16 @@ class IndexController extends Controller
                     'type' => $product_type,
                     'qty' => $item['qty'],
                     'price' => (int)$product->price,
-                    'total_price' => (int)$product->price * $item['qty'],
+                    'total_price' => $totalPrice,
                 ];
                 array_push($orders, $order_product);
                 if ($product) {
-                    $total_sum += (int)$product->price * $item['qty'];
+                    if ($item['type'] == 'set' && $product->in_subscription && $item['qty'] >= 12) {
+                        $total_sum += (int)$product->price * $item['qty'] * 0.8;
+                    } else {
+                        $total_sum += (int)$product->price * $item['qty'];
+                    }
+
                     $cart_info .= 'Название: <b>' . $product->title . '</b> Тип продуката: <b>' . $product_type . '. </b>Количество: <b>' . $item['qty'] . '</b> штук <br>  ';
                 }
             }
