@@ -374,8 +374,8 @@ class IndexController extends Controller
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                     $price = (int)$product->price * $item['qty'];
                 } elseif ($item['type'] == 'set') {
-                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
-                    if ($item['qty'] >= 12) {
+                    $product = Set::select('title', 'price', 'image', 'id', 'in_subscription')->where('id', '=', $item['product_id'])->first();
+                    if ($item['qty'] >= 12 && $product->in_subscription) {
                         $price = (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
 //                        $price = (int)$product->price * $item['qty'] - ((int)$product->price * $item['qty'] * 0.2);
                     } else {
@@ -394,7 +394,7 @@ class IndexController extends Controller
                     ];
                     array_push($cart_products, $product_array);
 
-                    if ($item['qty'] >= 12 && $item['type'] == 'set') {
+                    if ($item['qty'] >= 12 && $item['type'] == 'set' && $product->in_subscription) {
                         $total_sum += (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
                     } else {
                         $total_sum += (int)$product->price * $item['qty'];
@@ -427,7 +427,7 @@ class IndexController extends Controller
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
                 }
                 if ($product) {
-                    if ($item['type'] == 'set' && $item['qty'] >=12) {
+                    if ($item['type'] == 'set' && $item['qty'] >=12 && $product->in_subscription) {
                         $total_sum += (int)$product->price * $item['qty'] * 0.8; // 20 проц скидки
                     } else {
                         $total_sum += (int)$product->price * $item['qty'];
