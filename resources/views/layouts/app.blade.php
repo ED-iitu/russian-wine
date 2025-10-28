@@ -189,6 +189,18 @@
     }
 </script>
 
+@stack('scripts')
+<script>
+    window.addEventListener('popstate', () => {
+        location.reload();
+    });
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            location.reload();
+        }
+    });
+</script>
+
 
 @include('layouts.modal')
 @if (session()->get('success') or session()->get('error') or session()->get('warning') or session()->get('info') or session()->get('status') or $errors->any())
