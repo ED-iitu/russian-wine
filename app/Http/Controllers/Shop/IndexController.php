@@ -257,7 +257,13 @@ class IndexController extends Controller
                 'sessionItems' => $sessionItems
             ]);
 
-            if ($type === 'set' && $checkProduct->in_subscription && $sessionItems['qty'] > 12) {
+            $productsCount = $qty;
+
+            if (isset($sessionItems['qty'])) {
+                $productsCount = $sessionItems[0]['qty'];
+            }
+
+            if ($type === 'set' && $checkProduct->in_subscription && $productsCount > 12) {
                 return response()->json(['error' => 'Годовая подписка, только в кол-ве 12'], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
             }
 
