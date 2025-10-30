@@ -252,7 +252,11 @@ class IndexController extends Controller
         $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type, 'price' => $checkProduct->price];
         $sessionItems = session()->get('cart');
         if ($sessionItems and count($sessionItems) > 0) {
-            if ($type === 'set' && $checkProduct->in_subscription && $sessionItems > 12) {
+            if ($type === 'set' && $checkProduct->in_subscription && count($sessionItems) > 12) {
+                Log::info('Кол-во товаров в кеше', [
+                    'count' => count($sessionItems)
+                ]);
+
                 return response()->json(['error' => 'Годовая подписка, только в кол-ве 12'], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
             }
 
