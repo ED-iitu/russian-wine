@@ -13444,6 +13444,7 @@ header.other img {
     font-family: 'ProximaNova-Reg', sans-serif;;
     text-align: center;
     left: 2.8VW;
+    z-index: 1;
 }
 
 .other-product + .other-product {
