@@ -187,25 +187,6 @@
     function close_modal() {
         $('.auth_register_modal').addClass('hide')
     }
-
-    (function () {
-        let firstLoad = true;
-
-        window.addEventListener('pageshow', function (event) {
-            // Событие pageshow срабатывает и при возврате назад (из bfcache)
-            if (!firstLoad && event.persisted) {
-                location.reload();
-            }
-            firstLoad = false;
-        });
-
-        window.addEventListener('popstate', function () {
-            // При возврате назад (если pushState использовался или Chrome вернул из кэша)
-            if (!firstLoad) {
-                location.reload();
-            }
-        });
-    })();
 </script>
 
 @include('layouts.modal')
