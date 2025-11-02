@@ -13443,12 +13443,12 @@ header.other img {
     background: #000;
     font-family: 'ProximaNova-Reg', sans-serif;;
     text-align: center;
-    left: 2.8VW;
+    left: 40VW;
     z-index: 1;
 }
 
 .other-product + .other-product {
-    left: 5.6vw;
+    left: 42vw;
 }
 
 .other-product img {
