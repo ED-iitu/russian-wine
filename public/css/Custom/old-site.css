@@ -13443,17 +13443,17 @@ header.other img {
     background: #000;
     font-family: 'ProximaNova-Reg', sans-serif;;
     text-align: center;
-    left: 40VW;
+    left: 46VW;
     z-index: 1;
 }
 
 .other-product + .other-product {
-    left: 42vw;
+    left: 48vw;
 }
 
 .other-product img {
     width: 0.8vw;
-    margin-top: 0.7vw;
+    margin-top: 1vw;
 }
 
 #blur_cont.show {
