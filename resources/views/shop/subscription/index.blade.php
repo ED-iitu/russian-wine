@@ -24,7 +24,8 @@
         }
 
         #pod_lastblock .bokal {
-            bottom: 35rem !important;
+            bottom: 53rem !important;
+            left: 0 !important;
         }
 
         #pod_lastblock h2 {
@@ -32,10 +33,10 @@
         }
 
         #thirdblock a button {
-            top: 41rem !important;
+            top: 40rem !important;
             font-size: 2.5rem !important;
             width: 58rem !important;
-            left: 3rem !important;
+            left: 1rem !important;
         }
     }
 </style>
