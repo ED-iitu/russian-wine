@@ -29,7 +29,7 @@
         }
 
         .description p {
-            font-size: 3rem;
+            font-size: 3rem !important;
         }
 
         #pod_lastblock h2 {
