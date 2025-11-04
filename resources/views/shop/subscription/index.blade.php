@@ -28,6 +28,10 @@
             left: 0 !important;
         }
 
+        .description p {
+            font-size: 3rem;
+        }
+
         #pod_lastblock h2 {
             bottom: 14rem !important;
         }
