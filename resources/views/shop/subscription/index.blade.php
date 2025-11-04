@@ -2,6 +2,43 @@
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/page/subscription.css')}}">
 @endpush
+<style>
+    @media (max-width: 360px) {
+        #top_podpiska {
+            height: 75rem;
+        }
+
+        #top_podpiska .btn-danger {
+            font: 12px ProximaNova-Bold;
+            margin-top: 1rem;
+            left: 0;
+        }
+
+        #firstblock img {
+            margin-top: 0;
+        }
+
+        .desc-mask .description {
+            width: 50rem;
+            padding-top: 3vw;
+        }
+
+        #pod_lastblock .bokal {
+            bottom: 35rem;
+        }
+
+        #pod_lastblock h2 {
+            bottom: 14rem;
+        }
+
+        #thirdblock a button {
+            top: 41rem;
+            font-size: 2.5rem;
+            width: 58rem;
+            left: 3rem;
+        }
+    }
+</style>
 @section('content')
     <div id="product-category" class="container">
         <div class="row">
