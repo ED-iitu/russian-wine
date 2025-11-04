@@ -5,40 +5,41 @@
 <style>
     @media (max-width: 360px) {
         #top_podpiska {
-            height: 75rem;
+            height: 75rem !important;
         }
 
         #top_podpiska .btn-danger {
-            font: 12px ProximaNova-Bold;
-            margin-top: 1rem;
-            left: 0;
+            font: 12px ProximaNova-Bold !important;
+            margin-top: 1rem !important;
+            left: 0 !important;
         }
 
         #firstblock img {
-            margin-top: 0;
+            margin-top: 0 !important;
         }
 
         .desc-mask .description {
-            width: 50rem;
-            padding-top: 3vw;
+            width: 50rem !important;
+            padding-top: 3vw !important;
         }
 
         #pod_lastblock .bokal {
-            bottom: 35rem;
+            bottom: 35rem !important;
         }
 
         #pod_lastblock h2 {
-            bottom: 14rem;
+            bottom: 14rem !important;
         }
 
         #thirdblock a button {
-            top: 41rem;
-            font-size: 2.5rem;
-            width: 58rem;
-            left: 3rem;
+            top: 41rem !important;
+            font-size: 2.5rem !important;
+            width: 58rem !important;
+            left: 3rem !important;
         }
     }
 </style>
+
 @section('content')
     <div id="product-category" class="container">
         <div class="row">
