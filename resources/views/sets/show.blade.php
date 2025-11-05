@@ -4,6 +4,26 @@
 @section('keywords', $set->meta_keywords)
 @section('body_class', 'set-page footer-hide other-page')
 @section('content')
+    <style>
+        @media (max-width: 360px) {
+            .other-product {
+                display: inline-table !important;
+                width: 10VW;
+                height: 10VW;
+                left: 38VW;
+            }
+
+            .other-product + .other-product {
+                left: 48vw;
+            }
+
+            .other-product img {
+                width: 3.8vw;
+                margin-top: 0;
+            }
+        }
+
+    </style>
     <div id="desktop-product">
         <div class="other-page" id="other-page">
             <div class="product-page">
