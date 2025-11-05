@@ -26,6 +26,14 @@
                 height: 500px !important;
                 float: left;
             }
+
+            #desktop-product #other-page {
+                padding-top: 0 !important;
+            }
+
+            #other-page .product-page {
+                margin-top: 0 !important;
+            }
         }
 
     </style>
