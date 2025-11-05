@@ -21,6 +21,11 @@
                 width: 3.8vw;
                 margin-top: 0;
             }
+
+            .inner-image .image-set {
+                height: 500px !important;
+                float: left;
+            }
         }
 
     </style>
