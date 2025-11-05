@@ -32,7 +32,7 @@
             }
 
             #other-page .product-page {
-                margin-top: 0 !important;
+                margin-top: 40px !important;
             }
         }
 
