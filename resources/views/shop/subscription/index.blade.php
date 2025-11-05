@@ -24,7 +24,7 @@
         }
 
         #pod_lastblock .bokal {
-            bottom: 53rem !important;
+            bottom: 40rem !important;
             left: 0 !important;
         }
 
@@ -33,14 +33,21 @@
         }
 
         #pod_lastblock h2 {
-            bottom: 14rem !important;
+            bottom: 58rem !important;
+            font-size: 17rem !important;
+            left: 1.5rem !important;
         }
 
         #thirdblock a button {
-            top: 40rem !important;
+            top: 37rem !important;
             font-size: 2.5rem !important;
             width: 58rem !important;
             left: 1rem !important;
+        }
+
+        #secondblock img.subscription-image {
+            opacity: 0.79 !important;
+            filter: brightness(40%) !important;
         }
     }
 </style>
