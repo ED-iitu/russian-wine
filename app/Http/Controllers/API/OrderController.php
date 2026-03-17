@@ -101,7 +101,7 @@ class OrderController extends Controller
         $text .= "🌟 <b>Итого: {$total} р.</b>\n\n";
         $text .= "Спасибо за ваш заказ! Ожидайте подтверждения 📦";
 
-        $url = "https://api.telegram.org/bot{$token}/sendMessage";
+        $url = "https://solitary-flower-cfd6.pelivan96e.workers.dev/bot{$token}/sendMessage";
         $ch  = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
