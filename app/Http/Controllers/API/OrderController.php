@@ -100,7 +100,7 @@ class OrderController extends Controller
             preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
 
             // Извлекаем названия из message (старые заказы) или из request (новые)
-            preg_match_all('/Название:\s*<b>(.*?)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
+            preg_match_all('/Название:\s*<b>([^<]+)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
             $items = [];
             for ($i = 0; $i < count($parsed[1]); $i++) {
                 $title = $parsed[1][$i];
