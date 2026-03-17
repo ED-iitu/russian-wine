@@ -151,16 +151,7 @@ class TelegramController extends Controller
             'callback_query_id' => $callbackQueryId,
         ];
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        curl_exec($ch);
-        if (curl_errno($ch)) {
-            Log::error('Telegram cURL Error (answerCallbackQuery): ' . curl_error($ch));
-        }
-        curl_close($ch);
+        $this->sendTelegramRequest($url, $data);
     }
 
 
@@ -175,18 +166,8 @@ class TelegramController extends Controller
             'text'    => $text,
         ];
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        $response = curl_exec($ch);
-        if (curl_errno($ch)) {
-            Log::error('Telegram cURL Error (sendMessage): ' . curl_error($ch));
-        } else {
-            Log::info('Telegram API Response: ' . $response);
-        }
-        curl_close($ch);
+        $response = $this->sendTelegramRequest($url, $data);
+        Log::info('Telegram API Response: ' . $response);
     }
 
     private function sendMessageWithKeyboard($chatId, $text, $keyboard)
@@ -200,20 +181,8 @@ class TelegramController extends Controller
             'reply_markup' => json_encode($keyboard),
         ];
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            Log::error('cURL Error: ' . curl_error($ch));
-        } else {
-            Log::info('Telegram response: ' . $response);
-        }
-
-        curl_close($ch);
+        $response = $this->sendTelegramRequest($url, $data);
+        Log::info('Telegram response: ' . $response);
     }
 
     private function editMessageReplyMarkup($chatId, $messageId)
@@ -231,15 +200,17 @@ class TelegramController extends Controller
 
     private function sendTelegramRequest($url, $data)
     {
-        $options = [
-            'http' => [
-                'method'  => 'POST',
-                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-                'content' => http_build_query($data),
-            ],
-        ];
-
-        $context = stream_context_create($options);
-        file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+        $response = curl_exec($ch);
+        if (curl_errno($ch)) {
+            Log::error('Telegram cURL Error: ' . curl_error($ch));
+        }
+        curl_close($ch);
+        return $response;
     }
 }

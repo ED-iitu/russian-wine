@@ -110,7 +110,8 @@ class OrderController extends Controller
             'text'       => $text,
             'parse_mode' => 'HTML',
         ]));
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
         curl_exec($ch);
         curl_close($ch);
     }
