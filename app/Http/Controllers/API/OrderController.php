@@ -53,7 +53,7 @@ class OrderController extends Controller
         }
 
         $saveRequest          = new Order();
-        $saveRequest->user_id = $user?->id;
+        $saveRequest->user_id = $user ? $user->id : null;
         $saveRequest->name    = $validated['name'];
         $saveRequest->phone   = $validated['phone'];
         $saveRequest->email   = $validated['email'];

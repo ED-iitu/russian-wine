@@ -30,7 +30,7 @@ class WineController extends Controller
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'like', '%' . $search . '%')
                   ->orWhere('model', 'like', '%' . $search . '%')
-                  ->orWhereHas('winery', fn($q) => $q->where('title', 'like', '%' . $search . '%'));
+                  ->orWhereHas('winery', function($q) use ($search) { $q->where('title', 'like', '%' . $search . '%'); });
             });
         }
 
