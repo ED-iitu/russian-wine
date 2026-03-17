@@ -35,7 +35,7 @@ class TelegramController extends Controller
                         [
                             [
                                 'text' => 'Открыть каталог вин 🍷',
-                                'web_app' => ['url' => 'https://mini.russianvine.ru?v=3']
+                                'web_app' => ['url' => 'https://mini.russianvine.ru']
                             ],
                         ]
                     ]
@@ -61,7 +61,7 @@ class TelegramController extends Controller
                             ['text' => 'Instagram', 'url' => 'https://www.instagram.com/russianvine.ru']
                         ],
                         [
-                            ['text' => 'Сайт (переход на сайт)', 'url' => 'https://mini.russianvine.ru?v=3']
+                            ['text' => 'Сайт (переход на сайт)', 'url' => 'https://mini.russianvine.ru']
                         ],
                         [
                             ['text' => 'Карты (Яндекс)', 'url' => 'https://yandex.kz/maps/ru/org/russkoye_vino/13229685349/?ll=37.482092%2C55.798356&z=16.15']
@@ -76,7 +76,7 @@ class TelegramController extends Controller
                         [
                             [
                                 'text' => 'Открыть каталог вин 🍷',
-                                'web_app' => ['url' => 'https://mini.russianvine.ru?v=3']
+                                'web_app' => ['url' => 'https://mini.russianvine.ru']
                             ],
                         ]
                     ]
@@ -129,7 +129,7 @@ class TelegramController extends Controller
                         [
                             [
                                 'text' => 'Открыть каталог вин 🍷',
-                                'web_app' => ['url' => 'https://mini.russianvine.ru?v=3']
+                                'web_app' => ['url' => 'https://mini.russianvine.ru']
                             ],
                         ]
                     ]
