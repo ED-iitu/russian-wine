@@ -27,6 +27,7 @@ class OrderController extends Controller
         foreach ($validated['items'] as $item) {
             $requestData[] = [
                 'product_id' => $item['id'],
+                'title'      => $item['title'],
                 'qty'        => $item['quantity'],
                 'type'       => $type,
                 'price'      => $item['price']
@@ -95,13 +96,39 @@ class OrderController extends Controller
             ->get(['id', 'created_at', 'message', 'request']);
 
         $result = $orders->map(function ($order) {
-            $items = json_decode($order->request, true) ?: [];
+            $requestItems = json_decode($order->request, true) ?: [];
             preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
+
+            // Извлекаем названия из message (старые заказы) или из request (новые)
+            preg_match_all('/Название:\s*<b>(.*?)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
+            $items = [];
+            for ($i = 0; $i < count($parsed[1]); $i++) {
+                $title = $parsed[1][$i];
+                $qty   = (int)$parsed[2][$i];
+                $price = isset($requestItems[$i]['price']) ? (int)$requestItems[$i]['price'] : 0;
+                // Если в request уже есть title (новые заказы) — используем его
+                if (isset($requestItems[$i]['title'])) {
+                    $title = $requestItems[$i]['title'];
+                }
+                $items[] = ['title' => $title, 'qty' => $qty, 'price' => $price];
+            }
+            // Если message не распарсился — берём из request напрямую
+            if (empty($items)) {
+                foreach ($requestItems as $ri) {
+                    $items[] = [
+                        'title' => isset($ri['title']) ? $ri['title'] : 'Вино',
+                        'qty'   => (int)($ri['qty'] ?? 1),
+                        'price' => (int)($ri['price'] ?? 0),
+                    ];
+                }
+            }
+
             return [
-                'id'         => $order->id,
-                'date'       => $order->created_at->format('d.m.Y'),
-                'total'      => isset($m[1]) ? (int)$m[1] : 0,
-                'items_count'=> array_sum(array_column($items, 'qty')),
+                'id'          => $order->id,
+                'date'        => $order->created_at->format('d.m.Y'),
+                'total'       => isset($m[1]) ? (int)$m[1] : 0,
+                'items_count' => array_sum(array_column($requestItems, 'qty')),
+                'items'       => $items,
             ];
         });
 
