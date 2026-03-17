@@ -151,16 +151,16 @@ class TelegramController extends Controller
             'callback_query_id' => $callbackQueryId,
         ];
 
-        $options = [
-            'http' => [
-                'method'  => 'POST',
-                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-                'content' => http_build_query($data),
-            ],
-        ];
-
-        $context = stream_context_create($options);
-        file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_exec($ch);
+        if (curl_errno($ch)) {
+            Log::error('Telegram cURL Error (answerCallbackQuery): ' . curl_error($ch));
+        }
+        curl_close($ch);
     }
 
 
@@ -175,18 +175,18 @@ class TelegramController extends Controller
             'text'    => $text,
         ];
 
-        $options = [
-            'http' => [
-                'method'  => 'POST',
-                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-                'content' => http_build_query($data),
-            ],
-        ];
-
-        $context  = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-
-        Log::info('Telegram API Response: ' . $response);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $response = curl_exec($ch);
+        if (curl_errno($ch)) {
+            Log::error('Telegram cURL Error (sendMessage): ' . curl_error($ch));
+        } else {
+            Log::info('Telegram API Response: ' . $response);
+        }
+        curl_close($ch);
     }
 
     private function sendMessageWithKeyboard($chatId, $text, $keyboard)

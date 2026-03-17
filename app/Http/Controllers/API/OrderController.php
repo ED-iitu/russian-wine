@@ -101,19 +101,17 @@ class OrderController extends Controller
         $text .= "🌟 <b>Итого: {$total} р.</b>\n\n";
         $text .= "Спасибо за ваш заказ! Ожидайте подтверждения 📦";
 
-        $url  = "https://api.telegram.org/bot{$token}/sendMessage";
-        $data = http_build_query([
+        $url = "https://api.telegram.org/bot{$token}/sendMessage";
+        $ch  = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
             'chat_id'    => $chatId,
             'text'       => $text,
             'parse_mode' => 'HTML',
-        ]);
-
-        $context = stream_context_create(['http' => [
-            'method'  => 'POST',
-            'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-            'content' => $data,
-        ]]);
-
-        @file_get_contents($url, false, $context);
+        ]));
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_exec($ch);
+        curl_close($ch);
     }
 }
