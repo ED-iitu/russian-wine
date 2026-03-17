@@ -7,6 +7,7 @@ use App\Models\Region;
 use App\Models\Sugar;
 use App\Models\Wine;
 use App\Models\WineClass;
+use App\Models\Winery;
 use Illuminate\Http\Request;
 
 class WineController extends Controller
@@ -19,9 +20,18 @@ class WineController extends Controller
         $query->with(['color', 'region', 'sugar', 'winery', 'manufacture']);
 
         foreach ($request->all() as $field => $value) {
-            if (in_array($field, ['color_id', 'sugar_id', 'year', 'region_id', 'fortress', 'sort_id', 'class_id'])) { // только разрешённые поля
+            if (in_array($field, ['color_id', 'sugar_id', 'year', 'region_id', 'fortress', 'sort_id', 'class_id', 'winery_id'])) {
                 $query->where($field, $value);
             }
+        }
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('model', 'like', '%' . $search . '%')
+                  ->orWhereHas('winery', fn($q) => $q->where('title', 'like', '%' . $search . '%'));
+            });
         }
 
         return response()->json($query->paginate(20));
@@ -36,6 +46,7 @@ class WineController extends Controller
         $classes = WineClass::orderBy('title', 'ASC')->get();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
+        $wineries = Winery::orderBy('title', 'ASC')->get();
 
         return response()->json([
             'colors'     => $colors,
@@ -45,6 +56,7 @@ class WineController extends Controller
             'classes'    => $classes,
             'years'      => $years,
             'fortresses' => $fortresses,
+            'wineries'   => $wineries,
         ]);
     }
 

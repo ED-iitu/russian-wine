@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Log;
 
 class Order extends Model
 {
+    protected $fillable = ['user_id', 'name', 'email', 'phone', 'type', 'message', 'request'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     const TYPE_TASTING = 1;
     const TYPE_TOUR = 2;
     const TYPE_NOMINAL_WINE = 3;
