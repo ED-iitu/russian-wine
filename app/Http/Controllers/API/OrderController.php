@@ -135,6 +135,51 @@ class OrderController extends Controller
         return response()->json(['orders' => $result]);
     }
 
+    public function show(Request $request, $id)
+    {
+        $tgChatId = $request->query('telegram_chat_id');
+        $user = $tgChatId ? User::where('telegram_chat_id', $tgChatId)->first() : null;
+
+        $query = Order::where('id', $id)->where('type', Order::TYPE_CART);
+        if ($user) $query->where('user_id', $user->id);
+
+        $order = $query->first(['id', 'created_at', 'message', 'request']);
+        if (!$order) return response()->json(['error' => 'Not found'], 404);
+
+        $requestItems = json_decode($order->request, true) ?: [];
+        preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
+        preg_match_all('/Название:\s*<b>([^<]+)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
+
+        $items = [];
+        for ($i = 0; $i < count($parsed[1]); $i++) {
+            $title = isset($requestItems[$i]['title']) ? $requestItems[$i]['title'] : $parsed[1][$i];
+            $items[] = [
+                'title' => $title,
+                'qty'   => (int)$parsed[2][$i],
+                'price' => isset($requestItems[$i]['price']) ? (int)$requestItems[$i]['price'] : 0,
+            ];
+        }
+        if (empty($items)) {
+            foreach ($requestItems as $ri) {
+                $items[] = [
+                    'title' => isset($ri['title']) ? $ri['title'] : 'Вино',
+                    'qty'   => (int)($ri['qty'] ?? 1),
+                    'price' => (int)($ri['price'] ?? 0),
+                ];
+            }
+        }
+
+        return response()->json([
+            'order' => [
+                'id'          => $order->id,
+                'date'        => $order->created_at->format('d.m.Y'),
+                'total'       => isset($m[1]) ? (int)$m[1] : 0,
+                'items_count' => array_sum(array_column($requestItems, 'qty')),
+                'items'       => $items,
+            ]
+        ]);
+    }
+
     private function notifyUser(string $chatId, array $orders, float $total): void
     {
         $token = env('TELEGRAM_BOT_TOKEN');
