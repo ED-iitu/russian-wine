@@ -205,7 +205,7 @@ class TelegramController extends Controller
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         curl_setopt($ch, CURLOPT_TIMEOUT, 3);
-        curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+
         $response = curl_exec($ch);
         if (curl_errno($ch)) {
             Log::error('Telegram cURL Error: ' . curl_error($ch));
