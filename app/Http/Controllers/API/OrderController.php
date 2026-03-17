@@ -82,6 +82,32 @@ class OrderController extends Controller
         ], 201);
     }
 
+    public function userOrders(Request $request)
+    {
+        $request->validate(['telegram_chat_id' => 'required']);
+        $user = User::where('telegram_chat_id', $request->telegram_chat_id)->first();
+        if (!$user) {
+            return response()->json(['orders' => []]);
+        }
+        $orders = $user->orders()
+            ->where('type', Order::TYPE_CART)
+            ->orderBy('created_at', 'desc')
+            ->get(['id', 'created_at', 'message', 'request']);
+
+        $result = $orders->map(function ($order) {
+            $items = json_decode($order->request, true) ?: [];
+            preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
+            return [
+                'id'         => $order->id,
+                'date'       => $order->created_at->format('d.m.Y'),
+                'total'      => isset($m[1]) ? (int)$m[1] : 0,
+                'items_count'=> array_sum(array_column($items, 'qty')),
+            ];
+        });
+
+        return response()->json(['orders' => $result]);
+    }
+
     private function notifyUser(string $chatId, array $orders, float $total): void
     {
         $token = env('TELEGRAM_BOT_TOKEN');
