@@ -99,17 +99,19 @@ class OrderController extends Controller
             $requestItems = json_decode($order->request, true) ?: [];
             preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
 
-            // Извлекаем названия из message (старые заказы) или из request (новые)
-            preg_match_all('/Название:\s*<b>([^<]+)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
-            $items = [];
-            for ($i = 0; $i < count($parsed[1]); $i++) {
-                $title = $parsed[1][$i];
-                $qty   = (int)$parsed[2][$i];
+            // Извлекаем названия и количества из message отдельными паттернами
+            preg_match_all('/Название:\s*<b>([^<]+)<\/b>/u', $order->message, $mTitles);
+            preg_match_all('/Количество:\s*<b>(\d+)<\/b>/u', $order->message, $mQtys);
+            $titles = $mTitles[1] ?? [];
+            $qtys   = $mQtys[1] ?? [];
+            $items  = [];
+            $count  = max(count($titles), count($requestItems));
+            for ($i = 0; $i < $count; $i++) {
+                $title = isset($requestItems[$i]['title']) ? $requestItems[$i]['title']
+                       : (isset($titles[$i]) ? $titles[$i] : 'Вино');
+                $qty   = isset($qtys[$i]) ? (int)$qtys[$i]
+                       : (int)($requestItems[$i]['qty'] ?? 1);
                 $price = isset($requestItems[$i]['price']) ? (int)$requestItems[$i]['price'] : 0;
-                // Если в request уже есть title (новые заказы) — используем его
-                if (isset($requestItems[$i]['title'])) {
-                    $title = $requestItems[$i]['title'];
-                }
                 $items[] = ['title' => $title, 'qty' => $qty, 'price' => $price];
             }
             // Если message не распарсился — берём из request напрямую
@@ -148,25 +150,19 @@ class OrderController extends Controller
 
         $requestItems = json_decode($order->request, true) ?: [];
         preg_match('/Общая сумма:\s*(\d+)/', strip_tags($order->message), $m);
-        preg_match_all('/Название:\s*<b>([^<]+)<\/b>.*?Количество:\s*<b>(\d+)<\/b>/Us', $order->message, $parsed);
-
-        $items = [];
-        for ($i = 0; $i < count($parsed[1]); $i++) {
-            $title = isset($requestItems[$i]['title']) ? $requestItems[$i]['title'] : $parsed[1][$i];
-            $items[] = [
-                'title' => $title,
-                'qty'   => (int)$parsed[2][$i],
-                'price' => isset($requestItems[$i]['price']) ? (int)$requestItems[$i]['price'] : 0,
-            ];
-        }
-        if (empty($items)) {
-            foreach ($requestItems as $ri) {
-                $items[] = [
-                    'title' => isset($ri['title']) ? $ri['title'] : 'Вино',
-                    'qty'   => (int)($ri['qty'] ?? 1),
-                    'price' => (int)($ri['price'] ?? 0),
-                ];
-            }
+        preg_match_all('/Название:\s*<b>([^<]+)<\/b>/u', $order->message, $mTitles);
+        preg_match_all('/Количество:\s*<b>(\d+)<\/b>/u', $order->message, $mQtys);
+        $titles = $mTitles[1] ?? [];
+        $qtys   = $mQtys[1] ?? [];
+        $items  = [];
+        $count  = max(count($titles), count($requestItems));
+        for ($i = 0; $i < $count; $i++) {
+            $title = isset($requestItems[$i]['title']) ? $requestItems[$i]['title']
+                   : (isset($titles[$i]) ? $titles[$i] : 'Вино');
+            $qty   = isset($qtys[$i]) ? (int)$qtys[$i]
+                   : (int)($requestItems[$i]['qty'] ?? 1);
+            $price = isset($requestItems[$i]['price']) ? (int)$requestItems[$i]['price'] : 0;
+            $items[] = ['title' => $title, 'qty' => $qty, 'price' => $price];
         }
 
         return response()->json([
