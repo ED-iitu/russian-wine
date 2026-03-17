@@ -10,6 +10,11 @@ class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
+    public function orders()
+    {
+        return $this->hasMany(\App\Models\Order::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
