@@ -1,6 +1,10 @@
 <div class="shopSearch col-md-9">
     <div class="row featured_cont">
         @foreach($wines as $wine)
+            @php
+                $cartItems = $cart_items ?? [];
+                $isInCart = in_array('wine-' . $wine->id, $cartItems, true);
+            @endphp
             <div class="col-md-4 col-xs-6">
                 <div class="swiper-slide">
                     <div class="wine">
@@ -49,12 +53,12 @@
                                            value="1">
                                     <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                 </div>
-{{--                                <button id="button-carts" class="cart-btn-{{$wine->id}}"--}}
+                            {{--                                <button id="button-carts" class="cart-btn-{{$wine->id}}"--}}
 {{--                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">--}}
 {{--                                    <span>В корзину</span></button>--}}
-                                <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                        onclick="cart_button_click('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">
-                                    <span>В корзину</span></button>
+                                <button id="button-carts" class="cart-btn-{{$wine->id}} {{ $isInCart ? 'active' : '' }}"
+                                        onclick="cart_button_click('{{$wine->id}}', 1, 'wine');">
+                                    <span>{{ $isInCart ? 'Удалить' : 'В корзину' }}</span></button>
                             </div>
                         </div>
                     </div>

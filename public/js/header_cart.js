@@ -104,11 +104,15 @@ function cart_remove_from_button(wine_id, type) {
     $.ajax({
         url: '/cart/remove/' + type + '/' + wine_id + '/0',
         success: function (data) {
-            wine_btn.removeClass('active').find('span').text('В корзину');
+            if (typeof setCartButtonState === 'function') {
+                setCartButtonState(wine_btn, false);
+            } else {
+                wine_btn.removeClass('active').find('span').text('В корзину');
+            }
+            cart_table_update();
             recountTotal();
             count_wines();
             countItem();
-            // cart_table_update();
         }
     });
 }
@@ -182,6 +186,4 @@ function cart_table_update() {
         }
     );
 }
-
-
 

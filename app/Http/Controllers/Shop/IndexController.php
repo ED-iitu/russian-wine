@@ -34,6 +34,13 @@ class IndexController extends Controller
      */
     public function wine_list(WineFilter $filters)
     {
+        $cart_items = collect(session()->get('cart', []))
+            ->map(function ($item) {
+                return $item['type'] . '-' . $item['product_id'];
+            })
+            ->values()
+            ->all();
+
         $wines = Wine::where('status', '=', 'ACTIVE')
             ->filter($filters)
             ->select([
@@ -80,7 +87,8 @@ class IndexController extends Controller
             return view('shop.wine.wine-list', [
                 'wines' => $wines,
                 'filters' => $request_filter,
-                'favorite' => $favorite_id_list
+                'favorite' => $favorite_id_list,
+                'cart_items' => $cart_items,
             ]);
         }
         $wineries = Cache::remember('wine_list.wineries', 3600, function () {
@@ -137,7 +145,8 @@ class IndexController extends Controller
             'fortresses' => $fortresses,
             'filters' => $request_filter,
             'favorite' => $favorite_id_list,
-            'bread_crumbs' => $bread_crumbs
+            'bread_crumbs' => $bread_crumbs,
+            'cart_items' => $cart_items,
         ]);
     }
 

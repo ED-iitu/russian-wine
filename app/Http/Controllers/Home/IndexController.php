@@ -15,6 +15,13 @@ class IndexController extends Controller
 
     public function index()
     {
+        $cart_items = collect(session()->get('cart', []))
+            ->map(function ($item) {
+                return $item['type'] . '-' . $item['product_id'];
+            })
+            ->values()
+            ->all();
+
         $homeContent = Cache::remember('home.index.content', 1800, function () {
             $popular_wines = Wine::where('status', '=', 'ACTIVE')
                 ->where('featured', '=', 1)
@@ -54,6 +61,7 @@ class IndexController extends Controller
             'home_set'  => $homeContent['home_set'],
             'home_tasting'  => $homeContent['home_tasting'],
             'favorite' => $favorite_wine_id,
+            'cart_items' => $cart_items,
         ]);
     }
 }

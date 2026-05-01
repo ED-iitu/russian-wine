@@ -96,6 +96,10 @@
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
                         @foreach($popular_wines as $wine)
+                            @php
+                                $cartItems = $cart_items ?? [];
+                                $isInCart = in_array('wine-' . $wine->id, $cartItems, true);
+                            @endphp
                             @if ($wine->featured)
                                 <div class="swiper-slide">
                                     <div class="wine">
@@ -141,9 +145,9 @@
                                                            value="1">
                                                     <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus', null, 'popular')"></span>
                                                 </div>
-                                                <button id="button-carts" class="cart-btn-{{$wine->id}}"
+                                                <button id="button-carts" class="cart-btn-{{$wine->id}} {{ $isInCart ? 'active' : '' }}"
                                                         onclick="cart_button_click('{{$wine->id}}', 1, 'wine');">
-                                                    <span>В корзину</span></button>
+                                                    <span>{{ $isInCart ? 'Удалить' : 'В корзину' }}</span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -236,6 +240,10 @@
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
                         @foreach($new_wines as $wine)
+                            @php
+                                $cartItems = $cart_items ?? [];
+                                $isInCart = in_array('wine-' . $wine->id, $cartItems, true);
+                            @endphp
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
@@ -280,9 +288,9 @@
                                                        value="1">
                                                 <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus', null, 'new')"></span>
                                             </div>
-                                            <button id="button-carts" class="cart-btn-{{$wine->id}}"
+                                            <button id="button-carts" class="cart-btn-{{$wine->id}} {{ $isInCart ? 'active' : '' }}"
                                                     onclick="cart_button_click('{{$wine->id}}', 1, 'wine', null, 'new');">
-                                                <span>В корзину</span></button>
+                                                <span>{{ $isInCart ? 'Удалить' : 'В корзину' }}</span></button>
                                         </div>
                                     </div>
                                 </div>
