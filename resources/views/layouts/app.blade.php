@@ -39,6 +39,20 @@
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
     @stack('styles')
+    <script>
+        window.tippy = window.tippy || function () {
+            return {
+                destroy: function () {},
+                hide: function () {},
+                show: function () {},
+                setProps: function () {},
+                enable: function () {},
+                disable: function () {}
+            };
+        };
+        window.tippy.hideAll = window.tippy.hideAll || function () {};
+        window.tippy.setDefaultProps = window.tippy.setDefaultProps || function () {};
+    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         window.addEventListener('load', function () {

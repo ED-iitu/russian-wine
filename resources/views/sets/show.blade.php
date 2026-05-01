@@ -5,150 +5,6 @@
 @section('body_class', 'set-page footer-hide other-page')
 @section('content')
     <style>
-        .set-page #desktop-product {
-            overflow: hidden;
-        }
-
-        .set-page .product-page {
-            display: flex;
-            align-items: flex-start;
-            gap: 3rem;
-            padding: 5vw 4vw 0;
-        }
-
-        .set-page .product-page .col-sp-15,
-        .set-page .product-page .col-sp-7 {
-            float: none;
-        }
-
-        .set-page .product-page .col-sp-15 {
-            flex: 1 1 60%;
-            max-width: 58vw;
-        }
-
-        .set-page .product-page .col-sp-7 {
-            flex: 1 1 32%;
-            max-width: 34vw;
-        }
-
-        .set-page .inner-image {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 46vw;
-        }
-
-        .set-page .image-set {
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .set-page .image-set .swiper-slide {
-            width: auto;
-            background: transparent;
-        }
-
-        .set-page .image-set .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .set-page .description-set {
-            position: sticky;
-            top: 4vw;
-        }
-
-        .set-page #mobile-price {
-            display: none;
-        }
-
-        @media (max-width: 991px) {
-            .set-page .product-page {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
-                margin-top: 0;
-                padding: 0 0 26vw;
-            }
-
-            .set-page .product-page .col-sp-15,
-            .set-page .product-page .col-sp-7 {
-                max-width: none;
-                width: 100%;
-            }
-
-            .set-page .description-set {
-                position: static;
-                padding: 0 5.556vw;
-            }
-
-            .set-page .description-set h1 {
-                font-size: 12vw;
-                line-height: 1;
-                margin-bottom: 5vw;
-            }
-
-            .set-page .description-set p {
-                font-size: 4.5vw;
-                line-height: 1.7;
-            }
-
-            .set-page .inner-image {
-                min-height: 108vw;
-                overflow: hidden;
-            }
-
-            .set-page #spec-cont,
-            .set-page .inner-image .image-set {
-                height: auto !important;
-            }
-
-            .set-page .inner-image .image-set {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                padding: 0 5vw;
-                gap: 4vw;
-                scroll-snap-type: x mandatory;
-            }
-
-            .set-page .inner-image .image-set .swiper-slide {
-                flex: 0 0 72vw;
-                scroll-snap-align: center;
-            }
-
-            .set-page .inner-image .image-set .swiper-slide img {
-                width: 100%;
-            }
-
-            .set-page .other-product {
-                display: none;
-            }
-
-            .set-page #mobile-price {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 0 5.556vw;
-                box-sizing: border-box;
-            }
-
-            .set-page #mobile-price .price {
-                width: auto;
-                text-align: left;
-                font-size: 8vw;
-            }
-
-            .set-page #mobile-price #podpisatsa {
-                width: 48vw;
-                height: 12vw;
-                font-size: 4vw;
-            }
-        }
-
         @media (max-width: 360px) {
             .other-product {
                 display: inline-table !important;
@@ -192,7 +48,7 @@
                                 @for ($i = 0; $i < 6; $i++)
                                     <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[0]->image)}}">
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                 @endfor
                                 @break
@@ -200,11 +56,11 @@
                                 @for ($i = 0; $i < 3; $i++)
                                     <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[0]->image)}}">
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                     <a class="swiper-slide" data-bottle="{{$set->wines[1]->id}}">
                                         <img alt="{{$set->wines[1]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[1]->image)}}">
+                                             src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
                                 @endfor
                                 @break
@@ -212,22 +68,22 @@
                                 @for ($i = 0; $i < 2; $i++)
                                     <a class="swiper-slide" data-bottle="{{$set->wines[0]->id}}">
                                         <img alt="{{$set->wines[0]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[0]->image)}}">
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                     <a class="swiper-slide" data-bottle="{{$set->wines[1]->id}}">
                                         <img alt="{{$set->wines[1]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[1]->image)}}">
+                                             src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
                                     <a class="swiper-slide" data-bottle="{{$set->wines[2]->id}}">
                                         <img alt="{{$set->wines[2]->title}}"
-                                             decoding="async" src="{{Voyager::image($set->wines[2]->image)}}">
+                                             src="{{Voyager::image($set->wines[2]->image)}}">
                                     </a>
                                 @endfor
                                 @break
                                 @default
                                 @foreach($set->wines as $wine)
                                     <a class="swiper-slide" data-bottle="{{$wine->id}}">
-                                        <img alt="{{$wine->title}}" decoding="async" src="{{Voyager::image($wine->image)}}">
+                                        <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">
                                     </a>
                                 @endforeach
                                 @break
@@ -258,7 +114,6 @@
                             </a>
                         @endif
                     </div>
-{{--                    было тут--}}
                 </div>
                 <div class="col-sp-7">
                     <div class="description-set">
