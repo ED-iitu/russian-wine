@@ -14,7 +14,7 @@
 {{--                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine" loading="lazy">--}}
 {{--                            </p>--}}
                             <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
-                                <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy">
+                                <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy" decoding="async">
                                 <span class="attributes"></span>
                             </a>
                         </div>
@@ -81,9 +81,5 @@
             </script>
         @endpush
 
-        @push('scripts')
-            <script src="{{ asset('js/cart.js') }}"></script>
-
-        @endpush
     </div>
 </div>

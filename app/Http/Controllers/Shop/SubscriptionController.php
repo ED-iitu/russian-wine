@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Set;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class SubscriptionController extends Controller
 {
@@ -14,8 +15,12 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        $sets = Set::where('in_subscription', true)->limit(3)->get();
-        $sale_set = Set::whereNotNull('sale')->first();
+        $sets = Cache::remember('subscription.sets', 3600, function () {
+            return Set::where('in_subscription', true)->limit(3)->get();
+        });
+        $sale_set = Cache::remember('subscription.sale_set', 3600, function () {
+            return Set::whereNotNull('sale')->first();
+        });
         return view('shop.subscription.index', [
             'sets' => $sets,
             'sale_set' => $sale_set

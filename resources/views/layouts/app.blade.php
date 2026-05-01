@@ -3,11 +3,17 @@
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
+    @php
+        $routeName = Request::route() ? Request::route()->getName() : null;
+    @endphp
     <title>@yield('title', Voyager::setting('site.title'))</title>
     <meta name="description" content="@yield('description', Voyager::setting('site.description'))">
     <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))"/>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @if($routeName === 'home')
+        <link rel="preload" as="image" href="{{ asset('image/background_podpiska.png') }}">
+    @endif
     <!-- Owl carousel  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}">
     <!-- Swiper.js  -->
@@ -21,7 +27,8 @@
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://telegram.org">
     <!-- Favicon and touch icons  -->
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
@@ -35,17 +42,19 @@
     @stack('styles')
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        window.addEventListener('load', function () {
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(101038499, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            ym(101038499, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+            });
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/101038499" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -61,7 +70,7 @@
 @include('layouts.footer')
 
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 
 <script>
     $(document).ready(function () {
@@ -71,17 +80,17 @@
 
 });
 </script>
-<script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery/jquery-countTo.js') }}"></script>
-<script src="{{ asset('js/jquery/jquery-waypoints.js') }}"></script>
-<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery/jquery.easing.js') }}"></script>
+<script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery/jquery-countTo.js') }}" defer></script>
+<script src="{{ asset('js/jquery/jquery-waypoints.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery/jquery.easing.js') }}" defer></script>
 <!-- <script src="{{ asset('swiperJs/swiper.min.js') }}"></script> -->
-<script src="https://unpkg.com/swiper@6/swiper-bundle.min.js"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-<script src="{{ asset('js/cart.js') }}"></script>
-<script src="{{ asset('js/header_cart.js') }}"></script>
-<script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+<script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}" defer></script>
+<script src="{{ asset('js/cart.js') }}" defer></script>
+<script src="{{ asset('js/header_cart.js') }}" defer></script>
+<script src="https://telegram.org/js/telegram-web-app.js?57" defer></script>
 @stack('scripts')
 <script>
     window.addEventListener('DOMContentLoaded', () => {

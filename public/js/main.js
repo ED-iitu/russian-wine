@@ -1,4 +1,27 @@
-var swiperV = new Swiper('#smolSlider.swiper-container-v', {
+var initSwiper = function (selector, config) {
+    var container = document.querySelector(selector);
+
+    if (typeof Swiper === 'undefined' || !container) {
+        return null;
+    }
+
+    var slideCount = container.querySelectorAll('.swiper-slide').length;
+
+    if (!slideCount) {
+        return null;
+    }
+
+    var swiperConfig = $.extend(true, {}, config);
+
+    if (swiperConfig.loop && slideCount < 2) {
+        swiperConfig.loop = false;
+        swiperConfig.loopFillGroupWithBlank = false;
+    }
+
+    return new Swiper(container, swiperConfig);
+};
+
+var swiperV = initSwiper('#smolSlider.swiper-container-v', {
     slidesPerView: 3,
     centeredSlides: true,
     mousewheel: true,
@@ -26,17 +49,17 @@ var swiperV = new Swiper('#smolSlider.swiper-container-v', {
         },
     }
 });
-new Swiper('#winemakers_slider.swiper-container', {
+
+initSwiper('#winemakers_slider.swiper-container', {
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
-
 });
 
 
 if ($(window).width() < 991) {
-    var swiper_set = new Swiper('#spec-cont', {
+    initSwiper('#spec-cont', {
         slidesPerView: 'auto',
         spaceBetween: 0,
         loop: true,
@@ -46,7 +69,7 @@ if ($(window).width() < 991) {
         },
     });
 
-    var swiper = new Swiper('#home_slider', {
+    initSwiper('#home_slider', {
         slidesPerView: 'auto',
         spaceBetween: 0,
         loop: true,
@@ -61,7 +84,7 @@ if ($(window).width() < 991) {
     });
 }
 
-var swiper1 = new Swiper('#featured_slide0.swiper-container', {
+initSwiper('#featured_slide0.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 0,
     pagination: {
@@ -75,7 +98,7 @@ var swiper1 = new Swiper('#featured_slide0.swiper-container', {
     loop: true
 });
 
-var swiper = new Swiper('#featured_slide1.swiper-container', {
+initSwiper('#featured_slide1.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 0,
     pagination: {

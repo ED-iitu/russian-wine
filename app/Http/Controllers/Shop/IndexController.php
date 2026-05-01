@@ -19,6 +19,7 @@ use App\Models\Sugar;
 use App\Filters\WineFilter;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
@@ -33,24 +34,33 @@ class IndexController extends Controller
      */
     public function wine_list(WineFilter $filters)
     {
-        $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
-            ->get();
-        $mobile_wineries = $wineries->groupBy(function ($item) {
-            return mb_substr($item->title, 0, 1);
-        });
-        $colors = Color::orderBy('title', 'ASC')->get();
-        $regions = Region::orderBy('title', 'ASC')->get();
-        $sugars = Sugar::orderBy('title', 'ASC')->get();
-        $sorts = GrapeSort::orderBy('title', 'ASC')->get();
-        $mobile_sorts = $sorts->groupBy(function ($item) {
-            return mb_substr($item->title, 0, 1);
-        });
-        $classes = WineClass::orderBy('title', 'ASC')->get();
-        $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
-        $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
         $wines = Wine::where('status', '=', 'ACTIVE')
             ->filter($filters)
-            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->select([
+                'id',
+                'title',
+                'slug',
+                'image',
+                'price',
+                'year',
+                'winery_id',
+                'manufacturer_id',
+                'color_id',
+                'sugar_id',
+                'class_id',
+                'region_id',
+                'grape_sort_id',
+                'status',
+            ])
+            ->with([
+                'color:id,title',
+                'sugar:id,title',
+                'winery:id,title',
+                'manufacture:id,title',
+                'excerpt:id,title',
+                'sort:id,title',
+                'region:id,title',
+            ])
             ->orderByRaw('-sort_id DESC')
             ->paginate(30)
             ->onEachSide(0);
@@ -62,10 +72,7 @@ class IndexController extends Controller
         $favorite_id_list = [];
         if (Auth::guard('client')->user()) {
             $client = Auth::guard('client')->user();
-            $favorite_wines = $client->wines()->get();
-            foreach ($favorite_wines as $wine) {
-                $favorite_id_list[] = $wine->id;
-            }
+            $favorite_id_list = $client->wines()->pluck('wines.id')->all();
         }
         if (\request()->ajax()) {
             $cookei_filter = json_encode(request()->input());
@@ -76,6 +83,46 @@ class IndexController extends Controller
                 'favorite' => $favorite_id_list
             ]);
         }
+        $wineries = Cache::remember('wine_list.wineries', 3600, function () {
+            return Winery::where('status', '=', 'ACTIVE')
+                ->orderBy('title', 'ASC')
+                ->get();
+        });
+        $mobile_wineries = $wineries->groupBy(function ($item) {
+            return mb_substr($item->title, 0, 1);
+        });
+        $colors = Cache::remember('wine_list.colors', 3600, function () {
+            return Color::orderBy('title', 'ASC')->get();
+        });
+        $regions = Cache::remember('wine_list.regions', 3600, function () {
+            return Region::orderBy('title', 'ASC')->get();
+        });
+        $sugars = Cache::remember('wine_list.sugars', 3600, function () {
+            return Sugar::orderBy('title', 'ASC')->get();
+        });
+        $sorts = Cache::remember('wine_list.sorts', 3600, function () {
+            return GrapeSort::orderBy('title', 'ASC')->get();
+        });
+        $mobile_sorts = $sorts->groupBy(function ($item) {
+            return mb_substr($item->title, 0, 1);
+        });
+        $classes = Cache::remember('wine_list.classes', 3600, function () {
+            return WineClass::orderBy('title', 'ASC')->get();
+        });
+        $years = Cache::remember('wine_list.years', 3600, function () {
+            return Wine::select('year')
+                ->whereNotNull('year')
+                ->groupBy('year')
+                ->orderBy('year', 'DESC')
+                ->get();
+        });
+        $fortresses = Cache::remember('wine_list.fortresses', 3600, function () {
+            return Wine::select('fortress')
+                ->whereNotNull('fortress')
+                ->groupBy('fortress')
+                ->orderBy('fortress', 'DESC')
+                ->get();
+        });
         return view('shop.wine.wine-shop', [
             'wines' => $wines,
             'colors' => $colors,
@@ -102,7 +149,15 @@ class IndexController extends Controller
     {
         $bread_crumbs = $this->bread_crumbs();
         $wine = Wine::where('slug', '=', $slug)
-            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region')
+            ->with([
+                'color:id,title,image',
+                'sugar:id,title',
+                'winery:id,title',
+                'manufacture:id,title',
+                'excerpt:id,title',
+                'sort:id,title',
+                'region:id,title',
+            ])
             ->where('status', '=', 'ACTIVE')
             ->firstOrFail();
         if (isset($wine->winery)) {
@@ -148,7 +203,16 @@ class IndexController extends Controller
     {
 
         $wine = Wine::where('slug', '=', $slug)
-            ->with('color', 'sugar', 'winery', 'manufacture', 'excerpt', 'sort', 'region', 'grapeSorts')
+            ->with([
+                'color:id,title,image',
+                'sugar:id,title',
+                'winery:id,title',
+                'manufacture:id,title',
+                'excerpt:id,title',
+                'sort:id,title',
+                'region:id,title',
+                'grapeSorts:id,title',
+            ])
             ->where('status', '=', 'ACTIVE')
             ->firstOrFail();
 
@@ -189,7 +253,19 @@ class IndexController extends Controller
      */
     public function personal_wine()
     {
-        $wineries = Winery::where('is_nominal', '=', 1)->get();
+        $wineries = Cache::remember('personal_wine.wineries', 3600, function () {
+            return Winery::where('is_nominal', '=', 1)
+                ->select(['id', 'title', 'description', 'region_id', 'nominal_image'])
+                ->with([
+                    'region:id,title',
+                    'images' => function ($query) {
+                        $query->where('type_id', 4)
+                            ->select(['id', 'winery_id', 'type_id', 'image']);
+                    },
+                ])
+                ->orderBy('title', 'ASC')
+                ->get();
+        });
         return view('shop.wine.personal', [
             'wineries' => $wineries
         ]);

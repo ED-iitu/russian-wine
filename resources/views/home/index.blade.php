@@ -1,11 +1,30 @@
 @extends('layouts.app')
+@push('styles')
+    <style>
+        .video-slider {
+            position: relative;
+        }
+
+        #myVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 991px) {
+            .video-slider {
+                display: none;
+            }
+        }
+    </style>
+@endpush
 @section('content')
 
     <!-- SLIDER -->
     <div id="home_slid">
         <div class="text-center video-slider">
-            <video autoplay="" muted="" loop="" id="myVideo">
-                <source src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
+            <video autoplay muted loop playsinline preload="metadata" poster="{{ asset('image/background_podpiska.png') }}" id="myVideo">
+                <source media="(min-width: 992px)" src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
             </video>
         </div>
         <div class="swiper-viewport">
@@ -13,7 +32,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
                         <a href="{{route('wine_shop')}}">
-                            <img alt="Subscribe Bg" src="{{ asset ('image/background_podpiska.png') }}">
+                            <img alt="Subscribe Bg" src="{{ asset ('image/background_podpiska.png') }}" loading="eager" fetchpriority="high" decoding="async">
                             <span>Вино</span>
                             <p>
                                 Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, так
@@ -24,7 +43,7 @@
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="{{route('sets')}}">
-                            <img alt="Sets Bg" src="{{ asset ('image/background_sety.png') }}">
+                            <img alt="Sets Bg" src="{{ asset ('image/background_sety.png') }}" loading="lazy" decoding="async">
                             <span>Сеты</span>
                             <p>
                                 Мы объехали все винодельни нашей страны и отобрали лучшие и самые интересные вина.
@@ -34,7 +53,7 @@
 
                     </div>
                     <div class="swiper-slide text-center"><a href="{{route('tastings')}}">
-                            <img alt="Club Bg" src="{{ asset ('image/background_club.png') }}">
+                            <img alt="Club Bg" src="{{ asset ('image/background_club.png') }}" loading="lazy" decoding="async">
                             <span>Дегустации</span>
                             <p>
                                 Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой
@@ -45,7 +64,7 @@
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="{{route('personal-wine')}}">
-                            <img alt="Personal wine" src="{{ asset ('image/background_imennoe.png') }}">
+                            <img alt="Personal wine" src="{{ asset ('image/background_imennoe.png') }}" loading="lazy" decoding="async">
                             <span>Именное вино</span>
                             <p>
                                 Создайте семейную традицию – заложите свою бочку вина. По окончании выдержки, вино
@@ -71,9 +90,9 @@
                 <!-- Swiper -->
                 <h4>{{trans('home.popular')}}</h4>
                 <div class="prevslide0" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
-                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
+                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);" loading="lazy" decoding="async"></div>
                 <div class="nextslide0" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
-                        src="{{ asset ('image/slidearrow.png') }}"></div>
+                        src="{{ asset ('image/slidearrow.png') }}" loading="lazy" decoding="async"></div>
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
                         @foreach($popular_wines as $wine)
@@ -91,7 +110,7 @@
 {{--                                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">--}}
 {{--                                            </p>--}}
                                             <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
-                                                <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
+                                                <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy" decoding="async">
                                                 <span class="attributes"></span>
                                             </a>
                                         </div>
@@ -145,7 +164,7 @@
             <div id="specials-cont">
                 <div class="col-md-4 bannerstitle"
                      onclick="$('#degustacii_modal').css('display', 'block');$('body').addClass('nooverflow');">
-                    <img src="{{ asset ('image/degustag-main.png') }}">
+                    <img src="{{ asset ('image/degustag-main.png') }}" loading="lazy" decoding="async">
                     <h6>дегустации <span>{{$home_tasting->title}}</span></h6>
                     <button>ЗАПИСАТЬСЯ</button>
                     <div id="bannerdate">
@@ -155,7 +174,7 @@
                 </div>
                 <div class="col-md-4 bannerstitle">
                     <a href="{{route('set', $home_set->slug)}}">
-                        <img alt="{{$home_set->title}}" src="{{ Voyager::image($home_set->home_image) }}">
+                        <img alt="{{$home_set->title}}" src="{{ Voyager::image($home_set->home_image) }}" loading="lazy" decoding="async">
                         <h6>сет месяца <span>{{$home_set->title}}</span></h6>
                         <button>ЗАКАЗАТЬ СЕТ</button>
                     </a>
@@ -211,9 +230,9 @@
                 <!-- Swiper -->
                 <h4>{{trans('home.new')}} </h4>
                 <div class="prevslide1" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
-                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
+                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);" loading="lazy" decoding="async"></div>
                 <div class="nextslide1" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
-                        src="{{ asset ('image/slidearrow.png') }}"></div>
+                        src="{{ asset ('image/slidearrow.png') }}" loading="lazy" decoding="async"></div>
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
                         @foreach($new_wines as $wine)
@@ -229,7 +248,7 @@
 {{--                                            <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">--}}
 {{--                                        </p>--}}
                                         <a href="{{route('wine_or_winery', $wine->slug)}}" class="preview">
-                                            <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
+                                            <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}" loading="lazy" decoding="async">
                                             <span class="attributes"></span>
                                         </a>
                                     </div>
@@ -306,7 +325,7 @@
                                     <div>
                                         <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
                                             <img alt="{{$winemaker->seo_title}}"
-                                                 src="{{ Voyager::image($winemaker->main_image) }}"></a>
+                                                 src="{{ Voyager::image($winemaker->main_image) }}" loading="lazy" decoding="async"></a>
                                     </div>
                                     <h6>
                                         <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
@@ -349,6 +368,5 @@
         </section>
         @push('scripts')
             <script src="{{ asset('js/favorite.js') }}"></script>
-            <script src="{{ asset('js/cart.js') }}"></script>
     @endpush
 @endsection

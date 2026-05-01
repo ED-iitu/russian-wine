@@ -29,9 +29,34 @@
         }
 
         @media (max-width: 991px) {
+            #information-informationwc {
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .imennoe .swiper-container-h {
+                overflow: hidden;
+            }
+
+            .imennoe .swiper-slide {
+                min-height: auto;
+            }
+
             #modal_sviaz input[type=number], #modal_sviaz textarea {
                 font-size: 5vw;
                 margin-bottom: 5vh;
+            }
+
+            #slide-6 .preview img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            #mob-mouse {
+                display: block;
+                width: 8vw;
+                margin: 8vw auto 0;
             }
         }
     </style>
@@ -157,7 +182,7 @@
                                         @foreach($wineries as $winery)
                                             <div class="swiper-slide">
                                                 <div class="preview" onclick="preview({{$winery->id}})">
-                                                    <img src="{{Voyager::image($winery->nominal_image)}}" alt="image">
+                                                    <img src="{{Voyager::image($winery->nominal_image)}}" loading="lazy" decoding="async" alt="image">
                                                     <span>{{$winery->title}}</span>
                                                 </div>
                                             </div>
@@ -265,8 +290,8 @@
                         }
                     </script>
                     <script>
-                        if ($(window).width() < 991) {
-                            $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
+        if ($(window).width() < 991) {
+            $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
 
                             var section = $('#slide-6');
                             var sectin = $('#slide-6 .col-sss-4').height();
@@ -277,7 +302,9 @@
                             var section1 = $('.swiper-pagination.swiper-pagination-v');
                             var sectionTop2 = section1.offset().top;
                             $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
-                            $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}   " id="mob-mouse" />');
+                            if (!document.getElementById('mob-mouse')) {
+                                $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}" id="mob-mouse" />');
+                            }
                             var setion = $('#slide-5');
                             var setionTop = setion.offset().top;
                             // $(window).bind('scroll', function () {
@@ -314,7 +341,7 @@
         </div>
     </div>
 
-    @foreach($wineries as $winery)
+        @foreach($wineries as $winery)
         <div id="information-winerywc" class="information-winerywc winery-modal-{{$winery->id}}">
             <p class="close_click hidden" onclick="close_winery_modal()">
                 <img alt="close_icon" src="{{asset('image/closeicon.png')}}" style="width: 4.5rem; top: 4rem;">
@@ -325,7 +352,7 @@
                     <div class="swiper-wrapper">
                         @foreach($winery->images as $block)
                             @if ($block->type_id == 4)
-                                <div class="swiper-slide"><img alt="image" src="{{Voyager::image($block->image)}}"/>
+                                <div class="swiper-slide"><img alt="image" loading="lazy" decoding="async" src="{{Voyager::image($block->image)}}"/>
                                 </div>
                             @endif
                         @endforeach
@@ -379,7 +406,7 @@
                    required="required"
                    onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон');">
             <input type="text" id="text1" name="message" placeholder="Сообщение">
-            <img src="{{ captcha_src() }}" alt="captcha" style="width: 190px; height: 70px;">
+            <img src="{{ captcha_src() }}" alt="captcha" loading="lazy" decoding="async" style="width: 190px; height: 70px;">
 
             <input type="text" name="captcha" placeholder="Введите капчу" required>
 
