@@ -27,7 +27,6 @@
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
-    <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://telegram.org">
     <!-- Favicon and touch icons  -->
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">

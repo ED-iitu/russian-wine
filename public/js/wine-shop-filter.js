@@ -1,20 +1,70 @@
-/*  POPOVER JS*/
+/*  Tooltip JS */
+(function () {
+    var activeTooltip = null;
 
-tippy('.tippyTooltip', {
-    content(reference) {
-        const id = reference.getAttribute('data-template');
-        const template = document.getElementById(id);
-        return template.innerHTML;
-    },
-    trigger: 'click',
-    allowHTML: true,
-    theme: 'light-border',
-    interactive: true,
-    hideOnClick: true,
-    maxWidth: 'none',
-    offset: [0, 10],
-    placement: 'right',
-});
+    function closeTooltip() {
+        if (activeTooltip) {
+            activeTooltip.remove();
+            activeTooltip = null;
+        }
+    }
+
+    function openTooltip(target) {
+        closeTooltip();
+
+        var templateId = target.getAttribute('data-template');
+        var template = document.getElementById(templateId);
+
+        if (!template) {
+            return;
+        }
+
+        var rect = target.getBoundingClientRect();
+        var tooltip = document.createElement('div');
+        tooltip.className = 'filter-tooltip';
+        tooltip.innerHTML = '<div class="filter-tooltip__inner">' + template.innerHTML + '</div>';
+        document.body.appendChild(tooltip);
+
+        var tooltipWidth = tooltip.offsetWidth;
+        var top = window.scrollY + rect.top;
+        var left = window.scrollX + rect.right + 12;
+
+        if (left + tooltipWidth > window.scrollX + window.innerWidth - 12) {
+            left = window.scrollX + rect.left - tooltipWidth - 12;
+        }
+
+        if (left < window.scrollX + 12) {
+            left = window.scrollX + 12;
+            top = window.scrollY + rect.bottom + 12;
+        }
+
+        tooltip.style.top = top + 'px';
+        tooltip.style.left = left + 'px';
+        activeTooltip = tooltip;
+    }
+
+    $(document).on('click', '.tippyTooltip', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (activeTooltip) {
+            closeTooltip();
+            return;
+        }
+
+        openTooltip(this);
+    });
+
+    $(document).on('click', function () {
+        closeTooltip();
+    });
+
+    $(document).on('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeTooltip();
+        }
+    });
+})();
 
 $(window).on('hashchange', function () {
     if (window.location.hash) {
@@ -26,7 +76,7 @@ $(window).on('hashchange', function () {
         }
     }
 });
-/*  POPOVER JS END*/
+/*  Tooltip JS end */
 window.onpageshow = function (event) {
     var url_parameters = window.location.search;
     if (url_parameters.length === 0) clear_for_load()
@@ -336,5 +386,4 @@ function search(type, search_type = null) {
     }
 
 }
-
 

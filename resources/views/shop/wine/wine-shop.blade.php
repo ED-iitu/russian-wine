@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
-@endpush
 @section('content')
     <div class="shopContent">
         <div class="row subHeader">
@@ -504,7 +501,6 @@
     </div>
             @include('shop.wine.mobile-filter')
     @push('scripts')
-        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <script src="{{ asset('js/wine-shop-filter.js')}}"></script>
         <script src="{{ asset('js/favorite.js') }}"></script>
     @endpush

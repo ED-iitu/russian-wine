@@ -823,35 +823,35 @@ input {
     float: right;
 }
 
-.tippy-box {
-    position: relative;
+.filter-tooltip {
+    position: absolute;
+    z-index: 9999;
     background-color: #fff;
     color: #000;
     border-radius: 4px;
     font-size: 14px;
     line-height: 1.4;
     outline: 0;
-    transition-property: transform, visibility, opacity;
-    box-shadow: 0px 0px 3.3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3.3px 0 rgba(0, 0, 0, 0.2);
     min-width: 26.227vw;
+    max-width: min(90vw, 520px);
 }
 
-.tippy-content p {
+.filter-tooltip__inner {
+    padding: 0.934vw;
+}
+
+.filter-tooltip__inner p {
     font: 0.747vw 'ProximaNova-Reg', sans-serif;
-    /*letter-spacing: -.01em;*/
     line-height: 0.934vw;
     padding: 0;
 }
 
-.tippy-content h4 {
+.filter-tooltip__inner h4 {
     font-family: 'ProximaNova-Bold';
     font-size: 0.934vw;
     line-height: 1.634vw;
     margin: 0;
-}
-
-.tippy-content {
-    padding: 0.934vw;
 }
 
 .pagination > .disabled > span, .pagination > .disabled > span:hover,
@@ -2108,11 +2108,15 @@ span.currency {
         margin: 1rem 0.6rem;
     }
 
-    .tippy-content {
+    .filter-tooltip {
+        max-width: calc(90% - 20px);
+    }
+
+    .filter-tooltip__inner {
         padding: 2rem 1rem;
     }
 
-    .tippy-content p {
+    .filter-tooltip__inner p {
         font: 1.2rem 'ProximaNova-Reg', sans-serif;
         line-height: normal;
         /*letter-spacing: -.01em;*/
@@ -2120,11 +2124,7 @@ span.currency {
         padding: 0;
     }
 
-    [data-tippy-root] {
-        max-width: calc(90% - 20px);
-    }
-
-    .tippy-content h4 {
+    .filter-tooltip__inner h4 {
         font-family: 'ProximaNova-Bold';
         font-size: 1.6rem;
         line-height: 2rem;
