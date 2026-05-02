@@ -241,7 +241,7 @@
     .desc-mask .description li { line-height: 1.6; }
     .desc-mask .description strong,
     .desc-mask .description b { font-family: 'ProximaNova-Bold', sans-serif; }
-    /* Arrow button */
+    /* Arrow button — reset .mt-md (margin-top:40px + padding-top:40px from old-site.css) */
     .desc-mask .description img.visible-xs {
         display: block !important;
         width: 11.5vw !important;
@@ -249,7 +249,8 @@
         max-width: 44px !important;
         max-height: 44px !important;
         border-radius: 50%;
-        margin-top: 4vw;
+        margin-top: 4vw !important;
+        padding-top: 0 !important;
         object-fit: cover;
         pointer-events: all;
     }
