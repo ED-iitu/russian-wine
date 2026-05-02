@@ -141,6 +141,7 @@
        Desktop has padding: 8rem which collapses content to ~119px
        on a 375px phone. Override to reasonable mobile padding. */
     #information-winerywc {
+        position: relative;
         padding: 5rem 5vw 12vw;
         height: auto;
         min-height: 100vh;
@@ -155,9 +156,11 @@
         padding: 4vw 0 15vw;
         margin: 0;
     }
-    #information-winerywc img {
+    /* Swiper images fill the container width */
+    #information-winerywc .swiper-slide img {
         width: 100% !important;
         max-width: 100%;
+        height: auto;
     }
     #information-winerywc h1 {
         font-size: clamp(24px, 7vw, 48px) !important;
@@ -176,10 +179,24 @@
         font-size: clamp(14px, 4.5vw, 20px) !important;
     }
 
-    /* === Close button on winery modal === */
-    .close_click img {
-        width: 3rem !important;
-        top: 2rem !important;
+    /* === Close button — fixed to top-right of winery modal === */
+    #information-winerywc .close_click {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 200;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    #information-winerywc .close_click img {
+        display: block;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        max-width: 2.5rem !important;
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
     }
 
     /* === Swiper v container on mobile === */
