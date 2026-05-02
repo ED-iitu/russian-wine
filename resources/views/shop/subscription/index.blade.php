@@ -2,56 +2,6 @@
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/page/subscription.css')}}">
 @endpush
-<style>
-    @media (max-width: 360px) {
-        #top_podpiska {
-            height: 75rem !important;
-        }
-
-        #top_podpiska .btn-danger {
-            font: 12px ProximaNova-Bold !important;
-            margin-top: 1rem !important;
-            left: 0 !important;
-        }
-
-        #firstblock img {
-            margin-top: 0 !important;
-        }
-
-        .desc-mask .description {
-            width: 50rem !important;
-            padding-top: 3vw !important;
-        }
-
-        #pod_lastblock .bokal {
-            bottom: 40rem !important;
-            left: 0 !important;
-        }
-
-        .description p {
-            font-size: 3rem !important;
-        }
-
-        #pod_lastblock h2 {
-            bottom: 58rem !important;
-            font-size: 17rem !important;
-            left: 1.5rem !important;
-        }
-
-        #thirdblock a button {
-            top: 37rem !important;
-            font-size: 2.5rem !important;
-            width: 58rem !important;
-            left: 1rem !important;
-        }
-
-        #secondblock img.subscription-image {
-            opacity: 0.79 !important;
-            filter: brightness(40%) !important;
-        }
-    }
-</style>
-
 @section('content')
     <div id="product-category" class="container">
         <div class="row">
@@ -210,4 +160,21 @@
                 });
         }
     </script>
+    @push('scripts')
+    <script>
+        (function () {
+            var wasDesktop = $(window).width() >= 992;
+            var reloadTimer = null;
+            $(window).on('resize', function () {
+                clearTimeout(reloadTimer);
+                reloadTimer = setTimeout(function () {
+                    var isDesktop = $(window).width() >= 992;
+                    if (isDesktop !== wasDesktop) {
+                        location.reload();
+                    }
+                }, 300);
+            });
+        })();
+    </script>
+    @endpush
 @endsection

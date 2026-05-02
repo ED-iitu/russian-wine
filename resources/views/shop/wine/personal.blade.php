@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('body_class', 'overflow-hidden footer-hide')
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/page/personal-wine.css') }}">
+@endpush
 @section('content')
     <style>
         .swiper-container {
@@ -270,6 +273,22 @@
                             $('body').addClass('overflow-hidden');
                             $('body').removeClass('overflow-auto');
                         }
+
+                        // Reload when crossing the desktop/mobile breakpoint so
+                        // Swiper initialisation and layout match the current viewport.
+                        (function () {
+                            var wasDesktop = $(window).width() >= 992;
+                            var reloadTimer = null;
+                            $(window).on('resize', function () {
+                                clearTimeout(reloadTimer);
+                                reloadTimer = setTimeout(function () {
+                                    var isDesktop = $(window).width() >= 992;
+                                    if (isDesktop !== wasDesktop) {
+                                        location.reload();
+                                    }
+                                }, 300);
+                            });
+                        })();
 
                     </script>
                     <script>
