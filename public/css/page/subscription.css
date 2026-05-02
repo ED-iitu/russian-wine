@@ -147,101 +147,119 @@
     #secondblock {
         background: #fff;
         float: none;
+        padding: 4vw 0 2vw;
     }
     #secondblock .subscription-title {
-        font-size: clamp(22px, 7.5vw, 48px);
-        margin: 4vw 5.556vw 2vw;
-        color: #27283b;
+        display: block !important;
+        font-size: clamp(22px, 8vw, 42px);
+        font-family: 'ProximaNova-Bold', sans-serif;
+        margin: 0 5vw 5vw;
+        color: #1a1a2e;
+        line-height: 1.2;
     }
-    /* Each card: full-width stacked */
+    /* Each card: full-width stacked with horizontal gutters */
     #secondblock .col-sp-8 {
         width: 100%;
         float: none;
         height: auto;
         overflow: visible;
-        padding: 0 5.556vw 6vw;
+        padding: 0 4.5vw 5vw;
         box-sizing: border-box;
     }
+    /* Card shell */
     .podpiska-thumb {
         position: relative;
         width: 100%;
+        border-radius: 4.5vw;
         overflow: hidden;
-        border-radius: 2vw;
-    }
-    .podpiska-thumb img.subscription-image {
-        width: 100%;
-        height: 60vw;
-        object-fit: cover;
         display: block;
-        border-radius: 2vw;
-        filter: brightness(70%);
     }
-    /* Always-visible description overlay on mobile */
+    /* Background image — tall card matching the design proportions */
+    .podpiska-thumb img.subscription-image {
+        display: block;
+        width: 100%;
+        height: 118vw;
+        object-fit: cover;
+        border-radius: 0;
+        filter: brightness(80%);
+    }
+    /* Full-card overlay — flex column so title sticks top, description bottom */
     .desc-mask {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 4vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
         box-sizing: border-box;
     }
+    /* Title — top-left */
     .desc-mask h4 {
-        font-size: clamp(16px, 5.5vw, 28px);
+        font-size: clamp(14px, 5vw, 20px);
         color: #fff;
         font-family: 'ProximaNova-Bold', sans-serif;
         text-transform: uppercase;
-        margin: 0 0 3vw;
+        margin: 0;
+        padding: 5vw 5vw 0;
+        line-height: 1.2;
     }
+    /* Description area — bottom, with dark-to-transparent gradient */
     .desc-mask .description {
         opacity: 1 !important;
         width: auto !important;
         position: static !important;
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        font-size: clamp(13px, 4vw, 17px);
+        margin: 0 !important;
+        padding: 10vw 5vw 5vw !important;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(10, 5, 25, 0.65) 25%,
+            rgba(10, 5, 25, 0.88) 100%
+        );
+        font-size: clamp(13px, 3.9vw, 16px);
         font-family: 'ProximaNova-Reg', sans-serif;
-        line-height: 1.7;
+        line-height: 1.65;
         color: #fff;
     }
-    /* --- Типографика WYSIWYG-описания --- */
+    /* Типографика WYSIWYG-контента */
     .desc-mask .description p {
-        margin: 0 0 3vw;
+        margin: 0 0 2.5vw;
         padding: 0;
-        line-height: 1.7;
+        line-height: 1.65;
     }
     .desc-mask .description p:last-of-type {
         margin-bottom: 0;
     }
     .desc-mask .description ul,
     .desc-mask .description ol {
-        margin: 0 0 3vw;
-        padding-left: 5vw;
+        margin: 0 0 2.5vw;
+        padding-left: 4.5vw;
     }
     .desc-mask .description li {
-        margin-bottom: 1.5vw;
+        margin-bottom: 1.2vw;
         line-height: 1.6;
-    }
-    .desc-mask .description h2,
-    .desc-mask .description h3,
-    .desc-mask .description h4 {
-        font-size: clamp(14px, 4.5vw, 20px);
-        font-family: 'ProximaNova-Bold', sans-serif;
-        margin: 3vw 0 2vw;
-        line-height: 1.3;
-        color: #fff;
     }
     .desc-mask .description strong,
     .desc-mask .description b {
         font-family: 'ProximaNova-Bold', sans-serif;
     }
-    .desc-mask .description br {
-        display: block;
-        content: '';
-        margin-top: 1.5vw;
+    /* Arrow button (hlink-bg.png) */
+    .desc-mask .description img.visible-xs {
+        display: block !important;
+        width: 11.5vw;
+        height: 11.5vw;
+        border-radius: 50%;
+        margin-top: 4vw;
+        object-fit: cover;
+        flex-shrink: 0;
     }
+    /* Hide desktop-only elements inside description */
+    .desc-mask .description .fordesc,
     #secondblock .description .fordesc {
-        display: none;
+        display: none !important;
     }
 
     /* --- THIRD BLOCK (annual subscription) --- */
